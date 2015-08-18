@@ -1,0 +1,1430 @@
+From david.lyon at preisshare.net  Thu Mar  1 02:05:28 2007
+From: david.lyon at preisshare.net (david.lyon at preisshare.net)
+Date: Wed, 28 Feb 2007 19:05:28 -0600
+Subject: [Preisshare-dev] another one to have a look at...
+In-Reply-To: <45E624EB.6030900@planetva.com>
+References: <20070224130326.o9gq2zg5wcccs480@www.systml.co.uk>
+	<45E0D74E.4080707@preisshare.net> <45E22CDC.20108@planetva.com>
+	<20070225193858.fz2mm4oigmmo88co@srv11.ezyreg.com>
+	<45E624EB.6030900@planetva.com>
+Message-ID: <20070228190528.i4i6a74y63y0wkwc@srv11.ezyreg.com>
+
+
+Ludwig,
+
+Yeah, there's lots.
+
+I'm just building an automation component for pulling down the price  
+files from websites.
+
+It is an essential component to have in PreisShare. Maybe we can go  
+talk to some of these places. Or introduce it as a feature to make it  
+easier for the computer places to upload their product files.
+
+Very interesting stuff.. I agree...
+
+Quoting Ludwig Heymbeeck <ludwig at planetva.com>:
+
+> another one... http://au.shopping.com/
+>
+> david.lyon at preisshare.net wrote:
+>>
+>> I like the general idea of pulling down price files from websites   
+>> and being able to  search them.
+>>
+>> I'm building a new tool into preisshare to do just that.
+>>
+>> It could prove to be very popular.
+>>
+>>
+>> Quoting Ludwig Heymbeeck <ludwig at planetva.com>:
+>>
+>>> www.shopferret.com.au
+>>
+>>
+>>
+>>
+>>
+
+
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: pricelistcollector.PNG
+Type: image/png
+Size: 25157 bytes
+Desc: not available
+URL: <https://lists.berlios.de/pipermail/preisshare-dev/attachments/20070228/549191bd/attachment.png>
+
+From david.lyon at preisshare.net  Fri Mar  2 00:23:56 2007
+From: david.lyon at preisshare.net (David Lyon)
+Date: Fri, 02 Mar 2007 10:23:56 +1100
+Subject: [Preisshare-dev] [Fwd: ParistaPacific Kingston Flash Card Offer
+	List - 01-Mar-2007]
+Message-ID: <45E7608C.2040102@preisshare.net>
+
+Sonmez,
+
+These are the price files that we are receiving.
+
+It would be good to be able to decode these in perl and write the
+results to a preisshare file.
+
+You will need the tableextract perl module.
+
+It's a very interesting task.
+
+Then we can relay the prices. This will give us another constant feed of
+prices
+-------------- next part --------------
+An embedded message was scrubbed...
+From: <info at paristapacific.com>
+Subject: ParistaPacific Kingston Flash Card Offer List  - 01-Mar-2007
+Date: Thu, 1 Mar 2007 16:06:09 +0800
+Size: 16710
+URL: <https://lists.berlios.de/pipermail/preisshare-dev/attachments/20070302/5e57d853/attachment.mht>
+
+From david.lyon at preisshare.net  Mon Mar  5 00:42:16 2007
+From: david.lyon at preisshare.net (david.lyon at preisshare.net)
+Date: Sun, 04 Mar 2007 17:42:16 -0600
+Subject: [Preisshare-dev] A "duh" question - Excel
+In-Reply-To: <20070302132450.dc066b1d4d2e0a1a65719ae85a8071e6.3b8fcc7fec.wbe@email.secureserver.net>
+References: <20070302132450.dc066b1d4d2e0a1a65719ae85a8071e6.3b8fcc7fec.wbe@email.secureserver.net>
+Message-ID: <20070304174216.wdfan2xk9bj4o088@srv11.ezyreg.com>
+
+Quoting "David RR Webber \(XML\)" <david at drrw.info>:
+
+> Steve,    We're talking about people who barely know how to use email
+> here dude!   What I'm thinking is they already have the information
+> in Excel.    They can cut and paste into the new Excel template -
+> column for column - or create using pre-defined empty template.
+> Usually if your template is better than the {nothing} they've been
+> using - they can be persuaded.
+
+It's a good idea of course.
+
+Certainly would make it a lot easier.
+
+Let me know when you have the blank spreadsheet.. :-) We can start to  
+forward it to them and see how it goes.
+
+Regards
+
+David
+
+
+
+
+From david.lyon at preisshare.net  Tue Mar  6 06:35:19 2007
+From: david.lyon at preisshare.net (David Lyon)
+Date: Tue, 06 Mar 2007 16:35:19 +1100
+Subject: [Preisshare-dev] Hi David
+In-Reply-To: <88F336CB90B5F34880FADA0301B0EF4CE6FEBB@agni.JANDBINDIA.COM>
+References: <88F336CB90B5F34880FADA0301B0EF4CE6FEBB@agni.JANDBINDIA.COM>
+Message-ID: <45ECFD97.7010600@preisshare.net>
+
+
+Sinu,
+
+Still a fair bit to go. The idea sounds simple but they take time to get 
+right.
+
+Here I'm just trying to get the full circle of price-relaying working. 
+And make it very simple to use.
+
+What I've ended up doing is using DWSII (Delphi web script) to do the 
+actual price calculations. This means that the users can put in whatever 
+logic that they like to calculate from the cost price up to the final 
+sell price.
+
+The Relay_Calculations.pas file sits in the PreisShare directory. It 
+get's interpreted, not compiled into the program.
+
+I've attached a sample.
+
+An Editor (with syntax highlighting) is built into the new PriceSharer. 
+c/o the SynEdit components.
+
+We've got this running in production now and it seems to be ok.
+
+So it will be nice to be able to download some prices from an email, run 
+the relay_calculations over the prices, and then pump out new prices to 
+customers. We're getting ever closer.
+
+Regards
+
+David
+
+Sinu S. wrote:
+>
+> Hi David,
+>
+>  
+>
+> I downloaded TMail2000. They are using ClientSocket component for 
+> getting connection. Looks good.
+>
+>  
+>
+> By the way I am attaching a sample application using Indy.  You can 
+> see the downloading functions in the class "UPLDownloader.pas"  
+>
+>  
+>
+> Regards,
+>
+> Sinu
+>
+>  
+>
+
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: <https://lists.berlios.de/pipermail/preisshare-dev/attachments/20070306/44201190/attachment.html>
+-------------- next part --------------
+An embedded and charset-unspecified text was scrubbed...
+Name: Relay_Calculations.pas
+URL: <https://lists.berlios.de/pipermail/preisshare-dev/attachments/20070306/44201190/attachment.ksh>
+
+From david.lyon at preisshare.net  Thu Mar  8 00:28:55 2007
+From: david.lyon at preisshare.net (david.lyon at preisshare.net)
+Date: Wed, 07 Mar 2007 17:28:55 -0600
+Subject: [Preisshare-dev] Sample code from tradedesk showing xpath setup..
+Message-ID: <20070307172855.6cwi6ibhptcswokc@srv11.ezyreg.com>
+
+
+Hi Steve,
+
+I know that you can't compile it because you don't have a development  
+environment set up. But here is some code from tradedesk showing how  
+the xpath(like) assignments work.
+
+
+Regards
+
+David
+
+procedure TfrmMain.InitialiseStandardDoc;
+var
+     s,supplierNode,CustomerNode : String;
+     xc : Integer;
+     Total,TaxRate,TotalTax : Currency;
+     anItem : TListItem;
+begin
+
+	// -- Buyer/Seller need to be flipped
+	if (stdDocPanel.CurrentDocument.Document_Type = GTD_QUOTE_TYPE) or
+	   (stdDocPanel.CurrentDocument.Document_Type = GTD_INVOICE_TYPE) then
+	begin
+		supplierNode := STDDOC_SELLER_NODE;
+		CustomerNode := STDDOC_BUYER_NODE;
+	end
+	else begin
+		supplierNode := STDDOC_BUYER_NODE;
+		CustomerNode := STDDOC_SELLER_NODE;
+	end;
+
+	// -- Add Vendor details
+	with stdDocPanel.CurrentDocument do
+	begin
+		SetStringElement(CustomerNode,STDDOC_ELE_COMPANY_NAME,dmlData.tblTrader.FieldByName(GTD_DB_COL_COMPANY_NAME).AsString);
+		SetStringElement(CustomerNode,STDDOC_ELE_ADDRESS_LINE_1,dmlData.tblTrader.FieldByName(GTD_DB_COL_ADDRESS_LINE_1).AsString);
+		SetStringElement(CustomerNode,STDDOC_ELE_ADDRESS_LINE_2,dmlData.tblTrader.FieldByName(GTD_DB_COL_ADDRESS_LINE_2).AsString);
+		SetStringElement(CustomerNode,STDDOC_ELE_TOWN,  
+dmlData.tblTrader.FieldByName(GTD_DB_COL_TOWN).AsString);
+		SetStringElement(CustomerNode,STDDOC_ELE_STATE_REGION,dmlData.tblTrader.FieldByName(GTD_DB_COL_STATE_REGION).AsString);
+		SetStringElement(CustomerNode,STDDOC_ELE_POSTALCODE,dmlData.tblTrader.FieldByName(GTD_DB_COL_POSTALCODE).AsString);
+		SetStringElement(CustomerNode,STDDOC_ELE_COUNTRYCODE,dmlData.tblTrader.FieldByName(GTD_DB_COL_COUNTRYCODE).AsString);
+		SetStringElement(CustomerNode,STDDOC_ELE_TELEPHONE,dmlData.tblTrader.FieldByName(GTD_DB_COL_TELEPHONE).AsString);
+		SetStringElement(CustomerNode,STDDOC_ELE_TELEPHONE2,dmlData.tblTrader.FieldByName(GTD_DB_COL_TELEPHONE2).AsString);
+		SetStringElement(CustomerNode,STDDOC_ELE_TELEPHONE2,dmlData.tblTrader.FieldByName(GTD_DB_COL_TELEPHONE2).AsString);
+		SetStringElement(CustomerNode,STDDOC_ELE_EMAIL_ADDRESS,dmlData.tblTrader.FieldByName(GTD_DB_COL_EMAILADDRESS).AsString);
+	end;
+
+	// -- Add  details
+	frmConfig.RefreshCompanyInfo;
+	with stdDocPanel.CurrentDocument do
+	begin
+		// -- Selliug pary
+		SetStringElement(SupplierNode,STDDOC_ELE_COMPANY_NAME,frmConfig.txtCompany.Text);
+		SetStringElement(SupplierNode,STDDOC_ELE_ADDRESS_LINE_1,frmConfig.txtStreet1.Text);
+		SetStringElement(SupplierNode,STDDOC_ELE_ADDRESS_LINE_2,frmConfig.txtStreet2.Text);
+		SetStringElement(SupplierNode,STDDOC_ELE_TOWN, frmConfig.txtCity.Text);
+		SetStringElement(SupplierNode,STDDOC_ELE_STATE_REGION,frmConfig.cbxState.Text);
+		SetStringElement(SupplierNode,STDDOC_ELE_POSTALCODE,frmConfig.txtPostCode.Text);
+		SetStringElement(SupplierNode,STDDOC_ELE_COUNTRYCODE,GetCodeFromCountryName(frmConfig.cbxCountry.Text));
+		SetStringElement(SupplierNode,STDDOC_ELE_TELEPHONE,frmConfig.txtTelephone.Text);
+		SetStringElement(SupplierNode,STDDOC_ELE_TELEPHONE2,frmConfig.txtFax.Text);
+		SetStringElement(SupplierNode,STDDOC_ELE_OTHER_INFO,frmConfig.txtOtherInfo.Text);
+
+		// -- Header
+		SetStringElement(STDDOC_HDR_NODE,STDDOC_HDR_ELE_CONTACT,UserName);
+		SetStringElement(STDDOC_HDR_NODE,STDDOC_HDR_ELE_SALES_PERSON,UserName);
+
+		if stdDocPanel.CurrentDocument.Document_Type = GTD_ORDER_TYPE then
+		begin
+			SetStringElement(STDDOC_HDR_NODE,STDDOC_HDR_ELE_DELIV_ADDR,'');
+			SetStringElement(STDDOC_HDR_NODE,STDDOC_HDR_ELE_SPECL_INSTR,'');
+			SetStringElement(STDDOC_HDR_NODE,STDDOC_HDR_ELE_PMT_TERMS,'Account');
+		end
+		else if stdDocPanel.CurrentDocument.Document_Type = GTD_QUOTE_TYPE then
+		begin
+			SetStringElement(STDDOC_HDR_NODE,STDDOC_HDR_ELE_GEN_TERMS,frmConfig.txtQuoteTerms.Text);
+			SetStringElement(STDDOC_HDR_NODE,STDDOC_HDR_ELE_DELIV_MODE,frmConfig.cbxQuoteDeliveryMode.Text);
+			SetStringElement(STDDOC_HDR_NODE,STDDOC_HDR_ELE_DELIV_CHG,frmConfig.txtQuoteDeliveryCharge.EditText);
+		end;
+
+		// -- Is the quote tax inclusive or tax exclusive
+		if stdDocPanel.rdoTaxInclusive.Checked then
+		begin
+			// -- Tax calculation
+			Total := 0;
+			// -- Add up all the lines
+			for xc := 1 to stdDocPanel.lsvLineItems.Items.Count do
+			begin
+				anItem := stdDocPanel.lsvLineItems.Items[xc-1];
+				Total := Total + StringToFloat(anItem.SubItems[4]);
+			end;
+			// -- Get our tax rate
+			TaxRate :=  
+GetSalesTaxRateFromCountryCode(GetCodeFromCountryName(frmConfig.cbxCountry.Text));
+
+			SetStringElement(STDDOC_HDR_NODE,STDDOC_HDR_ELE_TAX_MODE,STDDOC_CONST_TAX_MODE_INC);
+		end
+		else begin
+			SetStringElement(STDDOC_HDR_NODE,STDDOC_HDR_ELE_TAX_MODE,STDDOC_CONST_TAX_MODE_EXC);
+			SetNumberElement(STDDOC_HDR_NODE,STDDOC_HDR_ELE_TAX_TOTAL,0);
+		end;
+
+		SetStringElement(STDDOC_HDR_NODE,STDDOC_HDR_ELE_TAX_NAME,GetTaxNameFromCountryCode(GetCodeFromCountryName(frmConfig.cbxCountry.Text)));
+		SetStringElement(STDDOC_HDR_NODE,STDDOC_HDR_ORIGIN_CODE,GetCodeFromCountryName(frmConfig.cbxCountry.Text));
+
+		// -- The document logo
+		if stdDocPanel.CurrentDocument.Document_Type = GTD_QUOTE_TYPE then
+		begin
+			// -- Logos go on quotes
+			if (frmConfig.txtLogoFilename.Text <> '') and  
+FileExists(frmConfig.txtLogoFilename.Text) then
+				SetStringElement(STDDOC_HDR_NODE,STDDOC_HDR_LOGO_IMAGE,ExtractFileName(frmConfig.txtLogoFilename.Text));
+
+			SetDateElement(STDDOC_HDR_NODE,STDDOC_HDR_QUOTE_EXPIRES,Date +  
+frmConfig.cbxQuoteExpiry.Value);
+		end;
+
+		SetStringElement(STDDOC_HDR_NODE,STDDOC_HDR_PAPER_SIZE,'A4');
+		SetStringElement(STDDOC_HDR_NODE,STDDOC_HDR_PRINT_ORIENT,'Portrait');
+
+		// SetStringElement(STDDOC_HDR,STDDOC_HDR_DISPLAY_FORMAT,) + #13;
+		// SetStringElement(STDDOC_HDR,STDDOC_HDR_HEADER_COLS,) + #13;
+		// SetStringElement(STDDOC_HDR,STDDOC_HDR_ITEM_COLS,) + #13;
+
+		// -- Initialise the total
+		Total := 0;
+		if txtDeliveryCost.Text <> '' then
+			Total := StrToFloat(txtDeliveryCost.Text);
+
+		// -- Add Delivery details
+		{
+		SetStringElement(GTD_PO_DEL_NODE,GTD_PO_DEL_ELE_MODE,cbxDeliveryMode.Text);
+		SetDateElement(GTD_PO_DEL_NODE,GTD_PO_DEL_ELE_DATE,dtpDeliveryDate.Date);
+		SetStringElement(GTD_PO_DEL_NODE,GTD_PO_DEL_ELE_ADDR,rceDeliveryAddress.Text);
+		SetStringElement(GTD_PO_DEL_NODE,GTD_PO_DEL_ELE_INSTR,rceDeliveryInstructions.Text);
+		SetStringElement(GTD_PO_DEL_NODE,GTD_PO_DEL_ELE_CHARGE,txtDeliveryCost.Text);
+		}
+     end;
+
+end;
+
+
+
+From stephen.green at systml.co.uk  Thu Mar  8 04:48:57 2007
+From: stephen.green at systml.co.uk (stephen.green at systml.co.uk)
+Date: Wed, 07 Mar 2007 20:48:57 -0700
+Subject: [Preisshare-dev] Sample code from tradedesk showing
+	xpath	setup..
+In-Reply-To: <20070307172855.6cwi6ibhptcswokc@srv11.ezyreg.com>
+References: <20070307172855.6cwi6ibhptcswokc@srv11.ezyreg.com>
+Message-ID: <20070307204857.odmsl2e9rocog4ok@www.systml.co.uk>
+
+Would the aim be to convert this just enough to use the
+XML format from DRRW? Not at this point UBL? If so it
+doesn't look like a lot has to change in this code (just
+add issue date, document ID, etc) but this abstracts the
+underlying syntax: Is this move from custom format to XML
+in hand?
+
+Maybe then the conversion would to using DRRW's XML (the
+same sort of semantics but with XML confomormance and
+just a few amendments) and if it were a requirement to
+import or export UBL, say (or any other formats) this
+could be attempted using an XSLT or equivalent transformation.
+
+So would you be looking for some XSLT too to do that?
+
+All the best
+
+Steve
+
+
+Quoting david.lyon at preisshare.net:
+
+>
+> Hi Steve,
+>
+> I know that you can't compile it because you don't have a development
+> environment set up. But here is some code from tradedesk showing how
+> the xpath(like) assignments work.
+>
+>
+> Regards
+>
+> David
+>
+> procedure TfrmMain.InitialiseStandardDoc;
+> var
+>      s,supplierNode,CustomerNode : String;
+>      xc : Integer;
+>      Total,TaxRate,TotalTax : Currency;
+>      anItem : TListItem;
+> begin
+>
+> 	// -- Buyer/Seller need to be flipped
+> 	if (stdDocPanel.CurrentDocument.Document_Type = GTD_QUOTE_TYPE) or
+> 	   (stdDocPanel.CurrentDocument.Document_Type = GTD_INVOICE_TYPE) then
+> 	begin
+> 		supplierNode := STDDOC_SELLER_NODE;
+> 		CustomerNode := STDDOC_BUYER_NODE;
+> 	end
+> 	else begin
+> 		supplierNode := STDDOC_BUYER_NODE;
+> 		CustomerNode := STDDOC_SELLER_NODE;
+> 	end;
+>
+> 	// -- Add Vendor details
+> 	with stdDocPanel.CurrentDocument do
+> 	begin
+> 		SetStringElement(CustomerNode,STDDOC_ELE_COMPANY_NAME,dmlData.tblTrader.FieldByName(GTD_DB_COL_COMPANY_NAME).AsString);
+> 		SetStringElement(CustomerNode,STDDOC_ELE_ADDRESS_LINE_1,dmlData.tblTrader.FieldByName(GTD_DB_COL_ADDRESS_LINE_1).AsString);
+> 		SetStringElement(CustomerNode,STDDOC_ELE_ADDRESS_LINE_2,dmlData.tblTrader.FieldByName(GTD_DB_COL_ADDRESS_LINE_2).AsString);
+> 		SetStringElement(CustomerNode,STDDOC_ELE_TOWN,
+> dmlData.tblTrader.FieldByName(GTD_DB_COL_TOWN).AsString);
+> 		SetStringElement(CustomerNode,STDDOC_ELE_STATE_REGION,dmlData.tblTrader.FieldByName(GTD_DB_COL_STATE_REGION).AsString);
+> 		SetStringElement(CustomerNode,STDDOC_ELE_POSTALCODE,dmlData.tblTrader.FieldByName(GTD_DB_COL_POSTALCODE).AsString);
+> 		SetStringElement(CustomerNode,STDDOC_ELE_COUNTRYCODE,dmlData.tblTrader.FieldByName(GTD_DB_COL_COUNTRYCODE).AsString);
+> 		SetStringElement(CustomerNode,STDDOC_ELE_TELEPHONE,dmlData.tblTrader.FieldByName(GTD_DB_COL_TELEPHONE).AsString);
+> 		SetStringElement(CustomerNode,STDDOC_ELE_TELEPHONE2,dmlData.tblTrader.FieldByName(GTD_DB_COL_TELEPHONE2).AsString);
+> 		SetStringElement(CustomerNode,STDDOC_ELE_TELEPHONE2,dmlData.tblTrader.FieldByName(GTD_DB_COL_TELEPHONE2).AsString);
+> 		SetStringElement(CustomerNode,STDDOC_ELE_EMAIL_ADDRESS,dmlData.tblTrader.FieldByName(GTD_DB_COL_EMAILADDRESS).AsString);
+> 	end;
+>
+> 	// -- Add  details
+> 	frmConfig.RefreshCompanyInfo;
+> 	with stdDocPanel.CurrentDocument do
+> 	begin
+> 		// -- Selliug pary
+> 		SetStringElement(SupplierNode,STDDOC_ELE_COMPANY_NAME,frmConfig.txtCompany.Text);
+> 		SetStringElement(SupplierNode,STDDOC_ELE_ADDRESS_LINE_1,frmConfig.txtStreet1.Text);
+> 		SetStringElement(SupplierNode,STDDOC_ELE_ADDRESS_LINE_2,frmConfig.txtStreet2.Text);
+> 		SetStringElement(SupplierNode,STDDOC_ELE_TOWN, frmConfig.txtCity.Text);
+> 		SetStringElement(SupplierNode,STDDOC_ELE_STATE_REGION,frmConfig.cbxState.Text);
+> 		SetStringElement(SupplierNode,STDDOC_ELE_POSTALCODE,frmConfig.txtPostCode.Text);
+> 		SetStringElement(SupplierNode,STDDOC_ELE_COUNTRYCODE,GetCodeFromCountryName(frmConfig.cbxCountry.Text));
+> 		SetStringElement(SupplierNode,STDDOC_ELE_TELEPHONE,frmConfig.txtTelephone.Text);
+> 		SetStringElement(SupplierNode,STDDOC_ELE_TELEPHONE2,frmConfig.txtFax.Text);
+> 		SetStringElement(SupplierNode,STDDOC_ELE_OTHER_INFO,frmConfig.txtOtherInfo.Text);
+>
+> 		// -- Header
+> 		SetStringElement(STDDOC_HDR_NODE,STDDOC_HDR_ELE_CONTACT,UserName);
+> 		SetStringElement(STDDOC_HDR_NODE,STDDOC_HDR_ELE_SALES_PERSON,UserName);
+>
+> 		if stdDocPanel.CurrentDocument.Document_Type = GTD_ORDER_TYPE then
+> 		begin
+> 			SetStringElement(STDDOC_HDR_NODE,STDDOC_HDR_ELE_DELIV_ADDR,'');
+> 			SetStringElement(STDDOC_HDR_NODE,STDDOC_HDR_ELE_SPECL_INSTR,'');
+> 			SetStringElement(STDDOC_HDR_NODE,STDDOC_HDR_ELE_PMT_TERMS,'Account');
+> 		end
+> 		else if stdDocPanel.CurrentDocument.Document_Type = GTD_QUOTE_TYPE then
+> 		begin
+> 			SetStringElement(STDDOC_HDR_NODE,STDDOC_HDR_ELE_GEN_TERMS,frmConfig.txtQuoteTerms.Text);
+> 			SetStringElement(STDDOC_HDR_NODE,STDDOC_HDR_ELE_DELIV_MODE,frmConfig.cbxQuoteDeliveryMode.Text);
+> 			SetStringElement(STDDOC_HDR_NODE,STDDOC_HDR_ELE_DELIV_CHG,frmConfig.txtQuoteDeliveryCharge.EditText);
+> 		end;
+>
+> 		// -- Is the quote tax inclusive or tax exclusive
+> 		if stdDocPanel.rdoTaxInclusive.Checked then
+> 		begin
+> 			// -- Tax calculation
+> 			Total := 0;
+> 			// -- Add up all the lines
+> 			for xc := 1 to stdDocPanel.lsvLineItems.Items.Count do
+> 			begin
+> 				anItem := stdDocPanel.lsvLineItems.Items[xc-1];
+> 				Total := Total + StringToFloat(anItem.SubItems[4]);
+> 			end;
+> 			// -- Get our tax rate
+> 			TaxRate :=
+> GetSalesTaxRateFromCountryCode(GetCodeFromCountryName(frmConfig.cbxCountry.Text));
+>
+> 			SetStringElement(STDDOC_HDR_NODE,STDDOC_HDR_ELE_TAX_MODE,STDDOC_CONST_TAX_MODE_INC);
+> 		end
+> 		else begin
+> 			SetStringElement(STDDOC_HDR_NODE,STDDOC_HDR_ELE_TAX_MODE,STDDOC_CONST_TAX_MODE_EXC);
+> 			SetNumberElement(STDDOC_HDR_NODE,STDDOC_HDR_ELE_TAX_TOTAL,0);
+> 		end;
+>
+> 		SetStringElement(STDDOC_HDR_NODE,STDDOC_HDR_ELE_TAX_NAME,GetTaxNameFromCountryCode(GetCodeFromCountryName(frmConfig.cbxCountry.Text)));
+> 		SetStringElement(STDDOC_HDR_NODE,STDDOC_HDR_ORIGIN_CODE,GetCodeFromCountryName(frmConfig.cbxCountry.Text));
+>
+> 		// -- The document logo
+> 		if stdDocPanel.CurrentDocument.Document_Type = GTD_QUOTE_TYPE then
+> 		begin
+> 			// -- Logos go on quotes
+> 			if (frmConfig.txtLogoFilename.Text <> '') and
+> FileExists(frmConfig.txtLogoFilename.Text) then
+> 				SetStringElement(STDDOC_HDR_NODE,STDDOC_HDR_LOGO_IMAGE,ExtractFileName(frmConfig.txtLogoFilename.Text));
+>
+> 			SetDateElement(STDDOC_HDR_NODE,STDDOC_HDR_QUOTE_EXPIRES,Date +
+> frmConfig.cbxQuoteExpiry.Value);
+> 		end;
+>
+> 		SetStringElement(STDDOC_HDR_NODE,STDDOC_HDR_PAPER_SIZE,'A4');
+> 		SetStringElement(STDDOC_HDR_NODE,STDDOC_HDR_PRINT_ORIENT,'Portrait');
+>
+> 		// SetStringElement(STDDOC_HDR,STDDOC_HDR_DISPLAY_FORMAT,) + #13;
+> 		// SetStringElement(STDDOC_HDR,STDDOC_HDR_HEADER_COLS,) + #13;
+> 		// SetStringElement(STDDOC_HDR,STDDOC_HDR_ITEM_COLS,) + #13;
+>
+> 		// -- Initialise the total
+> 		Total := 0;
+> 		if txtDeliveryCost.Text <> '' then
+> 			Total := StrToFloat(txtDeliveryCost.Text);
+>
+> 		// -- Add Delivery details
+> 		{
+> 		SetStringElement(GTD_PO_DEL_NODE,GTD_PO_DEL_ELE_MODE,cbxDeliveryMode.Text);
+> 		SetDateElement(GTD_PO_DEL_NODE,GTD_PO_DEL_ELE_DATE,dtpDeliveryDate.Date);
+> 		SetStringElement(GTD_PO_DEL_NODE,GTD_PO_DEL_ELE_ADDR,rceDeliveryAddress.Text);
+> 		SetStringElement(GTD_PO_DEL_NODE,GTD_PO_DEL_ELE_INSTR,rceDeliveryInstructions.Text);
+> 		SetStringElement(GTD_PO_DEL_NODE,GTD_PO_DEL_ELE_CHARGE,txtDeliveryCost.Text);
+> 		}
+>      end;
+>
+> end;
+>
+> _______________________________________________
+> Preisshare-dev mailing list
+> Preisshare-dev at lists.berlios.de
+> https://lists.berlios.de/mailman/listinfo/preisshare-dev
+>
+
+
+
+
+From david.lyon at preisshare.net  Thu Mar  8 05:21:12 2007
+From: david.lyon at preisshare.net (David Lyon)
+Date: Thu, 08 Mar 2007 15:21:12 +1100
+Subject: [Preisshare-dev] Sample code from tradedesk
+	showing	xpath	setup..
+In-Reply-To: <20070307204857.odmsl2e9rocog4ok@www.systml.co.uk>
+References: <20070307172855.6cwi6ibhptcswokc@srv11.ezyreg.com>
+	<20070307204857.odmsl2e9rocog4ok@www.systml.co.uk>
+Message-ID: <45EF8F38.7010500@preisshare.net>
+
+Hi Steve,
+
+stephen.green at systml.co.uk wrote:
+> Would the aim be to convert this just enough to use the
+> XML format from DRRW? Not at this point UBL? If so it
+> doesn't look like a lot has to change in this code (just
+> add issue date, document ID, etc) but this abstracts the
+> underlying syntax: Is this move from custom format to XML
+> in hand?
+>
+>   
+It doesn't matter so much to me.
+
+Maybe we could just move straight to real UBL. There isn't any advantage 
+at the moment going to an XML 1.0 rendition.
+
+
+> Maybe then the conversion would to using DRRW's XML (the
+> same sort of semantics but with XML confomormance and
+> just a few amendments) and if it were a requirement to
+> import or export UBL, say (or any other formats) this
+> could be attempted using an XSLT or equivalent transformation.
+>   
+What's different between DRRWs XML and UBL?
+
+I believe that by adding some string filtration/translation I can do all 
+the translation within a translation class.
+
+Something like this:
+
+ if (xpath='/Seller Information/Name') then
+ UBL_xpath := '/cac:Seller Information/cac:Name';
+
+etc..
+
+> So would you be looking for some XSLT too to do that?
+>   
+
+I have a more immediate need for an XSLT transformation to handle a 
+"Featured Product"
+
+xml =
+
+<Featured_Product>
+ <img_src="skypemousephone.png">
+ <name="Skype Mouse Phone">
+<description>This mouse incorporates a usb skype phone</description>
+</Featured_Product>
+
+and then transform that into html text and send it out on the email list.
+
+Regards
+
+David
+
+
+
+
+
+
+From david.lyon at preisshare.net  Thu Mar  8 05:38:17 2007
+From: david.lyon at preisshare.net (David Lyon)
+Date: Thu, 08 Mar 2007 15:38:17 +1100
+Subject: [Preisshare-dev] fyi Typical Chinese computer supplier request
+ [Fwd: chance can supply all computer parts]
+Message-ID: <45EF9339.6080307@preisshare.net>
+
+Hi Steve,
+
+yet another typical supplier request from China..
+
+Regards
+
+David
+-------------- next part --------------
+An embedded message was scrubbed...
+From: "alan zhang" <yourboxmodee at gmail.com>
+Subject: chance can supply all computer parts
+Date: Thu, 8 Mar 2007 11:08:43 +0800
+Size: 4219
+URL: <https://lists.berlios.de/pipermail/preisshare-dev/attachments/20070308/ef3a65c0/attachment.mht>
+
+From david at drrw.info  Thu Mar  8 18:27:49 2007
+From: david at drrw.info (David RR Webber (XML))
+Date: Thu, 08 Mar 2007 10:27:49 -0700
+Subject: [Preisshare-dev] fyi Typical Chinese computer supplier request
+	[Fwd: chance can supply all computer parts]
+Message-ID: <20070308102749.dc066b1d4d2e0a1a65719ae85a8071e6.e6d679bb0b.wbe@email.secureserver.net>
+
+An HTML attachment was scrubbed...
+URL: <https://lists.berlios.de/pipermail/preisshare-dev/attachments/20070308/fb03f74a/attachment.html>
+
+From stephen.green at systml.co.uk  Thu Mar  8 20:05:42 2007
+From: stephen.green at systml.co.uk (stephen.green at systml.co.uk)
+Date: Thu, 08 Mar 2007 12:05:42 -0700
+Subject: [Preisshare-dev] fyi Typical Chinese computer supplier
+	request	[Fwd: chance can supply all computer parts]
+In-Reply-To: <20070308102749.dc066b1d4d2e0a1a65719ae85a8071e6.e6d679bb0b.wbe@email.secureserver.net>
+References: <20070308102749.dc066b1d4d2e0a1a65719ae85a8071e6.e6d679bb0b.wbe@email.secureserver.net>
+Message-ID: <20070308120542.w2a48gngwsckwg4c@www.systml.co.uk>
+
+How about ebXML over open IM, David (and David)?  :-)
+It's been on my mind bugging me today as it seems such
+a nice fit.
+
+I could publish perhaps a 'broadcast' pattern ebBP definition
+in SystML along with Catalogue (or 'sourcing') UBL subsets
+if need be.
+
+All the best
+
+Steve
+
+Quoting "David RR Webber \(XML\)" <david at drrw.info>:
+
+> David,    Every time I look at these type of sites - same thing -
+> flash site with product details - no pricing!    Clearly need for a
+> central clearinghouse service where people can post bid requests and
+> get quotes - huge.    We can certainly use ebXML to make that all
+> secure - so bidders get RFQ delivered - and can then review those and
+> route back thru the clearinghouse to the requester.   DW
+>
+> "The way to be is to do" - Confucius (551-472 B.C.)
+>
+> -------- Original Message --------
+> Subject: [Preisshare-dev] fyi Typical Chinese computer supplier
+> request
+> [Fwd: chance can supply all computer parts]
+> From: David Lyon <david.lyon at preisshare.net>
+> Date: Wed, March 07, 2007 11:38 pm
+> To: Preisshare-dev at lists.berlios.de, Stephen Green
+> <stephengreenubl at gmail.com>
+>
+> Hi Steve,
+>
+> yet another typical supplier request from China..
+>
+> Regards
+>
+> David
+> -------------------------
+> _______________________________________________
+> Preisshare-dev mailing list
+> Preisshare-dev at lists.berlios.de
+> https://lists.berlios.de/mailman/listinfo/preisshare-dev
+
+
+
+
+From david at drrw.info  Thu Mar  8 20:32:50 2007
+From: david at drrw.info (David RR Webber (XML))
+Date: Thu, 08 Mar 2007 12:32:50 -0700
+Subject: [Preisshare-dev] fyi Typical Chinese computer supplier request
+	[Fwd: chance can supply all computer parts]
+Message-ID: <20070308123250.dc066b1d4d2e0a1a65719ae85a8071e6.a78f05df89.wbe@email.secureserver.net>
+
+An HTML attachment was scrubbed...
+URL: <https://lists.berlios.de/pipermail/preisshare-dev/attachments/20070308/510c64be/attachment.html>
+
+From david.lyon at preisshare.net  Thu Mar  8 23:45:38 2007
+From: david.lyon at preisshare.net (david.lyon at preisshare.net)
+Date: Thu, 08 Mar 2007 16:45:38 -0600
+Subject: [Preisshare-dev] fyi Typical Chinese computer supplier
+	request	[Fwd: chance can supply all computer parts]
+In-Reply-To: <20070308102749.dc066b1d4d2e0a1a65719ae85a8071e6.e6d679bb0b.wbe@email.secureserver.net>
+References: <20070308102749.dc066b1d4d2e0a1a65719ae85a8071e6.e6d679bb0b.wbe@email.secureserver.net>
+Message-ID: <20070308164538.fohxrj56ef1cooss@srv11.ezyreg.com>
+
+Quoting "David RR Webber \(XML\)" <david at drrw.info>:
+
+> David,    Every time I look at these type of sites - same thing -
+> flash site with product details - no pricing!
+
+Yes, that's right.
+
+> Clearly need for a
+> central clearinghouse service where people can post bid requests and
+> get quotes - huge.
+
+True.
+
+> We can certainly use ebXML to make that all
+> secure - so bidders get RFQ delivered - and can then review those and
+> route back thru the clearinghouse to the requester.   DW
+
+I'm pretty sure that this has already been done somewhere. By some VC  
+funded people who have a lot more cash to invest than us.
+
+Hence I'm a bit weary.
+
+In any case, Chinese culture is a little different than western  
+culture in some senses. They prefer to deal with people that they know  
+on a personal basis. Rather than through a machine.
+
+PreisShare is a facilitator for sharing the pricing/product  
+information. And being able to retrieve it from a local resident  
+product database.
+
+Asians especially want 'good price - very quick'. That's what  
+preisshare is oriented towards. Waiting for a bid to come back may not  
+be quick enough. But I may be wrong.
+
+Regards
+
+David
+
+
+
+
+From david.lyon at preisshare.net  Fri Mar  9 00:03:45 2007
+From: david.lyon at preisshare.net (david.lyon at preisshare.net)
+Date: Thu, 08 Mar 2007 17:03:45 -0600
+Subject: [Preisshare-dev] fyi Typical Chinese computer supplier
+	request	[Fwd: chance can supply all computer parts]
+In-Reply-To: <20070308120542.w2a48gngwsckwg4c@www.systml.co.uk>
+References: <20070308102749.dc066b1d4d2e0a1a65719ae85a8071e6.e6d679bb0b.wbe@email.secureserver.net>
+	<20070308120542.w2a48gngwsckwg4c@www.systml.co.uk>
+Message-ID: <20070308170345.7a7kdgs9liio0ocg@srv11.ezyreg.com>
+
+Quoting stephen.green at systml.co.uk:
+
+> How about ebXML over open IM, David (and David)?  :-)
+> It's been on my mind bugging me today as it seems such
+> a nice fit.
+
+The sending of the data isn't the main problem.
+
+I can tell you that you can spend an hour or two trying to convince  
+somebody of the merits of a "better" messaging system.
+
+But after two hours, they'll turn around and drop a file on Outlook  
+Express and ask you "what was wrong with that?".
+
+It's just not worth it at this point in the project.
+
+So much so, that I'm cutting out the IM capabilities of PreisShare  
+altogether for the moment. I'll reintroduce them later.
+
+> I could publish perhaps a 'broadcast' pattern ebBP definition
+> in SystML along with Catalogue (or 'sourcing') UBL subsets
+> if need be.
+
+Something possibly for the future...
+
+Regards
+
+David
+
+
+From david.lyon at preisshare.net  Fri Mar  9 02:05:05 2007
+From: david.lyon at preisshare.net (david.lyon at preisshare.net)
+Date: Thu, 08 Mar 2007 19:05:05 -0600
+Subject: [Preisshare-dev] Collection of product information from asian
+	suppliers
+Message-ID: <20070308190505.v7a2ftiuviww8w4o@srv11.ezyreg.com>
+
+Hi Steve,
+
+I've decided that we should make it as easy as possible for ourselves.
+
+Therefore, I'm thinking that we could try distributing the 'Supplier  
+product database.mdb' directly to suppliers.
+
+Telling them to enter their product information into it.
+
+Within access, it's pretty easy to add a few simple forms/data-entry screens.
+
+Then what we can do is collect all the data and merge it into one  
+'big' database and redistribute it.
+
+I think this could work. We should at least give it a go for the next  
+six weeks.
+
+This will be easier than spreadsheets. I think people will get a  
+better feel for the advantages of using a databased solution.
+
+Regards
+
+David
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: Supplier Product Database.zip
+Type: application/x-zip-compressed
+Size: 10418 bytes
+Desc: not available
+URL: <https://lists.berlios.de/pipermail/preisshare-dev/attachments/20070308/dee09994/attachment.bin>
+
+From david.lyon at preisshare.net  Wed Mar 28 01:49:17 2007
+From: david.lyon at preisshare.net (David Lyon)
+Date: Wed, 28 Mar 2007 09:49:17 +1000
+Subject: [Preisshare-dev] xslt example for product specials
+In-Reply-To: <92040e120703271331j710f3f54ub8a55df2101146a2@mail.gmail.com>
+References: <460843DD.5030309@preisshare.net>	
+	<92040e120703261617y7774b97au7001aaf396b8554@mail.gmail.com>	
+	<20070326184859.ci21o8z5xwqok44o@srv11.ezyreg.com>
+	<92040e120703271331j710f3f54ub8a55df2101146a2@mail.gmail.com>
+Message-ID: <4609AD7D.9030009@preisshare.net>
+
+Hi Steve,
+
+Simple question, how can it be run from the command line?
+
+Stephen Green wrote:
+> Hi David
+>
+> Here is the xslt (a first draft anyway).
+>
+> How does it look? It seems to work OK.
+>
+> All the best
+>
+> Steve
+>
+> On 27/03/07, david.lyon at preisshare.net <david.lyon at preisshare.net> wrote:
+>> Quoting Stephen Green <stephengreenubl at gmail.com>:
+>>
+>> > Hi David
+>> >
+>> > Thanks this is a great example of what a transformation with xslt 
+>> could be
+>> > creating.
+>>
+>> Sure.
+>>
+>> > I'm interested in how images can be held in the XML (and UBL one day
+>> > perhaps) - and got into and out of the XML. It seems it might be a
+>> > challenge if using XForms for this but that's another story.
+>>
+>> Don't worry about it.
+>>
+>> At the moment, most people are transferring images in product
+>> information via a url. www.mysite.com/product_imageid?=345
+>>
+>> It seems to work well.
+>>
+>> I'm getting quite close to implementing some more xml.
+>>
+>> >
+>> > I've not started on the xslt but it shouldn't take long
+>>
+>> Hope not. I need it by the end of the week. Make it simpler if you 
+>> need to.
+>>
+>> Need to get hopping with this... I'm getting positive responses from a
+>> number of chinese firms and I want to give them some software pretty
+>> soon.
+>>
+>> Regards
+>>
+>> David
+>>
+>>
+
+
+
+From stephengreenubl at gmail.com  Wed Mar 28 02:50:25 2007
+From: stephengreenubl at gmail.com (Stephen Green)
+Date: Wed, 28 Mar 2007 01:50:25 +0100
+Subject: [Preisshare-dev] Fwd: xslt example for product specials
+In-Reply-To: <92040e120703271749s26e7bf9dl63a4e258eede3dcc@mail.gmail.com>
+References: <460843DD.5030309@preisshare.net>
+	<92040e120703261617y7774b97au7001aaf396b8554@mail.gmail.com>
+	<20070326184859.ci21o8z5xwqok44o@srv11.ezyreg.com>
+	<92040e120703271331j710f3f54ub8a55df2101146a2@mail.gmail.com>
+	<4609AD7D.9030009@preisshare.net>
+	<92040e120703271749s26e7bf9dl63a4e258eede3dcc@mail.gmail.com>
+Message-ID: <92040e120703271750n6f44d2f4i28e21513b68085b1@mail.gmail.com>
+
+---------- Forwarded message ----------
+From: Stephen Green <stephengreenubl at gmail.com>
+Date: 28-Mar-2007 01:49
+Subject: Re: xslt example for product specials
+To: David Lyon <david.lyon at preisshare.net>
+
+
+Hi David
+
+That depends which xslt processor you use. Each has its own
+usually simple syntax.
+xalan
+saxon
+msxsl
+...
+which would you want to use?
+Easy enough to check the syntax. What platforms do you need
+to support?
+
+All the best
+
+Steve
+
+
+On 28/03/07, David Lyon <david.lyon at preisshare.net> wrote:
+> Hi Steve,
+>
+> Simple question, how can it be run from the command line?
+>
+> Stephen Green wrote:
+> > Hi David
+> >
+> > Here is the xslt (a first draft anyway).
+> >
+> > How does it look? It seems to work OK.
+> >
+> > All the best
+> >
+> > Steve
+> >
+> > On 27/03/07, david.lyon at preisshare.net <david.lyon at preisshare.net> wrote:
+> >> Quoting Stephen Green <stephengreenubl at gmail.com>:
+> >>
+> >> > Hi David
+> >> >
+> >> > Thanks this is a great example of what a transformation with xslt
+> >> could be
+> >> > creating.
+> >>
+> >> Sure.
+> >>
+> >> > I'm interested in how images can be held in the XML (and UBL one day
+> >> > perhaps) - and got into and out of the XML. It seems it might be a
+> >> > challenge if using XForms for this but that's another story.
+> >>
+> >> Don't worry about it.
+> >>
+> >> At the moment, most people are transferring images in product
+> >> information via a url. www.mysite.com/product_imageid?=345
+> >>
+> >> It seems to work well.
+> >>
+> >> I'm getting quite close to implementing some more xml.
+> >>
+> >> >
+> >> > I've not started on the xslt but it shouldn't take long
+> >>
+> >> Hope not. I need it by the end of the week. Make it simpler if you
+> >> need to.
+> >>
+> >> Need to get hopping with this... I'm getting positive responses from a
+> >> number of chinese firms and I want to give them some software pretty
+> >> soon.
+> >>
+> >> Regards
+> >>
+> >> David
+> >>
+> >>
+>
+>
+
+
+From david.lyon at preisshare.net  Wed Mar 28 03:06:40 2007
+From: david.lyon at preisshare.net (David Lyon)
+Date: Wed, 28 Mar 2007 11:06:40 +1000
+Subject: [Preisshare-dev] xslt example for product specials
+In-Reply-To: <92040e120703271749s26e7bf9dl63a4e258eede3dcc@mail.gmail.com>
+References: <460843DD.5030309@preisshare.net>	
+	<92040e120703261617y7774b97au7001aaf396b8554@mail.gmail.com>	
+	<20070326184859.ci21o8z5xwqok44o@srv11.ezyreg.com>	
+	<92040e120703271331j710f3f54ub8a55df2101146a2@mail.gmail.com>	
+	<4609AD7D.9030009@preisshare.net>
+	<92040e120703271749s26e7bf9dl63a4e258eede3dcc@mail.gmail.com>
+Message-ID: <4609BFA0.5050705@preisshare.net>
+
+Stephen Green wrote:
+> Hi David
+>
+> That depends which xslt processor you use. Each has its own
+> usually simple syntax.
+> xalan
+> saxon
+> msxsl
+> ...
+> which would you want to use?
+> Easy enough to check the syntax. What platforms do you need
+> to support?
+I'll probably use msxsl for now.
+
+Don't worry, I will build it into the code hopefully today. I was just 
+wondering if there was a simple command line way of doing it. I'm using 
+python and/or perl here.
+
+The idea is that I could include this in the documentation so that users 
+could debug and modify their own pages to look the way that they want.
+
+Regards
+
+David
+
+
+From david.lyon at preisshare.net  Wed Mar 28 03:15:32 2007
+From: david.lyon at preisshare.net (David Lyon)
+Date: Wed, 28 Mar 2007 11:15:32 +1000
+Subject: [Preisshare-dev] Supplier Product Data example
+In-Reply-To: <92040e120703271331j710f3f54ub8a55df2101146a2@mail.gmail.com>
+References: <460843DD.5030309@preisshare.net>	
+	<92040e120703261617y7774b97au7001aaf396b8554@mail.gmail.com>	
+	<20070326184859.ci21o8z5xwqok44o@srv11.ezyreg.com>
+	<92040e120703271331j710f3f54ub8a55df2101146a2@mail.gmail.com>
+Message-ID: <4609C1B4.2090506@preisshare.net>
+
+Hi Steve,
+
+I just looked at the example.
+
+There is one important thing missing and that is the comments.
+
+<?xml version="1.0" encoding="UTF-8" ?>
+- <#> <Featured_Product>
+  <Name>7" TFT-LCD COLOR SUN VISOR WITH TV</Name>
+  <Full_Image>mypic-example1.jpg</Full_Image>
+  <Description>
+
+*Broad display digital LCD mini TV, designed by the update Japanese 
+digital TV
+
+technology, with fine and crisp picture. No radiation.
+
+*Inset super powerful reception.
+
+*All supplement channels receipt, with 255 preset channels.
+
+*English, Russian, German, Arabic and Chinese menu changeable, and blue
+
+background display.
+
+*TV calendar displays year, month and date.
+
+*Timed auto turn on and off.
+
+*All-function remote controller.
+
+*Multi-system choice for the customer, such as PAL/NTSC/SECAM
+
+*AV input
+
+*Earphone output jack.
+
+*Can be powered by AC or DC or 12V automobile storage battery.
+
+*Automatically tuning system.
+
+*Dot format(H x V): 960x234
+
+
+If you have any enquiries, please don't hesitate to call me.
+
+  </Description>
+  </Featured_Product>
+
+
+
+From david.lyon at preisshare.net  Wed Mar 28 03:28:31 2007
+From: david.lyon at preisshare.net (David Lyon)
+Date: Wed, 28 Mar 2007 11:28:31 +1000
+Subject: [Preisshare-dev] next programming task...
+In-Reply-To: <4608D50E.90000@nerdshack.com>
+References: <20070326194242.563gt390og4k88wo@srv11.ezyreg.com>
+	<4608D50E.90000@nerdshack.com>
+Message-ID: <4609C4BF.4020705@preisshare.net>
+
+Hi Sonmez,
+
+I will try to dig up the xml file.
+
+But I've just been given a link to a system that I really like. We 
+really need to be doing this sort of thing with PreisShare. That is 
+offering a very simple "showroom" site.
+
+You could most definitely do this in python.
+
+An example is:
+
+http://www.made-in-china.com/showroom/zengzhiwen66#1
+
+So we could then offer:
+
+http://www.preisshare.net/showroom/zengzhiwen66#1 or something like that.
+
+Regards
+
+David
+
+S?nmez Kartal wrote:
+> Hi,
+>
+> I got your example email. I can handle this, but how can I get XML 
+> file? Example contains a HTML file.
+>
+> Regards
+>
+> S?nmez
+>
+>
+
+
+
+From stephengreenubl at gmail.com  Wed Mar 28 22:32:53 2007
+From: stephengreenubl at gmail.com (Stephen Green)
+Date: Wed, 28 Mar 2007 21:32:53 +0100
+Subject: [Preisshare-dev] Supplier Product Data example
+In-Reply-To: <92040e120703281330t6ac9695aod1c1c1eb179a731f@mail.gmail.com>
+References: <460843DD.5030309@preisshare.net>
+	<92040e120703261617y7774b97au7001aaf396b8554@mail.gmail.com>
+	<20070326184859.ci21o8z5xwqok44o@srv11.ezyreg.com>
+	<92040e120703271331j710f3f54ub8a55df2101146a2@mail.gmail.com>
+	<4609C1B4.2090506@preisshare.net>
+	<92040e120703281330t6ac9695aod1c1c1eb179a731f@mail.gmail.com>
+Message-ID: <92040e120703281332k11b20b1dwa56133e322cc6427@mail.gmail.com>
+
+If separating the lines in this way is a problem then we'd need to have
+
+<Description>
+<Line>
+...
+</Line>
+<Line>
+...
+</Line>
+...
+</Description>
+
+and change the xslt accordingly
+
+All the best
+
+Steve
+
+On 28/03/07, Stephen Green <stephengreenubl at gmail.com> wrote:
+> Hi David
+>
+> I hope the attached is OK.
+>
+> You have to be careful to separate lines in the description with
+> &lt;br /&gt;
+> otherwise the lines will all run into one another in the output
+> whereas with the escaped 'br' a <br /> is added to the html
+>
+> All the best
+>
+> Steve
+>
+> On 28/03/07, David Lyon <david.lyon at preisshare.net> wrote:
+> > Hi Steve,
+> >
+> > I just looked at the example.
+> >
+> > There is one important thing missing and that is the comments.
+> >
+> > <?xml version="1.0" encoding="UTF-8" ?>
+> > - <#> <Featured_Product>
+> >   <Name>7" TFT-LCD COLOR SUN VISOR WITH TV</Name>
+> >   <Full_Image>mypic-example1.jpg</Full_Image>
+> >   <Description>
+> >
+> > *Broad display digital LCD mini TV, designed by the update Japanese
+> > digital TV
+> >
+> > technology, with fine and crisp picture. No radiation.
+> >
+> > *Inset super powerful reception.
+> >
+> > *All supplement channels receipt, with 255 preset channels.
+> >
+> > *English, Russian, German, Arabic and Chinese menu changeable, and blue
+> >
+> > background display.
+> >
+> > *TV calendar displays year, month and date.
+> >
+> > *Timed auto turn on and off.
+> >
+> > *All-function remote controller.
+> >
+> > *Multi-system choice for the customer, such as PAL/NTSC/SECAM
+> >
+> > *AV input
+> >
+> > *Earphone output jack.
+> >
+> > *Can be powered by AC or DC or 12V automobile storage battery.
+> >
+> > *Automatically tuning system.
+> >
+> > *Dot format(H x V): 960x234
+> >
+> >
+> > If you have any enquiries, please don't hesitate to call me.
+> >
+> >   </Description>
+> >   </Featured_Product>
+> >
+> >
+>
+>
+
+
+From stephengreenubl at gmail.com  Wed Mar 28 22:30:14 2007
+From: stephengreenubl at gmail.com (Stephen Green)
+Date: Wed, 28 Mar 2007 21:30:14 +0100
+Subject: [Preisshare-dev] Supplier Product Data example
+In-Reply-To: <4609C1B4.2090506@preisshare.net>
+References: <460843DD.5030309@preisshare.net>
+	<92040e120703261617y7774b97au7001aaf396b8554@mail.gmail.com>
+	<20070326184859.ci21o8z5xwqok44o@srv11.ezyreg.com>
+	<92040e120703271331j710f3f54ub8a55df2101146a2@mail.gmail.com>
+	<4609C1B4.2090506@preisshare.net>
+Message-ID: <92040e120703281330t6ac9695aod1c1c1eb179a731f@mail.gmail.com>
+
+Hi David
+
+I hope the attached is OK.
+
+You have to be careful to separate lines in the description with
+&lt;br /&gt;
+otherwise the lines will all run into one another in the output
+whereas with the escaped 'br' a <br /> is added to the html
+
+All the best
+
+Steve
+
+On 28/03/07, David Lyon <david.lyon at preisshare.net> wrote:
+> Hi Steve,
+>
+> I just looked at the example.
+>
+> There is one important thing missing and that is the comments.
+>
+> <?xml version="1.0" encoding="UTF-8" ?>
+> - <#> <Featured_Product>
+>   <Name>7" TFT-LCD COLOR SUN VISOR WITH TV</Name>
+>   <Full_Image>mypic-example1.jpg</Full_Image>
+>   <Description>
+>
+> *Broad display digital LCD mini TV, designed by the update Japanese
+> digital TV
+>
+> technology, with fine and crisp picture. No radiation.
+>
+> *Inset super powerful reception.
+>
+> *All supplement channels receipt, with 255 preset channels.
+>
+> *English, Russian, German, Arabic and Chinese menu changeable, and blue
+>
+> background display.
+>
+> *TV calendar displays year, month and date.
+>
+> *Timed auto turn on and off.
+>
+> *All-function remote controller.
+>
+> *Multi-system choice for the customer, such as PAL/NTSC/SECAM
+>
+> *AV input
+>
+> *Earphone output jack.
+>
+> *Can be powered by AC or DC or 12V automobile storage battery.
+>
+> *Automatically tuning system.
+>
+> *Dot format(H x V): 960x234
+>
+>
+> If you have any enquiries, please don't hesitate to call me.
+>
+>   </Description>
+>   </Featured_Product>
+>
+>
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: XMLtoHTML_XSLT.zip
+Type: application/zip
+Size: 194073 bytes
+Desc: not available
+URL: <https://lists.berlios.de/pipermail/preisshare-dev/attachments/20070328/0b85190a/attachment.zip>
+
+From david.lyon at preisshare.net  Thu Mar 29 01:55:09 2007
+From: david.lyon at preisshare.net (David Lyon)
+Date: Thu, 29 Mar 2007 09:55:09 +1000
+Subject: [Preisshare-dev] Supplier Product Data example
+In-Reply-To: <92040e120703281332k11b20b1dwa56133e322cc6427@mail.gmail.com>
+References: <460843DD.5030309@preisshare.net>	
+	<92040e120703261617y7774b97au7001aaf396b8554@mail.gmail.com>	
+	<20070326184859.ci21o8z5xwqok44o@srv11.ezyreg.com>	
+	<92040e120703271331j710f3f54ub8a55df2101146a2@mail.gmail.com>	
+	<4609C1B4.2090506@preisshare.net>	
+	<92040e120703281330t6ac9695aod1c1c1eb179a731f@mail.gmail.com>
+	<92040e120703281332k11b20b1dwa56133e322cc6427@mail.gmail.com>
+Message-ID: <460B005D.4090209@preisshare.net>
+
+
+Hi Stephen,
+
+Don't worry about that so much. That was because I just cut and pasted 
+it from a text editor quickly.
+
+In the program it will get written correctly because it will go through 
+msxml.
+
+Regards
+
+David
+
+Stephen Green wrote:
+> If separating the lines in this way is a problem then we'd need to have
+>
+> <Description>
+> <Line>
+> ...
+> </Line>
+> <Line>
+> ...
+> </Line>
+> ...
+> </Description>
+>
+> and change the xslt accordingly
+>
+> All the best
+>
+> Steve
+>
+> On 28/03/07, Stephen Green <stephengreenubl at gmail.com> wrote:
+>> Hi David
+>>
+>> I hope the attached is OK.
+>>
+>> You have to be careful to separate lines in the description with
+>> &lt;br /&gt;
+>> otherwise the lines will all run into one another in the output
+>> whereas with the escaped 'br' a <br /> is added to the html
+>>
+>> All the best
+>>
+>> Steve
+>>
+>> On 28/03/07, David Lyon <david.lyon at preisshare.net> wrote:
+>> > Hi Steve,
+>> >
+>> > I just looked at the example.
+>> >
+>> > There is one important thing missing and that is the comments.
+>> >
+>> > <?xml version="1.0" encoding="UTF-8" ?>
+>> > - <#> <Featured_Product>
+>> >   <Name>7" TFT-LCD COLOR SUN VISOR WITH TV</Name>
+>> >   <Full_Image>mypic-example1.jpg</Full_Image>
+>> >   <Description>
+>> >
+>> > *Broad display digital LCD mini TV, designed by the update Japanese
+>> > digital TV
+>> >
+>> > technology, with fine and crisp picture. No radiation.
+>> >
+>> > *Inset super powerful reception.
+>> >
+>> > *All supplement channels receipt, with 255 preset channels.
+>> >
+>> > *English, Russian, German, Arabic and Chinese menu changeable, and 
+>> blue
+>> >
+>> > background display.
+>> >
+>> > *TV calendar displays year, month and date.
+>> >
+>> > *Timed auto turn on and off.
+>> >
+>> > *All-function remote controller.
+>> >
+>> > *Multi-system choice for the customer, such as PAL/NTSC/SECAM
+>> >
+>> > *AV input
+>> >
+>> > *Earphone output jack.
+>> >
+>> > *Can be powered by AC or DC or 12V automobile storage battery.
+>> >
+>> > *Automatically tuning system.
+>> >
+>> > *Dot format(H x V): 960x234
+>> >
+>> >
+>> > If you have any enquiries, please don't hesitate to call me.
+>> >
+>> >   </Description>
+>> >   </Featured_Product>
+>> >
+>> >
+>>
+>>
+>
+
+
+

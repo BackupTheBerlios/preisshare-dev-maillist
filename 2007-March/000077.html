@@ -1,0 +1,233 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Preisshare-dev] Sample code from tradedesk showing	xpath	setup..
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/preisshare-dev/2007-March/index.html" >
+   <LINK REL="made" HREF="mailto:preisshare-dev%40lists.berlios.de?Subject=Re%3A%20%5BPreisshare-dev%5D%20Sample%20code%20from%20tradedesk%20showing%0A%09xpath%09setup..&In-Reply-To=%3C20070307204857.odmsl2e9rocog4ok%40www.systml.co.uk%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000076.html">
+   <LINK REL="Next"  HREF="000078.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Preisshare-dev] Sample code from tradedesk showing	xpath	setup..</H1>
+    <B>stephen.green at systml.co.uk</B> 
+    <A HREF="mailto:preisshare-dev%40lists.berlios.de?Subject=Re%3A%20%5BPreisshare-dev%5D%20Sample%20code%20from%20tradedesk%20showing%0A%09xpath%09setup..&In-Reply-To=%3C20070307204857.odmsl2e9rocog4ok%40www.systml.co.uk%3E"
+       TITLE="[Preisshare-dev] Sample code from tradedesk showing	xpath	setup..">stephen.green at systml.co.uk
+       </A><BR>
+    <I>Thu Mar  8 04:48:57 CET 2007</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000076.html">[Preisshare-dev] Sample code from tradedesk showing xpath setup..
+</A></li>
+        <LI>Next message: <A HREF="000078.html">[Preisshare-dev] Sample code from tradedesk	showing	xpath	setup..
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#77">[ date ]</a>
+              <a href="thread.html#77">[ thread ]</a>
+              <a href="subject.html#77">[ subject ]</a>
+              <a href="author.html#77">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Would the aim be to convert this just enough to use the
+XML format from DRRW? Not at this point UBL? If so it
+doesn't look like a lot has to change in this code (just
+add issue date, document ID, etc) but this abstracts the
+underlying syntax: Is this move from custom format to XML
+in hand?
+
+Maybe then the conversion would to using DRRW's XML (the
+same sort of semantics but with XML confomormance and
+just a few amendments) and if it were a requirement to
+import or export UBL, say (or any other formats) this
+could be attempted using an XSLT or equivalent transformation.
+
+So would you be looking for some XSLT too to do that?
+
+All the best
+
+Steve
+
+
+Quoting <A HREF="https://lists.berlios.de/mailman/listinfo/preisshare-dev">david.lyon at preisshare.net</A>:
+
+&gt;<i>
+</I>&gt;<i> Hi Steve,
+</I>&gt;<i>
+</I>&gt;<i> I know that you can't compile it because you don't have a development
+</I>&gt;<i> environment set up. But here is some code from tradedesk showing how
+</I>&gt;<i> the xpath(like) assignments work.
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i> Regards
+</I>&gt;<i>
+</I>&gt;<i> David
+</I>&gt;<i>
+</I>&gt;<i> procedure TfrmMain.InitialiseStandardDoc;
+</I>&gt;<i> var
+</I>&gt;<i>      s,supplierNode,CustomerNode : String;
+</I>&gt;<i>      xc : Integer;
+</I>&gt;<i>      Total,TaxRate,TotalTax : Currency;
+</I>&gt;<i>      anItem : TListItem;
+</I>&gt;<i> begin
+</I>&gt;<i>
+</I>&gt;<i> 	// -- Buyer/Seller need to be flipped
+</I>&gt;<i> 	if (stdDocPanel.CurrentDocument.Document_Type = GTD_QUOTE_TYPE) or
+</I>&gt;<i> 	   (stdDocPanel.CurrentDocument.Document_Type = GTD_INVOICE_TYPE) then
+</I>&gt;<i> 	begin
+</I>&gt;<i> 		supplierNode := STDDOC_SELLER_NODE;
+</I>&gt;<i> 		CustomerNode := STDDOC_BUYER_NODE;
+</I>&gt;<i> 	end
+</I>&gt;<i> 	else begin
+</I>&gt;<i> 		supplierNode := STDDOC_BUYER_NODE;
+</I>&gt;<i> 		CustomerNode := STDDOC_SELLER_NODE;
+</I>&gt;<i> 	end;
+</I>&gt;<i>
+</I>&gt;<i> 	// -- Add Vendor details
+</I>&gt;<i> 	with stdDocPanel.CurrentDocument do
+</I>&gt;<i> 	begin
+</I>&gt;<i> 		SetStringElement(CustomerNode,STDDOC_ELE_COMPANY_NAME,dmlData.tblTrader.FieldByName(GTD_DB_COL_COMPANY_NAME).AsString);
+</I>&gt;<i> 		SetStringElement(CustomerNode,STDDOC_ELE_ADDRESS_LINE_1,dmlData.tblTrader.FieldByName(GTD_DB_COL_ADDRESS_LINE_1).AsString);
+</I>&gt;<i> 		SetStringElement(CustomerNode,STDDOC_ELE_ADDRESS_LINE_2,dmlData.tblTrader.FieldByName(GTD_DB_COL_ADDRESS_LINE_2).AsString);
+</I>&gt;<i> 		SetStringElement(CustomerNode,STDDOC_ELE_TOWN,
+</I>&gt;<i> dmlData.tblTrader.FieldByName(GTD_DB_COL_TOWN).AsString);
+</I>&gt;<i> 		SetStringElement(CustomerNode,STDDOC_ELE_STATE_REGION,dmlData.tblTrader.FieldByName(GTD_DB_COL_STATE_REGION).AsString);
+</I>&gt;<i> 		SetStringElement(CustomerNode,STDDOC_ELE_POSTALCODE,dmlData.tblTrader.FieldByName(GTD_DB_COL_POSTALCODE).AsString);
+</I>&gt;<i> 		SetStringElement(CustomerNode,STDDOC_ELE_COUNTRYCODE,dmlData.tblTrader.FieldByName(GTD_DB_COL_COUNTRYCODE).AsString);
+</I>&gt;<i> 		SetStringElement(CustomerNode,STDDOC_ELE_TELEPHONE,dmlData.tblTrader.FieldByName(GTD_DB_COL_TELEPHONE).AsString);
+</I>&gt;<i> 		SetStringElement(CustomerNode,STDDOC_ELE_TELEPHONE2,dmlData.tblTrader.FieldByName(GTD_DB_COL_TELEPHONE2).AsString);
+</I>&gt;<i> 		SetStringElement(CustomerNode,STDDOC_ELE_TELEPHONE2,dmlData.tblTrader.FieldByName(GTD_DB_COL_TELEPHONE2).AsString);
+</I>&gt;<i> 		SetStringElement(CustomerNode,STDDOC_ELE_EMAIL_ADDRESS,dmlData.tblTrader.FieldByName(GTD_DB_COL_EMAILADDRESS).AsString);
+</I>&gt;<i> 	end;
+</I>&gt;<i>
+</I>&gt;<i> 	// -- Add  details
+</I>&gt;<i> 	frmConfig.RefreshCompanyInfo;
+</I>&gt;<i> 	with stdDocPanel.CurrentDocument do
+</I>&gt;<i> 	begin
+</I>&gt;<i> 		// -- Selliug pary
+</I>&gt;<i> 		SetStringElement(SupplierNode,STDDOC_ELE_COMPANY_NAME,frmConfig.txtCompany.Text);
+</I>&gt;<i> 		SetStringElement(SupplierNode,STDDOC_ELE_ADDRESS_LINE_1,frmConfig.txtStreet1.Text);
+</I>&gt;<i> 		SetStringElement(SupplierNode,STDDOC_ELE_ADDRESS_LINE_2,frmConfig.txtStreet2.Text);
+</I>&gt;<i> 		SetStringElement(SupplierNode,STDDOC_ELE_TOWN, frmConfig.txtCity.Text);
+</I>&gt;<i> 		SetStringElement(SupplierNode,STDDOC_ELE_STATE_REGION,frmConfig.cbxState.Text);
+</I>&gt;<i> 		SetStringElement(SupplierNode,STDDOC_ELE_POSTALCODE,frmConfig.txtPostCode.Text);
+</I>&gt;<i> 		SetStringElement(SupplierNode,STDDOC_ELE_COUNTRYCODE,GetCodeFromCountryName(frmConfig.cbxCountry.Text));
+</I>&gt;<i> 		SetStringElement(SupplierNode,STDDOC_ELE_TELEPHONE,frmConfig.txtTelephone.Text);
+</I>&gt;<i> 		SetStringElement(SupplierNode,STDDOC_ELE_TELEPHONE2,frmConfig.txtFax.Text);
+</I>&gt;<i> 		SetStringElement(SupplierNode,STDDOC_ELE_OTHER_INFO,frmConfig.txtOtherInfo.Text);
+</I>&gt;<i>
+</I>&gt;<i> 		// -- Header
+</I>&gt;<i> 		SetStringElement(STDDOC_HDR_NODE,STDDOC_HDR_ELE_CONTACT,UserName);
+</I>&gt;<i> 		SetStringElement(STDDOC_HDR_NODE,STDDOC_HDR_ELE_SALES_PERSON,UserName);
+</I>&gt;<i>
+</I>&gt;<i> 		if stdDocPanel.CurrentDocument.Document_Type = GTD_ORDER_TYPE then
+</I>&gt;<i> 		begin
+</I>&gt;<i> 			SetStringElement(STDDOC_HDR_NODE,STDDOC_HDR_ELE_DELIV_ADDR,'');
+</I>&gt;<i> 			SetStringElement(STDDOC_HDR_NODE,STDDOC_HDR_ELE_SPECL_INSTR,'');
+</I>&gt;<i> 			SetStringElement(STDDOC_HDR_NODE,STDDOC_HDR_ELE_PMT_TERMS,'Account');
+</I>&gt;<i> 		end
+</I>&gt;<i> 		else if stdDocPanel.CurrentDocument.Document_Type = GTD_QUOTE_TYPE then
+</I>&gt;<i> 		begin
+</I>&gt;<i> 			SetStringElement(STDDOC_HDR_NODE,STDDOC_HDR_ELE_GEN_TERMS,frmConfig.txtQuoteTerms.Text);
+</I>&gt;<i> 			SetStringElement(STDDOC_HDR_NODE,STDDOC_HDR_ELE_DELIV_MODE,frmConfig.cbxQuoteDeliveryMode.Text);
+</I>&gt;<i> 			SetStringElement(STDDOC_HDR_NODE,STDDOC_HDR_ELE_DELIV_CHG,frmConfig.txtQuoteDeliveryCharge.EditText);
+</I>&gt;<i> 		end;
+</I>&gt;<i>
+</I>&gt;<i> 		// -- Is the quote tax inclusive or tax exclusive
+</I>&gt;<i> 		if stdDocPanel.rdoTaxInclusive.Checked then
+</I>&gt;<i> 		begin
+</I>&gt;<i> 			// -- Tax calculation
+</I>&gt;<i> 			Total := 0;
+</I>&gt;<i> 			// -- Add up all the lines
+</I>&gt;<i> 			for xc := 1 to stdDocPanel.lsvLineItems.Items.Count do
+</I>&gt;<i> 			begin
+</I>&gt;<i> 				anItem := stdDocPanel.lsvLineItems.Items[xc-1];
+</I>&gt;<i> 				Total := Total + StringToFloat(anItem.SubItems[4]);
+</I>&gt;<i> 			end;
+</I>&gt;<i> 			// -- Get our tax rate
+</I>&gt;<i> 			TaxRate :=
+</I>&gt;<i> GetSalesTaxRateFromCountryCode(GetCodeFromCountryName(frmConfig.cbxCountry.Text));
+</I>&gt;<i>
+</I>&gt;<i> 			SetStringElement(STDDOC_HDR_NODE,STDDOC_HDR_ELE_TAX_MODE,STDDOC_CONST_TAX_MODE_INC);
+</I>&gt;<i> 		end
+</I>&gt;<i> 		else begin
+</I>&gt;<i> 			SetStringElement(STDDOC_HDR_NODE,STDDOC_HDR_ELE_TAX_MODE,STDDOC_CONST_TAX_MODE_EXC);
+</I>&gt;<i> 			SetNumberElement(STDDOC_HDR_NODE,STDDOC_HDR_ELE_TAX_TOTAL,0);
+</I>&gt;<i> 		end;
+</I>&gt;<i>
+</I>&gt;<i> 		SetStringElement(STDDOC_HDR_NODE,STDDOC_HDR_ELE_TAX_NAME,GetTaxNameFromCountryCode(GetCodeFromCountryName(frmConfig.cbxCountry.Text)));
+</I>&gt;<i> 		SetStringElement(STDDOC_HDR_NODE,STDDOC_HDR_ORIGIN_CODE,GetCodeFromCountryName(frmConfig.cbxCountry.Text));
+</I>&gt;<i>
+</I>&gt;<i> 		// -- The document logo
+</I>&gt;<i> 		if stdDocPanel.CurrentDocument.Document_Type = GTD_QUOTE_TYPE then
+</I>&gt;<i> 		begin
+</I>&gt;<i> 			// -- Logos go on quotes
+</I>&gt;<i> 			if (frmConfig.txtLogoFilename.Text &lt;&gt; '') and
+</I>&gt;<i> FileExists(frmConfig.txtLogoFilename.Text) then
+</I>&gt;<i> 				SetStringElement(STDDOC_HDR_NODE,STDDOC_HDR_LOGO_IMAGE,ExtractFileName(frmConfig.txtLogoFilename.Text));
+</I>&gt;<i>
+</I>&gt;<i> 			SetDateElement(STDDOC_HDR_NODE,STDDOC_HDR_QUOTE_EXPIRES,Date +
+</I>&gt;<i> frmConfig.cbxQuoteExpiry.Value);
+</I>&gt;<i> 		end;
+</I>&gt;<i>
+</I>&gt;<i> 		SetStringElement(STDDOC_HDR_NODE,STDDOC_HDR_PAPER_SIZE,'A4');
+</I>&gt;<i> 		SetStringElement(STDDOC_HDR_NODE,STDDOC_HDR_PRINT_ORIENT,'Portrait');
+</I>&gt;<i>
+</I>&gt;<i> 		// SetStringElement(STDDOC_HDR,STDDOC_HDR_DISPLAY_FORMAT,) + #13;
+</I>&gt;<i> 		// SetStringElement(STDDOC_HDR,STDDOC_HDR_HEADER_COLS,) + #13;
+</I>&gt;<i> 		// SetStringElement(STDDOC_HDR,STDDOC_HDR_ITEM_COLS,) + #13;
+</I>&gt;<i>
+</I>&gt;<i> 		// -- Initialise the total
+</I>&gt;<i> 		Total := 0;
+</I>&gt;<i> 		if txtDeliveryCost.Text &lt;&gt; '' then
+</I>&gt;<i> 			Total := StrToFloat(txtDeliveryCost.Text);
+</I>&gt;<i>
+</I>&gt;<i> 		// -- Add Delivery details
+</I>&gt;<i> 		{
+</I>&gt;<i> 		SetStringElement(GTD_PO_DEL_NODE,GTD_PO_DEL_ELE_MODE,cbxDeliveryMode.Text);
+</I>&gt;<i> 		SetDateElement(GTD_PO_DEL_NODE,GTD_PO_DEL_ELE_DATE,dtpDeliveryDate.Date);
+</I>&gt;<i> 		SetStringElement(GTD_PO_DEL_NODE,GTD_PO_DEL_ELE_ADDR,rceDeliveryAddress.Text);
+</I>&gt;<i> 		SetStringElement(GTD_PO_DEL_NODE,GTD_PO_DEL_ELE_INSTR,rceDeliveryInstructions.Text);
+</I>&gt;<i> 		SetStringElement(GTD_PO_DEL_NODE,GTD_PO_DEL_ELE_CHARGE,txtDeliveryCost.Text);
+</I>&gt;<i> 		}
+</I>&gt;<i>      end;
+</I>&gt;<i>
+</I>&gt;<i> end;
+</I>&gt;<i>
+</I>&gt;<i> _______________________________________________
+</I>&gt;<i> Preisshare-dev mailing list
+</I>&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/preisshare-dev">Preisshare-dev at lists.berlios.de</A>
+</I>&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/preisshare-dev">https://lists.berlios.de/mailman/listinfo/preisshare-dev</A>
+</I>&gt;<i>
+</I>
+
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000076.html">[Preisshare-dev] Sample code from tradedesk showing xpath setup..
+</A></li>
+	<LI>Next message: <A HREF="000078.html">[Preisshare-dev] Sample code from tradedesk	showing	xpath	setup..
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#77">[ date ]</a>
+              <a href="thread.html#77">[ thread ]</a>
+              <a href="subject.html#77">[ subject ]</a>
+              <a href="author.html#77">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/preisshare-dev">More information about the Preisshare-dev
+mailing list</a><br>
+</body></html>

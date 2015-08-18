@@ -1,0 +1,289 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Preisshare-dev] fyi : PreisShare XML Format
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/preisshare-dev/2007-January/index.html" >
+   <LINK REL="made" HREF="mailto:preisshare-dev%40lists.berlios.de?Subject=Re%3A%20%5BPreisshare-dev%5D%20fyi%20%3A%20PreisShare%20XML%20Format&In-Reply-To=%3C000001c72e1e%240c3e8930%2424bb9b90%24%40info%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000005.html">
+   <LINK REL="Next"  HREF="000008.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Preisshare-dev] fyi : PreisShare XML Format</H1>
+    <B>David RR Webber</B> 
+    <A HREF="mailto:preisshare-dev%40lists.berlios.de?Subject=Re%3A%20%5BPreisshare-dev%5D%20fyi%20%3A%20PreisShare%20XML%20Format&In-Reply-To=%3C000001c72e1e%240c3e8930%2424bb9b90%24%40info%3E"
+       TITLE="[Preisshare-dev] fyi : PreisShare XML Format">david at drrw.info
+       </A><BR>
+    <I>Tue Jan  2 04:27:54 CET 2007</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000005.html">[Preisshare-dev] fyi : PreisShare XML Format
+</A></li>
+        <LI>Next message: <A HREF="000008.html">[Preisshare-dev] fyi : PreisShare XML Format
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#7">[ date ]</a>
+              <a href="thread.html#7">[ thread ]</a>
+              <a href="subject.html#7">[ subject ]</a>
+              <a href="author.html#7">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>David,
+
+ 
+
+Ok - good feedback.
+
+ 
+
+Amazon would probably be upset if you were totally cloning their stuff - but
+making it compatible seems fair do's.   Besides - they'd hardly want to give
+you all that huge free PR.
+
+ 
+
+You don't need to use web service for address - static XML with #ID anchors
+- and xinclude will work just fine too.
+
+ 
+
+Advantage is - just one place changes address for all references.   This
+would be transparent to the user anyway.  They would just publish their
+pricelist and their address in two separate pieces of XML.
+
+ 
+
+Engineering simple xml and pricelist on the fly is a challenge here I'd not
+realized we needed to re-visit.  As usual - the standard industry practice
+has become massively complex XML that protects customer lock-in and erects a
+massive technology barrier. 
+
+ 
+
+:<i> -(
+</I>
+ 
+
+We can do better.
+
+ 
+
+DW
+
+ 
+
+From: David Lyon [mailto:<A HREF="https://lists.berlios.de/mailman/listinfo/preisshare-dev">david.lyon at preisshare.net</A>] 
+Sent: Monday, January 01, 2007 6:16 PM
+To: <A HREF="https://lists.berlios.de/mailman/listinfo/preisshare-dev">david at drrw.info</A>
+Cc: <A HREF="https://lists.berlios.de/mailman/listinfo/preisshare-dev">preisshare-dev at lists.berlios.de</A>
+Subject: Re: fyi : PreisShare XML Format
+
+ 
+
+Hi David,
+
+David RR Webber wrote: 
+
+OK - I went in and looked at three existing formats:
+ 
+1) openapplicationsgroup.org
+2) oasis UBL v2.0
+3) Amazon.com
+  
+
+Just need to be a little careful on the plagiarism front. I think Amazon
+could afford a fairly good legal team.
+
+In any case I like the feedback. With all that Industry experience, it has
+taken you only a short time to clearly identify some areas that could do
+with improvement.
+
+
+
+
+ 
+I also re-designed pricelist details - based on these premises:
+ 
+a) Address does not belong here - just locale (Amazon shows buyer rough area
+of seller).  Address of merchant should be separate table lookup - and that
+layout should be based on OASIS CIQ v3 xsd - gives you real international
+address format, GPS location and more.
+  
+
+Maybe. 
+
+Traditionally though I've included it because the address in the table is
+updated from the pricelist if it is changed. 
+
+Just making some of the address fields optional should satisfy this. 
+
+
+
+b) Web services should be used to complement the price list - to lookup
+related information - such as shipping cost, VAT applicable, and so on.
+  
+
+I'm just thinking that this would have a fairly big impact on the cost of
+the whole product. Presently we can get away without any web server. To keep
+the implementation cost down. I was planning to keep them in the pricelist,
+redistribute daily/weekly/etc. 
+
+Then they have all the information that they need.
+
+It will be an ongoing issue that will need more attention as you clearly
+point out.
+
+
+
+c) Added optional merchant notes - allows extensions to cover special needs.
+  
+
+Yes I agree with this.
+
+
+
+
+d) organized like information into sections - again this allows better
+versioning and selections down the road - e.g. REST based requests (a la AWS
+Amazon) - can select parts of the structure.
+  
+
+I'll take a closer look.
+
+
+
+ 
+I think this is now closer - but probably still needs some tweaking.
+  
+
+Yes, it's definitely better!
+
+And I very much appreciate having somebody with so much Industry stature
+look into the messages.
+
+Thanks
+
+David
+
+
+
+ 
+
+
+
+  _____  
+
+
+
+ 
+&lt;?xml version=&quot;1.0&quot;?&gt;
+&lt;PriceList&gt;
+  &lt;VendorInformation&gt;
+        &lt;Organisation_Name&gt;
+        &lt;/Organisation_Name&gt;
+        &lt;PreisShare_ID&gt;
+        &lt;/PreisShare_ID&gt;
+ &lt;LocationDetails&gt;
+   &lt;StateProvince&gt;&lt;/StateProvince&gt;
+   &lt;Country&gt;&lt;/Country&gt;
+ &lt;/LocationDetails&gt;
+  &lt;/VendorInformation&gt;
+  &lt;ProductInformation&gt;
+        &lt;ProductGroup&gt;
+          &lt;Group_Description&gt;
+           &lt;/Group_Description&gt;
+          &lt;Product_Items&gt;
+               &lt;Product&gt;
+                 &lt;PLU&gt;
+                 &lt;/PLU&gt;
+                 &lt;Name&gt;
+                 &lt;/Name&gt;
+                 &lt;Description&gt;
+                 &lt;/Description&gt;
+                 &lt;OnSpecial_Flag&gt;
+                 &lt;/OnSpecial_Flag&gt;
+ 
+&lt;ListPrice&gt;
+  &lt;Amount&gt;7999&lt;/Amount&gt;
+  &lt;CurrencyCode&gt;USD&lt;/CurrencyCode&gt;
+  &lt;FormattedPrice&gt;$79.99&lt;/FormattedPrice&gt;
+  &lt;VATcategory&gt;Standard&lt;/VATcategory&gt;
+  &lt;/ListPrice&gt;
+  &lt;ValidityPeriod&gt;
+   &lt;StartDate time=&quot;&quot;&gt;&lt;/StartDate&gt;
+   &lt;EndDate time=&quot;&quot;&gt;&lt;/EndDate&gt;
+  &lt;/ValidityPeriod&gt;
+  &lt;ShippingDetails&gt;
+    &lt;FreeShipping allowed=&quot;true&quot; currency=&quot;USD&quot; orderTotal=&quot;$150&quot;/&gt;
+    &lt;SpecialHandling type=&quot;refridgerated&quot;/&gt;
+    &lt;SpecialHandling type=&quot;hazardous&quot;/&gt;
+    &lt;Shipping type=&quot;UPS&quot;/&gt;
+    &lt;Shipping type=&quot;FedEx&quot;/&gt;
+  &lt;/ShippingDetails&gt;
+ &lt;ItemAttributes&gt;
+  &lt;Manufacturer&gt;Viva Media&lt;/Manufacturer&gt;
+  &lt;Model&gt;00145&lt;/Model&gt;
+  &lt;ReleaseDate&gt;2006/01/01&lt;/ReleaseDate&gt;
+  &lt;UPC&gt;838639001453&lt;/UPC&gt;
+  &lt;EAN&gt;838639001453&lt;/EAN&gt;
+  &lt;ISBN&gt;0879801115&lt;/ISBN&gt;
+ &lt;/ItemAttributes&gt;
+ &lt;OfferAttributes&gt;
+  &lt;Condition&gt;New&lt;/Condition&gt;
+  &lt;SubCondition&gt;New&lt;/SubCondition&gt;
+  &lt;ConditionNote&gt;BRAND NEW FACTORY SEALED RETAIL BOX&lt;/ConditionNote&gt;
+  &lt;Availability&gt;Usually ships in 24 hours&lt;/Availability&gt;
+  &lt;TotalNew&gt;2&lt;/TotalNew&gt;
+  &lt;TotalUsed&gt;0&lt;/TotalUsed&gt;
+  &lt;TotalCollectible&gt;0&lt;/TotalCollectible&gt;
+  &lt;TotalRefurbished&gt;0&lt;/TotalRefurbished&gt;
+ &lt;/OfferAttributes&gt;
+        &lt;Unit&gt;
+  &lt;Height Units=&quot;hundredths-inches&quot;&gt;66&lt;/Height&gt;
+  &lt;Length Units=&quot;hundredths-inches&quot;&gt;900&lt;/Length&gt;
+  &lt;Weight Units=&quot;hundredths-pounds&quot;&gt;104&lt;/Weight&gt;
+  &lt;Width Units=&quot;hundredths-inches&quot;&gt;676&lt;/Width&gt;
+        &lt;/Unit&gt;
+  &lt;MerchantNotes&gt;
+     &lt;Note type=&quot;onspecial&quot;&gt;20% discount until January 1st, 2007&lt;/Note&gt;
+     &lt;Note type=&quot;aboutus&quot;&gt;Our 20th year of selling these&lt;/Note&gt;
+  &lt;/MerchantNotes&gt;
+               &lt;/Product&gt;
+          &lt;/Product_Items&gt;
+        &lt;/ProductGroup&gt;
+  &lt;/ProductInformation&gt;
+&lt;/PriceList&gt;
+  
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/preisshare-dev/attachments/20070101/f9d09e29/attachment.html">https://lists.berlios.de/pipermail/preisshare-dev/attachments/20070101/f9d09e29/attachment.html</A>&gt;
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000005.html">[Preisshare-dev] fyi : PreisShare XML Format
+</A></li>
+	<LI>Next message: <A HREF="000008.html">[Preisshare-dev] fyi : PreisShare XML Format
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#7">[ date ]</a>
+              <a href="thread.html#7">[ thread ]</a>
+              <a href="subject.html#7">[ subject ]</a>
+              <a href="author.html#7">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/preisshare-dev">More information about the Preisshare-dev
+mailing list</a><br>
+</body></html>

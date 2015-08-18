@@ -1,0 +1,1866 @@
+From david at drrw.info  Thu Feb  1 00:05:59 2007
+From: david at drrw.info (David RR Webber (XML))
+Date: Wed, 31 Jan 2007 16:05:59 -0700
+Subject: [Preisshare-dev] Pricelist files from Hong-Kong, China
+Message-ID: <20070131160559.dc066b1d4d2e0a1a65719ae85a8071e6.37c2aee992.wbe@email.secureserver.net>
+
+An HTML attachment was scrubbed...
+URL: <https://lists.berlios.de/pipermail/preisshare-dev/attachments/20070131/21022a49/attachment.html>
+
+From david.lyon at preisshare.net  Thu Feb  1 00:16:05 2007
+From: david.lyon at preisshare.net (david.lyon at preisshare.net)
+Date: Wed, 31 Jan 2007 17:16:05 -0600
+Subject: [Preisshare-dev] Pricelist files from Hong-Kong, China
+In-Reply-To: <20070131160559.dc066b1d4d2e0a1a65719ae85a8071e6.37c2aee992.wbe@email.secureserver.net>
+References: <20070131160559.dc066b1d4d2e0a1a65719ae85a8071e6.37c2aee992.wbe@email.secureserver.net>
+Message-ID: <20070131171605.ctsy4e7d3d008kow@srv11.ezyreg.com>
+
+Quoting "David RR Webber \(XML\)" <david at drrw.info>:
+
+> David,   In which case I'd give them a browser based capability.   1)
+> Create AJAX form that allows them to manage their price listing    2)
+> AJAX saves their results as XML - either on their machine - or on
+> server.   3) xslt renders that XML as html for web use.   4) The new
+> E4X works great in Mozilla.    So they can either use off-line form -
+> or online - update, save, distribute as XML - but renders as viewable
+> form.   DW
+
+It's a good high level idea....
+
+We don't currently have a web based offering. It's all a windows  
+client that does stuff directly at the moment.
+
+A web based product is certainly on the list of things to do. We're  
+trying to perfect the spreadsheet reading and the plan is to move that  
+into being server based in the future. Sonmez is working on a  
+multiplatform version so hopefully he might be able to look at that  
+soon.
+
+In the meantime, we spend a lot of time learning all the tricks of  
+managing all these prices for products and companies coming out of  
+asia. It is quite complex.
+
+That is certainly keeping us busy for the moment...
+
+Regards
+
+David
+
+
+
+
+From david.lyon at preisshare.net  Thu Feb  1 01:06:55 2007
+From: david.lyon at preisshare.net (david.lyon at preisshare.net)
+Date: Wed, 31 Jan 2007 18:06:55 -0600
+Subject: [Preisshare-dev] Pricelist files from Hong-Kong, China
+In-Reply-To: <16ccc8410701311550y7cb0640cm3ca5e08838c1ccd1@mail.gmail.com>
+References: <20070131084350.dc066b1d4d2e0a1a65719ae85a8071e6.49a1327fb2.wbe@email.secureserver.net>
+	<20070131164747.cz0svnuf8o00scw4@srv11.ezyreg.com>
+	<16ccc8410701311550y7cb0640cm3ca5e08838c1ccd1@mail.gmail.com>
+Message-ID: <20070131180655.y3na1bb2feo0wow0@srv11.ezyreg.com>
+
+
+Hi Tony,
+
+Quoting Tony Pelton <tpelton at gmail.com>:
+
+> not sure what your backend is ... but there are easy to use libraries
+> available for java that will happilly open an microsoft excel
+> spreadsheeet, and allow you to programatically extract data.
+
+It's a Delphi/ObjectPascal back end.
+
+Yes, I think every programming language offers it these days.
+
+> i've done some of it myself.
+
+:-)
+
+> there is of course no magic, in that, if the data in the spreadsheets
+> isn't "standard" it will be harder to extract programmatically.
+
+Yes, it is pretty routine.
+
+Regards
+
+David
+
+> don't know if that means that you are in fact having the issues i just
+> mentioned ...
+
+We're just trying to get it organised, making it easier for smaller  
+businesses to be able to use.
+
+
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: priceupdate.PNG
+Type: image/png
+Size: 19382 bytes
+Desc: not available
+URL: <https://lists.berlios.de/pipermail/preisshare-dev/attachments/20070131/35c92213/attachment.png>
+
+From david.lyon at preisshare.net  Fri Feb  2 04:42:55 2007
+From: david.lyon at preisshare.net (David Lyon)
+Date: Fri, 02 Feb 2007 14:42:55 +1100
+Subject: [Preisshare-dev] Pricelist files from Hong-Kong, China
+In-Reply-To: <45C18606.6000405@nerdshack.com>
+References: <20070130210602.tskbmi208gpc8sgc@srv11.ezyreg.com>
+	<45C18606.6000405@nerdshack.com>
+Message-ID: <45C2B33F.1070102@preisshare.net>
+
+S?nmez Kartal wrote:
+> If all those priceslists have different table formats then It is not 
+> much possible to automate importing them to PreisShare.
+>
+> A data mapper for Excel spreadsheets and/or HTML pages could handle 
+> these situation. But, In this case that won't fully make it automatic.
+>
+> Data mapper application (dma) should be able to mark columns and save 
+> mapped, also checks other files for exact match, if it finds it will 
+> save mapping format for found files too. After all files are 
+> interpreted by dma, it will copy data from marked files to where do 
+> you want.
+>
+> That dma could be a generic data mapper for many kind of file formats 
+> that could be an useful application.
+>
+Import Mapper
+
+We already do have such an import mapper built into the Search screen. 
+It will do it's best to pick the product information out of an Excel sheet.
+
+One problem that we have is that it needs Excel. But I'm trying to 
+incorporate the flexcel product which would read files directly. This 
+hopefully should improve performance and the dependance on windows and 
+excel.
+
+Regards
+
+David
+
+
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: <https://lists.berlios.de/pipermail/preisshare-dev/attachments/20070202/b3692c5b/attachment.html>
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: Import.PNG
+Type: image/png
+Size: 34925 bytes
+Desc: not available
+URL: <https://lists.berlios.de/pipermail/preisshare-dev/attachments/20070202/b3692c5b/attachment.png>
+
+From david.lyon at preisshare.net  Tue Feb  6 12:13:29 2007
+From: david.lyon at preisshare.net (David Lyon)
+Date: Tue, 06 Feb 2007 22:13:29 +1100
+Subject: [Preisshare-dev] [ubl-dev] ubl pricelist validation ?
+In-Reply-To: <s5c843c9.095@bristol-city.gov.uk>
+References: <s5c843c9.095@bristol-city.gov.uk>
+Message-ID: <45C862D9.50900@preisshare.net>
+
+Stephen Green wrote:
+> Hi David
+>
+> Back to trading, how necessary are those product groups?
+> They would be the one thing lost in translation going from
+> your xml to UBL. Maybe one of the UBL catalogue 'category'
+> entities would do the trick for that.
+>
+>   
+Pretty neccessary... see the text below... just out from HK...
+
+MEMORY MODULE PRICE LIST
+** 
+*_Kingston Memory_*
+** 
+*512mb/533  USD31.50   300PCS available
+1G/533  USD61.30    200PCS available
+*
+*Both are kingston non-hynix retailed packed*
+** 
+*_StarRam / SunRam_*
+*SD 128MB  (PC-133) 8Mx16  (8C)    USD7.50*
+*SD 128MB  (PC-133) 8Mx8  (16C)    USD7.00*
+*
+*SD 256MB  (PC-133) 32Mx8  (8C)    USD19.50*
+*
+*SD 512MB  (PC-133) 32Mx8  (16C)   USD42.50*
+*DDR 512MB (PC-400) 64Mx8 (8C)   USD29.50*
+*DDR 512MB (PC-400) 32Mx8 (16C)   USD29.50*
+*DDR 1GB (PC-400) 64Mx8 (16C)    USD65.00*
+*DDR2-512MB (PC-533) 64Mx8 (8C)   USD29.00*
+*DDR2-512MB (PC-667) 64Mx8 (8C)   USD29.50*
+*SunRam SDRAM 8Mx16-6    USD1.15/pcs*
+ 
+*_SyncMAX DDR 2_*
+*
+*256MB 533MHz (PC-4200) 64Mx8   FBGA (8 Chips)    US$18.80 *
+*512MB 533MHz (PC-4200) 64Mx8   FBGA (8 Chips)   US$32.00*
+*
+*
+*512MB 667MHz (PC-5300) 64Mx8   FBGA (8 Chips)   US$35.00*
+*
+*512MB 800MHz (PC-6400) 64Mx8   FBGA (8 Chips)   US$45.00*
+*1GB 800MHz (PC-6400) 64Mx8   FBGA (16 Chips)   US$100.00*
+*SODIMM 512MB 667MHz (PC-5300) CL4 - 64Mx8 FBGA (8 Chips) US$42.00*
+** 
+*Express (SyncMAX High performance product) - LOW LATENCY*
+*512MB 533MHz (CL3-3-3-8) & 667MHz (CL4-4-4-10)    US$50.00*
+*1GB 533MHz (CL3-3-3-8) & 667MHz (CL4-4-4-10)    US$108**.00*
+512MB 800MHz (PC-6400) 64Mx8   FBGA (8 Chips) CL4     US$78.00
+1GB 800MHz (PC-6400) 64Mx8   FBGA (16 Chips) CL4     US$160.00
+ 
+ 
+_Blank Memory modules_
+BLANK 512MB ( 64M X 8 ) PC-400 ELPIDA  ett usd28.5
+BLANK 1GB ( 64M X 8 ) PC-400 ELPIDA ett usd56
+DDR 2
+BLANK 512MB ( 32M X 8 ) PC-533 NANYA DIE USD26
+BLANK 512MB ( 64M x 8 ) PC-667 MIRA/ELPIDA ett USD28 B62URCD
+BLANK 1GB ( 64M x 8 ) PC-667 MIRA/ELPIDA ett USD55 B62URCE
+BLANK 512MB ( 64M x 8 ) PC-800 MIRA ett USD35 B62URCD stock
+ 
+
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: <https://lists.berlios.de/pipermail/preisshare-dev/attachments/20070206/72898a8b/attachment.html>
+
+From david at drrw.info  Tue Feb  6 15:09:48 2007
+From: david at drrw.info (David RR Webber (XML))
+Date: Tue, 06 Feb 2007 07:09:48 -0700
+Subject: [Preisshare-dev] [ubl-dev] ubl pricelist validation ?
+Message-ID: <20070206070948.dc066b1d4d2e0a1a65719ae85a8071e6.04af9726f1.wbe@email.secureserver.net>
+
+An HTML attachment was scrubbed...
+URL: <https://lists.berlios.de/pipermail/preisshare-dev/attachments/20070206/2214d823/attachment.html>
+
+From stephen.green at bristol.gov.uk  Tue Feb  6 12:23:10 2007
+From: stephen.green at bristol.gov.uk (Stephen Green)
+Date: Tue, 06 Feb 2007 11:23:10 +0000
+Subject: [Preisshare-dev] [ubl-dev] ubl pricelist validation ?
+Message-ID: <s5c86542.093@bristol-city.gov.uk>
+
+Hi David
+
+In one sense these product groups could just be translated into
+the UBL catalogue line description along with the product name.
+That wouldn't work going from UBL to preisshare-xml though, so
+I'll try to find something better, like category, and add it to
+everything. No need to change the preisshare-xml though for that. 
+
+What would you do with "*Both are kingston non-hynix retailed packed*"?
+That might need a note but it would be a note on product group
+which might not have an equivalent in UBL so it would be lost in translation
+to UBL.
+
+All the best
+
+Steve
+
+>>> David Lyon <david.lyon at preisshare.net> 06/02/07 11:13:29 >>>
+Stephen Green wrote:
+> Hi David
+>
+> Back to trading, how necessary are those product groups?
+> They would be the one thing lost in translation going from
+> your xml to UBL. Maybe one of the UBL catalogue 'category'
+> entities would do the trick for that.
+>
+>   
+Pretty neccessary... see the text below... just out from HK...
+
+MEMORY MODULE PRICE LIST
+** 
+*_Kingston Memory_*
+** 
+*512mb/533  USD31.50   300PCS available
+1G/533  USD61.30    200PCS available
+*
+*Both are kingston non-hynix retailed packed*
+** 
+*_StarRam / SunRam_*
+*SD 128MB  (PC-133) 8Mx16  (8C)    USD7.50*
+*SD 128MB  (PC-133) 8Mx8  (16C)    USD7.00*
+*
+*SD 256MB  (PC-133) 32Mx8  (8C)    USD19.50*
+*
+*SD 512MB  (PC-133) 32Mx8  (16C)   USD42.50*
+*DDR 512MB (PC-400) 64Mx8 (8C)   USD29.50*
+*DDR 512MB (PC-400) 32Mx8 (16C)   USD29.50*
+*DDR 1GB (PC-400) 64Mx8 (16C)    USD65.00*
+*DDR2-512MB (PC-533) 64Mx8 (8C)   USD29.00*
+*DDR2-512MB (PC-667) 64Mx8 (8C)   USD29.50*
+*SunRam SDRAM 8Mx16-6    USD1.15/pcs*
+ 
+*_SyncMAX DDR 2_*
+*
+*256MB 533MHz (PC-4200) 64Mx8   FBGA (8 Chips)    US$18.80 *
+*512MB 533MHz (PC-4200) 64Mx8   FBGA (8 Chips)   US$32.00*
+*
+*
+*512MB 667MHz (PC-5300) 64Mx8   FBGA (8 Chips)   US$35.00*
+*
+*512MB 800MHz (PC-6400) 64Mx8   FBGA (8 Chips)   US$45.00*
+*1GB 800MHz (PC-6400) 64Mx8   FBGA (16 Chips)   US$100.00*
+*SODIMM 512MB 667MHz (PC-5300) CL4 - 64Mx8 FBGA (8 Chips) US$42.00*
+** 
+*Express (SyncMAX High performance product) - LOW LATENCY*
+*512MB 533MHz (CL3-3-3-8) & 667MHz (CL4-4-4-10)    US$50.00*
+*1GB 533MHz (CL3-3-3-8) & 667MHz (CL4-4-4-10)    US$108**.00*
+512MB 800MHz (PC-6400) 64Mx8   FBGA (8 Chips) CL4     US$78.00
+1GB 800MHz (PC-6400) 64Mx8   FBGA (16 Chips) CL4     US$160.00
+ 
+ 
+_Blank Memory modules_
+BLANK 512MB ( 64M X 8 ) PC-400 ELPIDA  ett usd28.5
+BLANK 1GB ( 64M X 8 ) PC-400 ELPIDA ett usd56
+DDR 2
+BLANK 512MB ( 32M X 8 ) PC-533 NANYA DIE USD26
+BLANK 512MB ( 64M x 8 ) PC-667 MIRA/ELPIDA ett USD28 B62URCD
+BLANK 1GB ( 64M x 8 ) PC-667 MIRA/ELPIDA ett USD55 B62URCE
+BLANK 512MB ( 64M x 8 ) PC-800 MIRA ett USD35 B62URCD stock
+ 
+
+
+______________________________________________________________________
+Please note the new simpler name for our website: http://www.bristol.gov.uk
+
+Our email addresses have also changed - visit http://www.bristol.gov.uk/bigchange for further details.
+
+Sign-up for our email bulletin giving news, have-your-say  and event information at: http://www.bristol.gov.uk/newsdirect 
+
+
+
+
+
+From david.lyon at preisshare.net  Tue Feb  6 20:49:53 2007
+From: david.lyon at preisshare.net (David Lyon)
+Date: Wed, 07 Feb 2007 06:49:53 +1100
+Subject: [Preisshare-dev] [ubl-dev] ubl pricelist validation ?
+In-Reply-To: <s5c86542.097@bristol-city.gov.uk>
+References: <s5c86542.097@bristol-city.gov.uk>
+Message-ID: <45C8DBE1.6020308@preisshare.net>
+
+Stephen Green wrote:
+> Hi David
+>
+> In one sense these product groups could just be translated into
+> the UBL catalogue line description along with the product name.
+> That wouldn't work going from UBL to preisshare-xml though, so
+> I'll try to find something better, like category, and add it to
+> everything. No need to change the preisshare-xml though for that. 
+>   
+In our internal reader/writer class (in memory), we actually build a 
+flat list of all items and include the product group name as another field.
+
+Group_Description&="Kingston Memory" Name&="512mb/533" Actual_Price$=31.50
+Group_Description&="Kingston Memory" Name&="1G/533" Actual_Price$=61.30
+
+So when it comes to writing out an output file, all of the information 
+is easy at hand and ready to write.
+
+> What would you do with "*Both are kingston non-hynix retailed packed*"?
+>   
+Group_Description&="Kingston Memory" Name&="512mb/533" 
+Description&="*Both are kingston non-hynix retailed packed*" 
+Actual_Price$=31.50
+
+> That might need a note but it would be a note on product group
+> which might not have an equivalent in UBL so it would be lost in translation
+> to UBL.
+>   
+That's possible. When converting from spreadsheets it's always possible 
+that minor pieces get lost. It's not always a lossless process.
+
+Regards
+
+David
+
+> All the best
+>
+> Steve
+>
+>   
+>>>> David Lyon <david.lyon at preisshare.net> 06/02/07 11:13:29 >>>
+>>>>         
+> Stephen Green wrote:
+>   
+>> Hi David
+>>
+>> Back to trading, how necessary are those product groups?
+>> They would be the one thing lost in translation going from
+>> your xml to UBL. Maybe one of the UBL catalogue 'category'
+>> entities would do the trick for that.
+>>
+>>   
+>>     
+> Pretty neccessary... see the text below... just out from HK...
+>
+> MEMORY MODULE PRICE LIST
+> ** 
+> *_Kingston Memory_*
+> ** 
+> *512mb/533  USD31.50   300PCS available
+> 1G/533  USD61.30    200PCS available
+> *
+> *Both are kingston non-hynix retailed packed*
+> ** 
+> *_StarRam / SunRam_*
+> *SD 128MB  (PC-133) 8Mx16  (8C)    USD7.50*
+> *SD 128MB  (PC-133) 8Mx8  (16C)    USD7.00*
+> *
+> *SD 256MB  (PC-133) 32Mx8  (8C)    USD19.50*
+> *
+> *SD 512MB  (PC-133) 32Mx8  (16C)   USD42.50*
+> *DDR 512MB (PC-400) 64Mx8 (8C)   USD29.50*
+> *DDR 512MB (PC-400) 32Mx8 (16C)   USD29.50*
+> *DDR 1GB (PC-400) 64Mx8 (16C)    USD65.00*
+> *DDR2-512MB (PC-533) 64Mx8 (8C)   USD29.00*
+> *DDR2-512MB (PC-667) 64Mx8 (8C)   USD29.50*
+> *SunRam SDRAM 8Mx16-6    USD1.15/pcs*
+>  
+> *_SyncMAX DDR 2_*
+> *
+> *256MB 533MHz (PC-4200) 64Mx8   FBGA (8 Chips)    US$18.80 *
+> *512MB 533MHz (PC-4200) 64Mx8   FBGA (8 Chips)   US$32.00*
+> *
+> *
+> *512MB 667MHz (PC-5300) 64Mx8   FBGA (8 Chips)   US$35.00*
+> *
+> *512MB 800MHz (PC-6400) 64Mx8   FBGA (8 Chips)   US$45.00*
+> *1GB 800MHz (PC-6400) 64Mx8   FBGA (16 Chips)   US$100.00*
+> *SODIMM 512MB 667MHz (PC-5300) CL4 - 64Mx8 FBGA (8 Chips) US$42.00*
+> ** 
+> *Express (SyncMAX High performance product) - LOW LATENCY*
+> *512MB 533MHz (CL3-3-3-8) & 667MHz (CL4-4-4-10)    US$50.00*
+> *1GB 533MHz (CL3-3-3-8) & 667MHz (CL4-4-4-10)    US$108**.00*
+> 512MB 800MHz (PC-6400) 64Mx8   FBGA (8 Chips) CL4     US$78.00
+> 1GB 800MHz (PC-6400) 64Mx8   FBGA (16 Chips) CL4     US$160.00
+>  
+>  
+> _Blank Memory modules_
+> BLANK 512MB ( 64M X 8 ) PC-400 ELPIDA  ett usd28.5
+> BLANK 1GB ( 64M X 8 ) PC-400 ELPIDA ett usd56
+> DDR 2
+> BLANK 512MB ( 32M X 8 ) PC-533 NANYA DIE USD26
+> BLANK 512MB ( 64M x 8 ) PC-667 MIRA/ELPIDA ett USD28 B62URCD
+> BLANK 1GB ( 64M x 8 ) PC-667 MIRA/ELPIDA ett USD55 B62URCE
+> BLANK 512MB ( 64M x 8 ) PC-800 MIRA ett USD35 B62URCD stock
+>  
+>
+>
+> ______________________________________________________________________
+> Please note the new simpler name for our website: http://www.bristol.gov.uk
+>
+> Our email addresses have also changed - visit http://www.bristol.gov.uk/bigchange for further details.
+>
+> Sign-up for our email bulletin giving news, have-your-say  and event information at: http://www.bristol.gov.uk/newsdirect 
+>
+>
+>
+>
+>   
+
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: <https://lists.berlios.de/pipermail/preisshare-dev/attachments/20070207/18159433/attachment.html>
+
+From david.lyon at preisshare.net  Tue Feb  6 20:57:13 2007
+From: david.lyon at preisshare.net (David Lyon)
+Date: Wed, 07 Feb 2007 06:57:13 +1100
+Subject: [Preisshare-dev] [ubl-dev] ubl pricelist validation ?
+In-Reply-To: <20070206070948.dc066b1d4d2e0a1a65719ae85a8071e6.04af9726f1.wbe@email.secureserver.net>
+References: <20070206070948.dc066b1d4d2e0a1a65719ae85a8071e6.04af9726f1.wbe@email.secureserver.net>
+Message-ID: <45C8DD99.509@preisshare.net>
+
+David RR Webber (XML) wrote:
+>  
+> This latest from Steve seems to answer this?  If "Yes" then I'll make 
+> the CAM template for the whole XML sample -
+>  
+> <Product_Group>
+> > <Group_Description>Parts</Group_Description>
+> > <Product_Items>
+> > <Product>
+Yes. Looks right.
+>  
+> p.s. BTW - I'd suggest a lookup table on these group values - as they 
+> should be common across a domain - can we see if there's an optional 
+> attribute we can use to do lookup code as well as the 
+> group_description text...?
+Not sure what you mean by common accross a domain.. is a domain the 
+price list file?
+
+Reading out the product Groups usually takes little to no time.
+
+Are you thinking of the lookup as being part of the sending or receiving 
+process?
+
+Regards
+
+David
+
+
+From david at drrw.info  Tue Feb  6 22:27:34 2007
+From: david at drrw.info (David RR Webber (XML))
+Date: Tue, 06 Feb 2007 14:27:34 -0700
+Subject: [Preisshare-dev] [ubl-dev] ubl pricelist validation ?
+Message-ID: <20070206142734.dc066b1d4d2e0a1a65719ae85a8071e6.87213467da.wbe@email.secureserver.net>
+
+An HTML attachment was scrubbed...
+URL: <https://lists.berlios.de/pipermail/preisshare-dev/attachments/20070206/0b1b6959/attachment.html>
+
+From david.lyon at preisshare.net  Tue Feb  6 22:40:30 2007
+From: david.lyon at preisshare.net (David Lyon)
+Date: Wed, 07 Feb 2007 08:40:30 +1100
+Subject: [Preisshare-dev] [Fwd: Memory  Price List(Feb.06,2007)]
+Message-ID: <45C8F5CE.5050103@preisshare.net>
+
+Hi Jerry,
+
+ > How do i purchase the RAM - do you offer discount rates David?
+
+You'll have to contact the supplier directly. We don't supply any 
+hardware, only software to manage the prices.
+
+Regards
+
+David
+
+MEMORY MODULE PRICE LIST
+** 
+*_Kingston Memory_*
+** 
+*512mb/533  USD31.50   300PCS available
+1G/533  USD61.30    200PCS available
+*
+*Both are kingston non-hynix retailed packed*
+** 
+*_StarRam / SunRam_*
+*SD 128MB  (PC-133) 8Mx16  (8C)    USD7.50*
+*SD 128MB  (PC-133) 8Mx8  (16C)    USD7.00*
+*
+*SD 256MB  (PC-133) 32Mx8  (8C)    USD19.50*
+*
+*SD 512MB  (PC-133) 32Mx8  (16C)   USD42.50*
+*DDR 512MB (PC-400) 64Mx8 (8C)   USD29.50*
+*DDR 512MB (PC-400) 32Mx8 (16C)   USD29.50*
+*DDR 1GB (PC-400) 64Mx8 (16C)    USD65.00*
+*DDR2-512MB (PC-533) 64Mx8 (8C)   USD29.00*
+*DDR2-512MB (PC-667) 64Mx8 (8C)   USD29.50*
+*SunRam SDRAM 8Mx16-6    USD1.15/pcs*
+ 
+*_SyncMAX DDR 2_*
+*
+*256MB 533MHz (PC-4200) 64Mx8   FBGA (8 Chips)    US$18.80 *
+*512MB 533MHz (PC-4200) 64Mx8   FBGA (8 Chips)   US$32.00*
+*
+*
+*512MB 667MHz (PC-5300) 64Mx8   FBGA (8 Chips)   US$35.00*
+*
+*512MB 800MHz (PC-6400) 64Mx8   FBGA (8 Chips)   US$45.00*
+*1GB 800MHz (PC-6400) 64Mx8   FBGA (16 Chips)   US$100.00*
+*SODIMM 512MB 667MHz (PC-5300) CL4 - 64Mx8 FBGA (8 Chips) US$42.00*
+** 
+*Express (SyncMAX High performance product) - LOW LATENCY*
+*512MB 533MHz (CL3-3-3-8) & 667MHz (CL4-4-4-10)    US$50.00*
+*1GB 533MHz (CL3-3-3-8) & 667MHz (CL4-4-4-10)    US$108**.00*
+512MB 800MHz (PC-6400) 64Mx8   FBGA (8 Chips) CL4     US$78.00
+1GB 800MHz (PC-6400) 64Mx8   FBGA (16 Chips) CL4     US$160.00
+ 
+ 
+_Blank Memory modules_
+BLANK 512MB ( 64M X 8 ) PC-400 ELPIDA  ett usd28.5
+BLANK 1GB ( 64M X 8 ) PC-400 ELPIDA ett usd56
+DDR 2
+BLANK 512MB ( 32M X 8 ) PC-533 NANYA DIE USD26
+BLANK 512MB ( 64M x 8 ) PC-667 MIRA/ELPIDA ett USD28 B62URCD
+BLANK 1GB ( 64M x 8 ) PC-667 MIRA/ELPIDA ett USD55 B62URCE
+BLANK 512MB ( 64M x 8 ) PC-800 MIRA ett USD35 B62URCD stock
+ 
+
+For more information,pls do not hesitate to contact me,
+ 
+Thanks and regards,
+David Pang
+ 
+Wideland Electronics Ltd.
+ 
+Rm 11, 12/F., Leader Industrial Centre
+57-59 Au Pui Wan Street, Fotan, N.T.,
+Hong Kong  Website: www.wideland.com <http://www.wideland.com>
+Tel: +86 769 83630019   Fax: +86 769 83630055
+Email: david at wideland.com <mailto:david at wideland.com> or dvdpang at 126.com 
+<mailto:dvdpang at 126.com> 
+MSN: dvdpang at hotmail.com <mailto:dvdpang at hotmail.com>
+Skype: dvdpang   ICQ: 247-845-425
+
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: <https://lists.berlios.de/pipermail/preisshare-dev/attachments/20070207/3f2b5969/attachment.html>
+
+From david.lyon at preisshare.net  Tue Feb  6 22:49:30 2007
+From: david.lyon at preisshare.net (David Lyon)
+Date: Wed, 07 Feb 2007 08:49:30 +1100
+Subject: [Preisshare-dev] [ubl-dev] ubl pricelist validation ?
+In-Reply-To: <20070206142734.dc066b1d4d2e0a1a65719ae85a8071e6.87213467da.wbe@email.secureserver.net>
+References: <20070206142734.dc066b1d4d2e0a1a65719ae85a8071e6.87213467da.wbe@email.secureserver.net>
+Message-ID: <45C8F7EA.9030507@preisshare.net>
+
+David RR Webber (XML) wrote:
+> By domain - I mean suppliers - so everyone selling memory parts - you 
+> have a pre-defined lookup of common terms and categories - DMM 256 - 
+> and so on - so you remove the "fat fingering" issue - if they all use 
+> the common list...you would need to keep adding to that as it 
+> changes.  CAM makes that easy to indicate - and will work on both 
+> sending and receiving ends.
+At the moment we don't.
+
+It might be something that we can look at the future to.
+
+One of the reasons that I like the Asian style of things is that it is 
+so free for all.
+
+Having worked on similar projects here, if you insist on standardising 
+product descriptions, you end up with bland goop.
+
+For example, "Writing Instrument - BIC - Black Ink - 15cm transparent 
+plastic shaft"
+
+So somebody goes and types "black biro" into the search engine, and 
+can't find anything. Useless....
+
+My preference is that if the suppliers don't describe it right, then 
+they don't sell it and it is their problem.
+
+A few caveats on that.
+
+<Product>
+ PLU&="42343"
+ Name&="Black Pen"
+ Description&="* Transparent Shaft. * compatable with biro"
+ Brand&="BIC"
+ Model&="A50B"
+</Product>
+
+
+Seperating out the manufacturers model number and brand. They're important.
+
+Regards
+
+David
+
+
+
+From david at drrw.info  Wed Feb  7 20:16:22 2007
+From: david at drrw.info (David RR Webber (XML))
+Date: Wed, 07 Feb 2007 12:16:22 -0700
+Subject: [Preisshare-dev] [ubl-dev] ubl pricelist validation ?
+Message-ID: <20070207121622.dc066b1d4d2e0a1a65719ae85a8071e6.ea4b74805e.wbe@email.secureserver.net>
+
+An HTML attachment was scrubbed...
+URL: <https://lists.berlios.de/pipermail/preisshare-dev/attachments/20070207/fe1aee25/attachment.html>
+
+From david.lyon at preisshare.net  Thu Feb  8 02:17:44 2007
+From: david.lyon at preisshare.net (david.lyon at preisshare.net)
+Date: Wed, 07 Feb 2007 19:17:44 -0600
+Subject: [Preisshare-dev] FYI - csv pricelist feeds...
+In-Reply-To: <45CA556F.30107@planetva.com>
+References: <20070207121622.dc066b1d4d2e0a1a65719ae85a8071e6.ea4b74805e.wbe@email.secureserver.net>
+	<45CA556F.30107@planetva.com>
+Message-ID: <20070207191744.qp2ic15i3ixw8c4s@srv11.ezyreg.com>
+
+Quoting Ludwig Heymbeeck <ludwig at planetva.com>:
+
+> fyi...the way they do it now...
+> http://www.shopbot.com.au/addstore.html
+
+Yes, it's certainly simple and to the point.
+
+That's why I was saying we should build something like that into PreisShare.
+
+Note that their format is fixed - so they insist that the provider  
+ensure that the format is prepared for them.
+
+This is consistent with PreisShare, in which you can individually  
+specify which columns go into the file.
+
+Remember that job for the Insurance company that you did? That is  
+exactly how they work. They have their own definition on what columns  
+they expect and the file is transformed and uploaded to the website  
+according to what they want.
+
+Regards
+
+David
+
+
+
+
+From david.lyon at preisshare.net  Sat Feb 10 12:00:10 2007
+From: david.lyon at preisshare.net (David Lyon)
+Date: Sat, 10 Feb 2007 22:00:10 +1100
+Subject: [Preisshare-dev] New Commercial Brochure
+In-Reply-To: <20070206162105.dc066b1d4d2e0a1a65719ae85a8071e6.13c88ec0cb.wbe@email.secureserver.net>
+References: <20070206162105.dc066b1d4d2e0a1a65719ae85a8071e6.13c88ec0cb.wbe@email.secureserver.net>
+Message-ID: <45CDA5BA.8070302@preisshare.net>
+
+Hi David/Stephen,
+
+This is our now commercial Brochure that we'll be using for the year.
+
+We going to be focusing on Import/Search/Relay...
+
+A capability where we are able to redistribute price information quickly 
+out to clients, along with a search engine.
+
+So far, we've been getting quite a number of enquiries from Asia and it 
+seems to be appropriate to the market that we are going for.
+
+Regards
+
+David
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: PreisShare - Product Search & Price Relay System.pdf
+Type: application/pdf
+Size: 342679 bytes
+Desc: not available
+URL: <https://lists.berlios.de/pipermail/preisshare-dev/attachments/20070210/9337723b/attachment.pdf>
+
+From jerry.walsh at gmail.com  Tue Feb  6 22:30:02 2007
+From: jerry.walsh at gmail.com (Jerry Walsh)
+Date: Tue, 6 Feb 2007 21:30:02 +0000
+Subject: [Preisshare-dev] [ubl-dev] ubl pricelist validation ?
+In-Reply-To: <20070206142734.dc066b1d4d2e0a1a65719ae85a8071e6.87213467da.wbe@email.secureserver.net>
+References: <20070206142734.dc066b1d4d2e0a1a65719ae85a8071e6.87213467da.wbe@email.secureserver.net>
+Message-ID: <5c05f180702061330h6ae401fave57955e46161f021@mail.gmail.com>
+
+How do i purchase the RAM - do you offer discount rates David?
+
+On 2/6/07, David RR Webber (XML) <david at drrw.info> wrote:
+>
+> David,
+>
+>  By domain - I mean suppliers - so everyone selling memory parts - you
+> have a pre-defined lookup of common terms and categories - DMM 256 - and so
+> on - so you remove the "fat fingering" issue - if they all use the common
+> list...you would need to keep adding to that as it changes.  CAM makes that
+> easy to indicate - and will work on both sending and receiving ends.
+>
+> DW
+>
+> "The way to be is to do" - Confucius (551-472 B.C.)
+>
+>
+> -------- Original Message --------
+> Subject: Re: [Preisshare-dev] [ubl-dev] ubl pricelist validation ?
+> From: David Lyon <david.lyon at preisshare.net>
+> Date: Tue, February 06, 2007 2:57 pm
+> To: "David RR Webber (XML)" <david at drrw.info>,
+> Preisshare-dev at lists.berlios.de
+>
+> David RR Webber (XML) wrote:
+> >
+> > This latest from Steve seems to answer this?  If "Yes" then I'll make
+> > the CAM template for the whole XML sample -
+> >
+> > <Product_Group>
+> > > <Group_Description>Parts</Group_Description>
+> > > <Product_Items>
+> > > <Product>
+> Yes. Looks right.
+> >
+> > p.s. BTW - I'd suggest a lookup table on these group values - as they
+> > should be common across a domain - can we see if there's an optional
+> > attribute we can use to do lookup code as well as the
+> > group_description text...?
+> Not sure what you mean by common accross a domain.. is a domain the
+> price list file?
+>
+> Reading out the product Groups usually takes little to no time.
+>
+> Are you thinking of the lookup as being part of the sending or receiving
+> process?
+>
+> Regards
+>
+> David
+>
+>
+> _______________________________________________
+> Preisshare-dev mailing list
+> Preisshare-dev at lists.berlios.de
+> https://lists.berlios.de/mailman/listinfo/preisshare-dev
+>
+>
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: <https://lists.berlios.de/pipermail/preisshare-dev/attachments/20070206/349be214/attachment.html>
+
+From david at drrw.info  Sat Feb 10 23:24:35 2007
+From: david at drrw.info (David RR Webber (XML))
+Date: Sat, 10 Feb 2007 15:24:35 -0700
+Subject: [Preisshare-dev] New Commercial Brochure
+Message-ID: <20070210152434.dc066b1d4d2e0a1a65719ae85a8071e6.6ebc079172.wbe@email.secureserver.net>
+
+An HTML attachment was scrubbed...
+URL: <https://lists.berlios.de/pipermail/preisshare-dev/attachments/20070210/c9671914/attachment.html>
+
+From david.lyon at preisshare.net  Fri Feb 16 01:57:41 2007
+From: david.lyon at preisshare.net (david.lyon at preisshare.net)
+Date: Thu, 15 Feb 2007 18:57:41 -0600
+Subject: [Preisshare-dev] [ubl-dev] Top 10 uses of XML in 2007
+In-Reply-To: <92040e120702151604v139737c2k7faae9adc2850662@mail.gmail.com>
+References: <20070215163629.dc066b1d4d2e0a1a65719ae85a8071e6.510e223bab.wbe@email.secureserver.net>
+	<20070215174926.ib62qmmjxwu884sc@srv11.ezyreg.com>
+	<92040e120702151604v139737c2k7faae9adc2850662@mail.gmail.com>
+Message-ID: <20070215185741.jtqo1duh7a8ggwo4@srv11.ezyreg.com>
+
+
+> Could I join the project by the way, to maybe help maintain the
+> XML, schemas, etc. My BerliOS username is stephen_green.
+
+Hi Stephen,
+
+You're added in. :-)
+
+You sent me a zip file about two weeks ago. It was good. I'm not sure  
+how many changes you have made since.
+
+We can create a directory in berlios for the schemas.
+
+If you want to just put whatever file you want me to edit on the email  
+list I can turn changes around fairly quickly. I'm fairly flexible -  
+but we'll eventually get it all organised.
+
+I've found CVS doesn't really like changing directory names very much.  
+So it's important to be pretty sure of what you are doing before you  
+do it.
+
+Regards
+
+David
+
+
+
+
+
+From david.lyon at preisshare.net  Fri Feb 16 02:49:35 2007
+From: david.lyon at preisshare.net (david.lyon at preisshare.net)
+Date: Thu, 15 Feb 2007 19:49:35 -0600
+Subject: [Preisshare-dev] Email downloading app
+Message-ID: <20070215194935.ba0sbj7dibdwkk8w@srv11.ezyreg.com>
+
+Hi Sonmez,
+
+Luckily it Chinese New Year now, and those companies in Asia have  
+stopped sending me pricelists for a few days. :-)
+
+So I've finally got a chance to ask you to start building an app.
+
+What I need you to start writing is an application in Lazarus using  
+Overbyte.de mail components, to download emails from a mailbox.
+
+This will be used for automated pricelist collection.
+
+So are you right to start with this ?
+
+It just needs to be a very simple app indeed with one form, a display  
+box to show what is going on and the TPop3Cli component.
+
+You can hardware all the fields to start with if this helps.
+
+Regards
+
+David
+
+
+
+From stephengreenubl at gmail.com  Fri Feb 16 18:45:17 2007
+From: stephengreenubl at gmail.com (Stephen Green)
+Date: Fri, 16 Feb 2007 17:45:17 +0000
+Subject: [Preisshare-dev] [ubl-dev] Top 10 uses of XML in 2007
+In-Reply-To: <20070215185741.jtqo1duh7a8ggwo4@srv11.ezyreg.com>
+References: <20070215163629.dc066b1d4d2e0a1a65719ae85a8071e6.510e223bab.wbe@email.secureserver.net>
+	<20070215174926.ib62qmmjxwu884sc@srv11.ezyreg.com>
+	<92040e120702151604v139737c2k7faae9adc2850662@mail.gmail.com>
+	<20070215185741.jtqo1duh7a8ggwo4@srv11.ezyreg.com>
+Message-ID: <92040e120702160945o6e74329et3f6d2f16991dbc10@mail.gmail.com>
+
+Hi David
+
+This might sound odd but could you send me a copy of
+that file back again and I can then see if it needs much
+changing. It will need to be modified as the requirements
+for further elements are ascertained of course. Being XML
+that shouldn't break anything (if it's done right) but best
+not to decide final details like namespace yet until it is
+mature. We'd need to ensure it is seen as a draft with
+a draft namespace until then. The other schema without
+a namespace would be draft too and develop in parallel.
+
+The directory structure will need a bit of thought, yes.
+
+All the best
+
+Steve
+
+On 16/02/07, david.lyon at preisshare.net <david.lyon at preisshare.net> wrote:
+>
+> > Could I join the project by the way, to maybe help maintain the
+> > XML, schemas, etc. My BerliOS username is stephen_green.
+>
+> Hi Stephen,
+>
+> You're added in. :-)
+>
+> You sent me a zip file about two weeks ago. It was good. I'm not sure
+> how many changes you have made since.
+>
+> We can create a directory in berlios for the schemas.
+>
+> If you want to just put whatever file you want me to edit on the email
+> list I can turn changes around fairly quickly. I'm fairly flexible -
+> but we'll eventually get it all organised.
+>
+> I've found CVS doesn't really like changing directory names very much.
+> So it's important to be pretty sure of what you are doing before you
+> do it.
+>
+> Regards
+>
+> David
+>
+>
+>
+>
+
+
+From david.lyon at preisshare.net  Sat Feb 17 02:33:12 2007
+From: david.lyon at preisshare.net (David Lyon)
+Date: Sat, 17 Feb 2007 12:33:12 +1100
+Subject: [Preisshare-dev] PreisShare... what you would like in return...
+In-Reply-To: <92040e120702160030g43e7ede0uaa5173ddc3c9693d@mail.gmail.com>
+References: <20070215163629.dc066b1d4d2e0a1a65719ae85a8071e6.510e223bab.wbe@email.secureserver.net>	
+	<20070215174926.ib62qmmjxwu884sc@srv11.ezyreg.com>	
+	<92040e120702151604v139737c2k7faae9adc2850662@mail.gmail.com>	
+	<20070215190956.ugu5qq4pkokgkcgo@srv11.ezyreg.com>
+	<92040e120702160030g43e7ede0uaa5173ddc3c9693d@mail.gmail.com>
+Message-ID: <45D65B58.6030105@preisshare.net>
+
+Hi Steve,
+
+This weekend I'm doing an import run over a stack of pricelists from 
+Asia that I've received over the last two weeks. There's quite a few. It 
+took me 3 hours last night just cleaning them out of my email inbox.So I 
+have some compassion for the amount of time that it takes people in the 
+computer industry to manually process this stuff. It's just information 
+overload to the max.
+
+What I would like you to do is to start getting the XML documentation 
+together as you've already started.
+
+Then I'll send you over some of the sample data that I have.
+
+You can check it.
+
+At present, we can produce the data in XML but not load it in.
+
+Hopefully during March we can get this done.
+
+At the moment I'm pretty busy working on the Price Relay basics and 
+tidying up the search Engine so that it can be demonstrated this week.
+
+Regards
+
+David
+
+
+From david at drrw.info  Sat Feb 17 05:57:19 2007
+From: david at drrw.info (David RR Webber (XML))
+Date: Fri, 16 Feb 2007 21:57:19 -0700
+Subject: [Preisshare-dev] PreisShare... what you would like in return...
+Message-ID: <20070216215718.dc066b1d4d2e0a1a65719ae85a8071e6.da96313e03.wbe@email.secureserver.net>
+
+An HTML attachment was scrubbed...
+URL: <https://lists.berlios.de/pipermail/preisshare-dev/attachments/20070216/b9ed2fe9/attachment.html>
+
+From stephen.green at systml.co.uk  Sat Feb 17 16:39:57 2007
+From: stephen.green at systml.co.uk (stephen.green at systml.co.uk)
+Date: Sat, 17 Feb 2007 08:39:57 -0700
+Subject: [Preisshare-dev] PreisShare... what you would like in	return...
+In-Reply-To: <45D65B58.6030105@preisshare.net>
+References: <20070215163629.dc066b1d4d2e0a1a65719ae85a8071e6.510e223bab.wbe@email.secureserver.net>
+	<20070215174926.ib62qmmjxwu884sc@srv11.ezyreg.com>
+	<92040e120702151604v139737c2k7faae9adc2850662@mail.gmail.com>
+	<20070215190956.ugu5qq4pkokgkcgo@srv11.ezyreg.com>
+	<92040e120702160030g43e7ede0uaa5173ddc3c9693d@mail.gmail.com>
+	<45D65B58.6030105@preisshare.net>
+Message-ID: <20070217083957.b5digjivc0gso084@www.systml.co.uk>
+
+Many thanks
+
+Will do.
+
+All the best
+
+Steve
+
+Quoting David Lyon <david.lyon at preisshare.net>:
+
+> Hi Steve,
+>
+> This weekend I'm doing an import run over a stack of pricelists from
+> Asia that I've received over the last two weeks. There's quite a few. It
+> took me 3 hours last night just cleaning them out of my email inbox.So I
+> have some compassion for the amount of time that it takes people in the
+> computer industry to manually process this stuff. It's just information
+> overload to the max.
+>
+> What I would like you to do is to start getting the XML documentation
+> together as you've already started.
+>
+> Then I'll send you over some of the sample data that I have.
+>
+> You can check it.
+>
+> At present, we can produce the data in XML but not load it in.
+>
+> Hopefully during March we can get this done.
+>
+> At the moment I'm pretty busy working on the Price Relay basics and
+> tidying up the search Engine so that it can be demonstrated this week.
+>
+> Regards
+>
+> David
+> _______________________________________________
+> Preisshare-dev mailing list
+> Preisshare-dev at lists.berlios.de
+> https://lists.berlios.de/mailman/listinfo/preisshare-dev
+>
+
+
+
+
+From david.lyon at preisshare.net  Sat Feb 17 22:03:06 2007
+From: david.lyon at preisshare.net (David Lyon)
+Date: Sun, 18 Feb 2007 08:03:06 +1100
+Subject: [Preisshare-dev] PreisShare... what you would like in return...
+In-Reply-To: <20070216215718.dc066b1d4d2e0a1a65719ae85a8071e6.da96313e03.wbe@email.secureserver.net>
+References: <20070216215718.dc066b1d4d2e0a1a65719ae85a8071e6.da96313e03.wbe@email.secureserver.net>
+Message-ID: <45D76D8A.1080300@preisshare.net>
+
+David,
+
+I can understand why you might see the similarity but there is a lot 
+more to PreisShare than just the XML messages.
+
+Over time, the concepts have been refined to include things that 
+businesses can actually use in day to day operation like the search engine.
+
+Loading all the price information into a database and being able to 
+search it is more what PreisShare is about rather than the electronic 
+messages.
+
+Regards
+
+David
+
+
+
+
+David RR Webber (XML) wrote:
+> BTW - I just remembered the deja vu here -
+>  
+>  http://dotnet.sys-con.com/read/40127.htm
+>  
+> ; -)
+>  
+> DW
+>
+> "The way to be is to do" - Confucius (551-472 B.C.)
+>
+>
+>     -------- Original Message --------
+>     Subject: Re: [Preisshare-dev] PreisShare... what you would like in
+>     return...
+>     From: David Lyon <david.lyon at preisshare.net>
+>     Date: Fri, February 16, 2007 8:33 pm
+>     To: Stephen Green <stephengreenubl at gmail.com>,
+>     Preisshare-dev at lists.berlios.de
+>
+>     Hi Steve,
+>
+>     This weekend I'm doing an import run over a stack of pricelists from
+>     Asia that I've received over the last two weeks. There's quite a
+>     few. It
+>     took me 3 hours last night just cleaning them out of my email
+>     inbox.So I
+>     have some compassion for the amount of time that it takes people
+>     in the
+>     computer industry to manually process this stuff. It's just
+>     information
+>     overload to the max.
+>
+>     What I would like you to do is to start getting the XML documentation
+>     together as you've already started.
+>
+>     Then I'll send you over some of the sample data that I have.
+>
+>     You can check it.
+>
+>     At present, we can produce the data in XML but not load it in.
+>
+>     Hopefully during March we can get this done.
+>
+>     At the moment I'm pretty busy working on the Price Relay basics and
+>     tidying up the search Engine so that it can be demonstrated this week.
+>
+>     Regards
+>
+>     David
+>     _______________________________________________
+>     Preisshare-dev mailing list
+>     Preisshare-dev at lists.berlios.de
+>     https://lists.berlios.de/mailman/listinfo/preisshare-dev 
+>
+
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: <https://lists.berlios.de/pipermail/preisshare-dev/attachments/20070218/36666ac1/attachment.html>
+
+From david.lyon at preisshare.net  Sun Feb 18 23:48:30 2007
+From: david.lyon at preisshare.net (David Lyon)
+Date: Mon, 19 Feb 2007 09:48:30 +1100
+Subject: [Preisshare-dev] PreisShare... what you would like in return...
+In-Reply-To: <20070216215718.dc066b1d4d2e0a1a65719ae85a8071e6.da96313e03.wbe@email.secureserver.net>
+References: <20070216215718.dc066b1d4d2e0a1a65719ae85a8071e6.da96313e03.wbe@email.secureserver.net>
+Message-ID: <45D8D7BE.20703@preisshare.net>
+
+Hi David,
+
+I was reading the article.. at the bottom I noticed references to XML 
+Global and CatXML.org. Neither of these companies seem to be still 
+around so I assume they kindof fell by the wayside.
+
+Regards
+
+David
+
+*References*
+
+   1. /Internet-based selling web sites:/ www.freestore.com
+      <http://www.freestore.com>, www.vista.com <http://www.vista.com>,
+      www.commerceone.com <http://www.commerceone.com>,
+      www.clubselling.com <http://www.clubselling.com>
+   2. /Legacy Electronic Data Interchange (EDI):/ www.disa.org
+      <http://www.disa.org>
+   3. /Bizcodes:/ www.bizcodes.org <http://www.bizcodes.org>
+   4. /EDI - Electronic Data Interchange:/ www.disa.org
+      <http://www.disa.org>
+   5. /The CatXML reference information:/ www.CatXML.org
+      <http://www.CatXML.org>
+   6. /The ebXML Initiative:/ www.ebXML.org <http://www.ebXML.org>
+   7. /GoXML:/ http://goxml.com
+
+David RR Webber (XML) wrote:
+> BTW - I just remembered the deja vu here -
+>  
+>  http://dotnet.sys-con.com/read/40127.htm
+>  
+> ; -)
+>  
+> DW
+>
+> "The way to be is to do" - Confucius (551-472 B.C.)
+>
+>
+>     -------- Original Message --------
+>     Subject: Re: [Preisshare-dev] PreisShare... what you would like in
+>     return...
+>     From: David Lyon <david.lyon at preisshare.net>
+>     Date: Fri, February 16, 2007 8:33 pm
+>     To: Stephen Green <stephengreenubl at gmail.com>,
+>     Preisshare-dev at lists.berlios.de
+>
+>     Hi Steve,
+>
+>     This weekend I'm doing an import run over a stack of pricelists from
+>     Asia that I've received over the last two weeks. There's quite a
+>     few. It
+>     took me 3 hours last night just cleaning them out of my email
+>     inbox.So I
+>     have some compassion for the amount of time that it takes people
+>     in the
+>     computer industry to manually process this stuff. It's just
+>     information
+>     overload to the max.
+>
+>     What I would like you to do is to start getting the XML documentation
+>     together as you've already started.
+>
+>     Then I'll send you over some of the sample data that I have.
+>
+>     You can check it.
+>
+>     At present, we can produce the data in XML but not load it in.
+>
+>     Hopefully during March we can get this done.
+>
+>     At the moment I'm pretty busy working on the Price Relay basics and
+>     tidying up the search Engine so that it can be demonstrated this week.
+>
+>     Regards
+>
+>     David
+>     _______________________________________________
+>     Preisshare-dev mailing list
+>     Preisshare-dev at lists.berlios.de
+>     https://lists.berlios.de/mailman/listinfo/preisshare-dev 
+>
+
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: <https://lists.berlios.de/pipermail/preisshare-dev/attachments/20070219/4a897a26/attachment.html>
+
+From david at drrw.info  Mon Feb 19 00:27:22 2007
+From: david at drrw.info (David RR Webber (XML))
+Date: Sun, 18 Feb 2007 16:27:22 -0700
+Subject: [Preisshare-dev] PreisShare... what you would like in return...
+Message-ID: <20070218162722.dc066b1d4d2e0a1a65719ae85a8071e6.936d68ac29.wbe@email.secureserver.net>
+
+An HTML attachment was scrubbed...
+URL: <https://lists.berlios.de/pipermail/preisshare-dev/attachments/20070218/cb95e967/attachment.html>
+
+From david.lyon at preisshare.net  Mon Feb 19 00:40:49 2007
+From: david.lyon at preisshare.net (david.lyon at preisshare.net)
+Date: Sun, 18 Feb 2007 17:40:49 -0600
+Subject: [Preisshare-dev] PreisShare... what you would like in	return...
+In-Reply-To: <20070218162722.dc066b1d4d2e0a1a65719ae85a8071e6.936d68ac29.wbe@email.secureserver.net>
+References: <20070218162722.dc066b1d4d2e0a1a65719ae85a8071e6.936d68ac29.wbe@email.secureserver.net>
+Message-ID: <20070218174049.s9j9bkwdw0dckkkg@srv11.ezyreg.com>
+
+Quoting "David RR Webber \(XML\)" <david at drrw.info>:
+
+> Yep - this was a trip down memory lane here - deja vu.    The CatXML
+> idea certainly ahead of its time - and getting everyone back then to
+> see the value - before XML was even established.
+
+Sometimes timing is everything.
+
+One difficulty I guess was the premise that you could give a "really  
+good format", by this I mean xml, to a programmer and they would do  
+something incredible with it.
+
+Unfortunately, it doesn't happen like this in the business world and  
+it is actually getting much much worse.
+
+Programming is being increasingly being offshored, and programmers are  
+rarely given the budget to do anything really spectacular with pricing  
+information.
+
+My take is that there is just a glut of Excel price data out there  
+that very few companies can deal with effectively.
+
+Hence PreisShare and the product search.
+
+All I can say is that it takes some time and a lot of work to really  
+pry out of small businesses what they actually need in terms of  
+pricing systems.
+
+And yes, Google has taught us all a lesson about searching, and it's  
+value. That's for sure.
+
+David
+
+
+
+From david.lyon at preisshare.net  Wed Feb 21 23:48:02 2007
+From: david.lyon at preisshare.net (David Lyon)
+Date: Thu, 22 Feb 2007 09:48:02 +1100
+Subject: [Preisshare-dev] XML price file processing challenge...
+In-Reply-To: <45DB880C.1010700@Bigfoot.com>
+References: <45D24974.2010000@Bigfoot.com> <45DB880C.1010700@Bigfoot.com>
+Message-ID: <45DCCC22.2080009@preisshare.net>
+
+Hi Mathias,
+
+Let me know how you go with that xml file.
+
+There is actually quite a lot of commercial opportunities out there when 
+you know this stuff.
+
+I had a think about the problem. One way might be to do a statistical 
+count of all nodes that are found in the document.
+
+And then, if there are a matching set of say 1400 productid nodes, 1400 
+productname nodes, then that forms a set from which to work with.
+
+Regards
+
+David
+
+
+From david.lyon at preisshare.net  Wed Feb 21 07:19:52 2007
+From: david.lyon at preisshare.net (David Lyon)
+Date: Wed, 21 Feb 2007 17:19:52 +1100
+Subject: [Preisshare-dev] Emailing: CeoMate CME-T25 2.2 inch MP4 Player
+	Product Specification
+Message-ID: <45DBE488.5030601@preisshare.net>
+
+Hi Steve,
+
+This is one of the numerous examples of product sheets that I'm 
+receiving from Suppliers in Asia
+
+Any thoughts on how to get them all would be appreciated.
+
+Regards
+
+David
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: CeoMate CME-T25 2.2 inch MP4 Player Product Specification.zip
+Type: application/x-zip-compressed
+Size: 750773 bytes
+Desc: not available
+URL: <https://lists.berlios.de/pipermail/preisshare-dev/attachments/20070221/5bfed85d/attachment.bin>
+
+From david.lyon at preisshare.net  Wed Feb 21 23:58:07 2007
+From: david.lyon at preisshare.net (David Lyon)
+Date: Thu, 22 Feb 2007 09:58:07 +1100
+Subject: [Preisshare-dev] Queen Mary 2 in Sydney
+Message-ID: <45DCCE7F.7020609@preisshare.net>
+
+Hi List,
+
+Something interesting happened here in Sydney yesterday.
+
+The Queen Mary 2, the largest cruise ship, can in and docked.
+
+It's absolutely enormous. Shown here from the office.
+
+Queen Mary 2
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: <https://lists.berlios.de/pipermail/preisshare-dev/attachments/20070222/8d93f7ae/attachment.html>
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: queen mary 2.jpg
+Type: image/jpeg
+Size: 50274 bytes
+Desc: not available
+URL: <https://lists.berlios.de/pipermail/preisshare-dev/attachments/20070222/8d93f7ae/attachment.jpg>
+
+From david.lyon at preisshare.net  Thu Feb 22 00:53:05 2007
+From: david.lyon at preisshare.net (David Lyon)
+Date: Thu, 22 Feb 2007 10:53:05 +1100
+Subject: [Preisshare-dev] [Fwd: Catalogue Re: [ubl-dev] B2B and IT
+ standards... interesting paper and Gartner's view]
+Message-ID: <45DCDB61.2020202@preisshare.net>
+
+Hi Steve,
+
+This was your earlier message.
+
+This is what we need to get documented
+
+Regards
+
+David
+-------------- next part --------------
+An embedded message was scrubbed...
+From: "Stephen Green" <stephen.green at bristol.gov.uk>
+Subject: Catalogue Re: [ubl-dev] B2B and IT standards... interesting	paper and Gartner's view
+Date: Mon, 05 Feb 2007 10:26:55 +0000
+Size: 10197
+URL: <https://lists.berlios.de/pipermail/preisshare-dev/attachments/20070222/6980109c/attachment.mht>
+
+From david.lyon at preisshare.net  Thu Feb 22 00:58:53 2007
+From: david.lyon at preisshare.net (David Lyon)
+Date: Thu, 22 Feb 2007 10:58:53 +1100
+Subject: [Preisshare-dev] UBL / PreisShare hybrid catalogue localization
+In-Reply-To: <20070206162105.dc066b1d4d2e0a1a65719ae85a8071e6.13c88ec0cb.wbe@email.secureserver.net>
+References: <20070206162105.dc066b1d4d2e0a1a65719ae85a8071e6.13c88ec0cb.wbe@email.secureserver.net>
+Message-ID: <45DCDCBD.3030809@preisshare.net>
+
+Steve,
+
+This is Davids original message. It contains a file 
+"PreisShare-catalog-rules" which is really interesting.
+
+I'd like to somehow get this cleaned up and used. It was a very good start.
+
+Goes to show the depth of DRW's knowledge.
+
+Next I need to figure out how to get cam running. I have to admit I'm 
+scared of java and setting up classpaths. Oh well.
+
+Regards
+
+David
+
+David RR Webber (XML) wrote:
+> David, 
+>
+> OK - here's a ZIP with the CAM template and revised catalogue localized
+> layout for PreisShare. 
+>
+> Noticed I changed a couple of things to keep them closer to UBL, and
+> make them more extensible in future. 
+>
+> I also included the HTML rules report that CAM generates + the lookup
+> files.
+>
+> Enjoy, DW
+>
+> p.s. I'm also using the associative validation with template location
+> here - so you can point to the URL where the template is (right now it
+> defaults to the same sub-directory as the instance "./[name.cam]"). 
+>  
+> "The way to be is to do" - Confucius (551-472 B.C.)
+>  
+>
+>  -------- Original Message --------
+> Subject: [ubl-dev] Re: Catalogue Re: [ubl-dev] B2B and IT standards...
+> interesting paper and Gartner's view
+> From: David Lyon <david.lyon at preisshare.net>
+> Date: Tue, February 06, 2007 6:05 am
+> To: Stephen Green <stephen.green at bristol.gov.uk>
+> Cc: ubl-dev at lists.oasis-open.org
+>
+> Hi Steve,
+>
+> looks good.....
+>
+> Implementing that will probably keep me busy (and quiet) for a few 
+> days... :-)
+>
+> Regards
+>
+> David
+>
+> Stephen Green wrote:
+>   
+>> Just to add an amended PreisShare xml file for a pricelist document
+>> which matches the UBL equivalent at
+>> http://lists.oasis-open.org/archives/ubl-dev/200702/msg00041.html
+>>
+>> <Price_List price_List_ID="007" issue_Date="2007-01-01">
+>> <Vendor_Information>
+>> <PreisShare_ID>038454332</PreisShare_ID>
+>> <Organisation_Name>Yada Computers</Organisation_Name>
+>> <Address_Line_1>3a River Road</Address_Line_1>
+>> <Address_Line_2/>
+>> <Suburb_Town>Naremburn</Suburb_Town>
+>> <State_Region>NSW</State_Region>
+>> <ZIP_Postcode>2566</ZIP_Postcode>
+>> <Country_Code list_ID="ISO3166-1" url="http://docs.oasis-open.org/ubl/os-ubl-2.0/cl/gc/default/CountryIdentificationCode-2.0.gc">AU</Country_Code>
+>> </Vendor_Information>
+>> <Receiver_Information>
+>> <PreisShare_ID>1</PreisShare_ID>
+>> <Organisation_Name></Organisation_Name>
+>> <Address_Line_1></Address_Line_1>
+>> <Address_Line_2/>
+>> <Suburb_Town></Suburb_Town>
+>> <State_Region></State_Region>
+>> <ZIP_Postcode></ZIP_Postcode>
+>> <Country_Code></Country_Code>
+>> </Receiver_Information>
+>> <Product_Information>
+>> <Product_Group>
+>> <Group_Description>Parts</Group_Description>
+>> <Product_Items>
+>> <Product>
+>> <PLU>37380</PLU>
+>> <Name>Net Switch 10/100 24P rt 19"</Name>
+>> <Actual_Price iso_3166-1_Currency_Code="NZD" url="http://docs.oasis-open.org/UBL/os-UBL-2.0/cl/gc/cefact/CurrencyCode-2.0.gc">106.6</Actual_Price>
+>> <Price_Base_Quantity unece_7_04_Units_Of_Measure_Code="C62" unece_7_04_Units_Of_Measure_Name="one" url="http://docs.oasis-open.org/UBL/os-UBL-2.0/cl/gc/cefact/UnitOfMeasureCode-2.0.gc">1</Price_Base_Quantity>
+>> </Product>
+>> <Product>
+>> <PLU>GE00447</PLU>
+>> <Name>Geh K Ext. LC-POWER EH-25MP Multimedia HDD Player 2,5"</Name>
+>> <Actual_Price/>
+>> </Product>
+>> </Product_Items>
+>> </Product_Group>
+>> </Product_Information>
+>> </Price_List>
+>>
+>> I just added a few things like document ID and issue date (attributes on document root),
+>> codelist bindings to help UBL-interop and base quantity added to price (seems sensible).
+>>
+>> My UBL subset adds a few things like multiple descriptive elements (for multiple languages
+>> - a good add from Denmark to UBL documents in general I think), a country name, etc in
+>> addresses (in case a country is created which doesn't yet have a code) and other minor 
+>> things. Otherwise the subset at http://lists.oasis-open.org/archives/ubl-dev/200702/msg00041.html
+>> seems a close match to the PreisShare xml format. Hence I'd suggest encapsulating it in some
+>> CAM.
+>>
+>> All the best
+>>
+>> Stephen Green
+>>
+>>
+>>     
+
+
+
+From david.lyon at preisshare.net  Thu Feb 22 01:02:40 2007
+From: david.lyon at preisshare.net (David Lyon)
+Date: Thu, 22 Feb 2007 11:02:40 +1100
+Subject: [Preisshare-dev] UBL / PreisShare hybrid catalogue localization
+In-Reply-To: <45DCDCBD.3030809@preisshare.net>
+References: <20070206162105.dc066b1d4d2e0a1a65719ae85a8071e6.13c88ec0cb.wbe@email.secureserver.net>
+	<45DCDCBD.3030809@preisshare.net>
+Message-ID: <45DCDDA0.9000202@preisshare.net>
+
+Hi Steve,
+
+Here's the file.
+
+Regards
+
+David
+
+David Lyon wrote:
+> Steve,
+>
+> This is Davids original message. It contains a file 
+> "PreisShare-catalog-rules" which is really interesting.
+>
+> I'd like to somehow get this cleaned up and used. It was a very good start.
+>
+> Goes to show the depth of DRW's knowledge.
+>
+> Next I need to figure out how to get cam running. I have to admit I'm 
+> scared of java and setting up classpaths. Oh well.
+>
+> Regards
+>
+> David
+>
+> David RR Webber (XML) wrote:
+>   
+>> David, 
+>>
+>> OK - here's a ZIP with the CAM template and revised catalogue localized
+>> layout for PreisShare. 
+>>
+>> Noticed I changed a couple of things to keep them closer to UBL, and
+>> make them more extensible in future. 
+>>
+>> I also included the HTML rules report that CAM generates + the lookup
+>> files.
+>>
+>> Enjoy, DW
+>>
+>> p.s. I'm also using the associative validation with template location
+>> here - so you can point to the URL where the template is (right now it
+>> defaults to the same sub-directory as the instance "./[name.cam]"). 
+>>  
+>> "The way to be is to do" - Confucius (551-472 B.C.)
+>>  
+>>
+>>  -------- Original Message --------
+>> Subject: [ubl-dev] Re: Catalogue Re: [ubl-dev] B2B and IT standards...
+>> interesting paper and Gartner's view
+>> From: David Lyon <david.lyon at preisshare.net>
+>> Date: Tue, February 06, 2007 6:05 am
+>> To: Stephen Green <stephen.green at bristol.gov.uk>
+>> Cc: ubl-dev at lists.oasis-open.org
+>>
+>> Hi Steve,
+>>
+>> looks good.....
+>>
+>> Implementing that will probably keep me busy (and quiet) for a few 
+>> days... :-)
+>>
+>> Regards
+>>
+>> David
+>>
+>> Stephen Green wrote:
+>>   
+>>     
+>>> Just to add an amended PreisShare xml file for a pricelist document
+>>> which matches the UBL equivalent at
+>>> http://lists.oasis-open.org/archives/ubl-dev/200702/msg00041.html
+>>>
+>>> <Price_List price_List_ID="007" issue_Date="2007-01-01">
+>>> <Vendor_Information>
+>>> <PreisShare_ID>038454332</PreisShare_ID>
+>>> <Organisation_Name>Yada Computers</Organisation_Name>
+>>> <Address_Line_1>3a River Road</Address_Line_1>
+>>> <Address_Line_2/>
+>>> <Suburb_Town>Naremburn</Suburb_Town>
+>>> <State_Region>NSW</State_Region>
+>>> <ZIP_Postcode>2566</ZIP_Postcode>
+>>> <Country_Code list_ID="ISO3166-1" url="http://docs.oasis-open.org/ubl/os-ubl-2.0/cl/gc/default/CountryIdentificationCode-2.0.gc">AU</Country_Code>
+>>> </Vendor_Information>
+>>> <Receiver_Information>
+>>> <PreisShare_ID>1</PreisShare_ID>
+>>> <Organisation_Name></Organisation_Name>
+>>> <Address_Line_1></Address_Line_1>
+>>> <Address_Line_2/>
+>>> <Suburb_Town></Suburb_Town>
+>>> <State_Region></State_Region>
+>>> <ZIP_Postcode></ZIP_Postcode>
+>>> <Country_Code></Country_Code>
+>>> </Receiver_Information>
+>>> <Product_Information>
+>>> <Product_Group>
+>>> <Group_Description>Parts</Group_Description>
+>>> <Product_Items>
+>>> <Product>
+>>> <PLU>37380</PLU>
+>>> <Name>Net Switch 10/100 24P rt 19"</Name>
+>>> <Actual_Price iso_3166-1_Currency_Code="NZD" url="http://docs.oasis-open.org/UBL/os-UBL-2.0/cl/gc/cefact/CurrencyCode-2.0.gc">106.6</Actual_Price>
+>>> <Price_Base_Quantity unece_7_04_Units_Of_Measure_Code="C62" unece_7_04_Units_Of_Measure_Name="one" url="http://docs.oasis-open.org/UBL/os-UBL-2.0/cl/gc/cefact/UnitOfMeasureCode-2.0.gc">1</Price_Base_Quantity>
+>>> </Product>
+>>> <Product>
+>>> <PLU>GE00447</PLU>
+>>> <Name>Geh K Ext. LC-POWER EH-25MP Multimedia HDD Player 2,5"</Name>
+>>> <Actual_Price/>
+>>> </Product>
+>>> </Product_Items>
+>>> </Product_Group>
+>>> </Product_Information>
+>>> </Price_List>
+>>>
+>>> I just added a few things like document ID and issue date (attributes on document root),
+>>> codelist bindings to help UBL-interop and base quantity added to price (seems sensible).
+>>>
+>>> My UBL subset adds a few things like multiple descriptive elements (for multiple languages
+>>> - a good add from Denmark to UBL documents in general I think), a country name, etc in
+>>> addresses (in case a country is created which doesn't yet have a code) and other minor 
+>>> things. Otherwise the subset at http://lists.oasis-open.org/archives/ubl-dev/200702/msg00041.html
+>>> seems a close match to the PreisShare xml format. Hence I'd suggest encapsulating it in some
+>>> CAM.
+>>>
+>>> All the best
+>>>
+>>> Stephen Green
+>>>
+>>>
+>>>     
+>>>       
+>
+> _______________________________________________
+> Preisshare-dev mailing list
+> Preisshare-dev at lists.berlios.de
+> https://lists.berlios.de/mailman/listinfo/preisshare-dev
+>
+>   
+
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: <https://lists.berlios.de/pipermail/preisshare-dev/attachments/20070222/4a4eb14d/attachment.html>
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: PreisShare-CAM-Catalogue.zip
+Type: application/x-zip-compressed
+Size: 26856 bytes
+Desc: not available
+URL: <https://lists.berlios.de/pipermail/preisshare-dev/attachments/20070222/4a4eb14d/attachment.bin>
+
+From david at drrw.info  Thu Feb 22 02:44:53 2007
+From: david at drrw.info (David RR Webber (XML))
+Date: Wed, 21 Feb 2007 18:44:53 -0700
+Subject: [Preisshare-dev] UBL / PreisShare hybrid catalogue localization
+Message-ID: <20070221184453.dc066b1d4d2e0a1a65719ae85a8071e6.f1cc5c86eb.wbe@email.secureserver.net>
+
+An HTML attachment was scrubbed...
+URL: <https://lists.berlios.de/pipermail/preisshare-dev/attachments/20070221/d25e21ef/attachment.html>
+
+From david at drrw.info  Thu Feb 22 02:51:16 2007
+From: david at drrw.info (David RR Webber (XML))
+Date: Wed, 21 Feb 2007 18:51:16 -0700
+Subject: [Preisshare-dev] Queen Mary 2 in Sydney
+Message-ID: <20070221185116.dc066b1d4d2e0a1a65719ae85a8071e6.687348f2ba.wbe@email.secureserver.net>
+
+An HTML attachment was scrubbed...
+URL: <https://lists.berlios.de/pipermail/preisshare-dev/attachments/20070221/085de8ad/attachment.html>
+
+From stephen.green at systml.co.uk  Thu Feb 22 10:00:37 2007
+From: stephen.green at systml.co.uk (stephen.green at systml.co.uk)
+Date: Thu, 22 Feb 2007 02:00:37 -0700
+Subject: [Preisshare-dev] [Fwd: Catalogue Re: [ubl-dev] B2B and
+	IT	standards... interesting paper and Gartner's view]
+In-Reply-To: <45DCDB61.2020202@preisshare.net>
+References: <45DCDB61.2020202@preisshare.net>
+Message-ID: <20070222020037.k3mennsogswgckgk@www.systml.co.uk>
+
+Ah yes, that should be fine.
+
+Thanks David
+
+Steve
+
+
+Quoting David Lyon <david.lyon at preisshare.net>:
+
+> Hi Steve,
+>
+> This was your earlier message.
+>
+> This is what we need to get documented
+>
+> Regards
+>
+> David
+
+
+
+
+From david.lyon at preisshare.net  Fri Feb 23 00:50:58 2007
+From: david.lyon at preisshare.net (david.lyon at preisshare.net)
+Date: Thu, 22 Feb 2007 17:50:58 -0600
+Subject: [Preisshare-dev] Testing price relaying with CAM..
+Message-ID: <20070222175058.n7lpgw8th874occ4@srv11.ezyreg.com>
+
+Hi David,
+
+I'm thinking over the next month or so to do some testing with price  
+relaying and CAM.
+
+I've now identified some good daily data feeds which I can build a relay from.
+
+What I'm wondering is if you have a smtp mailbox that can pickup  
+PreisShareXML and feed it into CAM for validation at your side.
+
+The files would come as an attachment.
+
+If you then had the software at your side, you could then relay the  
+prices onto Steve. And so forth.
+
+Let me know if you are interested in taking part. I think it would  
+take about an hour per week over four weeks. It's an experimental  
+thing but I don't believe that it will be too difficult to find  
+customers once we can demo it in operation.
+
+Regards
+
+David
+
+
+From david at drrw.info  Fri Feb 23 16:27:53 2007
+From: david at drrw.info (David RR Webber (XML))
+Date: Fri, 23 Feb 2007 08:27:53 -0700
+Subject: [Preisshare-dev] Testing price relaying with CAM..
+Message-ID: <20070223082752.dc066b1d4d2e0a1a65719ae85a8071e6.7e197a7a63.wbe@email.secureserver.net>
+
+An HTML attachment was scrubbed...
+URL: <https://lists.berlios.de/pipermail/preisshare-dev/attachments/20070223/f06bf926/attachment.html>
+
+From david.lyon at preisshare.net  Sun Feb 25 01:24:46 2007
+From: david.lyon at preisshare.net (David Lyon)
+Date: Sun, 25 Feb 2007 11:24:46 +1100
+Subject: [Preisshare-dev] PreisShare XML format and related work
+In-Reply-To: <20070224130326.o9gq2zg5wcccs480@www.systml.co.uk>
+References: <20070224130326.o9gq2zg5wcccs480@www.systml.co.uk>
+Message-ID: <45E0D74E.4080707@preisshare.net>
+
+
+Steve/Dave,
+
+The good thing about this file is that it is so simple that even I can 
+understand it ! :-)
+
+There are quite a few fields in the <Product> section that are missing. 
+Mainly because I haven't told you about them. But I'm sure that they can 
+be easily introduced a little later.
+
+I would say that the next step is going to be somehow getting this up 
+onto my website onto an 'xml' page.
+
+So that somebody could have a look and see that the xml format is 
+'really simple' and that they could even try to use it themself. This 
+would be the desirable outcome.
+
+The question then becomes, "ok - I have my pricelist in xml, how do I 
+use CAM to validate it?"
+
+Having the documentation for both a PreisShare command-line to generate 
+the file and a CAM command-line to validate the file on the web page 
+that they could run to tie it all together would be really nice. It 
+would be something that would be safe enough to try at home.
+
+So if you want to add a bit of documentation for running the CAM 
+validator, feel free. It would be really useful.
+
+Regards
+
+David
+
+
+stephen.green at systml.co.uk wrote:
+> Hi David
+>
+> I had missed this (unless that's because it was
+> sent directly from David W to yourself of course).
+> It astounds me. I hadn't realised until now that
+> CAM could so well dispense with the need for XSD.
+> Now I don't (yet?) see any need to add anything to
+> this and it is pure CAM. Maybe there could be
+> an additional benefit from making XSD for this but
+> then there would be two schemas to maintain (and I
+> take it from your previous comments that there is
+> need to keep adding more to this at present).
+>
+> Aside to David RRW: you've convinced me CAM has the
+> potential to outweigh even XSD in XML B2B :-))
+>
+> Now I wonder whether there is much more for me to
+> do at this stage. It might be as time goes on I
+> could try to add CCTS compliance (giving your work
+> the sort of standing UBL might have, though not
+> quite the publicity of course :-)  You could then
+> call it, maybe, an ISO 15000-5 compliant format.
+> It would probably just need a model with the TBG17
+> template spreadsheet, relating the elements to
+> existing BIEs and CCs and qualifying the datatypes.
+> That could be slowish work though but it might mean
+> feeding back stuff to TBG17 (like the pricelist
+> group element - CatalogueLine inside CatalogueLine?).
+>
+> I could then just work on the UBL equivalent and the
+> halfway house of the 'Simpler than UBL' lookalike.
+> Plus stylesheets could be maintained for transforming
+> between these. I could do the STU for PreisShare and
+> the Catalogue (PriceList) for SystML and the two
+> would then complement eachother. There could be some
+> documenting for PreisShare and the transformations.
+>
+> Does this sound OK?
+>
+> All the best
+>
+> Steve
+>
+>>>> David Lyon <david.lyon at preisshare.net> 02/22/07 00:03 AM >>>
+> Hi Steve,
+>
+> Here's the file.
+>
+> Regards
+>
+> David
+>
+>
+
+
+
+From david at drrw.info  Sun Feb 25 01:42:27 2007
+From: david at drrw.info (David RR Webber (XML))
+Date: Sat, 24 Feb 2007 17:42:27 -0700
+Subject: [Preisshare-dev] PreisShare XML format and related work
+Message-ID: <20070224174226.dc066b1d4d2e0a1a65719ae85a8071e6.8426f768cb.wbe@email.secureserver.net>
+
+An HTML attachment was scrubbed...
+URL: <https://lists.berlios.de/pipermail/preisshare-dev/attachments/20070224/2976e01a/attachment.html>
+

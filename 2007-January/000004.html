@@ -1,0 +1,133 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Preisshare-dev] fyi : PreisShare XML Format
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/preisshare-dev/2007-January/index.html" >
+   <LINK REL="made" HREF="mailto:preisshare-dev%40lists.berlios.de?Subject=Re%3A%20%5BPreisshare-dev%5D%20fyi%20%3A%20PreisShare%20XML%20Format&In-Reply-To=%3C002701c72de6%2451e66490%24f5b32db0%24%40info%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000002.html">
+   <LINK REL="Next"  HREF="000005.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Preisshare-dev] fyi : PreisShare XML Format</H1>
+    <B>David RR Webber</B> 
+    <A HREF="mailto:preisshare-dev%40lists.berlios.de?Subject=Re%3A%20%5BPreisshare-dev%5D%20fyi%20%3A%20PreisShare%20XML%20Format&In-Reply-To=%3C002701c72de6%2451e66490%24f5b32db0%24%40info%3E"
+       TITLE="[Preisshare-dev] fyi : PreisShare XML Format">david at drrw.info
+       </A><BR>
+    <I>Mon Jan  1 21:49:23 CET 2007</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000002.html">[Preisshare-dev] fyi : PreisShare XML Format
+</A></li>
+        <LI>Next message: <A HREF="000005.html">[Preisshare-dev] fyi : PreisShare XML Format
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#4">[ date ]</a>
+              <a href="thread.html#4">[ thread ]</a>
+              <a href="subject.html#4">[ subject ]</a>
+              <a href="author.html#4">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>David,
+
+OK - I went in and looked at three existing formats:
+
+1) openapplicationsgroup.org
+2) oasis UBL v2.0
+3) Amazon.com
+
+Attached is a suggested revised format based principally on 3)
+
+1) and 2) are way too complex for typical SMB retail use.  3) should work
+for eBay / Buy.com, etc too.
+
+I also re-designed pricelist details - based on these premises:
+
+a) Address does not belong here - just locale (Amazon shows buyer rough area
+of seller).  Address of merchant should be separate table lookup - and that
+layout should be based on OASIS CIQ v3 xsd - gives you real international
+address format, GPS location and more.
+b) Web services should be used to complement the price list - to lookup
+related information - such as shipping cost, VAT applicable, and so on.
+c) Added optional merchant notes - allows extensions to cover special needs.
+d) organized like information into sections - again this allows better
+versioning and selections down the road - e.g. REST based requests (a la AWS
+Amazon) - can select parts of the structure.
+
+I think this is now closer - but probably still needs some tweaking.
+
+You can see Amazon in action by clicking on these two links:
+
+ <A HREF="http://readingheaven.com/chess">http://readingheaven.com/chess</A>
+
+and the underlying XML from the AWS web service:
+
+ 
+<A HREF="http://xml-us.amznxslt.com/onca/xml?Service=AWSECommerceService&amp;Subscription">http://xml-us.amznxslt.com/onca/xml?Service=AWSECommerceService&amp;Subscription</A>
+Id=178QAAPQR2137JF2QY82&amp;AssociateTag=readingheaven-20&amp;Operation=ItemLookup&amp;I
+dType=ASIN&amp;ItemId=0764550039,0486290298,0879801107,0879801115,B00068M536,188
+4822312,1880673851,B0001GDEVU&amp;MerchantId=All&amp;ResponseGroup=Medium,Offers,Tra
+cks&amp;ContentType=text/xml
+UBL samplers - <A HREF="http://www.systml.co.uk/xml/">http://www.systml.co.uk/xml/</A> 
+
+Enjoy, DW
+
+-----Original Message-----
+From: David Lyon [mailto:<A HREF="https://lists.berlios.de/mailman/listinfo/preisshare-dev">david.lyon at preisshare.net</A>] 
+Sent: Monday, January 01, 2007 12:15 PM
+To: <A HREF="https://lists.berlios.de/mailman/listinfo/preisshare-dev">david at drrw.info</A>
+Cc: <A HREF="https://lists.berlios.de/mailman/listinfo/preisshare-dev">preisshare-dev at lists.berlios.de</A>
+Subject: fyi : PreisShare XML Format
+
+
+Hi DW,
+
+One of our team members did a conversion on one of our pricelist files and
+contributed this as an xml pricelist document.
+
+There are a few minor changes to do but as you can see it's a pretty simple
+format.
+
+We're not too far off having this included as our standard xml pricelist
+file.
+
+Regards
+
+David
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: PreisShare_Pricelist.xml
+Type: text/xml
+Size: 2072 bytes
+Desc: not available
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/preisshare-dev/attachments/20070101/1e13c46d/attachment.xml">https://lists.berlios.de/pipermail/preisshare-dev/attachments/20070101/1e13c46d/attachment.xml</A>&gt;
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000002.html">[Preisshare-dev] fyi : PreisShare XML Format
+</A></li>
+	<LI>Next message: <A HREF="000005.html">[Preisshare-dev] fyi : PreisShare XML Format
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#4">[ date ]</a>
+              <a href="thread.html#4">[ thread ]</a>
+              <a href="subject.html#4">[ subject ]</a>
+              <a href="author.html#4">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/preisshare-dev">More information about the Preisshare-dev
+mailing list</a><br>
+</body></html>

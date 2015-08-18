@@ -1,0 +1,283 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Preisshare-dev] fyi : PreisShare XML Format
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/preisshare-dev/2007-January/index.html" >
+   <LINK REL="made" HREF="mailto:preisshare-dev%40lists.berlios.de?Subject=Re%3A%20%5BPreisshare-dev%5D%20fyi%20%3A%20PreisShare%20XML%20Format&In-Reply-To=%3C459AE685.7070409%40preisshare.net%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000010.html">
+   <LINK REL="Next"  HREF="000012.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Preisshare-dev] fyi : PreisShare XML Format</H1>
+    <B>David Lyon</B> 
+    <A HREF="mailto:preisshare-dev%40lists.berlios.de?Subject=Re%3A%20%5BPreisshare-dev%5D%20fyi%20%3A%20PreisShare%20XML%20Format&In-Reply-To=%3C459AE685.7070409%40preisshare.net%3E"
+       TITLE="[Preisshare-dev] fyi : PreisShare XML Format">david.lyon at preisshare.net
+       </A><BR>
+    <I>Wed Jan  3 00:11:01 CET 2007</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000010.html">[Preisshare-dev] fyi : PreisShare XML Format
+</A></li>
+        <LI>Next message: <A HREF="000012.html">[Preisshare-dev] fyi : PreisShare XML Format
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#11">[ date ]</a>
+              <a href="thread.html#11">[ thread ]</a>
+              <a href="subject.html#11">[ subject ]</a>
+              <a href="author.html#11">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Hi David,
+
+&gt;<i> OK - let me work on slimming the XML down a bit. I too like to see one 
+</I>&gt;<i> line for one item.
+</I>I'm actually hoping to keep the structure pretty much the same as 
+already there a few software dependencies.
+
+In December, I incorporated some improvements that were suggested by 
+developers.
+
+Anyway, here is a sample portion of a pricelist from a German customer.
+
+&lt;PriceList&gt;
+&lt;Vendor Information&gt;
+PreisShare_ID&amp;=&quot;dvl&quot;
+Organisation_Name&amp;=&quot;DVL Hardware Gmbh&quot;
+Address_Line_1&amp;=&quot;&quot;
+Address_Line_2&amp;=&quot;&quot;
+Suburb_Town&amp;=&quot;Munchen&quot;
+State_Region&amp;=&quot;&quot;
+ZIP_Postcode&amp;=&quot;&quot;
+Country_Code&amp;=&quot;DE&quot;
+&lt;/Vendor Information&gt;
+&lt;Product Information&gt;
+&lt;Product Group&gt;
+Group_Description&amp;=&quot;Netzwerkkarten&quot;
+&lt;Product Items&gt;
+&lt;Product&gt;
+Description&amp;=&quot;Network Switch.&quot;
+Actual_Price$=106.6
+OnSpecial_Flag?=False
+PLU&amp;=&quot;37380&quot;
+Name&amp;=&quot;Net Switch 10^/100 24P rt 19^&quot;&quot;
+List_Price&#8364;=43,90
+&lt;/Product&gt;
+&lt;/Product Items&gt;
+&lt;/Product Group&gt;
+&lt;Product Group&gt;
+Group_Description&amp;=&quot;Geh&#228;use&quot;
+&lt;Product Items&gt;
+&lt;Product&gt;
+PLU&amp;=&quot;GE00447&quot;
+Name&amp;=&quot;Geh K Ext. LC-POWER EH-25MP Multimedia HDD Player 2,5^&quot;&quot;
+List_Price&#8364;=43,90
+&lt;/Product&gt;
+&lt;Product&gt;
+PLU&amp;=&quot;GE00423&quot;
+Name&amp;=&quot;Geh K Ext. MS-TECH MV-175 Multimedia HDD Player 2,5^&quot;&quot;
+List_Price&#8364;=63,50
+&lt;/Product&gt;
+&lt;/Product Items&gt;
+&lt;/Product Group&gt;
+&lt;Product Group&gt;
+Group_Description&amp;=&quot;Akku ^/ Akku Zub&quot;
+&lt;Product Items&gt;
+&lt;Product&gt;
+PLU&amp;=&quot;AK00005&quot;
+Name&amp;=&quot;Akku TECXUS NiMH micro^/AAA 950mAh (2er) blister&quot;
+List_Price&#8364;=2,80
+&lt;/Product&gt;
+&lt;Product&gt;
+PLU&amp;=&quot;AK00006&quot;
+Name&amp;=&quot;Akku TECXUS NiMH mignon^/AA 2700mAh (2er) blister&quot;
+List_Price&#8364;=4,50
+&lt;/Product&gt;
+&lt;Product&gt;
+PLU&amp;=&quot;AK00007&quot;
+Name&amp;=&quot;Akku TECXUS NiMH mignon^/AA 2700mAh (4er) + Leder-Bag blister&quot;
+List_Price&#8364;=8,70
+&lt;/Product&gt;
+&lt;Product&gt;
+PLU&amp;=&quot;AK00008&quot;
+Name&amp;=&quot;Akku TECXUS Ladeger&#228;t TC 30 ultra inkl. 4x AA2500mAh rt. box&quot;
+List_Price&#8364;=26,50
+&lt;/Product&gt;
+&lt;Product&gt;
+PLU&amp;=&quot;AK00009&quot;
+Name&amp;=&quot;Akku TECXUS Ladeger&#228;t TC 6000 family box&quot;
+List_Price&#8364;=27,50
+&lt;/Product&gt;
+&lt;Product&gt;
+PLU&amp;=&quot;AK00010&quot;
+Name&amp;=&quot;Akku TECXUS Ladeger&#228;t TC 1000 inkl. 4x AA2500mAh rt. blister&quot;
+List_Price&#8364;=10,90
+&lt;/Product&gt;
+&lt;/Product Items&gt;
+&lt;/Product Group&gt;
+
+Cut from the code, here are our definitions:
+
+// -- Pricelist Document Node and Element Definitions
+GTD_PL_VENDORINFO_TAG = 'Vendor Information';
+GTD_PL_VENDORINFO_NODE = '/PriceList/' + GTD_PL_VENDORINFO_TAG;
+GTD_PL_ELE_COMPANY_CODE = 'PreisShare_ID';
+GTD_PL_ELE_COMPANY_NAME = 'Organisation_Name';
+GTD_PL_ELE_ADDRESS_LINE_1 = 'Address_Line_1';
+GTD_PL_ELE_ADDRESS_LINE_2 = 'Address_Line_2';
+GTD_PL_ELE_TOWN = 'Suburb_Town';
+GTD_PL_ELE_STATE_REGION = 'State_Region';
+GTD_PL_ELE_POSTALCODE = 'ZIP_Postcode';
+GTD_PL_ELE_COUNTRYCODE = 'Country_Code';
+GTD_PL_ELE_IPADDRESS = 'IP_Address';
+GTD_PL_ELE_FAX = 'Fax';
+GTD_PL_ELE_PROFILE = 'Profile_Description';
+GTD_PL_ELE_TELEPHONE = 'Telephone';
+GTD_PL_ELE_TELEPHONE2 = 'Telephone_2';
+GTD_PL_ELE_EMAIL_ADDRESS = 'Email_Address';
+GTD_PL_ELE_OTHER_INFO = 'Other_Information';
+GTD_PL_ELE_SELL_CATEGORIES = 'Selling_Categories';
+GTD_PL_ELE_BUY_CATEGORIES = 'Buying_Categories';
+GTD_PL_ELE_LATTITUDE = 'Lattitude';
+GTD_PL_ELE_LONGITUDE = 'Longitude';
+GTD_PL_ELE_COORDINATES = 'Coordinates';
+GTD_PL_ELE_CONTACT = 'Contact';
+
+GTD_PL_DELIVERY_NODE = '/PriceList/Delivery Information';
+GTD_PL_ELE_DELIVERY_MODE = 'Delivery_Modes';
+GTD_PL_DELIVTYPE_UPS = 'UPS';
+GTD_PL_DELIVTYPE_FEDEX = 'Fedex';
+GTD_PL_DELIVTYPE_AIR = 'Air Freight';
+GTD_PL_DELIVTYPE_SEA = 'Sea';
+GTD_PL_DELIVTYPE_COLLECT = 'Collect';
+GTD_PL_DELIVTYPE_COURIER = 'Courier';
+GTD_PL_ELE_MIN_DELIV_CHARGE = 'Minimum_Delivery_Cost';
+
+// -- Information area
+GTD_PL_INFORMATION_TAG = 'Summary';
+GTD_PL_INFORMATION_NODE = '/PriceList/' + GTD_PL_INFORMATION_TAG;
+GTD_PL_ELE_COLUMNS_USED = 'Columns_Used';
+
+GTD_PL_INFORMATION_ITEM_NODE= '/Item';
+GTD_PL_ELE_INFO_TITLE = 'Title';
+GTD_PL_ELE_INFO_TEXT = 'Description';
+GTD_PL_INFO_IMAGE_NODE = '/Image';
+GTD_PL_ELE_INFO_IMAGE_ID = 'Filename';
+
+// -- Banking details
+GTD_PL_BANKING_NODE = '/PriceList/Banking Details';
+GTD_PL_ELE_BANK_BSB = 'Our_BSB';
+GTD_PL_ELE_BANK_ACCT = 'Our_Account_Number';
+GTD_PL_ELE_BANK_GTL = 'Our_Bank_GTL';
+GTD_PL_ELE_PAYMENT_TYPES = 'Payment_Types';
+
+// -- Payment/Card Types
+GTD_PL_PAYTYPE_ACCOUNT = 'Account';
+GTD_PL_CARDTYPE_EFT = 'Eft';
+GTD_PL_CARDTYPE_AMEX = 'American Express';
+GTD_PL_CARDTYPE_DINERS = 'Diners Club';
+GTD_PL_CARDTYPE_JCB = 'JCB';
+GTD_PL_CARDTYPE_CARTEBLACHE = 'Carte Blache';
+GTD_PL_CARDTYPE_VISA = 'Visa';
+GTD_PL_CARDTYPE_MC = 'MasterCard';
+GTD_PL_CARDTYPE_BC = 'BankCard';
+GTD_PL_CARDTYPE_DISCNOVUS = 'Discover/Novus';
+
+GTD_PL_PRICELIST_TAG = 'PriceList';
+GTD_PL_PATCH_TAG = 'Pricelst Patch';
+
+GTD_PL_PRODUCTINFO_TAG = 'Product Information';
+GTD_PL_PRODUCTINFO_NODE = '/PriceList/' + GTD_PL_PRODUCTINFO_TAG; // 
+/PriceList/Product Information
+GTD_PL_PRODUCTGROUP_TAG = 'Product Group';
+GTD_PL_PRODUCTGROUP_NODE = '/' + GTD_PL_PRODUCTGROUP_TAG;
+GTD_PL_PRODUCTGROUPL2_TAG = 'Product Group Level 2';
+GTD_PL_PRODUCTGROUPL2_NODE = '/' + GTD_PL_PRODUCTGROUPL2_TAG;
+GTD_PL_PRODUCTGROUPL3_NODE = '/Product Group Level 3';
+GTD_PL_ELE_GROUP_NAME = 'Group_Description';
+GTD_PL_ELE_GROUPL2_NAME = 'Group_Description_2';
+GTD_PL_ELE_GROUPL3_NAME = 'Group_Description_3';
+GTD_PL_PRODUCTITEMS_NODE = '/Product Items';
+GTD_PL_PRODUCTITEM_NODE = '/Product';
+GTD_PL_PRODUCTITEMS_TAG = 'Product Items';
+GTD_PL_PRODUCTITEM_TAG = 'Product';
+GTD_PL_ELE_PRODUCT_PLU = 'PLU'; // &lt;== The new identifier
+GTD_PL_ELE_PRODUCT_CODE = GTD_PL_ELE_PRODUCT_PLU; // &lt;== The new identifier
+GTD_PL_ELE_PRODUCT_NAME = 'Name';
+GTD_PL_ELE_PRODUCT_DESC = 'Description';
+GTD_PL_ELE_PRODUCT_KEYWORDS = 'Keywords';
+GTD_PL_ELE_PRODUCT_LIST = 'List_Price';
+GTD_PL_ELE_PRODUCT_ACTUAL = 'Actual_Price'; // &lt;= and here is the new
+GTD_PL_ELE_PRODUCT_TAXR = 'Tax_Rate';
+GTD_PL_ELE_PRODUCT_TAXT = 'Tax_Type';
+GTD_PL_ELE_PRODUCT_TAXAMT = 'Tax_Amount';
+GTD_PL_ELE_PRODUCT_BRAND = 'Brand';
+GTD_PL_ELE_PRODUCT_UNIT = 'Unit';
+GTD_PL_ELE_PRODUCT_MINORDQTY= 'MinOrderQty';
+GTD_PL_ELE_PRODUCT_TYPE = 'Product_Type';
+GTD_PL_ELE_PRODUCT_IMAGE = 'Thumbnail';
+GTD_PL_ELE_PRODUCT_BIGIMAGE = 'FullImage';
+GTD_PL_ELE_PRODUCT_MOREINFO = 'Further_Info_URL';
+GTD_PL_ELE_BRANDNAME = 'Brand';
+GTD_PL_ELE_MANUFACT_NAME = 'Manufacturer';
+GTD_PL_ELE_MANUFACT_GTL = 'Manufacturer.GTL';
+GTP_PL_ELE_MANUFACT_PRODINFO= 'Manufacturer.Product_URL';
+GTD_PL_ELE_PRODUCT_AVAIL_FLAG = 'Availability.Flag';
+GTD_PL_ELE_PRODUCT_AVAIL_DATE = 'Availability.Date';
+GTD_PL_ELE_PRODUCT_AVAIL_STATUS = 'Availability.Status';
+GTD_PL_AVAIL_FLAG_UNKNOWN = '';
+GTD_PL_AVAIL_FLAG_HIGH = 'High';
+GTD_PL_AVAIL_FLAG_MEDIUM = 'Medium';
+GTD_PL_AVAIL_FLAG_LOW = 'Low';
+GTD_PL_AVAIL_FLAG_AFTER = 'After';
+GTD_PL_AVAIL_FLAG_OUTOFSTOCK= 'OutOfStock';
+GTD_PL_AVAIL_FLAG_NONSTOCK = 'NonStock';
+GTD_PL_ELE_PRODUCT_AVAIL_BACKORD= 'Availability.OnBackOrder';
+GTD_PL_ELE_ONSPECIAL = 'OnSpecial_Flag';
+GTD_PL_ELE_ONSPECIAL_TILL = 'OnSpecial_Until';
+
+&gt;<i> Plus - I'll show how to use xinclude to reference in the address stuff 
+</I>&gt;<i> - very simple.
+</I>ok.
+
+&gt;<i> And then - yes - I see value in being able to apply simple map to go 
+</I>&gt;<i> to Amazon or eBay formats - so data could be extracted out of Preis 
+</I>&gt;<i> and simply inserted into theirs...
+</I>And possibly for an additional price as a commercial add-on, of course. :-)
+
+Best Regards
+
+David
+
+
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000010.html">[Preisshare-dev] fyi : PreisShare XML Format
+</A></li>
+	<LI>Next message: <A HREF="000012.html">[Preisshare-dev] fyi : PreisShare XML Format
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#11">[ date ]</a>
+              <a href="thread.html#11">[ thread ]</a>
+              <a href="subject.html#11">[ subject ]</a>
+              <a href="author.html#11">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/preisshare-dev">More information about the Preisshare-dev
+mailing list</a><br>
+</body></html>

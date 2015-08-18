@@ -1,0 +1,170 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Preisshare-dev] Doing xml data feeds
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/preisshare-dev/2007-January/index.html" >
+   <LINK REL="made" HREF="mailto:preisshare-dev%40lists.berlios.de?Subject=Re%3A%20%5BPreisshare-dev%5D%20Doing%20xml%20data%20feeds&In-Reply-To=%3C52431.127.0.0.1.1168924631.squirrel%40srv11.ezyreg.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000026.html">
+   <LINK REL="Next"  HREF="000028.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Preisshare-dev] Doing xml data feeds</H1>
+    <B>sinu at preisshare.net</B> 
+    <A HREF="mailto:preisshare-dev%40lists.berlios.de?Subject=Re%3A%20%5BPreisshare-dev%5D%20Doing%20xml%20data%20feeds&In-Reply-To=%3C52431.127.0.0.1.1168924631.squirrel%40srv11.ezyreg.com%3E"
+       TITLE="[Preisshare-dev] Doing xml data feeds">sinu at preisshare.net
+       </A><BR>
+    <I>Tue Jan 16 06:17:11 CET 2007</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000026.html">[Preisshare-dev] Doing xml data feeds
+</A></li>
+        <LI>Next message: <A HREF="000028.html">[Preisshare-dev] Doing xml data feeds / Now ranked 71 on Berlios
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#27">[ date ]</a>
+              <a href="thread.html#27">[ thread ]</a>
+              <a href="subject.html#27">[ subject ]</a>
+              <a href="author.html#27">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Hi David ,
+
+I have completed the XML conversion using TXMLDocument component.
+
+I have modified following files in the components folder
+
+1. PricelistGenerate.pas
+2. GTDPricelists.pas
+
+and added a new unit called UXMLOp.pas for XMl operations. I have attached
+all files.
+
+Also, I have attached a sample .Preisfile and the corresponding .xml file
+generated.
+
+In the GTDPricelists.pas  you can check the function ExportAsXML and in
+PricelistGenerate.pas, you can search for PL_DELIV_XML for getting the
+latest changes.
+
+Expecting your suggestions regarding the new changes,
+
+Best regards,
+Sinu
+
+
+
+
+
+
+&gt;<i>
+</I>&gt;<i> Hi Sinu,
+</I>&gt;<i>
+</I>&gt;<i> Quoting <A HREF="https://lists.berlios.de/mailman/listinfo/preisshare-dev">sinu at preisshare.net</A>:
+</I>&gt;&gt;<i> I had a look at the .xml file sent [generated using the data binding
+</I>&gt;&gt;<i> wizard], the auto created interface file(retail.pas) and the classes
+</I>&gt;&gt;<i> used
+</I>&gt;&gt;<i> for creating the .xml file (retailu.pas).
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> I tried to use the 'loadfromfile' and 'savetofile' methods.
+</I>&gt;&gt;<i> But faced some access violation while calling the loadfromfile when the
+</I>&gt;&gt;<i> earlier sample .PreisFile file was used as an input.
+</I>&gt;<i>
+</I>&gt;<i> Oh yeah, don't do that.. they're not compatable. The ms-xml parser will
+</I>&gt;<i> crash.
+</I>&gt;<i>
+</I>&gt;&gt;<i> So, for testing the new classes [in retailu.pas], a new sample
+</I>&gt;&gt;<i> .PreisFile
+</I>&gt;&gt;<i> [with the new format] file is required.
+</I>&gt;<i>
+</I>&gt;<i> Yes. That's right. I've attached it.
+</I>&gt;<i>
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> Another thing is - the logic used in the functions is like this.
+</I>&gt;&gt;<i> 1.Load the . PreisFile file.
+</I>&gt;&gt;<i> 2.Get the various pricelist items in internal structures.
+</I>&gt;&gt;<i> 3.Save to .xml file
+</I>&gt;<i>
+</I>&gt;<i> Correct.
+</I>&gt;<i>
+</I>&gt;&gt;<i> But we already have some classes for reading the .PreisFile file.
+</I>&gt;&gt;<i> So it will be nice if we can reuse them.
+</I>&gt;&gt;<i> Something like the following will be fine.
+</I>&gt;&gt;<i> *read a line from .PreisFile are file [already exists]
+</I>&gt;&gt;<i> *write the .xml node with the pricelist item.
+</I>&gt;&gt;<i> *finally save the .xml file.
+</I>&gt;<i>
+</I>&gt;<i> Yes.
+</I>&gt;<i>
+</I>&gt;<i> There are two options. We use the Wizard style xml interface (the
+</I>&gt;<i> Retail example) or we manipulate items in the xml pricelist directly
+</I>&gt;<i> using code like in xmlunit.pas (attached).
+</I>&gt;<i>
+</I>&gt;&gt;<i> While trying in a different way to come with an .xml file I noticed that
+</I>&gt;&gt;<i> if we make some small changes in the current .PreisFile file itself,
+</I>&gt;&gt;<i> we can convert it to an .xml file [the current . PreisFile file is
+</I>&gt;&gt;<i> somewhat in .xml format].
+</I>&gt;<i>
+</I>&gt;<i> It's more tricky than it might seem.
+</I>&gt;<i>
+</I>&gt;&gt;<i> ..
+</I>&gt;&gt;<i> But this is a clumsy way of doing it :(
+</I>&gt;<i>
+</I>&gt;<i> Yes. I'd rather not do it this way.
+</I>&gt;<i>
+</I>&gt;&gt;<i> Better method:
+</I>&gt;&gt;<i> we can use methods of TXMLDocument component to create an XML file.
+</I>&gt;<i>
+</I>&gt;<i> Yes.
+</I>&gt;<i>
+</I>&gt;&gt;<i> The tag information in the xml file that you have sent is different from
+</I>&gt;&gt;<i> the tags in the .PreisFile file.
+</I>&gt;<i>
+</I>&gt;<i> I know.
+</I>&gt;<i>
+</I>&gt;<i> We need to use the .PreisFile format. Some of the tags got accidently
+</I>&gt;<i> changed.
+</I>&gt;<i>
+</I>&gt;<i> Meanwhile, I am busy merging your timer code. It looks very good.
+</I>&gt;<i>
+</I>&gt;<i> Regards
+</I>&gt;<i>
+</I>&gt;<i> David
+</I>&gt;<i>
+</I>-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: Preisshare_XML.zip
+Type: application/x-zip-compressed
+Size: 15951 bytes
+Desc: not available
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/preisshare-dev/attachments/20070115/8137f1a8/attachment.bin">https://lists.berlios.de/pipermail/preisshare-dev/attachments/20070115/8137f1a8/attachment.bin</A>&gt;
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000026.html">[Preisshare-dev] Doing xml data feeds
+</A></li>
+	<LI>Next message: <A HREF="000028.html">[Preisshare-dev] Doing xml data feeds / Now ranked 71 on Berlios
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#27">[ date ]</a>
+              <a href="thread.html#27">[ thread ]</a>
+              <a href="subject.html#27">[ subject ]</a>
+              <a href="author.html#27">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/preisshare-dev">More information about the Preisshare-dev
+mailing list</a><br>
+</body></html>

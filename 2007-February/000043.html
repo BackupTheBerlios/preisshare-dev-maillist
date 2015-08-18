@@ -1,0 +1,104 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Preisshare-dev] [ubl-dev] ubl pricelist validation ?
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/preisshare-dev/2007-February/index.html" >
+   <LINK REL="made" HREF="mailto:preisshare-dev%40lists.berlios.de?Subject=Re%3A%20%5BPreisshare-dev%5D%20%5Bubl-dev%5D%20ubl%20pricelist%20validation%20%3F&In-Reply-To=%3C45C8F7EA.9030507%40preisshare.net%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000047.html">
+   <LINK REL="Next"  HREF="000042.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Preisshare-dev] [ubl-dev] ubl pricelist validation ?</H1>
+    <B>David Lyon</B> 
+    <A HREF="mailto:preisshare-dev%40lists.berlios.de?Subject=Re%3A%20%5BPreisshare-dev%5D%20%5Bubl-dev%5D%20ubl%20pricelist%20validation%20%3F&In-Reply-To=%3C45C8F7EA.9030507%40preisshare.net%3E"
+       TITLE="[Preisshare-dev] [ubl-dev] ubl pricelist validation ?">david.lyon at preisshare.net
+       </A><BR>
+    <I>Tue Feb  6 22:49:30 CET 2007</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000047.html">[Preisshare-dev] [ubl-dev] ubl pricelist validation ?
+</A></li>
+        <LI>Next message: <A HREF="000042.html">[Preisshare-dev] [Fwd: Memory  Price List(Feb.06,2007)]
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#43">[ date ]</a>
+              <a href="thread.html#43">[ thread ]</a>
+              <a href="subject.html#43">[ subject ]</a>
+              <a href="author.html#43">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>David RR Webber (XML) wrote:
+&gt;<i> By domain - I mean suppliers - so everyone selling memory parts - you 
+</I>&gt;<i> have a pre-defined lookup of common terms and categories - DMM 256 - 
+</I>&gt;<i> and so on - so you remove the &quot;fat fingering&quot; issue - if they all use 
+</I>&gt;<i> the common list...you would need to keep adding to that as it 
+</I>&gt;<i> changes.  CAM makes that easy to indicate - and will work on both 
+</I>&gt;<i> sending and receiving ends.
+</I>At the moment we don't.
+
+It might be something that we can look at the future to.
+
+One of the reasons that I like the Asian style of things is that it is 
+so free for all.
+
+Having worked on similar projects here, if you insist on standardising 
+product descriptions, you end up with bland goop.
+
+For example, &quot;Writing Instrument - BIC - Black Ink - 15cm transparent 
+plastic shaft&quot;
+
+So somebody goes and types &quot;black biro&quot; into the search engine, and 
+can't find anything. Useless....
+
+My preference is that if the suppliers don't describe it right, then 
+they don't sell it and it is their problem.
+
+A few caveats on that.
+
+&lt;Product&gt;
+ PLU&amp;=&quot;42343&quot;
+ Name&amp;=&quot;Black Pen&quot;
+ Description&amp;=&quot;* Transparent Shaft. * compatable with biro&quot;
+ Brand&amp;=&quot;BIC&quot;
+ Model&amp;=&quot;A50B&quot;
+&lt;/Product&gt;
+
+
+Seperating out the manufacturers model number and brand. They're important.
+
+Regards
+
+David
+
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000047.html">[Preisshare-dev] [ubl-dev] ubl pricelist validation ?
+</A></li>
+	<LI>Next message: <A HREF="000042.html">[Preisshare-dev] [Fwd: Memory  Price List(Feb.06,2007)]
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#43">[ date ]</a>
+              <a href="thread.html#43">[ thread ]</a>
+              <a href="subject.html#43">[ subject ]</a>
+              <a href="author.html#43">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/preisshare-dev">More information about the Preisshare-dev
+mailing list</a><br>
+</body></html>

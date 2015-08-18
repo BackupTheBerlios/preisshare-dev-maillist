@@ -1,0 +1,368 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Preisshare-dev] Quotation -&gt; moving to UBL support in	Australian Computer	Industry
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/preisshare-dev/2007-April/index.html" >
+   <LINK REL="made" HREF="mailto:preisshare-dev%40lists.berlios.de?Subject=Re%3A%20%5BPreisshare-dev%5D%20Quotation%20-%3E%20moving%20to%20UBL%20support%20in%0A%09Australian%20Computer%09Industry&In-Reply-To=%3C20070409051908.7wj0s5p5ow84sogw%40www.systml.co.uk%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000100.html">
+   <LINK REL="Next"  HREF="000102.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Preisshare-dev] Quotation -&gt; moving to UBL support in	Australian Computer	Industry</H1>
+    <B>stephen.green at systml.co.uk</B> 
+    <A HREF="mailto:preisshare-dev%40lists.berlios.de?Subject=Re%3A%20%5BPreisshare-dev%5D%20Quotation%20-%3E%20moving%20to%20UBL%20support%20in%0A%09Australian%20Computer%09Industry&In-Reply-To=%3C20070409051908.7wj0s5p5ow84sogw%40www.systml.co.uk%3E"
+       TITLE="[Preisshare-dev] Quotation -&gt; moving to UBL support in	Australian Computer	Industry">stephen.green at systml.co.uk
+       </A><BR>
+    <I>Mon Apr  9 13:19:08 CEST 2007</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000100.html">[Preisshare-dev] Quotation -&gt; moving to UBL support in	Australian Computer Industry
+</A></li>
+        <LI>Next message: <A HREF="000102.html">[Preisshare-dev] New Quotation Format / Test
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#101">[ date ]</a>
+              <a href="thread.html#101">[ thread ]</a>
+              <a href="subject.html#101">[ subject ]</a>
+              <a href="author.html#101">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Hi David
+
+Is the following any good as a PreisShare Quotation in XML and a
+schema?
+
+If these are OK I can start mapping them to the UBL Quotation
+
+All the best
+
+Steve
+
+
+XML:
+
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;Quotation xmlns=&quot;<A HREF="http://www.preisshare.net/Quotation:0.1-draft">http://www.preisshare.net/Quotation:0.1-draft</A>&quot;  
+xmlns:xsi=&quot;<A HREF="http://www.w3.org/2001/XMLSchema-instance">http://www.w3.org/2001/XMLSchema-instance</A>&quot;  
+xsi:schemaLocation=&quot;<A HREF="http://www.preisshare.net/Quotation:0.1-draft">http://www.preisshare.net/Quotation:0.1-draft</A>  
+PreisShareQuotation-v0-1-draft.xsd&quot;  
+xmlns:xsd=&quot;<A HREF="http://www.w3.org/2001/XMLSchema">http://www.w3.org/2001/XMLSchema</A>&quot;&gt;
+	&lt;BuyerParty&gt;
+		&lt;Email_Address/&gt;
+		&lt;Telephone_2/&gt;
+		&lt;Telephone/&gt;
+		&lt;Country_Code/&gt;
+		&lt;ZIP_Postcode/&gt;
+		&lt;State_Region/&gt;
+		&lt;Suburb_Town&gt;Swinson&lt;/Suburb_Town&gt;
+		&lt;Address_Line_2/&gt;
+		&lt;Address_Line_1&gt;2 Frog Rock&lt;/Address_Line_1&gt;
+		&lt;Organisation_Name&gt;I-Tech&lt;/Organisation_Name&gt;
+	&lt;/BuyerParty&gt;
+	&lt;SellerParty&gt;
+		&lt;Other_Information/&gt;
+		&lt;Telephone_2/&gt;
+		&lt;Telephone/&gt;
+		&lt;Country_Code&gt;AU&lt;/Country_Code&gt;
+		&lt;ZIP_Postcode/&gt;
+		&lt;State_Region/&gt;
+		&lt;Suburb_Town/&gt;
+		&lt;Address_Line_2/&gt;
+		&lt;Address_Line_1/&gt;
+		&lt;Organisation_Name/&gt;
+	&lt;/SellerParty&gt;
+	&lt;Header_Information&gt;
+		&lt;Delivery_Date xsi:type=&quot;xsd:date&quot;&gt;2007-04-06&lt;/Delivery_Date&gt;
+		&lt;PrintOrientation&gt;Portrait&lt;/PrintOrientation&gt;
+		&lt;PaperSize&gt;A4&lt;/PaperSize&gt;
+		&lt;Valid_Until xsi:type=&quot;xsd:date&quot;&gt;2007-04-13&lt;/Valid_Until&gt;
+		&lt;Country_Code&gt;AU&lt;/Country_Code&gt;
+		&lt;Tax_Name&gt;GST&lt;/Tax_Name&gt;
+		&lt;Tax_Mode&gt;Inclusive&lt;/Tax_Mode&gt;
+		&lt;Delivery_Charge xsi:type=&quot;xsd:decimal&quot;&gt;0.00&lt;/Delivery_Charge&gt;
+		&lt;Delivery_Mode&gt;Collect&lt;/Delivery_Mode&gt;
+		&lt;General_Terms/&gt;
+		&lt;Sales_Person/&gt;
+		&lt;Contact/&gt;
+	&lt;/Header_Information&gt;
+	&lt;Line_Item_List&gt;
+		&lt;Line_Item&gt;
+			&lt;Amount xsi:type=&quot;xsd:decimal&quot;&gt;38.85&lt;/Amount&gt;
+			&lt;Unit&gt;Each&lt;/Unit&gt;
+			&lt;Rate xsi:type=&quot;xsd:decimal&quot;&gt;12.95&lt;/Rate&gt;
+			&lt;Quantity xsi:type=&quot;xsd:decimal&quot;&gt;3&lt;/Quantity&gt;
+			&lt;Description/&gt;
+			&lt;Name&gt;Memory Stick&lt;/Name&gt;
+			&lt;Code&gt;EOOE&lt;/Code&gt;
+		&lt;/Line_Item&gt;
+	&lt;/Line_Item_List&gt;
+&lt;/Quotation&gt;
+
+
+
+Schema:
+
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;xsd:schema xmlns=&quot;<A HREF="http://www.preisshare.net/Quotation:0.1-draft">http://www.preisshare.net/Quotation:0.1-draft</A>&quot;  
+xmlns:xsd=&quot;<A HREF="http://www.w3.org/2001/XMLSchema">http://www.w3.org/2001/XMLSchema</A>&quot;  
+targetNamespace=&quot;<A HREF="http://www.preisshare.net/Quotation:0.1-draft">http://www.preisshare.net/Quotation:0.1-draft</A>&quot;&gt;
+	&lt;xsd:element name=&quot;ZIP_Postcode&quot; type=&quot;xsd:string&quot;/&gt;
+	&lt;xsd:element name=&quot;Valid_Until&quot; type=&quot;xsd:date&quot;/&gt;
+	&lt;xsd:element name=&quot;Unit&quot; type=&quot;xsd:string&quot;/&gt;
+	&lt;xsd:element name=&quot;Telephone_2&quot; type=&quot;xsd:string&quot;/&gt;
+	&lt;xsd:element name=&quot;Telephone&quot; type=&quot;xsd:string&quot;/&gt;
+	&lt;xsd:element name=&quot;Tax_Name&quot; type=&quot;xsd:string&quot;/&gt;
+	&lt;xsd:element name=&quot;Tax_Mode&quot; type=&quot;xsd:string&quot;/&gt;
+	&lt;xsd:element name=&quot;Suburb_Town&quot; type=&quot;xsd:string&quot;/&gt;
+	&lt;xsd:element name=&quot;State_Region&quot; type=&quot;xsd:string&quot;/&gt;
+	&lt;xsd:element name=&quot;SellerParty&quot; type=&quot;SellerPartyType&quot;/&gt;
+	&lt;xsd:element name=&quot;Sales_Person&quot; type=&quot;xsd:string&quot;/&gt;
+	&lt;xsd:element name=&quot;Rate&quot; type=&quot;xsd:decimal&quot;/&gt;
+	&lt;xsd:element name=&quot;Quotation&quot; type=&quot;QuotationType&quot;/&gt;
+	&lt;xsd:element name=&quot;Quantity&quot; type=&quot;xsd:decimal&quot;/&gt;
+	&lt;xsd:element name=&quot;PrintOrientation&quot; type=&quot;xsd:string&quot;/&gt;
+	&lt;xsd:element name=&quot;PaperSize&quot; type=&quot;xsd:string&quot;/&gt;
+	&lt;xsd:element name=&quot;Other_Information&quot; type=&quot;xsd:string&quot;/&gt;
+	&lt;xsd:element name=&quot;Organisation_Name&quot; type=&quot;xsd:string&quot;/&gt;
+	&lt;xsd:element name=&quot;Name&quot; type=&quot;xsd:string&quot;/&gt;
+	&lt;xsd:element name=&quot;Line_Item_List&quot; type=&quot;Line_Item_ListType&quot;/&gt;
+	&lt;xsd:element name=&quot;Line_Item&quot; type=&quot;Line_ItemType&quot;/&gt;
+	&lt;xsd:element name=&quot;Header_Information&quot; type=&quot;Header_InformationType&quot;/&gt;
+	&lt;xsd:element name=&quot;General_Terms&quot; type=&quot;xsd:string&quot;/&gt;
+	&lt;xsd:element name=&quot;Email_Address&quot; type=&quot;xsd:string&quot;/&gt;
+	&lt;xsd:element name=&quot;Description&quot; type=&quot;xsd:string&quot;/&gt;
+	&lt;xsd:element name=&quot;Delivery_Mode&quot; type=&quot;xsd:string&quot;/&gt;
+	&lt;xsd:element name=&quot;Delivery_Date&quot; type=&quot;xsd:date&quot;/&gt;
+	&lt;xsd:element name=&quot;Delivery_Charge&quot; type=&quot;xsd:decimal&quot;/&gt;
+	&lt;xsd:element name=&quot;Country_Code&quot; type=&quot;xsd:string&quot;/&gt;
+	&lt;xsd:element name=&quot;Contact&quot; type=&quot;xsd:string&quot;/&gt;
+	&lt;xsd:element name=&quot;Code&quot; type=&quot;xsd:string&quot;/&gt;
+	&lt;xsd:element name=&quot;BuyerParty&quot; type=&quot;BuyerPartyType&quot;/&gt;
+	&lt;xsd:element name=&quot;Amount&quot; type=&quot;xsd:decimal&quot;/&gt;
+	&lt;xsd:element name=&quot;Address_Line_2&quot; type=&quot;xsd:string&quot;/&gt;
+	&lt;xsd:element name=&quot;Address_Line_1&quot; type=&quot;xsd:string&quot;/&gt;
+	&lt;xsd:complexType name=&quot;SellerPartyType&quot;&gt;
+		&lt;xsd:sequence&gt;
+			&lt;xsd:element ref=&quot;Other_Information&quot;/&gt;
+			&lt;xsd:element ref=&quot;Telephone_2&quot;/&gt;
+			&lt;xsd:element ref=&quot;Telephone&quot;/&gt;
+			&lt;xsd:element ref=&quot;Country_Code&quot;/&gt;
+			&lt;xsd:element ref=&quot;ZIP_Postcode&quot;/&gt;
+			&lt;xsd:element ref=&quot;State_Region&quot;/&gt;
+			&lt;xsd:element ref=&quot;Suburb_Town&quot;/&gt;
+			&lt;xsd:element ref=&quot;Address_Line_2&quot;/&gt;
+			&lt;xsd:element ref=&quot;Address_Line_1&quot;/&gt;
+			&lt;xsd:element ref=&quot;Organisation_Name&quot;/&gt;
+		&lt;/xsd:sequence&gt;
+	&lt;/xsd:complexType&gt;
+	&lt;xsd:complexType name=&quot;QuotationType&quot;&gt;
+		&lt;xsd:sequence&gt;
+			&lt;xsd:element ref=&quot;BuyerParty&quot;/&gt;
+			&lt;xsd:element ref=&quot;SellerParty&quot;/&gt;
+			&lt;xsd:element ref=&quot;Header_Information&quot;/&gt;
+			&lt;xsd:element ref=&quot;Line_Item_List&quot;/&gt;
+		&lt;/xsd:sequence&gt;
+	&lt;/xsd:complexType&gt;
+	&lt;xsd:complexType name=&quot;Line_Item_ListType&quot;&gt;
+		&lt;xsd:sequence&gt;
+			&lt;xsd:element ref=&quot;Line_Item&quot;/&gt;
+		&lt;/xsd:sequence&gt;
+	&lt;/xsd:complexType&gt;
+	&lt;xsd:complexType name=&quot;Line_ItemType&quot;&gt;
+		&lt;xsd:sequence&gt;
+			&lt;xsd:element ref=&quot;Amount&quot;/&gt;
+			&lt;xsd:element ref=&quot;Unit&quot;/&gt;
+			&lt;xsd:element ref=&quot;Rate&quot;/&gt;
+			&lt;xsd:element ref=&quot;Quantity&quot;/&gt;
+			&lt;xsd:element ref=&quot;Description&quot;/&gt;
+			&lt;xsd:element ref=&quot;Name&quot;/&gt;
+			&lt;xsd:element ref=&quot;Code&quot;/&gt;
+		&lt;/xsd:sequence&gt;
+	&lt;/xsd:complexType&gt;
+	&lt;xsd:complexType name=&quot;Header_InformationType&quot;&gt;
+		&lt;xsd:sequence&gt;
+			&lt;xsd:element ref=&quot;Delivery_Date&quot;/&gt;
+			&lt;xsd:element ref=&quot;PrintOrientation&quot;/&gt;
+			&lt;xsd:element ref=&quot;PaperSize&quot;/&gt;
+			&lt;xsd:element ref=&quot;Valid_Until&quot;/&gt;
+			&lt;xsd:element ref=&quot;Country_Code&quot;/&gt;
+			&lt;xsd:element ref=&quot;Tax_Name&quot;/&gt;
+			&lt;xsd:element ref=&quot;Tax_Mode&quot;/&gt;
+			&lt;xsd:element ref=&quot;Delivery_Charge&quot;/&gt;
+			&lt;xsd:element ref=&quot;Delivery_Mode&quot;/&gt;
+			&lt;xsd:element ref=&quot;General_Terms&quot;/&gt;
+			&lt;xsd:element ref=&quot;Sales_Person&quot;/&gt;
+			&lt;xsd:element ref=&quot;Contact&quot;/&gt;
+		&lt;/xsd:sequence&gt;
+	&lt;/xsd:complexType&gt;
+	&lt;xsd:complexType name=&quot;BuyerPartyType&quot;&gt;
+		&lt;xsd:sequence&gt;
+			&lt;xsd:element ref=&quot;Email_Address&quot;/&gt;
+			&lt;xsd:element ref=&quot;Telephone_2&quot;/&gt;
+			&lt;xsd:element ref=&quot;Telephone&quot;/&gt;
+			&lt;xsd:element ref=&quot;Country_Code&quot;/&gt;
+			&lt;xsd:element ref=&quot;ZIP_Postcode&quot;/&gt;
+			&lt;xsd:element ref=&quot;State_Region&quot;/&gt;
+			&lt;xsd:element ref=&quot;Suburb_Town&quot;/&gt;
+			&lt;xsd:element ref=&quot;Address_Line_2&quot;/&gt;
+			&lt;xsd:element ref=&quot;Address_Line_1&quot;/&gt;
+			&lt;xsd:element ref=&quot;Organisation_Name&quot;/&gt;
+		&lt;/xsd:sequence&gt;
+	&lt;/xsd:complexType&gt;
+&lt;/xsd:schema&gt;
+
+
+Quoting David Lyon &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/preisshare-dev">david.lyon at preisshare.net</A>&gt;:
+
+&gt;<i>
+</I>&gt;<i> Hi Steve,
+</I>&gt;<i>
+</I>&gt;<i> Sorry to say this but I've had a complete change of direction.
+</I>&gt;<i>
+</I>&gt;<i> Time has come to stop the beer talk about UBL and start moving on it.
+</I>&gt;<i>
+</I>&gt;<i> So what I'm proposing is to include UBL in the production software that
+</I>&gt;<i> we issue out sometime this year. What I want to do is to make
+</I>&gt;<i> transforms that will produce UBL Quotes, Orders and Invoices and
+</I>&gt;<i> possibly pricelists/catalogues. from an xml version of these documents.
+</I>&gt;<i>
+</I>&gt;<i> So what I'm saying, is that I need a UBL Quotation.xslt to transform
+</I>&gt;<i> (an xml version) of the below. I will then include that in the software
+</I>&gt;<i> that I'm selling.
+</I>&gt;<i>
+</I>&gt;<i> Then, I'll consider making some sort of credible anouncement about it
+</I>&gt;<i> after it is done.
+</I>&gt;<i>
+</I>&gt;<i> Regards
+</I>&gt;<i>
+</I>&gt;<i> David
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i> These are
+</I>&gt;<i> &lt;?PreisMarkup(tm) Version#=2.0 encoding&amp;=&quot;UTF-8&quot; LangID&amp;=&quot;EN&quot;&gt;
+</I>&gt;<i> &lt;BuyerParty&gt;
+</I>&gt;<i>  Email_Address&amp;=&quot;&quot;
+</I>&gt;<i>  Telephone_2&amp;=&quot;&quot;
+</I>&gt;<i>  Telephone&amp;=&quot;&quot;
+</I>&gt;<i>  Country_Code&amp;=&quot;&quot;
+</I>&gt;<i>  ZIP_Postcode&amp;=&quot;&quot;
+</I>&gt;<i>  State_Region&amp;=&quot;&quot;
+</I>&gt;<i>  Suburb_Town&amp;=&quot;Swinson&quot;
+</I>&gt;<i>  Address_Line_2&amp;=&quot;&quot;
+</I>&gt;<i>  Address_Line_1&amp;=&quot;2 Frog Rock&quot;
+</I>&gt;<i>  Organisation_Name&amp;=&quot;I-Tech&quot;
+</I>&gt;<i> &lt;/BuyerParty&gt;
+</I>&gt;<i> &lt;SellerParty&gt;
+</I>&gt;<i>  Other_Information&amp;=&quot;&quot;
+</I>&gt;<i>  Telephone_2&amp;=&quot;&quot;
+</I>&gt;<i>  Telephone&amp;=&quot;&quot;
+</I>&gt;<i>  Country_Code&amp;=&quot;AU&quot;
+</I>&gt;<i>  ZIP_Postcode&amp;=&quot;&quot;
+</I>&gt;<i>  State_Region&amp;=&quot;&quot;
+</I>&gt;<i>  Suburb_Town&amp;=&quot;&quot;
+</I>&gt;<i>  Address_Line_2&amp;=&quot;&quot;
+</I>&gt;<i>  Address_Line_1&amp;=&quot;&quot;
+</I>&gt;<i>  Organisation_Name&amp;=&quot;&quot;
+</I>&gt;<i> &lt;/SellerParty&gt;
+</I>&gt;<i> &lt;Header Information&gt;
+</I>&gt;<i>  Delivery_Date@=2007-04-06
+</I>&gt;<i>  PrintOrientation&amp;=&quot;Portrait&quot;
+</I>&gt;<i>  PaperSize&amp;=&quot;A4&quot;
+</I>&gt;<i>  Valid_Until@=2007-04-13
+</I>&gt;<i>  Country_Code&amp;=&quot;AU&quot;
+</I>&gt;<i>  Tax_Name&amp;=&quot;GST&quot;
+</I>&gt;<i>  Tax_Mode&amp;=&quot;Inclusive&quot;
+</I>&gt;<i>  Delivery_Charge&amp;=&quot;0.00&quot;
+</I>&gt;<i>  Delivery_Mode&amp;=&quot;Collect&quot;
+</I>&gt;<i>  General_Terms&amp;=&quot;&quot;
+</I>&gt;<i>  Sales_Person&amp;=&quot;&quot;
+</I>&gt;<i>  Contact&amp;=&quot;&quot;
+</I>&gt;<i> &lt;/Header Information&gt;
+</I>&gt;<i> &lt;Line Item List&gt;
+</I>&gt;<i>  &lt;Line Item&gt;
+</I>&gt;<i>    Amount#=38.85
+</I>&gt;<i>    Unit&amp;=&quot;Each&quot;
+</I>&gt;<i>    Rate&amp;=&quot;12.95&quot;
+</I>&gt;<i>    Quantity#=3
+</I>&gt;<i>    Description&amp;=&quot;&quot;
+</I>&gt;<i>    Name&amp;=&quot;Memory Stick&quot;
+</I>&gt;<i>    Code&amp;=&quot;EOOE&quot;
+</I>&gt;<i>  &lt;/Line Item&gt;
+</I>&gt;<i> &lt;/Line Item List&gt;
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/preisshare-dev">stephen.green at systml.co.uk</A> wrote:
+</I>&gt;&gt;<i> Hi David
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> A few questions (gap analysis with my own quote ingredients):
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> Date?
+</I>&gt;&gt;<i> Who from?
+</I>&gt;&gt;<i> Who to?
+</I>&gt;&gt;<i> VAT?
+</I>&gt;&gt;<i> What if more than one item quoted (if the request was for several   
+</I>&gt;&gt;<i> item quotes)?
+</I>&gt;&gt;<i> Seller's product ref?
+</I>&gt;&gt;<i> What if there were quantities involved?
+</I>&gt;&gt;<i> Currency?
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> Plus (though I don't include it myself):
+</I>&gt;&gt;<i> How long is this price valid?
+</I>&gt;&gt;<i> Any discounts, etc?
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> All the best
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> Steve
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> Quoting David Lyon &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/preisshare-dev">david.lyon at preisshare.net</A>&gt;:
+</I>&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i> QUOTATION
+</I>&gt;&gt;&gt;<i> =========
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i> TRANSCEND JETFLASH V30 4GB HIGH SPEED USB 2.0 PLUG
+</I>&gt;&gt;&gt;<i> AND PLAY
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i> Price: 86.25
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>
+</I>
+
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000100.html">[Preisshare-dev] Quotation -&gt; moving to UBL support in	Australian Computer Industry
+</A></li>
+	<LI>Next message: <A HREF="000102.html">[Preisshare-dev] New Quotation Format / Test
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#101">[ date ]</a>
+              <a href="thread.html#101">[ thread ]</a>
+              <a href="subject.html#101">[ subject ]</a>
+              <a href="author.html#101">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/preisshare-dev">More information about the Preisshare-dev
+mailing list</a><br>
+</body></html>

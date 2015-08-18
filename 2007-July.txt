@@ -1,0 +1,38 @@
+From david.lyon at preisshare.net  Tue Jul  3 04:52:02 2007
+From: david.lyon at preisshare.net (David Lyon)
+Date: Tue, 03 Jul 2007 12:52:02 +1000
+Subject: [Preisshare-dev] Gibabyte image download script...
+Message-ID: <4689B9D2.3010506@preisshare.net>
+
+Hi Sonmez,
+
+It seems to work.
+
+$ python download_images_gigabyte.py gigabyte_motherboard_models.csv 
+gigimage
+CSV File is gigabyte_motherboard_models.csv
+Image folder is gigimage
+
+Image links downloading
+
+Image motherboard_productimage_7nf-rz_big.jpg downloaded!
+Image motherboard_productimage_7nf-rzc_big.jpg downloaded!
+Image motherboard_productimage_7vm333m-rz_big.jpg downloaded!
+Image motherboard_productimage_7vm400am-rz_big.jpg downloaded!
+Image motherboard_productimage_7vm400m-rz_big.jpg downloaded!
+Image motherboard_productimage_7vt600p-rz_big.jpg downloaded!
+Image motherboard_productimage_7vt600p-rzc_big.jpg downloaded!
+Image motherboard_productimage_7vt600-rz_big.jpg downloaded!
+Image motherboard_productimage_7vt600-rzc_big.jpg downloaded!
+Image motherboard_productimage_7vt880-rz_big.jpg downloaded!
+Image motherboard_productimage_7vt880-rzc_big.jpg downloaded!
+Image motherboard_productimage_8i845ge-rz_big.jpg downloaded!
+Image motherboard_productimage_8i845ge-rzc_big.jpg downloaded!
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: download_images_gigabyte.py
+Type: text/x-python
+Size: 1408 bytes
+Desc: not available
+URL: <https://lists.berlios.de/pipermail/preisshare-dev/attachments/20070703/c03227c2/attachment.py>
+

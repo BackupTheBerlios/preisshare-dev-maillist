@@ -1,0 +1,876 @@
+From david.lyon at preisshare.net  Mon Apr  2 06:31:13 2007
+From: david.lyon at preisshare.net (david.lyon at preisshare.net)
+Date: Sun, 01 Apr 2007 23:31:13 -0500
+Subject: [Preisshare-dev] xml transformation stuff..
+Message-ID: <20070401233113.uqxwxwu06lw0cs4k@srv11.ezyreg.com>
+
+Hi Steve,
+
+Have you seen this page?
+
+http://www.xmlpitstop.com/StyleSheetCentral/SSC_1TOM.aspx
+
+They have some very interesting style sheets on there.
+
+I'd like to be able to do more of this sort of stuff and include it  
+within the software.
+
+Let me know your thoughts...
+
+Regards
+
+David
+
+
+From stephen.green at systml.co.uk  Mon Apr  2 09:23:26 2007
+From: stephen.green at systml.co.uk (stephen.green at systml.co.uk)
+Date: Mon, 02 Apr 2007 01:23:26 -0600
+Subject: [Preisshare-dev] xml transformation stuff..
+In-Reply-To: <20070401233113.uqxwxwu06lw0cs4k@srv11.ezyreg.com>
+References: <20070401233113.uqxwxwu06lw0cs4k@srv11.ezyreg.com>
+Message-ID: <20070402012326.82gjn5asc08cw4ck@www.systml.co.uk>
+
+Hi David
+
+Yes, I believe it was Ken who originally put forward
+the idea of 'push' and 'pull' in xslt. You tend to 'pull'
+when you know the data and 'push' when you don't.
+I used 'pull' because we are pretty sure of the data
+but if the data is likely to evolve a lot and the order
+of the data in particular might change we could
+switch to 'push'. (Plus the tool I use uses it.)
+
+Push - use templates/apply-templates
+Pull - use for-each/value-of
+
+Ken's book has a lot on this and he has/does a course
+too (which SystML offers - plug, plug - http://www.systml.co.uk )
+Ken's book is
+G. Ken Holman: Definitive XSLT and XPath, Prentice Hall
+
+Of course Mr Kay's books cover the same sorts of things
+(M. Kay, Wrox) and there is the advantage they do XSLT 2 too.
+I appreciate lots of fun using all these books a lot and
+learning from these guys. Thanks Ken and Michael.
+
+I must admit I find all this stuff very cool, though it can
+be frustrating at times as it isn't a 'Turing complete'
+language and also getting the hang of use of recursion
+a lot can be challenging (but who doesn't love a challenge).
+
+Now and then you need something else, such as when
+messing with unknown namespaces.
+
+All the best
+
+Steve
+
+Quoting david.lyon at preisshare.net:
+
+> Hi Steve,
+>
+> Have you seen this page?
+>
+> http://www.xmlpitstop.com/StyleSheetCentral/SSC_1TOM.aspx
+>
+> They have some very interesting style sheets on there.
+>
+> I'd like to be able to do more of this sort of stuff and include it
+> within the software.
+>
+> Let me know your thoughts...
+>
+> Regards
+>
+> David
+> _______________________________________________
+> Preisshare-dev mailing list
+> Preisshare-dev at lists.berlios.de
+> https://lists.berlios.de/mailman/listinfo/preisshare-dev
+>
+
+
+
+
+From david.lyon at preisshare.net  Mon Apr  2 09:58:52 2007
+From: david.lyon at preisshare.net (David Lyon)
+Date: Mon, 02 Apr 2007 17:58:52 +1000
+Subject: [Preisshare-dev] xml transformation stuff..
+In-Reply-To: <20070402012326.82gjn5asc08cw4ck@www.systml.co.uk>
+References: <20070401233113.uqxwxwu06lw0cs4k@srv11.ezyreg.com>
+	<20070402012326.82gjn5asc08cw4ck@www.systml.co.uk>
+Message-ID: <4610B7BC.8000300@preisshare.net>
+
+
+Hi Steve,
+
+so you're looking for a place to *do* cool. That's good :-)
+
+It would be good to get a collection of different transformations and 
+stylesheets relating to price updating together in one collection.
+
+Sonmez and me have been trying to get the transformations happening in 
+python. Ever used python?
+
+stephen.green at systml.co.uk wrote:
+> Hi David
+>
+> Yes, I believe it was Ken who originally put forward
+> the idea of 'push' and 'pull' in xslt. You tend to 'pull'
+> when you know the data and 'push' when you don't.
+> I used 'pull' because we are pretty sure of the data
+> but if the data is likely to evolve a lot and the order
+> of the data in particular might change we could
+> switch to 'push'. (Plus the tool I use uses it.)
+>
+> Push - use templates/apply-templates
+> Pull - use for-each/value-of
+>
+> Ken's book has a lot on this and he has/does a course
+> too (which SystML offers - plug, plug - http://www.systml.co.uk )
+> Ken's book is
+> G. Ken Holman: Definitive XSLT and XPath, Prentice Hall
+>
+> Of course Mr Kay's books cover the same sorts of things
+> (M. Kay, Wrox) and there is the advantage they do XSLT 2 too.
+> I appreciate lots of fun using all these books a lot and
+> learning from these guys. Thanks Ken and Michael.
+>
+> I must admit I find all this stuff very cool, though it can
+> be frustrating at times as it isn't a 'Turing complete'
+> language and also getting the hang of use of recursion
+> a lot can be challenging (but who doesn't love a challenge).
+>
+> Now and then you need something else, such as when
+> messing with unknown namespaces.
+>
+> All the best
+>
+> Steve
+>
+> Quoting david.lyon at preisshare.net:
+>
+>> Hi Steve,
+>>
+>> Have you seen this page?
+>>
+>> http://www.xmlpitstop.com/StyleSheetCentral/SSC_1TOM.aspx
+>>
+>> They have some very interesting style sheets on there.
+>>
+>> I'd like to be able to do more of this sort of stuff and include it
+>> within the software.
+>>
+>> Let me know your thoughts...
+>>
+>> Regards
+>>
+>> David
+>> _______________________________________________
+>> Preisshare-dev mailing list
+>> Preisshare-dev at lists.berlios.de
+>> https://lists.berlios.de/mailman/listinfo/preisshare-dev
+>>
+>
+>
+>
+
+
+
+From david at drrw.info  Mon Apr  2 16:56:31 2007
+From: david at drrw.info (David RR Webber (XML))
+Date: Mon, 02 Apr 2007 07:56:31 -0700
+Subject: [Preisshare-dev] xml transformation stuff..
+Message-ID: <20070402075631.dc066b1d4d2e0a1a65719ae85a8071e6.24a6b2d40e.wbe@email.secureserver.net>
+
+An HTML attachment was scrubbed...
+URL: <https://lists.berlios.de/pipermail/preisshare-dev/attachments/20070402/ee5425d4/attachment.html>
+
+From stephen.green at systml.co.uk  Mon Apr  2 20:18:18 2007
+From: stephen.green at systml.co.uk (stephen.green at systml.co.uk)
+Date: Mon, 02 Apr 2007 12:18:18 -0600
+Subject: [Preisshare-dev] xml transformation stuff..
+In-Reply-To: <4610B7BC.8000300@preisshare.net>
+References: <20070401233113.uqxwxwu06lw0cs4k@srv11.ezyreg.com>
+	<20070402012326.82gjn5asc08cw4ck@www.systml.co.uk>
+	<4610B7BC.8000300@preisshare.net>
+Message-ID: <20070402121818.p5s19tjyocg0osks@www.systml.co.uk>
+
+Hi David
+
+No, never used Python but I'm always having to
+learn new languages and philosophies quickly.
+I guess the XML bits of Python aren't much
+different to other XML handling methods. Do you
+use 4Suite for the XSLT?
+
+But yes, I do relish any chance to *do* cool :-)
+
+All the best
+
+Steve
+
+
+
+Quoting David Lyon <david.lyon at preisshare.net>:
+
+>
+> Hi Steve,
+>
+> so you're looking for a place to *do* cool. That's good :-)
+>
+> It would be good to get a collection of different transformations and
+> stylesheets relating to price updating together in one collection.
+>
+> Sonmez and me have been trying to get the transformations happening in
+> python. Ever used python?
+>
+> stephen.green at systml.co.uk wrote:
+>> Hi David
+>>
+>> Yes, I believe it was Ken who originally put forward
+>> the idea of 'push' and 'pull' in xslt. You tend to 'pull'
+>> when you know the data and 'push' when you don't.
+>> I used 'pull' because we are pretty sure of the data
+>> but if the data is likely to evolve a lot and the order
+>> of the data in particular might change we could
+>> switch to 'push'. (Plus the tool I use uses it.)
+>>
+>> Push - use templates/apply-templates
+>> Pull - use for-each/value-of
+>>
+>> Ken's book has a lot on this and he has/does a course
+>> too (which SystML offers - plug, plug - http://www.systml.co.uk )
+>> Ken's book is
+>> G. Ken Holman: Definitive XSLT and XPath, Prentice Hall
+>>
+>> Of course Mr Kay's books cover the same sorts of things
+>> (M. Kay, Wrox) and there is the advantage they do XSLT 2 too.
+>> I appreciate lots of fun using all these books a lot and
+>> learning from these guys. Thanks Ken and Michael.
+>>
+>> I must admit I find all this stuff very cool, though it can
+>> be frustrating at times as it isn't a 'Turing complete'
+>> language and also getting the hang of use of recursion
+>> a lot can be challenging (but who doesn't love a challenge).
+>>
+>> Now and then you need something else, such as when
+>> messing with unknown namespaces.
+>>
+>> All the best
+>>
+>> Steve
+>>
+>> Quoting david.lyon at preisshare.net:
+>>
+>>> Hi Steve,
+>>>
+>>> Have you seen this page?
+>>>
+>>> http://www.xmlpitstop.com/StyleSheetCentral/SSC_1TOM.aspx
+>>>
+>>> They have some very interesting style sheets on there.
+>>>
+>>> I'd like to be able to do more of this sort of stuff and include it
+>>> within the software.
+>>>
+>>> Let me know your thoughts...
+>>>
+>>> Regards
+>>>
+>>> David
+>>> _______________________________________________
+>>> Preisshare-dev mailing list
+>>> Preisshare-dev at lists.berlios.de
+>>> https://lists.berlios.de/mailman/listinfo/preisshare-dev
+>>>
+>>
+>>
+>>
+
+
+
+
+From david.lyon at preisshare.net  Wed Apr  4 14:07:46 2007
+From: david.lyon at preisshare.net (David Lyon)
+Date: Wed, 04 Apr 2007 22:07:46 +1000
+Subject: [Preisshare-dev] [Fwd: Invitation for HK fair/OLETI]
+Message-ID: <46139512.5010408@preisshare.net>
+
+Hi Sonmez,
+
+ok, here is a company.
+
+Build an xml pricelist file.
+
+Do whatever with python and send back.
+
+This is LIVE data.
+-------------- next part --------------
+An embedded message was scrubbed...
+From: "sunny" <sunny at oleti.com.hk>
+Subject: Invitation for HK fair/OLETI
+Date: Wed, 4 Apr 2007 13:46:09 +0800
+Size: 397605
+URL: <https://lists.berlios.de/pipermail/preisshare-dev/attachments/20070404/382824a7/attachment.mht>
+
+From david.lyon at preisshare.net  Fri Apr  6 02:28:43 2007
+From: david.lyon at preisshare.net (David Lyon)
+Date: Fri, 06 Apr 2007 10:28:43 +1000
+Subject: [Preisshare-dev] Quotation -> moving to UBL support in
+	Australian Computer Industry
+In-Reply-To: <20070405124130.meo3zo2dds0k444g@www.systml.co.uk>
+References: <20070405030936187.3AD35AA467F954BA@COMPAQ-310>
+	<20070405124130.meo3zo2dds0k444g@www.systml.co.uk>
+Message-ID: <4615943B.7020100@preisshare.net>
+
+
+Hi Steve,
+
+Sorry to say this but I've had a complete change of direction.
+
+Time has come to stop the beer talk about UBL and start moving on it.
+
+So what I'm proposing is to include UBL in the production software that 
+we issue out sometime this year. What I want to do is to make transforms 
+that will produce UBL Quotes, Orders and Invoices and possibly 
+pricelists/catalogues. from an xml version of these documents.
+
+So what I'm saying, is that I need a UBL Quotation.xslt to transform (an 
+xml version) of the below. I will then include that in the software that 
+I'm selling.
+
+Then, I'll consider making some sort of credible anouncement about it 
+after it is done.
+
+Regards
+
+David
+
+
+
+
+These are
+<?PreisMarkup(tm) Version#=2.0 encoding&="UTF-8" LangID&="EN">
+<BuyerParty>
+  Email_Address&=""
+  Telephone_2&=""
+  Telephone&=""
+  Country_Code&=""
+  ZIP_Postcode&=""
+  State_Region&=""
+  Suburb_Town&="Swinson"
+  Address_Line_2&=""
+  Address_Line_1&="2 Frog Rock"
+  Organisation_Name&="I-Tech"
+</BuyerParty>
+<SellerParty>
+  Other_Information&=""
+  Telephone_2&=""
+  Telephone&=""
+  Country_Code&="AU"
+  ZIP_Postcode&=""
+  State_Region&=""
+  Suburb_Town&=""
+  Address_Line_2&=""
+  Address_Line_1&=""
+  Organisation_Name&=""
+</SellerParty>
+<Header Information>
+  Delivery_Date@=2007-04-06
+  PrintOrientation&="Portrait"
+  PaperSize&="A4"
+  Valid_Until@=2007-04-13
+  Country_Code&="AU"
+  Tax_Name&="GST"
+  Tax_Mode&="Inclusive"
+  Delivery_Charge&="0.00"
+  Delivery_Mode&="Collect"
+  General_Terms&=""
+  Sales_Person&=""
+  Contact&=""
+</Header Information>
+<Line Item List>
+  <Line Item>
+    Amount#=38.85
+    Unit&="Each"
+    Rate&="12.95"
+    Quantity#=3
+    Description&=""
+    Name&="Memory Stick"
+    Code&="EOOE"
+  </Line Item>
+</Line Item List>
+
+
+stephen.green at systml.co.uk wrote:
+> Hi David
+>
+> A few questions (gap analysis with my own quote ingredients):
+>
+> Date?
+> Who from?
+> Who to?
+> VAT?
+> What if more than one item quoted (if the request was for several item 
+> quotes)?
+> Seller's product ref?
+> What if there were quantities involved?
+> Currency?
+>
+> Plus (though I don't include it myself):
+> How long is this price valid?
+> Any discounts, etc?
+>
+>
+> All the best
+>
+> Steve
+>
+>
+>
+> Quoting David Lyon <david.lyon at preisshare.net>:
+>
+>> QUOTATION
+>> =========
+>>
+>> TRANSCEND JETFLASH V30 4GB HIGH SPEED USB 2.0 PLUG
+>> AND PLAY
+>>
+>> Price: 86.25
+>>
+>
+>
+>
+
+
+
+From stephen.green at systml.co.uk  Mon Apr  9 13:19:08 2007
+From: stephen.green at systml.co.uk (stephen.green at systml.co.uk)
+Date: Mon, 09 Apr 2007 05:19:08 -0600
+Subject: [Preisshare-dev] Quotation -> moving to UBL support in
+	Australian Computer	Industry
+In-Reply-To: <4615943B.7020100@preisshare.net>
+References: <20070405030936187.3AD35AA467F954BA@COMPAQ-310>
+	<20070405124130.meo3zo2dds0k444g@www.systml.co.uk>
+	<4615943B.7020100@preisshare.net>
+Message-ID: <20070409051908.7wj0s5p5ow84sogw@www.systml.co.uk>
+
+Hi David
+
+Is the following any good as a PreisShare Quotation in XML and a
+schema?
+
+If these are OK I can start mapping them to the UBL Quotation
+
+All the best
+
+Steve
+
+
+XML:
+
+<?xml version="1.0" encoding="UTF-8"?>
+<Quotation xmlns="http://www.preisshare.net/Quotation:0.1-draft"  
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  
+xsi:schemaLocation="http://www.preisshare.net/Quotation:0.1-draft  
+PreisShareQuotation-v0-1-draft.xsd"  
+xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<BuyerParty>
+		<Email_Address/>
+		<Telephone_2/>
+		<Telephone/>
+		<Country_Code/>
+		<ZIP_Postcode/>
+		<State_Region/>
+		<Suburb_Town>Swinson</Suburb_Town>
+		<Address_Line_2/>
+		<Address_Line_1>2 Frog Rock</Address_Line_1>
+		<Organisation_Name>I-Tech</Organisation_Name>
+	</BuyerParty>
+	<SellerParty>
+		<Other_Information/>
+		<Telephone_2/>
+		<Telephone/>
+		<Country_Code>AU</Country_Code>
+		<ZIP_Postcode/>
+		<State_Region/>
+		<Suburb_Town/>
+		<Address_Line_2/>
+		<Address_Line_1/>
+		<Organisation_Name/>
+	</SellerParty>
+	<Header_Information>
+		<Delivery_Date xsi:type="xsd:date">2007-04-06</Delivery_Date>
+		<PrintOrientation>Portrait</PrintOrientation>
+		<PaperSize>A4</PaperSize>
+		<Valid_Until xsi:type="xsd:date">2007-04-13</Valid_Until>
+		<Country_Code>AU</Country_Code>
+		<Tax_Name>GST</Tax_Name>
+		<Tax_Mode>Inclusive</Tax_Mode>
+		<Delivery_Charge xsi:type="xsd:decimal">0.00</Delivery_Charge>
+		<Delivery_Mode>Collect</Delivery_Mode>
+		<General_Terms/>
+		<Sales_Person/>
+		<Contact/>
+	</Header_Information>
+	<Line_Item_List>
+		<Line_Item>
+			<Amount xsi:type="xsd:decimal">38.85</Amount>
+			<Unit>Each</Unit>
+			<Rate xsi:type="xsd:decimal">12.95</Rate>
+			<Quantity xsi:type="xsd:decimal">3</Quantity>
+			<Description/>
+			<Name>Memory Stick</Name>
+			<Code>EOOE</Code>
+		</Line_Item>
+	</Line_Item_List>
+</Quotation>
+
+
+
+Schema:
+
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns="http://www.preisshare.net/Quotation:0.1-draft"  
+xmlns:xsd="http://www.w3.org/2001/XMLSchema"  
+targetNamespace="http://www.preisshare.net/Quotation:0.1-draft">
+	<xsd:element name="ZIP_Postcode" type="xsd:string"/>
+	<xsd:element name="Valid_Until" type="xsd:date"/>
+	<xsd:element name="Unit" type="xsd:string"/>
+	<xsd:element name="Telephone_2" type="xsd:string"/>
+	<xsd:element name="Telephone" type="xsd:string"/>
+	<xsd:element name="Tax_Name" type="xsd:string"/>
+	<xsd:element name="Tax_Mode" type="xsd:string"/>
+	<xsd:element name="Suburb_Town" type="xsd:string"/>
+	<xsd:element name="State_Region" type="xsd:string"/>
+	<xsd:element name="SellerParty" type="SellerPartyType"/>
+	<xsd:element name="Sales_Person" type="xsd:string"/>
+	<xsd:element name="Rate" type="xsd:decimal"/>
+	<xsd:element name="Quotation" type="QuotationType"/>
+	<xsd:element name="Quantity" type="xsd:decimal"/>
+	<xsd:element name="PrintOrientation" type="xsd:string"/>
+	<xsd:element name="PaperSize" type="xsd:string"/>
+	<xsd:element name="Other_Information" type="xsd:string"/>
+	<xsd:element name="Organisation_Name" type="xsd:string"/>
+	<xsd:element name="Name" type="xsd:string"/>
+	<xsd:element name="Line_Item_List" type="Line_Item_ListType"/>
+	<xsd:element name="Line_Item" type="Line_ItemType"/>
+	<xsd:element name="Header_Information" type="Header_InformationType"/>
+	<xsd:element name="General_Terms" type="xsd:string"/>
+	<xsd:element name="Email_Address" type="xsd:string"/>
+	<xsd:element name="Description" type="xsd:string"/>
+	<xsd:element name="Delivery_Mode" type="xsd:string"/>
+	<xsd:element name="Delivery_Date" type="xsd:date"/>
+	<xsd:element name="Delivery_Charge" type="xsd:decimal"/>
+	<xsd:element name="Country_Code" type="xsd:string"/>
+	<xsd:element name="Contact" type="xsd:string"/>
+	<xsd:element name="Code" type="xsd:string"/>
+	<xsd:element name="BuyerParty" type="BuyerPartyType"/>
+	<xsd:element name="Amount" type="xsd:decimal"/>
+	<xsd:element name="Address_Line_2" type="xsd:string"/>
+	<xsd:element name="Address_Line_1" type="xsd:string"/>
+	<xsd:complexType name="SellerPartyType">
+		<xsd:sequence>
+			<xsd:element ref="Other_Information"/>
+			<xsd:element ref="Telephone_2"/>
+			<xsd:element ref="Telephone"/>
+			<xsd:element ref="Country_Code"/>
+			<xsd:element ref="ZIP_Postcode"/>
+			<xsd:element ref="State_Region"/>
+			<xsd:element ref="Suburb_Town"/>
+			<xsd:element ref="Address_Line_2"/>
+			<xsd:element ref="Address_Line_1"/>
+			<xsd:element ref="Organisation_Name"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="QuotationType">
+		<xsd:sequence>
+			<xsd:element ref="BuyerParty"/>
+			<xsd:element ref="SellerParty"/>
+			<xsd:element ref="Header_Information"/>
+			<xsd:element ref="Line_Item_List"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="Line_Item_ListType">
+		<xsd:sequence>
+			<xsd:element ref="Line_Item"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="Line_ItemType">
+		<xsd:sequence>
+			<xsd:element ref="Amount"/>
+			<xsd:element ref="Unit"/>
+			<xsd:element ref="Rate"/>
+			<xsd:element ref="Quantity"/>
+			<xsd:element ref="Description"/>
+			<xsd:element ref="Name"/>
+			<xsd:element ref="Code"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="Header_InformationType">
+		<xsd:sequence>
+			<xsd:element ref="Delivery_Date"/>
+			<xsd:element ref="PrintOrientation"/>
+			<xsd:element ref="PaperSize"/>
+			<xsd:element ref="Valid_Until"/>
+			<xsd:element ref="Country_Code"/>
+			<xsd:element ref="Tax_Name"/>
+			<xsd:element ref="Tax_Mode"/>
+			<xsd:element ref="Delivery_Charge"/>
+			<xsd:element ref="Delivery_Mode"/>
+			<xsd:element ref="General_Terms"/>
+			<xsd:element ref="Sales_Person"/>
+			<xsd:element ref="Contact"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="BuyerPartyType">
+		<xsd:sequence>
+			<xsd:element ref="Email_Address"/>
+			<xsd:element ref="Telephone_2"/>
+			<xsd:element ref="Telephone"/>
+			<xsd:element ref="Country_Code"/>
+			<xsd:element ref="ZIP_Postcode"/>
+			<xsd:element ref="State_Region"/>
+			<xsd:element ref="Suburb_Town"/>
+			<xsd:element ref="Address_Line_2"/>
+			<xsd:element ref="Address_Line_1"/>
+			<xsd:element ref="Organisation_Name"/>
+		</xsd:sequence>
+	</xsd:complexType>
+</xsd:schema>
+
+
+Quoting David Lyon <david.lyon at preisshare.net>:
+
+>
+> Hi Steve,
+>
+> Sorry to say this but I've had a complete change of direction.
+>
+> Time has come to stop the beer talk about UBL and start moving on it.
+>
+> So what I'm proposing is to include UBL in the production software that
+> we issue out sometime this year. What I want to do is to make
+> transforms that will produce UBL Quotes, Orders and Invoices and
+> possibly pricelists/catalogues. from an xml version of these documents.
+>
+> So what I'm saying, is that I need a UBL Quotation.xslt to transform
+> (an xml version) of the below. I will then include that in the software
+> that I'm selling.
+>
+> Then, I'll consider making some sort of credible anouncement about it
+> after it is done.
+>
+> Regards
+>
+> David
+>
+>
+>
+>
+> These are
+> <?PreisMarkup(tm) Version#=2.0 encoding&="UTF-8" LangID&="EN">
+> <BuyerParty>
+>  Email_Address&=""
+>  Telephone_2&=""
+>  Telephone&=""
+>  Country_Code&=""
+>  ZIP_Postcode&=""
+>  State_Region&=""
+>  Suburb_Town&="Swinson"
+>  Address_Line_2&=""
+>  Address_Line_1&="2 Frog Rock"
+>  Organisation_Name&="I-Tech"
+> </BuyerParty>
+> <SellerParty>
+>  Other_Information&=""
+>  Telephone_2&=""
+>  Telephone&=""
+>  Country_Code&="AU"
+>  ZIP_Postcode&=""
+>  State_Region&=""
+>  Suburb_Town&=""
+>  Address_Line_2&=""
+>  Address_Line_1&=""
+>  Organisation_Name&=""
+> </SellerParty>
+> <Header Information>
+>  Delivery_Date@=2007-04-06
+>  PrintOrientation&="Portrait"
+>  PaperSize&="A4"
+>  Valid_Until@=2007-04-13
+>  Country_Code&="AU"
+>  Tax_Name&="GST"
+>  Tax_Mode&="Inclusive"
+>  Delivery_Charge&="0.00"
+>  Delivery_Mode&="Collect"
+>  General_Terms&=""
+>  Sales_Person&=""
+>  Contact&=""
+> </Header Information>
+> <Line Item List>
+>  <Line Item>
+>    Amount#=38.85
+>    Unit&="Each"
+>    Rate&="12.95"
+>    Quantity#=3
+>    Description&=""
+>    Name&="Memory Stick"
+>    Code&="EOOE"
+>  </Line Item>
+> </Line Item List>
+>
+>
+> stephen.green at systml.co.uk wrote:
+>> Hi David
+>>
+>> A few questions (gap analysis with my own quote ingredients):
+>>
+>> Date?
+>> Who from?
+>> Who to?
+>> VAT?
+>> What if more than one item quoted (if the request was for several   
+>> item quotes)?
+>> Seller's product ref?
+>> What if there were quantities involved?
+>> Currency?
+>>
+>> Plus (though I don't include it myself):
+>> How long is this price valid?
+>> Any discounts, etc?
+>>
+>>
+>> All the best
+>>
+>> Steve
+>>
+>>
+>>
+>> Quoting David Lyon <david.lyon at preisshare.net>:
+>>
+>>> QUOTATION
+>>> =========
+>>>
+>>> TRANSCEND JETFLASH V30 4GB HIGH SPEED USB 2.0 PLUG
+>>> AND PLAY
+>>>
+>>> Price: 86.25
+>>>
+>>
+>>
+>>
+
+
+
+
+From david.lyon at preisshare.net  Tue Apr 10 03:19:13 2007
+From: david.lyon at preisshare.net (David Lyon)
+Date: Tue, 10 Apr 2007 11:19:13 +1000
+Subject: [Preisshare-dev] New Quotation Format / Test
+Message-ID: <20070410011913468.52475FBF3B482B64@COMPAQ-310>
+
+An HTML attachment was scrubbed...
+URL: <https://lists.berlios.de/pipermail/preisshare-dev/attachments/20070410/fdcd2330/attachment.html>
+
+From david.lyon at preisshare.net  Tue Apr 17 03:57:09 2007
+From: david.lyon at preisshare.net (david.lyon at preisshare.net)
+Date: Mon, 16 Apr 2007 20:57:09 -0500
+Subject: [Preisshare-dev] testing with python
+Message-ID: <20070416205709.hqz0uer9804k8wco@srv11.ezyreg.com>
+
+Hi Sonmez,
+
+Here's an interesting link that I found on testing
+windows applications from within a python script
+
+http://www.tizmoi.net/watsup/intro.html
+
+Regards
+
+David
+
+
+From david.lyon at preisshare.net  Thu Apr 19 03:01:17 2007
+From: david.lyon at preisshare.net (david.lyon at preisshare.net)
+Date: Wed, 18 Apr 2007 20:01:17 -0500
+Subject: [Preisshare-dev] Price feeds ... collecting data from websites
+Message-ID: <20070418200117.jjv1vxixz1cg4cks@srv11.ezyreg.com>
+
+
+Hi All,
+
+Ludwig suggested that we offer some sort of price feed. That is being  
+able to pull down price files off websites and load them into the  
+product database.
+
+The idea is that if all suppliers can make a price file available then  
+PreisShare can pull all the price files down and load them.
+
+Well the concept is advancing. I recently did a test capture off a  
+test machine and this is what it looks like.
+
+http://www.preisshare.net/downloads/download/show_pricefeed.html
+
+Regards
+
+David
+
+
+From david at drrw.info  Thu Apr 19 22:31:40 2007
+From: david at drrw.info (David RR Webber (XML))
+Date: Thu, 19 Apr 2007 13:31:40 -0700
+Subject: [Preisshare-dev] Price feeds ... collecting data from websites
+Message-ID: <20070419133140.dc066b1d4d2e0a1a65719ae85a8071e6.f99aa7cadb.wbe@email.secureserver.net>
+
+An HTML attachment was scrubbed...
+URL: <https://lists.berlios.de/pipermail/preisshare-dev/attachments/20070419/d2f5f8c0/attachment.html>
+
+From david.lyon at preisshare.net  Fri Apr 20 02:14:29 2007
+From: david.lyon at preisshare.net (David Lyon)
+Date: Fri, 20 Apr 2007 10:14:29 +1000
+Subject: [Preisshare-dev] Price feeds ... collecting data from websites
+In-Reply-To: <20070419133140.dc066b1d4d2e0a1a65719ae85a8071e6.f99aa7cadb.wbe@email.secureserver.net>
+References: <20070419133140.dc066b1d4d2e0a1a65719ae85a8071e6.f99aa7cadb.wbe@email.secureserver.net>
+Message-ID: <462805E5.8050001@preisshare.net>
+
+
+David RR Webber (XML) wrote:
+> Very cool!
+
+Thanks DW.
+
+You might find it interesting to know that the csv data actually gets 
+'marked' up before it is loaded. So it shouldn't be so hard taking the 
+feeds from xml (ubl/whatever). Hopefully we can do that sometime this 
+year. There are a few companies that have xml data on their website, not 
+many though.
+
+It will be interesting what they say in HK and China when I visit there 
+in a week or so. One silly sales girl in Taiwan told me "It's too 
+complex for me, I don't understand it".
+
+But that is just an invitation to explain the whole process better, 
+which is price relaying. Quickly downloading all your price files every 
+day, recalculating and re-issuing. All done with little in the way of 
+manual effort.
+
+I'm also starting to consider putting ebxml into the mix. Maybe it can 
+add some value. Maybe we should look at doing some tests.
+
+Regards
+
+David
+
+
+
+
+
+
+
+
+
+
+
+

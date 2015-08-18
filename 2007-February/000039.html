@@ -1,0 +1,183 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Preisshare-dev] [ubl-dev] ubl pricelist validation ?
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/preisshare-dev/2007-February/index.html" >
+   <LINK REL="made" HREF="mailto:preisshare-dev%40lists.berlios.de?Subject=Re%3A%20%5BPreisshare-dev%5D%20%5Bubl-dev%5D%20ubl%20pricelist%20validation%20%3F&In-Reply-To=%3C45C8DBE1.6020308%40preisshare.net%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000040.html">
+   <LINK REL="Next"  HREF="000041.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Preisshare-dev] [ubl-dev] ubl pricelist validation ?</H1>
+    <B>David Lyon</B> 
+    <A HREF="mailto:preisshare-dev%40lists.berlios.de?Subject=Re%3A%20%5BPreisshare-dev%5D%20%5Bubl-dev%5D%20ubl%20pricelist%20validation%20%3F&In-Reply-To=%3C45C8DBE1.6020308%40preisshare.net%3E"
+       TITLE="[Preisshare-dev] [ubl-dev] ubl pricelist validation ?">david.lyon at preisshare.net
+       </A><BR>
+    <I>Tue Feb  6 20:49:53 CET 2007</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000040.html">[Preisshare-dev] [ubl-dev] ubl pricelist validation ?
+</A></li>
+        <LI>Next message: <A HREF="000041.html">[Preisshare-dev] [ubl-dev] ubl pricelist validation ?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#39">[ date ]</a>
+              <a href="thread.html#39">[ thread ]</a>
+              <a href="subject.html#39">[ subject ]</a>
+              <a href="author.html#39">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Stephen Green wrote:
+&gt;<i> Hi David
+</I>&gt;<i>
+</I>&gt;<i> In one sense these product groups could just be translated into
+</I>&gt;<i> the UBL catalogue line description along with the product name.
+</I>&gt;<i> That wouldn't work going from UBL to preisshare-xml though, so
+</I>&gt;<i> I'll try to find something better, like category, and add it to
+</I>&gt;<i> everything. No need to change the preisshare-xml though for that. 
+</I>&gt;<i>   
+</I>In our internal reader/writer class (in memory), we actually build a 
+flat list of all items and include the product group name as another field.
+
+Group_Description&amp;=&quot;Kingston Memory&quot; Name&amp;=&quot;512mb/533&quot; Actual_Price$=31.50
+Group_Description&amp;=&quot;Kingston Memory&quot; Name&amp;=&quot;1G/533&quot; Actual_Price$=61.30
+
+So when it comes to writing out an output file, all of the information 
+is easy at hand and ready to write.
+
+&gt;<i> What would you do with &quot;*Both are kingston non-hynix retailed packed*&quot;?
+</I>&gt;<i>   
+</I>Group_Description&amp;=&quot;Kingston Memory&quot; Name&amp;=&quot;512mb/533&quot; 
+Description&amp;=&quot;*Both are kingston non-hynix retailed packed*&quot; 
+Actual_Price$=31.50
+
+&gt;<i> That might need a note but it would be a note on product group
+</I>&gt;<i> which might not have an equivalent in UBL so it would be lost in translation
+</I>&gt;<i> to UBL.
+</I>&gt;<i>   
+</I>That's possible. When converting from spreadsheets it's always possible 
+that minor pieces get lost. It's not always a lossless process.
+
+Regards
+
+David
+
+&gt;<i> All the best
+</I>&gt;<i>
+</I>&gt;<i> Steve
+</I>&gt;<i>
+</I>&gt;<i>   
+</I>&gt;&gt;&gt;&gt;<i> David Lyon &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/preisshare-dev">david.lyon at preisshare.net</A>&gt; 06/02/07 11:13:29 &gt;&gt;&gt;
+</I>&gt;&gt;&gt;&gt;<i>         
+</I>&gt;<i> Stephen Green wrote:
+</I>&gt;<i>   
+</I>&gt;&gt;<i> Hi David
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> Back to trading, how necessary are those product groups?
+</I>&gt;&gt;<i> They would be the one thing lost in translation going from
+</I>&gt;&gt;<i> your xml to UBL. Maybe one of the UBL catalogue 'category'
+</I>&gt;&gt;<i> entities would do the trick for that.
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>   
+</I>&gt;&gt;<i>     
+</I>&gt;<i> Pretty neccessary... see the text below... just out from HK...
+</I>&gt;<i>
+</I>&gt;<i> MEMORY MODULE PRICE LIST
+</I>&gt;<i> ** 
+</I>&gt;<i> *_Kingston Memory_*
+</I>&gt;<i> ** 
+</I>&gt;<i> *512mb/533  USD31.50   300PCS available
+</I>&gt;<i> 1G/533  USD61.30    200PCS available
+</I>&gt;<i> *
+</I>&gt;<i> *Both are kingston non-hynix retailed packed*
+</I>&gt;<i> ** 
+</I>&gt;<i> *_StarRam / SunRam_*
+</I>&gt;<i> *SD 128MB  (PC-133) 8Mx16  (8C)    USD7.50*
+</I>&gt;<i> *SD 128MB  (PC-133) 8Mx8  (16C)    USD7.00*
+</I>&gt;<i> *
+</I>&gt;<i> *SD 256MB  (PC-133) 32Mx8  (8C)    USD19.50*
+</I>&gt;<i> *
+</I>&gt;<i> *SD 512MB  (PC-133) 32Mx8  (16C)   USD42.50*
+</I>&gt;<i> *DDR 512MB (PC-400) 64Mx8 (8C)   USD29.50*
+</I>&gt;<i> *DDR 512MB (PC-400) 32Mx8 (16C)   USD29.50*
+</I>&gt;<i> *DDR 1GB (PC-400) 64Mx8 (16C)    USD65.00*
+</I>&gt;<i> *DDR2-512MB (PC-533) 64Mx8 (8C)   USD29.00*
+</I>&gt;<i> *DDR2-512MB (PC-667) 64Mx8 (8C)   USD29.50*
+</I>&gt;<i> *SunRam SDRAM 8Mx16-6    USD1.15/pcs*
+</I>&gt;<i>  
+</I>&gt;<i> *_SyncMAX DDR 2_*
+</I>&gt;<i> *
+</I>&gt;<i> *256MB 533MHz (PC-4200) 64Mx8   FBGA (8 Chips)    US$18.80 *
+</I>&gt;<i> *512MB 533MHz (PC-4200) 64Mx8   FBGA (8 Chips)   US$32.00*
+</I>&gt;<i> *
+</I>&gt;<i> *
+</I>&gt;<i> *512MB 667MHz (PC-5300) 64Mx8   FBGA (8 Chips)   US$35.00*
+</I>&gt;<i> *
+</I>&gt;<i> *512MB 800MHz (PC-6400) 64Mx8   FBGA (8 Chips)   US$45.00*
+</I>&gt;<i> *1GB 800MHz (PC-6400) 64Mx8   FBGA (16 Chips)   US$100.00*
+</I>&gt;<i> *SODIMM 512MB 667MHz (PC-5300) CL4 - 64Mx8 FBGA (8 Chips) US$42.00*
+</I>&gt;<i> ** 
+</I>&gt;<i> *Express (SyncMAX High performance product) - LOW LATENCY*
+</I>&gt;<i> *512MB 533MHz (CL3-3-3-8) &amp; 667MHz (CL4-4-4-10)    US$50.00*
+</I>&gt;<i> *1GB 533MHz (CL3-3-3-8) &amp; 667MHz (CL4-4-4-10)    US$108**.00*
+</I>&gt;<i> 512MB 800MHz (PC-6400) 64Mx8   FBGA (8 Chips) CL4     US$78.00
+</I>&gt;<i> 1GB 800MHz (PC-6400) 64Mx8   FBGA (16 Chips) CL4     US$160.00
+</I>&gt;<i>  
+</I>&gt;<i>  
+</I>&gt;<i> _Blank Memory modules_
+</I>&gt;<i> BLANK 512MB ( 64M X 8 ) PC-400 ELPIDA  ett usd28.5
+</I>&gt;<i> BLANK 1GB ( 64M X 8 ) PC-400 ELPIDA ett usd56
+</I>&gt;<i> DDR 2
+</I>&gt;<i> BLANK 512MB ( 32M X 8 ) PC-533 NANYA DIE USD26
+</I>&gt;<i> BLANK 512MB ( 64M x 8 ) PC-667 MIRA/ELPIDA ett USD28 B62URCD
+</I>&gt;<i> BLANK 1GB ( 64M x 8 ) PC-667 MIRA/ELPIDA ett USD55 B62URCE
+</I>&gt;<i> BLANK 512MB ( 64M x 8 ) PC-800 MIRA ett USD35 B62URCD stock
+</I>&gt;<i>  
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i> ______________________________________________________________________
+</I>&gt;<i> Please note the new simpler name for our website: <A HREF="http://www.bristol.gov.uk">http://www.bristol.gov.uk</A>
+</I>&gt;<i>
+</I>&gt;<i> Our email addresses have also changed - visit <A HREF="http://www.bristol.gov.uk/bigchange">http://www.bristol.gov.uk/bigchange</A> for further details.
+</I>&gt;<i>
+</I>&gt;<i> Sign-up for our email bulletin giving news, have-your-say  and event information at: <A HREF="http://www.bristol.gov.uk/newsdirect">http://www.bristol.gov.uk/newsdirect</A> 
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i>   
+</I>
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/preisshare-dev/attachments/20070207/18159433/attachment.html">https://lists.berlios.de/pipermail/preisshare-dev/attachments/20070207/18159433/attachment.html</A>&gt;
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000040.html">[Preisshare-dev] [ubl-dev] ubl pricelist validation ?
+</A></li>
+	<LI>Next message: <A HREF="000041.html">[Preisshare-dev] [ubl-dev] ubl pricelist validation ?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#39">[ date ]</a>
+              <a href="thread.html#39">[ thread ]</a>
+              <a href="subject.html#39">[ subject ]</a>
+              <a href="author.html#39">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/preisshare-dev">More information about the Preisshare-dev
+mailing list</a><br>
+</body></html>

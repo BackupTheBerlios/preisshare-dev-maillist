@@ -1,0 +1,119 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Preisshare-dev] Sample code from tradedesk	showing	xpath	setup..
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/preisshare-dev/2007-March/index.html" >
+   <LINK REL="made" HREF="mailto:preisshare-dev%40lists.berlios.de?Subject=Re%3A%20%5BPreisshare-dev%5D%20Sample%20code%20from%20tradedesk%0A%09showing%09xpath%09setup..&In-Reply-To=%3C45EF8F38.7010500%40preisshare.net%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000077.html">
+   <LINK REL="Next"  HREF="000079.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Preisshare-dev] Sample code from tradedesk	showing	xpath	setup..</H1>
+    <B>David Lyon</B> 
+    <A HREF="mailto:preisshare-dev%40lists.berlios.de?Subject=Re%3A%20%5BPreisshare-dev%5D%20Sample%20code%20from%20tradedesk%0A%09showing%09xpath%09setup..&In-Reply-To=%3C45EF8F38.7010500%40preisshare.net%3E"
+       TITLE="[Preisshare-dev] Sample code from tradedesk	showing	xpath	setup..">david.lyon at preisshare.net
+       </A><BR>
+    <I>Thu Mar  8 05:21:12 CET 2007</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000077.html">[Preisshare-dev] Sample code from tradedesk showing	xpath	setup..
+</A></li>
+        <LI>Next message: <A HREF="000079.html">[Preisshare-dev] fyi Typical Chinese computer supplier request [Fwd: chance can supply all computer parts]
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#78">[ date ]</a>
+              <a href="thread.html#78">[ thread ]</a>
+              <a href="subject.html#78">[ subject ]</a>
+              <a href="author.html#78">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Hi Steve,
+
+<A HREF="https://lists.berlios.de/mailman/listinfo/preisshare-dev">stephen.green at systml.co.uk</A> wrote:
+&gt;<i> Would the aim be to convert this just enough to use the
+</I>&gt;<i> XML format from DRRW? Not at this point UBL? If so it
+</I>&gt;<i> doesn't look like a lot has to change in this code (just
+</I>&gt;<i> add issue date, document ID, etc) but this abstracts the
+</I>&gt;<i> underlying syntax: Is this move from custom format to XML
+</I>&gt;<i> in hand?
+</I>&gt;<i>
+</I>&gt;<i>   
+</I>It doesn't matter so much to me.
+
+Maybe we could just move straight to real UBL. There isn't any advantage 
+at the moment going to an XML 1.0 rendition.
+
+
+&gt;<i> Maybe then the conversion would to using DRRW's XML (the
+</I>&gt;<i> same sort of semantics but with XML confomormance and
+</I>&gt;<i> just a few amendments) and if it were a requirement to
+</I>&gt;<i> import or export UBL, say (or any other formats) this
+</I>&gt;<i> could be attempted using an XSLT or equivalent transformation.
+</I>&gt;<i>   
+</I>What's different between DRRWs XML and UBL?
+
+I believe that by adding some string filtration/translation I can do all 
+the translation within a translation class.
+
+Something like this:
+
+ if (xpath='/Seller Information/Name') then
+ UBL_xpath := '/cac:Seller Information/cac:Name';
+
+etc..
+
+&gt;<i> So would you be looking for some XSLT too to do that?
+</I>&gt;<i>   
+</I>
+I have a more immediate need for an XSLT transformation to handle a 
+&quot;Featured Product&quot;
+
+xml =
+
+&lt;Featured_Product&gt;
+ &lt;img_src=&quot;skypemousephone.png&quot;&gt;
+ &lt;name=&quot;Skype Mouse Phone&quot;&gt;
+&lt;description&gt;This mouse incorporates a usb skype phone&lt;/description&gt;
+&lt;/Featured_Product&gt;
+
+and then transform that into html text and send it out on the email list.
+
+Regards
+
+David
+
+
+
+
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000077.html">[Preisshare-dev] Sample code from tradedesk showing	xpath	setup..
+</A></li>
+	<LI>Next message: <A HREF="000079.html">[Preisshare-dev] fyi Typical Chinese computer supplier request [Fwd: chance can supply all computer parts]
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#78">[ date ]</a>
+              <a href="thread.html#78">[ thread ]</a>
+              <a href="subject.html#78">[ subject ]</a>
+              <a href="author.html#78">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/preisshare-dev">More information about the Preisshare-dev
+mailing list</a><br>
+</body></html>

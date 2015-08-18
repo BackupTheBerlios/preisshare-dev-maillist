@@ -1,0 +1,2621 @@
+From david.lyon at preisshare.net  Mon Jan  1 17:45:00 2007
+From: david.lyon at preisshare.net (David Lyon)
+Date: Tue, 02 Jan 2007 03:45:00 +1100
+Subject: [Preisshare-dev] cvs and source code updates..
+In-Reply-To: <51214.127.0.0.1.1167664846.squirrel@srv11.ezyreg.com>
+References: <45987206.20908@preisshare.net>
+	<51214.127.0.0.1.1167664846.squirrel@srv11.ezyreg.com>
+Message-ID: <45993A8C.50505@preisshare.net>
+
+Hi Sinu,
+
+How did you go retrieving the source code updates from berlios?
+
+I've really appreciated you helping out on this project.
+
+Next thing that I would like you to get working somehow is the 
+scheduling system for sending out the pricelists. Having them sent out 
+daily, weekly etc using a timer. This also involves writing back to the 
+trader.settings field the timestamp of the last pricelist send.
+
+Are you able and willing to take that on?
+
+Meanwhile, I have to do more work on the spreadsheet generation. To make 
+sure that it is generating the spreadsheets as per clients requirements. 
+It's a bit of a rush, I need it finished this week.
+
+Regards
+
+David
+
+
+
+
+From david.lyon at preisshare.net  Mon Jan  1 18:15:00 2007
+From: david.lyon at preisshare.net (David Lyon)
+Date: Tue, 02 Jan 2007 04:15:00 +1100
+Subject: [Preisshare-dev] fyi : PreisShare XML Format
+In-Reply-To: <003201c72cf8$693ac800$3bb05800$@info>
+References: <20061229104131.dc066b1d4d2e0a1a65719ae85a8071e6.05505fd3dd.wbe@email.secureserver.net>
+	<4595F4E5.8010603@preisshare.net>
+	<014401c72c32$98617820$c9246860$@info>
+	<4596F52D.1080400@preisshare.net>
+	<01bc01c72c88$dc6fd740$954f85c0$@info>
+	<459738CD.9020101@preisshare.net>
+	<002a01c72cea$847136d0$8d53a470$@info>
+	<4597DD6B.4060404@preisshare.net>
+	<003201c72cf8$693ac800$3bb05800$@info>
+Message-ID: <45994194.8040502@preisshare.net>
+
+
+Hi DW,
+
+One of our team members did a conversion on one of our pricelist files 
+and contributed this as an xml pricelist document.
+
+There are a few minor changes to do but as you can see it's a pretty 
+simple format.
+
+We're not too far off having this included as our standard xml pricelist 
+file.
+
+Regards
+
+David
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: PreisShare Pricelist.xml
+Type: text/xml
+Size: 751 bytes
+Desc: not available
+URL: <https://lists.berlios.de/pipermail/preisshare-dev/attachments/20070102/2dda7c8b/attachment.xml>
+
+From mike at saxonica.com  Mon Jan  1 18:24:47 2007
+From: mike at saxonica.com (Michael Kay)
+Date: Mon, 1 Jan 2007 17:24:47 -0000
+Subject: [Preisshare-dev] New pricelist Generator
+In-Reply-To: <459463E7.1080100@preisshare.net>
+Message-ID: <008301c72dc9$bcd12cd0$6401a8c0@turtle>
+
+I've accidently added some people to the mailing list instead of inviting
+them. I simply pressed the wrong button. So if this stuff isn't interesting,
+it's time to unsubscribe. Which can easily be done on the link that should
+be below.
+
+
+The link isn't below. In any case, if you added people by mistake, it's your
+job to remove them again. If you can't, you should at the very least send a
+grovelling apology, not a bland statement like the above.
+ 
+As it happens, your message went in my spam bucket so I only found it after
+considerable searching.
+ 
+Michael Kay
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: <https://lists.berlios.de/pipermail/preisshare-dev/attachments/20070101/930644d1/attachment.html>
+
+From david at drrw.info  Mon Jan  1 21:49:23 2007
+From: david at drrw.info (David RR Webber)
+Date: Mon, 1 Jan 2007 15:49:23 -0500
+Subject: [Preisshare-dev] fyi : PreisShare XML Format
+In-Reply-To: <45994194.8040502@preisshare.net>
+References: <20061229104131.dc066b1d4d2e0a1a65719ae85a8071e6.05505fd3dd.wbe@email.secureserver.net>
+	<4595F4E5.8010603@preisshare.net>
+	<014401c72c32$98617820$c9246860$@info>
+	<4596F52D.1080400@preisshare.net>
+	<01bc01c72c88$dc6fd740$954f85c0$@info>
+	<459738CD.9020101@preisshare.net>
+	<002a01c72cea$847136d0$8d53a470$@info>
+	<4597DD6B.4060404@preisshare.net>
+	<003201c72cf8$693ac800$3bb05800$@info>
+	<45994194.8040502@preisshare.net>
+Message-ID: <002701c72de6$51e66490$f5b32db0$@info>
+
+David,
+
+OK - I went in and looked at three existing formats:
+
+1) openapplicationsgroup.org
+2) oasis UBL v2.0
+3) Amazon.com
+
+Attached is a suggested revised format based principally on 3)
+
+1) and 2) are way too complex for typical SMB retail use.  3) should work
+for eBay / Buy.com, etc too.
+
+I also re-designed pricelist details - based on these premises:
+
+a) Address does not belong here - just locale (Amazon shows buyer rough area
+of seller).  Address of merchant should be separate table lookup - and that
+layout should be based on OASIS CIQ v3 xsd - gives you real international
+address format, GPS location and more.
+b) Web services should be used to complement the price list - to lookup
+related information - such as shipping cost, VAT applicable, and so on.
+c) Added optional merchant notes - allows extensions to cover special needs.
+d) organized like information into sections - again this allows better
+versioning and selections down the road - e.g. REST based requests (a la AWS
+Amazon) - can select parts of the structure.
+
+I think this is now closer - but probably still needs some tweaking.
+
+You can see Amazon in action by clicking on these two links:
+
+ http://readingheaven.com/chess
+
+and the underlying XML from the AWS web service:
+
+ 
+http://xml-us.amznxslt.com/onca/xml?Service=AWSECommerceService&Subscription
+Id=178QAAPQR2137JF2QY82&AssociateTag=readingheaven-20&Operation=ItemLookup&I
+dType=ASIN&ItemId=0764550039,0486290298,0879801107,0879801115,B00068M536,188
+4822312,1880673851,B0001GDEVU&MerchantId=All&ResponseGroup=Medium,Offers,Tra
+cks&ContentType=text/xml
+UBL samplers - http://www.systml.co.uk/xml/ 
+
+Enjoy, DW
+
+-----Original Message-----
+From: David Lyon [mailto:david.lyon at preisshare.net] 
+Sent: Monday, January 01, 2007 12:15 PM
+To: david at drrw.info
+Cc: preisshare-dev at lists.berlios.de
+Subject: fyi : PreisShare XML Format
+
+
+Hi DW,
+
+One of our team members did a conversion on one of our pricelist files and
+contributed this as an xml pricelist document.
+
+There are a few minor changes to do but as you can see it's a pretty simple
+format.
+
+We're not too far off having this included as our standard xml pricelist
+file.
+
+Regards
+
+David
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: PreisShare_Pricelist.xml
+Type: text/xml
+Size: 2072 bytes
+Desc: not available
+URL: <https://lists.berlios.de/pipermail/preisshare-dev/attachments/20070101/1e13c46d/attachment.xml>
+
+From david.lyon at preisshare.net  Tue Jan  2 00:15:46 2007
+From: david.lyon at preisshare.net (David Lyon)
+Date: Tue, 02 Jan 2007 10:15:46 +1100
+Subject: [Preisshare-dev] fyi : PreisShare XML Format
+In-Reply-To: <002701c72de6$51e66490$f5b32db0$@info>
+References: <20061229104131.dc066b1d4d2e0a1a65719ae85a8071e6.05505fd3dd.wbe@email.secureserver.net>
+	<4595F4E5.8010603@preisshare.net>
+	<014401c72c32$98617820$c9246860$@info>
+	<4596F52D.1080400@preisshare.net>
+	<01bc01c72c88$dc6fd740$954f85c0$@info>
+	<459738CD.9020101@preisshare.net>
+	<002a01c72cea$847136d0$8d53a470$@info>
+	<4597DD6B.4060404@preisshare.net>
+	<003201c72cf8$693ac800$3bb05800$@info>
+	<45994194.8040502@preisshare.net>
+	<002701c72de6$51e66490$f5b32db0$@info>
+Message-ID: <45999622.20406@preisshare.net>
+
+Hi David,
+
+David RR Webber wrote:
+> OK - I went in and looked at three existing formats:
+>
+> 1) openapplicationsgroup.org
+> 2) oasis UBL v2.0
+> 3) Amazon.com
+>   
+Just need to be a little careful on the plagiarism front. I think Amazon 
+could afford a fairly good legal team.
+
+In any case I like the feedback. With all that Industry experience, it 
+has taken you only a short time to clearly identify some areas that 
+could do with improvement.
+
+> I also re-designed pricelist details - based on these premises:
+>
+> a) Address does not belong here - just locale (Amazon shows buyer rough area
+> of seller).  Address of merchant should be separate table lookup - and that
+> layout should be based on OASIS CIQ v3 xsd - gives you real international
+> address format, GPS location and more.
+>   
+Maybe.
+
+Traditionally though I've included it because the address in the table 
+is updated from the pricelist if it is changed.
+
+Just making some of the address fields optional should satisfy this.
+> b) Web services should be used to complement the price list - to lookup
+> related information - such as shipping cost, VAT applicable, and so on.
+>   
+I'm just thinking that this would have a fairly big impact on the cost 
+of the whole product. Presently we can get away without any web server. 
+To keep the implementation cost down. I was planning to keep them in the 
+pricelist, redistribute daily/weekly/etc.
+
+Then they have all the information that they need.
+
+It will be an ongoing issue that will need more attention as you clearly 
+point out.
+> c) Added optional merchant notes - allows extensions to cover special needs.
+>   
+Yes I agree with this.
+
+> d) organized like information into sections - again this allows better
+> versioning and selections down the road - e.g. REST based requests (a la AWS
+> Amazon) - can select parts of the structure.
+>   
+I'll take a closer look.
+> I think this is now closer - but probably still needs some tweaking.
+>   
+Yes, it's definitely better!
+
+And I very much appreciate having somebody with so much Industry stature 
+look into the messages.
+
+Thanks
+
+David
+> ------------------------------------------------------------------------
+>
+> <?xml version="1.0"?>
+> <PriceList>
+>   <VendorInformation>
+> 	<Organisation_Name>
+> 	</Organisation_Name>
+>   	<PreisShare_ID>
+> 	</PreisShare_ID>
+>  <LocationDetails>
+>    <StateProvince></StateProvince>
+>    <Country></Country>
+>  </LocationDetails>
+>   </VendorInformation>
+>   <ProductInformation>
+> 	<ProductGroup>
+> 	  <Group_Description>
+> 	   </Group_Description>
+> 	  <Product_Items>
+> 		<Product>
+> 		  <PLU>
+> 		  </PLU>
+> 		  <Name>
+> 		  </Name>
+> 		  <Description>
+> 		  </Description>
+> 		  <OnSpecial_Flag>
+> 		  </OnSpecial_Flag>
+>
+> <ListPrice>
+>   <Amount>7999</Amount>
+>   <CurrencyCode>USD</CurrencyCode>
+>   <FormattedPrice>$79.99</FormattedPrice>
+>   <VATcategory>Standard</VATcategory>
+>   </ListPrice>
+>   <ValidityPeriod>
+>    <StartDate time=""></StartDate>
+>    <EndDate time=""></EndDate>
+>   </ValidityPeriod>
+>   <ShippingDetails>
+>     <FreeShipping allowed="true" currency="USD" orderTotal="$150"/>
+>     <SpecialHandling type="refridgerated"/>
+>     <SpecialHandling type="hazardous"/>
+>     <Shipping type="UPS"/>
+>     <Shipping type="FedEx"/>
+>   </ShippingDetails>
+>  <ItemAttributes>
+>   <Manufacturer>Viva Media</Manufacturer>
+>   <Model>00145</Model>
+>   <ReleaseDate>2006/01/01</ReleaseDate>
+>   <UPC>838639001453</UPC>
+>   <EAN>838639001453</EAN>
+>   <ISBN>0879801115</ISBN>
+>  </ItemAttributes>
+>  <OfferAttributes>
+>   <Condition>New</Condition>
+>   <SubCondition>New</SubCondition>
+>   <ConditionNote>BRAND NEW FACTORY SEALED RETAIL BOX</ConditionNote>
+>   <Availability>Usually ships in 24 hours</Availability>
+>   <TotalNew>2</TotalNew>
+>   <TotalUsed>0</TotalUsed>
+>   <TotalCollectible>0</TotalCollectible>
+>   <TotalRefurbished>0</TotalRefurbished>
+>  </OfferAttributes>
+> 	<Unit>
+>   <Height Units="hundredths-inches">66</Height>
+>   <Length Units="hundredths-inches">900</Length>
+>   <Weight Units="hundredths-pounds">104</Weight>
+>   <Width Units="hundredths-inches">676</Width>
+> 	</Unit>
+>   <MerchantNotes>
+>      <Note type="onspecial">20% discount until January 1st, 2007</Note>
+>      <Note type="aboutus">Our 20th year of selling these</Note>
+>   </MerchantNotes>
+> 		</Product>
+> 	  </Product_Items>
+> 	</ProductGroup>
+>   </ProductInformation>
+> </PriceList>
+>   
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: <https://lists.berlios.de/pipermail/preisshare-dev/attachments/20070102/05c04a1b/attachment.html>
+
+From david at drrw.info  Tue Jan  2 00:17:02 2007
+From: david at drrw.info (David RR Webber)
+Date: Mon, 1 Jan 2007 18:17:02 -0500
+Subject: [Preisshare-dev] fyi : PreisShare XML Format
+In-Reply-To: <45994194.8040502@preisshare.net>
+References: <20061229104131.dc066b1d4d2e0a1a65719ae85a8071e6.05505fd3dd.wbe@email.secureserver.net>
+	<4595F4E5.8010603@preisshare.net>
+	<014401c72c32$98617820$c9246860$@info>
+	<4596F52D.1080400@preisshare.net>
+	<01bc01c72c88$dc6fd740$954f85c0$@info>
+	<459738CD.9020101@preisshare.net>
+	<002a01c72cea$847136d0$8d53a470$@info>
+	<4597DD6B.4060404@preisshare.net>
+	<003201c72cf8$693ac800$3bb05800$@info>
+	<45994194.8040502@preisshare.net>
+Message-ID: <004001c72dfa$f34ef360$d9ecda20$@info>
+
+David,
+
+Just made one small obvious change - added languageID to top of structure.
+
+Attached,
+
+See prior email for design notes and more.
+
+DW
+
+-----Original Message-----
+From: David Lyon [mailto:david.lyon at preisshare.net] 
+Sent: Monday, January 01, 2007 12:15 PM
+To: david at drrw.info
+Cc: preisshare-dev at lists.berlios.de
+Subject: fyi : PreisShare XML Format
+
+
+Hi DW,
+
+One of our team members did a conversion on one of our pricelist files and
+contributed this as an xml pricelist document.
+
+There are a few minor changes to do but as you can see it's a pretty simple
+format.
+
+We're not too far off having this included as our standard xml pricelist
+file.
+
+Regards
+
+David
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: PreisShare_Pricelist.xml
+Type: text/xml
+Size: 2091 bytes
+Desc: not available
+URL: <https://lists.berlios.de/pipermail/preisshare-dev/attachments/20070101/3f7dabb2/attachment.xml>
+
+From david at drrw.info  Tue Jan  2 04:27:54 2007
+From: david at drrw.info (David RR Webber)
+Date: Mon, 1 Jan 2007 22:27:54 -0500
+Subject: [Preisshare-dev] fyi : PreisShare XML Format
+In-Reply-To: <45999622.20406@preisshare.net>
+References: <20061229104131.dc066b1d4d2e0a1a65719ae85a8071e6.05505fd3dd.wbe@email.secureserver.net>
+	<4595F4E5.8010603@preisshare.net>
+	<014401c72c32$98617820$c9246860$@info>
+	<4596F52D.1080400@preisshare.net>
+	<01bc01c72c88$dc6fd740$954f85c0$@info>
+	<459738CD.9020101@preisshare.net>
+	<002a01c72cea$847136d0$8d53a470$@info>
+	<4597DD6B.4060404@preisshare.net>
+	<003201c72cf8$693ac800$3bb05800$@info>
+	<45994194.8040502@preisshare.net>
+	<002701c72de6$51e66490$f5b32db0$@info>
+	<45999622.20406@preisshare.net>
+Message-ID: <000001c72e1e$0c3e8930$24bb9b90$@info>
+
+David,
+
+ 
+
+Ok - good feedback.
+
+ 
+
+Amazon would probably be upset if you were totally cloning their stuff - but
+making it compatible seems fair do's.   Besides - they'd hardly want to give
+you all that huge free PR.
+
+ 
+
+You don't need to use web service for address - static XML with #ID anchors
+- and xinclude will work just fine too.
+
+ 
+
+Advantage is - just one place changes address for all references.   This
+would be transparent to the user anyway.  They would just publish their
+pricelist and their address in two separate pieces of XML.
+
+ 
+
+Engineering simple xml and pricelist on the fly is a challenge here I'd not
+realized we needed to re-visit.  As usual - the standard industry practice
+has become massively complex XML that protects customer lock-in and erects a
+massive technology barrier. 
+
+ 
+
+: -(
+
+ 
+
+We can do better.
+
+ 
+
+DW
+
+ 
+
+From: David Lyon [mailto:david.lyon at preisshare.net] 
+Sent: Monday, January 01, 2007 6:16 PM
+To: david at drrw.info
+Cc: preisshare-dev at lists.berlios.de
+Subject: Re: fyi : PreisShare XML Format
+
+ 
+
+Hi David,
+
+David RR Webber wrote: 
+
+OK - I went in and looked at three existing formats:
+ 
+1) openapplicationsgroup.org
+2) oasis UBL v2.0
+3) Amazon.com
+  
+
+Just need to be a little careful on the plagiarism front. I think Amazon
+could afford a fairly good legal team.
+
+In any case I like the feedback. With all that Industry experience, it has
+taken you only a short time to clearly identify some areas that could do
+with improvement.
+
+
+
+
+ 
+I also re-designed pricelist details - based on these premises:
+ 
+a) Address does not belong here - just locale (Amazon shows buyer rough area
+of seller).  Address of merchant should be separate table lookup - and that
+layout should be based on OASIS CIQ v3 xsd - gives you real international
+address format, GPS location and more.
+  
+
+Maybe. 
+
+Traditionally though I've included it because the address in the table is
+updated from the pricelist if it is changed. 
+
+Just making some of the address fields optional should satisfy this. 
+
+
+
+b) Web services should be used to complement the price list - to lookup
+related information - such as shipping cost, VAT applicable, and so on.
+  
+
+I'm just thinking that this would have a fairly big impact on the cost of
+the whole product. Presently we can get away without any web server. To keep
+the implementation cost down. I was planning to keep them in the pricelist,
+redistribute daily/weekly/etc. 
+
+Then they have all the information that they need.
+
+It will be an ongoing issue that will need more attention as you clearly
+point out.
+
+
+
+c) Added optional merchant notes - allows extensions to cover special needs.
+  
+
+Yes I agree with this.
+
+
+
+
+d) organized like information into sections - again this allows better
+versioning and selections down the road - e.g. REST based requests (a la AWS
+Amazon) - can select parts of the structure.
+  
+
+I'll take a closer look.
+
+
+
+ 
+I think this is now closer - but probably still needs some tweaking.
+  
+
+Yes, it's definitely better!
+
+And I very much appreciate having somebody with so much Industry stature
+look into the messages.
+
+Thanks
+
+David
+
+
+
+ 
+
+
+
+  _____  
+
+
+
+ 
+<?xml version="1.0"?>
+<PriceList>
+  <VendorInformation>
+        <Organisation_Name>
+        </Organisation_Name>
+        <PreisShare_ID>
+        </PreisShare_ID>
+ <LocationDetails>
+   <StateProvince></StateProvince>
+   <Country></Country>
+ </LocationDetails>
+  </VendorInformation>
+  <ProductInformation>
+        <ProductGroup>
+          <Group_Description>
+           </Group_Description>
+          <Product_Items>
+               <Product>
+                 <PLU>
+                 </PLU>
+                 <Name>
+                 </Name>
+                 <Description>
+                 </Description>
+                 <OnSpecial_Flag>
+                 </OnSpecial_Flag>
+ 
+<ListPrice>
+  <Amount>7999</Amount>
+  <CurrencyCode>USD</CurrencyCode>
+  <FormattedPrice>$79.99</FormattedPrice>
+  <VATcategory>Standard</VATcategory>
+  </ListPrice>
+  <ValidityPeriod>
+   <StartDate time=""></StartDate>
+   <EndDate time=""></EndDate>
+  </ValidityPeriod>
+  <ShippingDetails>
+    <FreeShipping allowed="true" currency="USD" orderTotal="$150"/>
+    <SpecialHandling type="refridgerated"/>
+    <SpecialHandling type="hazardous"/>
+    <Shipping type="UPS"/>
+    <Shipping type="FedEx"/>
+  </ShippingDetails>
+ <ItemAttributes>
+  <Manufacturer>Viva Media</Manufacturer>
+  <Model>00145</Model>
+  <ReleaseDate>2006/01/01</ReleaseDate>
+  <UPC>838639001453</UPC>
+  <EAN>838639001453</EAN>
+  <ISBN>0879801115</ISBN>
+ </ItemAttributes>
+ <OfferAttributes>
+  <Condition>New</Condition>
+  <SubCondition>New</SubCondition>
+  <ConditionNote>BRAND NEW FACTORY SEALED RETAIL BOX</ConditionNote>
+  <Availability>Usually ships in 24 hours</Availability>
+  <TotalNew>2</TotalNew>
+  <TotalUsed>0</TotalUsed>
+  <TotalCollectible>0</TotalCollectible>
+  <TotalRefurbished>0</TotalRefurbished>
+ </OfferAttributes>
+        <Unit>
+  <Height Units="hundredths-inches">66</Height>
+  <Length Units="hundredths-inches">900</Length>
+  <Weight Units="hundredths-pounds">104</Weight>
+  <Width Units="hundredths-inches">676</Width>
+        </Unit>
+  <MerchantNotes>
+     <Note type="onspecial">20% discount until January 1st, 2007</Note>
+     <Note type="aboutus">Our 20th year of selling these</Note>
+  </MerchantNotes>
+               </Product>
+          </Product_Items>
+        </ProductGroup>
+  </ProductInformation>
+</PriceList>
+  
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: <https://lists.berlios.de/pipermail/preisshare-dev/attachments/20070101/f9d09e29/attachment.html>
+
+From david.lyon at preisshare.net  Tue Jan  2 04:53:42 2007
+From: david.lyon at preisshare.net (david.lyon at preisshare.net)
+Date: Mon, 01 Jan 2007 21:53:42 -0600
+Subject: [Preisshare-dev] fyi : PreisShare XML Format
+In-Reply-To: <000001c72e1e$0c3e8930$24bb9b90$@info>
+References: <20061229104131.dc066b1d4d2e0a1a65719ae85a8071e6.05505fd3dd.wbe@email.secureserver.net>
+	<4595F4E5.8010603@preisshare.net>
+	<014401c72c32$98617820$c9246860$@info>
+	<4596F52D.1080400@preisshare.net>
+	<01bc01c72c88$dc6fd740$954f85c0$@info>
+	<459738CD.9020101@preisshare.net>
+	<002a01c72cea$847136d0$8d53a470$@info>
+	<4597DD6B.4060404@preisshare.net>
+	<003201c72cf8$693ac800$3bb05800$@info>
+	<45994194.8040502@preisshare.net>
+	<002701c72de6$51e66490$f5b32db0$@info>
+	<45999622.20406@preisshare.net> <000001c72e1e$0c3e8930$24bb9b90$@info>
+Message-ID: <20070101215342.08qczv7m600kkkg4@srv11.ezyreg.com>
+
+Quoting David RR Webber <david at drrw.info>:
+
+> Amazon would probably be upset if you were totally cloning their stuff - but
+> making it compatible seems fair do's.   Besides - they'd hardly want to give
+> you all that huge free PR.
+
+:-)
+
+If a customer needs a compatable feed for doing Amazon, then maybe  
+they can buy a CAM template from you :-)
+
+If not, then maybe we could do a transform with an XSLT module.
+
+I really don't want to try to do everything. Only have a really good  
+simple platform.
+
+One issue that I have with their format is that it will get enormously  
+bulky for large numbers of items. Such as in spare parts.
+
+<ListPrice>
+   <amount>7999</Amount>
+   <CurrencyCode>USD</CurrencyCode>
+   <FormattedPrice>$79.99</FormattedPrice>
+   <VATcategory>Standard</VATcategory>
+   </ListPrice>
+   <ValidityPeriod>
+    <StartDate time=""></StartDate>
+    <EndDate time=""></EndDate>
+   </ValidityPeriod>
+  <ItemAttributes>
+   <Manufacturer>Viva Media</Manufacturer>
+   <Model>00145</Model>
+  </ItemAttributes>
+
+This I already have as:
+
+<Product>
+   ListPrice$=79.99
+   Vatcategory&="Standard"
+   Manufacturer&="Viva Media"
+   Model&="00145"
+</Product>
+
+so in xml it should be:
+
+<Product>
+   <ListPrice>79.99</ListPrice>
+   <Vatcategory>Standard</Vatcategory>
+   <Manufacturer>Viva Media</Manufacturer>
+   <Model>00145</Model>
+</Product>
+
+I'm not that keen on nesting because it bulks everything out. I accept  
+the arguments for versioning and stuff like that, but they aren't as  
+applicable in an SME environment.
+
+> You don't need to use web service for address - static XML with #ID anchors
+> - and xinclude will work just fine too.
+
+Ok. That's a point.
+
+> Advantage is - just one place changes address for all references.   This
+> would be transparent to the user anyway.  They would just publish their
+> pricelist and their address in two separate pieces of XML.
+
+I'm considering it, but it sounds more complex than just having it in  
+one file.
+
+> Engineering simple xml and pricelist on the fly is a challenge here I'd not
+> realized we needed to re-visit.
+
+Oh yes. It's what I'm working on for a Customer right now.
+
+It's not so bad. Each customer wants a seperate pricelist with  
+different columns in it. There are of course different prices also.
+
+> As usual - the standard industry practice
+> has become massively complex XML that protects customer lock-in and erects a
+> massive technology barrier.
+
+That's why I would prefer to keep it simple.
+
+> : -(
+>
+> We can do better.
+
+That's what I believe also.
+
+Best Regards
+
+David
+
+
+
+From david at drrw.info  Tue Jan  2 20:55:43 2007
+From: david at drrw.info (David RR Webber (XML))
+Date: Tue, 02 Jan 2007 12:55:43 -0700
+Subject: [Preisshare-dev] fyi : PreisShare XML Format
+Message-ID: <20070102125542.dc066b1d4d2e0a1a65719ae85a8071e6.3517e54906.wbe@email.secureserver.net>
+
+An HTML attachment was scrubbed...
+URL: <https://lists.berlios.de/pipermail/preisshare-dev/attachments/20070102/1ee68613/attachment.html>
+
+From david at drrw.info  Tue Jan  2 20:55:52 2007
+From: david at drrw.info (David RR Webber (XML))
+Date: Tue, 02 Jan 2007 12:55:52 -0700
+Subject: [Preisshare-dev] fyi : PreisShare XML Format
+Message-ID: <20070102125551.dc066b1d4d2e0a1a65719ae85a8071e6.102227fb79.wbe@email.secureserver.net>
+
+An HTML attachment was scrubbed...
+URL: <https://lists.berlios.de/pipermail/preisshare-dev/attachments/20070102/d1427943/attachment.html>
+
+From david.lyon at preisshare.net  Wed Jan  3 00:11:01 2007
+From: david.lyon at preisshare.net (David Lyon)
+Date: Wed, 03 Jan 2007 10:11:01 +1100
+Subject: [Preisshare-dev] fyi : PreisShare XML Format
+In-Reply-To: <20070102125551.dc066b1d4d2e0a1a65719ae85a8071e6.102227fb79.wbe@email.secureserver.net>
+References: <20070102125551.dc066b1d4d2e0a1a65719ae85a8071e6.102227fb79.wbe@email.secureserver.net>
+Message-ID: <459AE685.7070409@preisshare.net>
+
+Hi David,
+
+> OK - let me work on slimming the XML down a bit. I too like to see one 
+> line for one item.
+I'm actually hoping to keep the structure pretty much the same as 
+already there a few software dependencies.
+
+In December, I incorporated some improvements that were suggested by 
+developers.
+
+Anyway, here is a sample portion of a pricelist from a German customer.
+
+<PriceList>
+<Vendor Information>
+PreisShare_ID&="dvl"
+Organisation_Name&="DVL Hardware Gmbh"
+Address_Line_1&=""
+Address_Line_2&=""
+Suburb_Town&="Munchen"
+State_Region&=""
+ZIP_Postcode&=""
+Country_Code&="DE"
+</Vendor Information>
+<Product Information>
+<Product Group>
+Group_Description&="Netzwerkkarten"
+<Product Items>
+<Product>
+Description&="Network Switch."
+Actual_Price$=106.6
+OnSpecial_Flag?=False
+PLU&="37380"
+Name&="Net Switch 10^/100 24P rt 19^""
+List_Price?=43,90
+</Product>
+</Product Items>
+</Product Group>
+<Product Group>
+Group_Description&="Geh?use"
+<Product Items>
+<Product>
+PLU&="GE00447"
+Name&="Geh K Ext. LC-POWER EH-25MP Multimedia HDD Player 2,5^""
+List_Price?=43,90
+</Product>
+<Product>
+PLU&="GE00423"
+Name&="Geh K Ext. MS-TECH MV-175 Multimedia HDD Player 2,5^""
+List_Price?=63,50
+</Product>
+</Product Items>
+</Product Group>
+<Product Group>
+Group_Description&="Akku ^/ Akku Zub"
+<Product Items>
+<Product>
+PLU&="AK00005"
+Name&="Akku TECXUS NiMH micro^/AAA 950mAh (2er) blister"
+List_Price?=2,80
+</Product>
+<Product>
+PLU&="AK00006"
+Name&="Akku TECXUS NiMH mignon^/AA 2700mAh (2er) blister"
+List_Price?=4,50
+</Product>
+<Product>
+PLU&="AK00007"
+Name&="Akku TECXUS NiMH mignon^/AA 2700mAh (4er) + Leder-Bag blister"
+List_Price?=8,70
+</Product>
+<Product>
+PLU&="AK00008"
+Name&="Akku TECXUS Ladeger?t TC 30 ultra inkl. 4x AA2500mAh rt. box"
+List_Price?=26,50
+</Product>
+<Product>
+PLU&="AK00009"
+Name&="Akku TECXUS Ladeger?t TC 6000 family box"
+List_Price?=27,50
+</Product>
+<Product>
+PLU&="AK00010"
+Name&="Akku TECXUS Ladeger?t TC 1000 inkl. 4x AA2500mAh rt. blister"
+List_Price?=10,90
+</Product>
+</Product Items>
+</Product Group>
+
+Cut from the code, here are our definitions:
+
+// -- Pricelist Document Node and Element Definitions
+GTD_PL_VENDORINFO_TAG = 'Vendor Information';
+GTD_PL_VENDORINFO_NODE = '/PriceList/' + GTD_PL_VENDORINFO_TAG;
+GTD_PL_ELE_COMPANY_CODE = 'PreisShare_ID';
+GTD_PL_ELE_COMPANY_NAME = 'Organisation_Name';
+GTD_PL_ELE_ADDRESS_LINE_1 = 'Address_Line_1';
+GTD_PL_ELE_ADDRESS_LINE_2 = 'Address_Line_2';
+GTD_PL_ELE_TOWN = 'Suburb_Town';
+GTD_PL_ELE_STATE_REGION = 'State_Region';
+GTD_PL_ELE_POSTALCODE = 'ZIP_Postcode';
+GTD_PL_ELE_COUNTRYCODE = 'Country_Code';
+GTD_PL_ELE_IPADDRESS = 'IP_Address';
+GTD_PL_ELE_FAX = 'Fax';
+GTD_PL_ELE_PROFILE = 'Profile_Description';
+GTD_PL_ELE_TELEPHONE = 'Telephone';
+GTD_PL_ELE_TELEPHONE2 = 'Telephone_2';
+GTD_PL_ELE_EMAIL_ADDRESS = 'Email_Address';
+GTD_PL_ELE_OTHER_INFO = 'Other_Information';
+GTD_PL_ELE_SELL_CATEGORIES = 'Selling_Categories';
+GTD_PL_ELE_BUY_CATEGORIES = 'Buying_Categories';
+GTD_PL_ELE_LATTITUDE = 'Lattitude';
+GTD_PL_ELE_LONGITUDE = 'Longitude';
+GTD_PL_ELE_COORDINATES = 'Coordinates';
+GTD_PL_ELE_CONTACT = 'Contact';
+
+GTD_PL_DELIVERY_NODE = '/PriceList/Delivery Information';
+GTD_PL_ELE_DELIVERY_MODE = 'Delivery_Modes';
+GTD_PL_DELIVTYPE_UPS = 'UPS';
+GTD_PL_DELIVTYPE_FEDEX = 'Fedex';
+GTD_PL_DELIVTYPE_AIR = 'Air Freight';
+GTD_PL_DELIVTYPE_SEA = 'Sea';
+GTD_PL_DELIVTYPE_COLLECT = 'Collect';
+GTD_PL_DELIVTYPE_COURIER = 'Courier';
+GTD_PL_ELE_MIN_DELIV_CHARGE = 'Minimum_Delivery_Cost';
+
+// -- Information area
+GTD_PL_INFORMATION_TAG = 'Summary';
+GTD_PL_INFORMATION_NODE = '/PriceList/' + GTD_PL_INFORMATION_TAG;
+GTD_PL_ELE_COLUMNS_USED = 'Columns_Used';
+
+GTD_PL_INFORMATION_ITEM_NODE= '/Item';
+GTD_PL_ELE_INFO_TITLE = 'Title';
+GTD_PL_ELE_INFO_TEXT = 'Description';
+GTD_PL_INFO_IMAGE_NODE = '/Image';
+GTD_PL_ELE_INFO_IMAGE_ID = 'Filename';
+
+// -- Banking details
+GTD_PL_BANKING_NODE = '/PriceList/Banking Details';
+GTD_PL_ELE_BANK_BSB = 'Our_BSB';
+GTD_PL_ELE_BANK_ACCT = 'Our_Account_Number';
+GTD_PL_ELE_BANK_GTL = 'Our_Bank_GTL';
+GTD_PL_ELE_PAYMENT_TYPES = 'Payment_Types';
+
+// -- Payment/Card Types
+GTD_PL_PAYTYPE_ACCOUNT = 'Account';
+GTD_PL_CARDTYPE_EFT = 'Eft';
+GTD_PL_CARDTYPE_AMEX = 'American Express';
+GTD_PL_CARDTYPE_DINERS = 'Diners Club';
+GTD_PL_CARDTYPE_JCB = 'JCB';
+GTD_PL_CARDTYPE_CARTEBLACHE = 'Carte Blache';
+GTD_PL_CARDTYPE_VISA = 'Visa';
+GTD_PL_CARDTYPE_MC = 'MasterCard';
+GTD_PL_CARDTYPE_BC = 'BankCard';
+GTD_PL_CARDTYPE_DISCNOVUS = 'Discover/Novus';
+
+GTD_PL_PRICELIST_TAG = 'PriceList';
+GTD_PL_PATCH_TAG = 'Pricelst Patch';
+
+GTD_PL_PRODUCTINFO_TAG = 'Product Information';
+GTD_PL_PRODUCTINFO_NODE = '/PriceList/' + GTD_PL_PRODUCTINFO_TAG; // 
+/PriceList/Product Information
+GTD_PL_PRODUCTGROUP_TAG = 'Product Group';
+GTD_PL_PRODUCTGROUP_NODE = '/' + GTD_PL_PRODUCTGROUP_TAG;
+GTD_PL_PRODUCTGROUPL2_TAG = 'Product Group Level 2';
+GTD_PL_PRODUCTGROUPL2_NODE = '/' + GTD_PL_PRODUCTGROUPL2_TAG;
+GTD_PL_PRODUCTGROUPL3_NODE = '/Product Group Level 3';
+GTD_PL_ELE_GROUP_NAME = 'Group_Description';
+GTD_PL_ELE_GROUPL2_NAME = 'Group_Description_2';
+GTD_PL_ELE_GROUPL3_NAME = 'Group_Description_3';
+GTD_PL_PRODUCTITEMS_NODE = '/Product Items';
+GTD_PL_PRODUCTITEM_NODE = '/Product';
+GTD_PL_PRODUCTITEMS_TAG = 'Product Items';
+GTD_PL_PRODUCTITEM_TAG = 'Product';
+GTD_PL_ELE_PRODUCT_PLU = 'PLU'; // <== The new identifier
+GTD_PL_ELE_PRODUCT_CODE = GTD_PL_ELE_PRODUCT_PLU; // <== The new identifier
+GTD_PL_ELE_PRODUCT_NAME = 'Name';
+GTD_PL_ELE_PRODUCT_DESC = 'Description';
+GTD_PL_ELE_PRODUCT_KEYWORDS = 'Keywords';
+GTD_PL_ELE_PRODUCT_LIST = 'List_Price';
+GTD_PL_ELE_PRODUCT_ACTUAL = 'Actual_Price'; // <= and here is the new
+GTD_PL_ELE_PRODUCT_TAXR = 'Tax_Rate';
+GTD_PL_ELE_PRODUCT_TAXT = 'Tax_Type';
+GTD_PL_ELE_PRODUCT_TAXAMT = 'Tax_Amount';
+GTD_PL_ELE_PRODUCT_BRAND = 'Brand';
+GTD_PL_ELE_PRODUCT_UNIT = 'Unit';
+GTD_PL_ELE_PRODUCT_MINORDQTY= 'MinOrderQty';
+GTD_PL_ELE_PRODUCT_TYPE = 'Product_Type';
+GTD_PL_ELE_PRODUCT_IMAGE = 'Thumbnail';
+GTD_PL_ELE_PRODUCT_BIGIMAGE = 'FullImage';
+GTD_PL_ELE_PRODUCT_MOREINFO = 'Further_Info_URL';
+GTD_PL_ELE_BRANDNAME = 'Brand';
+GTD_PL_ELE_MANUFACT_NAME = 'Manufacturer';
+GTD_PL_ELE_MANUFACT_GTL = 'Manufacturer.GTL';
+GTP_PL_ELE_MANUFACT_PRODINFO= 'Manufacturer.Product_URL';
+GTD_PL_ELE_PRODUCT_AVAIL_FLAG = 'Availability.Flag';
+GTD_PL_ELE_PRODUCT_AVAIL_DATE = 'Availability.Date';
+GTD_PL_ELE_PRODUCT_AVAIL_STATUS = 'Availability.Status';
+GTD_PL_AVAIL_FLAG_UNKNOWN = '';
+GTD_PL_AVAIL_FLAG_HIGH = 'High';
+GTD_PL_AVAIL_FLAG_MEDIUM = 'Medium';
+GTD_PL_AVAIL_FLAG_LOW = 'Low';
+GTD_PL_AVAIL_FLAG_AFTER = 'After';
+GTD_PL_AVAIL_FLAG_OUTOFSTOCK= 'OutOfStock';
+GTD_PL_AVAIL_FLAG_NONSTOCK = 'NonStock';
+GTD_PL_ELE_PRODUCT_AVAIL_BACKORD= 'Availability.OnBackOrder';
+GTD_PL_ELE_ONSPECIAL = 'OnSpecial_Flag';
+GTD_PL_ELE_ONSPECIAL_TILL = 'OnSpecial_Until';
+
+> Plus - I'll show how to use xinclude to reference in the address stuff 
+> - very simple.
+ok.
+
+> And then - yes - I see value in being able to apply simple map to go 
+> to Amazon or eBay formats - so data could be extracted out of Preis 
+> and simply inserted into theirs...
+And possibly for an additional price as a commercial add-on, of course. :-)
+
+Best Regards
+
+David
+
+
+
+
+From david at drrw.info  Wed Jan  3 15:49:26 2007
+From: david at drrw.info (David RR Webber (XML))
+Date: Wed, 03 Jan 2007 07:49:26 -0700
+Subject: [Preisshare-dev] fyi : PreisShare XML Format
+Message-ID: <20070103074926.dc066b1d4d2e0a1a65719ae85a8071e6.57852f289c.wbe@email.secureserver.net>
+
+An HTML attachment was scrubbed...
+URL: <https://lists.berlios.de/pipermail/preisshare-dev/attachments/20070103/c697d3f1/attachment.html>
+
+From david.lyon at preisshare.net  Thu Jan  4 00:06:34 2007
+From: david.lyon at preisshare.net (david.lyon at preisshare.net)
+Date: Wed, 03 Jan 2007 17:06:34 -0600
+Subject: [Preisshare-dev] fyi : PreisShare XML Format
+In-Reply-To: <20070103074926.dc066b1d4d2e0a1a65719ae85a8071e6.57852f289c.wbe@email.secureserver.net>
+References: <20070103074926.dc066b1d4d2e0a1a65719ae85a8071e6.57852f289c.wbe@email.secureserver.net>
+Message-ID: <20070103170634.tp24983p2nsw0osg@srv11.ezyreg.com>
+
+Quoting "David RR Webber (XML)" <david at drrw.info>:
+
+> David,   Looks like you invented your own attribute mechanism here.
+
+Yes.
+
+> This just makes code overhead everywhere - parsing that out - defeats
+> the purpose of XML being able to use standard tools.
+
+Parsing it is not neccessary. As included are the tools neccessary to  
+apply it to an SQL database directly. Failing that, a customer can ask  
+for the pricelist to be provided in CSV, XLS or XML.
+
+Then they can use their choice of tools.
+
+In a small business environment, they usually only know csv or xls.
+
+> Plus - you will
+> not get buy-in from big players.
+
+Because they don't like something that is more efficient?
+
+Anyway, that is not so high on my list of priorities at the moment.  
+Our business strategy is to offer something useful to smaller  
+organisations.
+
+> Anyway - I think we can accommodate
+> this approach - but use standard attributes - and the code change
+> should be minimal.   I'll investigate later today.   Thanks, DW
+
+Take care
+
+David
+
+
+From david.lyon at preisshare.net  Thu Jan  4 00:22:09 2007
+From: david.lyon at preisshare.net (david.lyon at preisshare.net)
+Date: Wed, 03 Jan 2007 17:22:09 -0600
+Subject: [Preisshare-dev] fyi : PreisShare XML Format
+In-Reply-To: <20070103074926.dc066b1d4d2e0a1a65719ae85a8071e6.57852f289c.wbe@email.secureserver.net>
+References: <20070103074926.dc066b1d4d2e0a1a65719ae85a8071e6.57852f289c.wbe@email.secureserver.net>
+Message-ID: <20070103172209.u3zydelholwscgsg@srv11.ezyreg.com>
+
+
+Hi David,
+
+Yes, we've got a lot of things that are unique to our project.
+
+The data formats, communications, searching and integration are all  
+somewhat unique. We're not hooked on them, we are flexible to embrace  
+other formats also.
+
+We are in the process of adding standard xml stuff now, but we have no  
+client funding to do it. So it is just a feature request at the  
+moment. I do look at it for a few hours each day, working out the best  
+way to do it.
+
+Instead, we are just focussing on industrial park realities. That is  
+making preisshare work in industrial settings and getting paid  
+whatever they can afford. Dealing with tens of thousands of products,  
+different pricelist formats and stuff like that.
+
+That's the daily grind.....
+
+chewing those prices.....
+
+our new catchphrase for business..
+
+"Never be aftaid of price changes again...."
+
+
+Quoting "David RR Webber (XML)" <david at drrw.info>:
+
+> David,   Looks like you invented your own attribute mechanism here.
+> This just makes code overhead everywhere - parsing that out - defeats
+> the purpose of XML being able to use standard tools.   Plus - you will
+> not get buy-in from big players.   Anyway - I think we can accommodate
+> this approach - but use standard attributes - and the code change
+> should be minimal.   I'll investigate later today.   Thanks, DW
+>
+> "The way to be is to do" - Confucius (551-472 B.C.)
+>
+> -------- Original Message --------
+> Subject: Re: fyi : PreisShare XML Format
+> From: David Lyon <david.lyon at preisshare.net>
+> Date: Tue, January 02, 2007 6:11 pm
+> To: "David RR Webber (XML)" <david at drrw.info>
+> Cc: preisshare-dev at lists.berlios.de
+>
+> Hi David,
+>
+>> OK - let me work on slimming the XML down a bit. I too like to see
+> one
+>> line for one item.
+> I'm actually hoping to keep the structure pretty much the same as
+> already there a few software dependencies.
+>
+> In December, I incorporated some improvements that were suggested by
+> developers.
+>
+> Anyway, here is a sample portion of a pricelist from a German
+> customer.
+>
+> <PriceList>
+> <Vendor Information>
+> PreisShare_ID&="dvl"
+> Organisation_Name&="DVL Hardware Gmbh"
+> Address_Line_1&=""
+> Address_Line_2&=""
+> Suburb_Town&="Munchen"
+> State_Region&=""
+> ZIP_Postcode&=""
+> Country_Code&="DE"
+> </Vendor Information>
+> <Product Information>
+> <Product Group>
+> Group_Description&="Netzwerkkarten"
+> <Product Items>
+> <Product>
+> Description&="Network Switch."
+> Actual_Price$=106.6
+> OnSpecial_Flag?=False
+> PLU&="37380"
+> Name&="Net Switch 10^/100 24P rt 19^""
+> List_Price&euro;=43,90
+> </Product>
+> </Product Items>
+> </Product Group>
+> <Product Group>
+> Group_Description&="Geh?use"
+> <Product Items>
+> <Product>
+> PLU&="GE00447"
+> Name&="Geh K Ext. LC-POWER EH-25MP Multimedia HDD Player 2,5^""
+> List_Price&euro;=43,90
+> </Product>
+> <Product>
+> PLU&="GE00423"
+> Name&="Geh K Ext. MS-TECH MV-175 Multimedia HDD Player 2,5^""
+> List_Price&euro;=63,50
+> </Product>
+> </Product Items>
+> </Product Group>
+> <Product Group>
+> Group_Description&="Akku ^/ Akku Zub"
+> <Product Items>
+> <Product>
+> PLU&="AK00005"
+> Name&="Akku TECXUS NiMH micro^/AAA 950mAh (2er) blister"
+> List_Price&euro;=2,80
+> </Product>
+> <Product>
+> PLU&="AK00006"
+> Name&="Akku TECXUS NiMH mignon^/AA 2700mAh (2er) blister"
+> List_Price&euro;=4,50
+> </Product>
+> <Product>
+> PLU&="AK00007"
+> Name&="Akku TECXUS NiMH mignon^/AA 2700mAh (4er) + Leder-Bag blister"
+> List_Price&euro;=8,70
+> </Product>
+> <Product>
+> PLU&="AK00008"
+> Name&="Akku TECXUS Ladeger?t TC 30 ultra inkl. 4x AA2500mAh rt. box"
+> List_Price&euro;=26,50
+> </Product>
+> <Product>
+> PLU&="AK00009"
+> Name&="Akku TECXUS Ladeger?t TC 6000 family box"
+> List_Price&euro;=27,50
+> </Product>
+> <Product>
+> PLU&="AK00010"
+> Name&="Akku TECXUS Ladeger?t TC 1000 inkl. 4x AA2500mAh rt. blister"
+> List_Price&euro;=10,90
+> </Product>
+> </Product Items>
+> </Product Group>
+>
+> Cut from the code, here are our definitions:
+>
+> // -- Pricelist Document Node and Element Definitions
+> GTD_PL_VENDORINFO_TAG = 'Vendor Information';
+> GTD_PL_VENDORINFO_NODE = '/PriceList/' + GTD_PL_VENDORINFO_TAG;
+> GTD_PL_ELE_COMPANY_CODE = 'PreisShare_ID';
+> GTD_PL_ELE_COMPANY_NAME = 'Organisation_Name';
+> GTD_PL_ELE_ADDRESS_LINE_1 = 'Address_Line_1';
+> GTD_PL_ELE_ADDRESS_LINE_2 = 'Address_Line_2';
+> GTD_PL_ELE_TOWN = 'Suburb_Town';
+> GTD_PL_ELE_STATE_REGION = 'State_Region';
+> GTD_PL_ELE_POSTALCODE = 'ZIP_Postcode';
+> GTD_PL_ELE_COUNTRYCODE = 'Country_Code';
+> GTD_PL_ELE_IPADDRESS = 'IP_Address';
+> GTD_PL_ELE_FAX = 'Fax';
+> GTD_PL_ELE_PROFILE = 'Profile_Description';
+> GTD_PL_ELE_TELEPHONE = 'Telephone';
+> GTD_PL_ELE_TELEPHONE2 = 'Telephone_2';
+> GTD_PL_ELE_EMAIL_ADDRESS = 'Email_Address';
+> GTD_PL_ELE_OTHER_INFO = 'Other_Information';
+> GTD_PL_ELE_SELL_CATEGORIES = 'Selling_Categories';
+> GTD_PL_ELE_BUY_CATEGORIES = 'Buying_Categories';
+> GTD_PL_ELE_LATTITUDE = 'Lattitude';
+> GTD_PL_ELE_LONGITUDE = 'Longitude';
+> GTD_PL_ELE_COORDINATES = 'Coordinates';
+> GTD_PL_ELE_CONTACT = 'Contact';
+>
+> GTD_PL_DELIVERY_NODE = '/PriceList/Delivery Information';
+> GTD_PL_ELE_DELIVERY_MODE = 'Delivery_Modes';
+> GTD_PL_DELIVTYPE_UPS = 'UPS';
+> GTD_PL_DELIVTYPE_FEDEX = 'Fedex';
+> GTD_PL_DELIVTYPE_AIR = 'Air Freight';
+> GTD_PL_DELIVTYPE_SEA = 'Sea';
+> GTD_PL_DELIVTYPE_COLLECT = 'Collect';
+> GTD_PL_DELIVTYPE_COURIER = 'Courier';
+> GTD_PL_ELE_MIN_DELIV_CHARGE = 'Minimum_Delivery_Cost';
+>
+> // -- Information area
+> GTD_PL_INFORMATION_TAG = 'Summary';
+> GTD_PL_INFORMATION_NODE = '/PriceList/' + GTD_PL_INFORMATION_TAG;
+> GTD_PL_ELE_COLUMNS_USED = 'Columns_Used';
+>
+> GTD_PL_INFORMATION_ITEM_NODE= '/Item';
+> GTD_PL_ELE_INFO_TITLE = 'Title';
+> GTD_PL_ELE_INFO_TEXT = 'Description';
+> GTD_PL_INFO_IMAGE_NODE = '/Image';
+> GTD_PL_ELE_INFO_IMAGE_ID = 'Filename';
+>
+> // -- Banking details
+> GTD_PL_BANKING_NODE = '/PriceList/Banking Details';
+> GTD_PL_ELE_BANK_BSB = 'Our_BSB';
+> GTD_PL_ELE_BANK_ACCT = 'Our_Account_Number';
+> GTD_PL_ELE_BANK_GTL = 'Our_Bank_GTL';
+> GTD_PL_ELE_PAYMENT_TYPES = 'Payment_Types';
+>
+> // -- Payment/Card Types
+> GTD_PL_PAYTYPE_ACCOUNT = 'Account';
+> GTD_PL_CARDTYPE_EFT = 'Eft';
+> GTD_PL_CARDTYPE_AMEX = 'American Express';
+> GTD_PL_CARDTYPE_DINERS = 'Diners Club';
+> GTD_PL_CARDTYPE_JCB = 'JCB';
+> GTD_PL_CARDTYPE_CARTEBLACHE = 'Carte Blache';
+> GTD_PL_CARDTYPE_VISA = 'Visa';
+> GTD_PL_CARDTYPE_MC = 'MasterCard';
+> GTD_PL_CARDTYPE_BC = 'BankCard';
+> GTD_PL_CARDTYPE_DISCNOVUS = 'Discover/Novus';
+>
+> GTD_PL_PRICELIST_TAG = 'PriceList';
+> GTD_PL_PATCH_TAG = 'Pricelst Patch';
+>
+> GTD_PL_PRODUCTINFO_TAG = 'Product Information';
+> GTD_PL_PRODUCTINFO_NODE = '/PriceList/' + GTD_PL_PRODUCTINFO_TAG; //
+> /PriceList/Product Information
+> GTD_PL_PRODUCTGROUP_TAG = 'Product Group';
+> GTD_PL_PRODUCTGROUP_NODE = '/' + GTD_PL_PRODUCTGROUP_TAG;
+> GTD_PL_PRODUCTGROUPL2_TAG = 'Product Group Level 2';
+> GTD_PL_PRODUCTGROUPL2_NODE = '/' + GTD_PL_PRODUCTGROUPL2_TAG;
+> GTD_PL_PRODUCTGROUPL3_NODE = '/Product Group Level 3';
+> GTD_PL_ELE_GROUP_NAME = 'Group_Description';
+> GTD_PL_ELE_GROUPL2_NAME = 'Group_Description_2';
+> GTD_PL_ELE_GROUPL3_NAME = 'Group_Description_3';
+> GTD_PL_PRODUCTITEMS_NODE = '/Product Items';
+> GTD_PL_PRODUCTITEM_NODE = '/Product';
+> GTD_PL_PRODUCTITEMS_TAG = 'Product Items';
+> GTD_PL_PRODUCTITEM_TAG = 'Product';
+> GTD_PL_ELE_PRODUCT_PLU = 'PLU'; // <== The new identifier
+> GTD_PL_ELE_PRODUCT_CODE = GTD_PL_ELE_PRODUCT_PLU; // <== The new
+> identifier
+> GTD_PL_ELE_PRODUCT_NAME = 'Name';
+> GTD_PL_ELE_PRODUCT_DESC = 'Description';
+> GTD_PL_ELE_PRODUCT_KEYWORDS = 'Keywords';
+> GTD_PL_ELE_PRODUCT_LIST = 'List_Price';
+> GTD_PL_ELE_PRODUCT_ACTUAL = 'Actual_Price'; // <= and here is the new
+> GTD_PL_ELE_PRODUCT_TAXR = 'Tax_Rate';
+> GTD_PL_ELE_PRODUCT_TAXT = 'Tax_Type';
+> GTD_PL_ELE_PRODUCT_TAXAMT = 'Tax_Amount';
+> GTD_PL_ELE_PRODUCT_BRAND = 'Brand';
+> GTD_PL_ELE_PRODUCT_UNIT = 'Unit';
+> GTD_PL_ELE_PRODUCT_MINORDQTY= 'MinOrderQty';
+> GTD_PL_ELE_PRODUCT_TYPE = 'Product_Type';
+> GTD_PL_ELE_PRODUCT_IMAGE = 'Thumbnail';
+> GTD_PL_ELE_PRODUCT_BIGIMAGE = 'FullImage';
+> GTD_PL_ELE_PRODUCT_MOREINFO = 'Further_Info_URL';
+> GTD_PL_ELE_BRANDNAME = 'Brand';
+> GTD_PL_ELE_MANUFACT_NAME = 'Manufacturer';
+> GTD_PL_ELE_MANUFACT_GTL = 'Manufacturer.GTL';
+> GTP_PL_ELE_MANUFACT_PRODINFO= 'Manufacturer.Product_URL';
+> GTD_PL_ELE_PRODUCT_AVAIL_FLAG = 'Availability.Flag';
+> GTD_PL_ELE_PRODUCT_AVAIL_DATE = 'Availability.Date';
+> GTD_PL_ELE_PRODUCT_AVAIL_STATUS = 'Availability.Status';
+> GTD_PL_AVAIL_FLAG_UNKNOWN = '';
+> GTD_PL_AVAIL_FLAG_HIGH = 'High';
+> GTD_PL_AVAIL_FLAG_MEDIUM = 'Medium';
+> GTD_PL_AVAIL_FLAG_LOW = 'Low';
+> GTD_PL_AVAIL_FLAG_AFTER = 'After';
+> GTD_PL_AVAIL_FLAG_OUTOFSTOCK= 'OutOfStock';
+> GTD_PL_AVAIL_FLAG_NONSTOCK = 'NonStock';
+> GTD_PL_ELE_PRODUCT_AVAIL_BACKORD= 'Availability.OnBackOrder';
+> GTD_PL_ELE_ONSPECIAL = 'OnSpecial_Flag';
+> GTD_PL_ELE_ONSPECIAL_TILL = 'OnSpecial_Until';
+>
+>> Plus - I'll show how to use xinclude to reference in the address
+> stuff
+>> - very simple.
+> ok.
+>
+>> And then - yes - I see value in being able to apply simple map to
+> go
+>> to Amazon or eBay formats - so data could be extracted out of Preis
+>
+>> and simply inserted into theirs...
+> And possibly for an additional price as a commercial add-on, of
+> course. :-)
+>
+> Best Regards
+>
+> David
+
+
+
+
+From david at drrw.info  Thu Jan  4 04:04:16 2007
+From: david at drrw.info (David RR Webber)
+Date: Wed, 3 Jan 2007 22:04:16 -0500
+Subject: [Preisshare-dev] fyi : PreisShare XML Format
+In-Reply-To: <20070103172209.u3zydelholwscgsg@srv11.ezyreg.com>
+References: <20070103074926.dc066b1d4d2e0a1a65719ae85a8071e6.57852f289c.wbe@email.secureserver.net>
+	<20070103172209.u3zydelholwscgsg@srv11.ezyreg.com>
+Message-ID: <017601c72fad$060a6260$121f2720$@info>
+
+David,
+
+Got side tracked this evening.
+
+BTW - of interest - 
+
+http://www.eweek.com/article2/0,1895,2078366,00.asp?kc=EWEWEMNL010107EP26A
+
+DW
+
+-----Original Message-----
+From: david.lyon at preisshare.net [mailto:david.lyon at preisshare.net] 
+Sent: Wednesday, January 03, 2007 6:22 PM
+To: david at drrw.info
+Cc: preisshare-dev at lists.berlios.de
+Subject: RE: fyi : PreisShare XML Format
+
+
+Hi David,
+
+Yes, we've got a lot of things that are unique to our project.
+
+The data formats, communications, searching and integration are all somewhat
+unique. We're not hooked on them, we are flexible to embrace other formats
+also.
+
+We are in the process of adding standard xml stuff now, but we have no
+client funding to do it. So it is just a feature request at the moment. I do
+look at it for a few hours each day, working out the best way to do it.
+
+Instead, we are just focussing on industrial park realities. That is making
+preisshare work in industrial settings and getting paid whatever they can
+afford. Dealing with tens of thousands of products, different pricelist
+formats and stuff like that.
+
+That's the daily grind.....
+
+chewing those prices.....
+
+our new catchphrase for business..
+
+"Never be aftaid of price changes again...."
+
+
+Quoting "David RR Webber (XML)" <david at drrw.info>:
+
+> David,   Looks like you invented your own attribute mechanism here.
+> This just makes code overhead everywhere - parsing that out - defeats
+> the purpose of XML being able to use standard tools.   Plus - you will
+> not get buy-in from big players.   Anyway - I think we can accommodate
+> this approach - but use standard attributes - and the code change
+> should be minimal.   I'll investigate later today.   Thanks, DW
+>
+> "The way to be is to do" - Confucius (551-472 B.C.)
+>
+> -------- Original Message --------
+> Subject: Re: fyi : PreisShare XML Format
+> From: David Lyon <david.lyon at preisshare.net>
+> Date: Tue, January 02, 2007 6:11 pm
+> To: "David RR Webber (XML)" <david at drrw.info>
+> Cc: preisshare-dev at lists.berlios.de
+>
+> Hi David,
+>
+>> OK - let me work on slimming the XML down a bit. I too like to see
+> one
+>> line for one item.
+> I'm actually hoping to keep the structure pretty much the same as 
+> already there a few software dependencies.
+>
+> In December, I incorporated some improvements that were suggested by 
+> developers.
+>
+> Anyway, here is a sample portion of a pricelist from a German 
+> customer.
+>
+> <PriceList>
+> <Vendor Information>
+> PreisShare_ID&="dvl"
+> Organisation_Name&="DVL Hardware Gmbh"
+> Address_Line_1&=""
+> Address_Line_2&=""
+> Suburb_Town&="Munchen"
+> State_Region&=""
+> ZIP_Postcode&=""
+> Country_Code&="DE"
+> </Vendor Information>
+> <Product Information>
+> <Product Group>
+> Group_Description&="Netzwerkkarten"
+> <Product Items>
+> <Product>
+> Description&="Network Switch."
+> Actual_Price$=106.6
+> OnSpecial_Flag?=False
+> PLU&="37380"
+> Name&="Net Switch 10^/100 24P rt 19^""
+> List_Price&euro;=43,90
+> </Product>
+> </Product Items>
+> </Product Group>
+> <Product Group>
+> Group_Description&="Geh?use"
+> <Product Items>
+> <Product>
+> PLU&="GE00447"
+> Name&="Geh K Ext. LC-POWER EH-25MP Multimedia HDD Player 2,5^""
+> List_Price&euro;=43,90
+> </Product>
+> <Product>
+> PLU&="GE00423"
+> Name&="Geh K Ext. MS-TECH MV-175 Multimedia HDD Player 2,5^""
+> List_Price&euro;=63,50
+> </Product>
+> </Product Items>
+> </Product Group>
+> <Product Group>
+> Group_Description&="Akku ^/ Akku Zub"
+> <Product Items>
+> <Product>
+> PLU&="AK00005"
+> Name&="Akku TECXUS NiMH micro^/AAA 950mAh (2er) blister"
+> List_Price&euro;=2,80
+> </Product>
+> <Product>
+> PLU&="AK00006"
+> Name&="Akku TECXUS NiMH mignon^/AA 2700mAh (2er) blister"
+> List_Price&euro;=4,50
+> </Product>
+> <Product>
+> PLU&="AK00007"
+> Name&="Akku TECXUS NiMH mignon^/AA 2700mAh (4er) + Leder-Bag blister"
+> List_Price&euro;=8,70
+> </Product>
+> <Product>
+> PLU&="AK00008"
+> Name&="Akku TECXUS Ladeger?t TC 30 ultra inkl. 4x AA2500mAh rt. box"
+> List_Price&euro;=26,50
+> </Product>
+> <Product>
+> PLU&="AK00009"
+> Name&="Akku TECXUS Ladeger?t TC 6000 family box"
+> List_Price&euro;=27,50
+> </Product>
+> <Product>
+> PLU&="AK00010"
+> Name&="Akku TECXUS Ladeger?t TC 1000 inkl. 4x AA2500mAh rt. blister"
+> List_Price&euro;=10,90
+> </Product>
+> </Product Items>
+> </Product Group>
+>
+> Cut from the code, here are our definitions:
+>
+> // -- Pricelist Document Node and Element Definitions 
+> GTD_PL_VENDORINFO_TAG = 'Vendor Information'; GTD_PL_VENDORINFO_NODE = 
+> '/PriceList/' + GTD_PL_VENDORINFO_TAG; GTD_PL_ELE_COMPANY_CODE = 
+> 'PreisShare_ID'; GTD_PL_ELE_COMPANY_NAME = 'Organisation_Name';
+> GTD_PL_ELE_ADDRESS_LINE_1 = 'Address_Line_1';
+> GTD_PL_ELE_ADDRESS_LINE_2 = 'Address_Line_2'; GTD_PL_ELE_TOWN = 
+> 'Suburb_Town'; GTD_PL_ELE_STATE_REGION = 'State_Region'; 
+> GTD_PL_ELE_POSTALCODE = 'ZIP_Postcode'; GTD_PL_ELE_COUNTRYCODE = 
+> 'Country_Code'; GTD_PL_ELE_IPADDRESS = 'IP_Address'; GTD_PL_ELE_FAX = 
+> 'Fax'; GTD_PL_ELE_PROFILE = 'Profile_Description'; 
+> GTD_PL_ELE_TELEPHONE = 'Telephone';
+> GTD_PL_ELE_TELEPHONE2 = 'Telephone_2'; GTD_PL_ELE_EMAIL_ADDRESS = 
+> 'Email_Address'; GTD_PL_ELE_OTHER_INFO = 'Other_Information'; 
+> GTD_PL_ELE_SELL_CATEGORIES = 'Selling_Categories'; 
+> GTD_PL_ELE_BUY_CATEGORIES = 'Buying_Categories'; GTD_PL_ELE_LATTITUDE 
+> = 'Lattitude'; GTD_PL_ELE_LONGITUDE = 'Longitude'; 
+> GTD_PL_ELE_COORDINATES = 'Coordinates'; GTD_PL_ELE_CONTACT = 
+> 'Contact';
+>
+> GTD_PL_DELIVERY_NODE = '/PriceList/Delivery Information'; 
+> GTD_PL_ELE_DELIVERY_MODE = 'Delivery_Modes'; GTD_PL_DELIVTYPE_UPS = 
+> 'UPS'; GTD_PL_DELIVTYPE_FEDEX = 'Fedex'; GTD_PL_DELIVTYPE_AIR = 'Air 
+> Freight'; GTD_PL_DELIVTYPE_SEA = 'Sea'; GTD_PL_DELIVTYPE_COLLECT = 
+> 'Collect'; GTD_PL_DELIVTYPE_COURIER = 'Courier'; 
+> GTD_PL_ELE_MIN_DELIV_CHARGE = 'Minimum_Delivery_Cost';
+>
+> // -- Information area
+> GTD_PL_INFORMATION_TAG = 'Summary';
+> GTD_PL_INFORMATION_NODE = '/PriceList/' + GTD_PL_INFORMATION_TAG; 
+> GTD_PL_ELE_COLUMNS_USED = 'Columns_Used';
+>
+> GTD_PL_INFORMATION_ITEM_NODE= '/Item'; GTD_PL_ELE_INFO_TITLE = 
+> 'Title'; GTD_PL_ELE_INFO_TEXT = 'Description'; GTD_PL_INFO_IMAGE_NODE 
+> = '/Image'; GTD_PL_ELE_INFO_IMAGE_ID = 'Filename';
+>
+> // -- Banking details
+> GTD_PL_BANKING_NODE = '/PriceList/Banking Details'; 
+> GTD_PL_ELE_BANK_BSB = 'Our_BSB'; GTD_PL_ELE_BANK_ACCT = 
+> 'Our_Account_Number'; GTD_PL_ELE_BANK_GTL = 'Our_Bank_GTL'; 
+> GTD_PL_ELE_PAYMENT_TYPES = 'Payment_Types';
+>
+> // -- Payment/Card Types
+> GTD_PL_PAYTYPE_ACCOUNT = 'Account';
+> GTD_PL_CARDTYPE_EFT = 'Eft';
+> GTD_PL_CARDTYPE_AMEX = 'American Express'; GTD_PL_CARDTYPE_DINERS = 
+> 'Diners Club'; GTD_PL_CARDTYPE_JCB = 'JCB'; 
+> GTD_PL_CARDTYPE_CARTEBLACHE = 'Carte Blache'; GTD_PL_CARDTYPE_VISA = 
+> 'Visa'; GTD_PL_CARDTYPE_MC = 'MasterCard'; GTD_PL_CARDTYPE_BC = 
+> 'BankCard'; GTD_PL_CARDTYPE_DISCNOVUS = 'Discover/Novus';
+>
+> GTD_PL_PRICELIST_TAG = 'PriceList';
+> GTD_PL_PATCH_TAG = 'Pricelst Patch';
+>
+> GTD_PL_PRODUCTINFO_TAG = 'Product Information'; 
+> GTD_PL_PRODUCTINFO_NODE = '/PriceList/' + GTD_PL_PRODUCTINFO_TAG; // 
+> /PriceList/Product Information GTD_PL_PRODUCTGROUP_TAG = 'Product 
+> Group'; GTD_PL_PRODUCTGROUP_NODE = '/' + GTD_PL_PRODUCTGROUP_TAG; 
+> GTD_PL_PRODUCTGROUPL2_TAG = 'Product Group Level 2'; 
+> GTD_PL_PRODUCTGROUPL2_NODE = '/' + GTD_PL_PRODUCTGROUPL2_TAG; 
+> GTD_PL_PRODUCTGROUPL3_NODE = '/Product Group Level 3'; 
+> GTD_PL_ELE_GROUP_NAME = 'Group_Description'; GTD_PL_ELE_GROUPL2_NAME = 
+> 'Group_Description_2'; GTD_PL_ELE_GROUPL3_NAME = 
+> 'Group_Description_3'; GTD_PL_PRODUCTITEMS_NODE = '/Product Items'; 
+> GTD_PL_PRODUCTITEM_NODE = '/Product'; GTD_PL_PRODUCTITEMS_TAG = 
+> 'Product Items'; GTD_PL_PRODUCTITEM_TAG = 'Product'; 
+> GTD_PL_ELE_PRODUCT_PLU = 'PLU'; // <== The new identifier 
+> GTD_PL_ELE_PRODUCT_CODE = GTD_PL_ELE_PRODUCT_PLU; // <== The new 
+> identifier GTD_PL_ELE_PRODUCT_NAME = 'Name'; GTD_PL_ELE_PRODUCT_DESC = 
+> 'Description'; GTD_PL_ELE_PRODUCT_KEYWORDS = 'Keywords'; 
+> GTD_PL_ELE_PRODUCT_LIST = 'List_Price'; GTD_PL_ELE_PRODUCT_ACTUAL = 
+> 'Actual_Price'; // <= and here is the new GTD_PL_ELE_PRODUCT_TAXR = 
+> 'Tax_Rate'; GTD_PL_ELE_PRODUCT_TAXT = 'Tax_Type'; 
+> GTD_PL_ELE_PRODUCT_TAXAMT = 'Tax_Amount'; GTD_PL_ELE_PRODUCT_BRAND = 
+> 'Brand'; GTD_PL_ELE_PRODUCT_UNIT = 'Unit'; 
+> GTD_PL_ELE_PRODUCT_MINORDQTY= 'MinOrderQty'; GTD_PL_ELE_PRODUCT_TYPE = 
+> 'Product_Type'; GTD_PL_ELE_PRODUCT_IMAGE = 'Thumbnail'; 
+> GTD_PL_ELE_PRODUCT_BIGIMAGE = 'FullImage'; GTD_PL_ELE_PRODUCT_MOREINFO 
+> = 'Further_Info_URL'; GTD_PL_ELE_BRANDNAME = 'Brand'; 
+> GTD_PL_ELE_MANUFACT_NAME = 'Manufacturer'; GTD_PL_ELE_MANUFACT_GTL = 
+> 'Manufacturer.GTL'; GTP_PL_ELE_MANUFACT_PRODINFO= 
+> 'Manufacturer.Product_URL'; GTD_PL_ELE_PRODUCT_AVAIL_FLAG = 
+> 'Availability.Flag'; GTD_PL_ELE_PRODUCT_AVAIL_DATE = 
+> 'Availability.Date'; GTD_PL_ELE_PRODUCT_AVAIL_STATUS = 
+> 'Availability.Status'; GTD_PL_AVAIL_FLAG_UNKNOWN = ''; 
+> GTD_PL_AVAIL_FLAG_HIGH = 'High'; GTD_PL_AVAIL_FLAG_MEDIUM = 'Medium'; 
+> GTD_PL_AVAIL_FLAG_LOW = 'Low'; GTD_PL_AVAIL_FLAG_AFTER = 'After'; 
+> GTD_PL_AVAIL_FLAG_OUTOFSTOCK= 'OutOfStock'; GTD_PL_AVAIL_FLAG_NONSTOCK 
+> = 'NonStock'; GTD_PL_ELE_PRODUCT_AVAIL_BACKORD= 
+> 'Availability.OnBackOrder'; GTD_PL_ELE_ONSPECIAL = 'OnSpecial_Flag'; 
+> GTD_PL_ELE_ONSPECIAL_TILL = 'OnSpecial_Until';
+>
+>> Plus - I'll show how to use xinclude to reference in the address
+> stuff
+>> - very simple.
+> ok.
+>
+>> And then - yes - I see value in being able to apply simple map to
+> go
+>> to Amazon or eBay formats - so data could be extracted out of Preis
+>
+>> and simply inserted into theirs...
+> And possibly for an additional price as a commercial add-on, of 
+> course. :-)
+>
+> Best Regards
+>
+> David
+
+
+
+
+
+From david at drrw.info  Thu Jan  4 04:38:37 2007
+From: david at drrw.info (David RR Webber)
+Date: Wed, 3 Jan 2007 22:38:37 -0500
+Subject: [Preisshare-dev] fyi : PreisShare XML Format
+In-Reply-To: <20070103170634.tp24983p2nsw0osg@srv11.ezyreg.com>
+References: <20070103074926.dc066b1d4d2e0a1a65719ae85a8071e6.57852f289c.wbe@email.secureserver.net>
+	<20070103170634.tp24983p2nsw0osg@srv11.ezyreg.com>
+Message-ID: <017f01c72fb1$d250dc60$76f29520$@info>
+
+Another thought - Excel can import XML now - need to try and see what makes
+it work best from the XML to the cells...
+
+DW
+
+-----Original Message-----
+From: david.lyon at preisshare.net [mailto:david.lyon at preisshare.net] 
+Sent: Wednesday, January 03, 2007 6:07 PM
+To: David RR Webber (XML)
+Cc: preisshare-dev at lists.berlios.de
+Subject: RE: fyi : PreisShare XML Format
+
+Quoting "David RR Webber (XML)" <david at drrw.info>:
+
+> David,   Looks like you invented your own attribute mechanism here.
+
+Yes.
+
+> This just makes code overhead everywhere - parsing that out - defeats 
+> the purpose of XML being able to use standard tools.
+
+Parsing it is not neccessary. As included are the tools neccessary to apply
+it to an SQL database directly. Failing that, a customer can ask for the
+pricelist to be provided in CSV, XLS or XML.
+
+Then they can use their choice of tools.
+
+In a small business environment, they usually only know csv or xls.
+
+> Plus - you will
+> not get buy-in from big players.
+
+Because they don't like something that is more efficient?
+
+Anyway, that is not so high on my list of priorities at the moment.  
+Our business strategy is to offer something useful to smaller organisations.
+
+> Anyway - I think we can accommodate
+> this approach - but use standard attributes - and the code change
+> should be minimal.   I'll investigate later today.   Thanks, DW
+
+Take care
+
+David
+
+
+
+From david.lyon at preisshare.net  Thu Jan  4 04:49:56 2007
+From: david.lyon at preisshare.net (david.lyon at preisshare.net)
+Date: Wed, 03 Jan 2007 21:49:56 -0600
+Subject: [Preisshare-dev] fyi : PreisShare XML Format
+In-Reply-To: <017601c72fad$060a6260$121f2720$@info>
+References: <20070103074926.dc066b1d4d2e0a1a65719ae85a8071e6.57852f289c.wbe@email.secureserver.net>
+	<20070103172209.u3zydelholwscgsg@srv11.ezyreg.com>
+	<017601c72fad$060a6260$121f2720$@info>
+Message-ID: <20070103214956.f6vi9yhxdfj4k4gg@srv11.ezyreg.com>
+
+Quoting David RR Webber <david at drrw.info>:
+
+> David,
+>
+> Got side tracked this evening.
+>
+> BTW - of interest -
+>
+> http://www.eweek.com/article2/0,1895,2078366,00.asp?kc=EWEWEMNL010107EP26A
+
+Interesting.
+
+It's not surprising that there is a big attraction for developers to a  
+company doing so well.
+
+We've got a different vision, which is to provide easier price  
+updating facilities to small and medium sized businesses. Graphic  
+based programs with illustrations on price rises/falls etc.
+
+There's a lot of competition, a lot of alternative technologies....
+
+Doesn't matter to us...
+
+Regards
+
+David
+
+
+
+
+From ludwig at planetva.com  Thu Jan  4 05:13:25 2007
+From: ludwig at planetva.com (Ludwig Heymbeeck)
+Date: Thu, 04 Jan 2007 15:13:25 +1100
+Subject: [Preisshare-dev] fyi : PreisShare XML Format
+In-Reply-To: <017f01c72fb1$d250dc60$76f29520$@info>
+References: <20070103074926.dc066b1d4d2e0a1a65719ae85a8071e6.57852f289c.wbe@email.secureserver.net>	<20070103170634.tp24983p2nsw0osg@srv11.ezyreg.com>
+	<017f01c72fb1$d250dc60$76f29520$@info>
+Message-ID: <459C7EE5.2030605@planetva.com>
+
+Hi DW,
+
+I have been following this conversation for some time now. Just 
+wondering whether you are the guru who invented ebXML?
+
+Ludwig
+
+David RR Webber wrote:
+> Another thought - Excel can import XML now - need to try and see what makes
+> it work best from the XML to the cells...
+>
+> DW
+>
+> -----Original Message-----
+> From: david.lyon at preisshare.net [mailto:david.lyon at preisshare.net] 
+> Sent: Wednesday, January 03, 2007 6:07 PM
+> To: David RR Webber (XML)
+> Cc: preisshare-dev at lists.berlios.de
+> Subject: RE: fyi : PreisShare XML Format
+>
+> Quoting "David RR Webber (XML)" <david at drrw.info>:
+>
+>   
+>> David,   Looks like you invented your own attribute mechanism here.
+>>     
+>
+> Yes.
+>
+>   
+>> This just makes code overhead everywhere - parsing that out - defeats 
+>> the purpose of XML being able to use standard tools.
+>>     
+>
+> Parsing it is not neccessary. As included are the tools neccessary to apply
+> it to an SQL database directly. Failing that, a customer can ask for the
+> pricelist to be provided in CSV, XLS or XML.
+>
+> Then they can use their choice of tools.
+>
+> In a small business environment, they usually only know csv or xls.
+>
+>   
+>> Plus - you will
+>> not get buy-in from big players.
+>>     
+>
+> Because they don't like something that is more efficient?
+>
+> Anyway, that is not so high on my list of priorities at the moment.  
+> Our business strategy is to offer something useful to smaller organisations.
+>
+>   
+>> Anyway - I think we can accommodate
+>> this approach - but use standard attributes - and the code change
+>> should be minimal.   I'll investigate later today.   Thanks, DW
+>>     
+>
+> Take care
+>
+> David
+>
+> _______________________________________________
+> Preisshare-dev mailing list
+> Preisshare-dev at lists.berlios.de
+> https://lists.berlios.de/mailman/listinfo/preisshare-dev
+>
+>
+>
+>   
+
+
+
+
+From david.lyon at preisshare.net  Thu Jan  4 05:30:05 2007
+From: david.lyon at preisshare.net (david.lyon at preisshare.net)
+Date: Wed, 03 Jan 2007 22:30:05 -0600
+Subject: [Preisshare-dev] fyi : PreisShare XML Format
+In-Reply-To: <017f01c72fb1$d250dc60$76f29520$@info>
+References: <20070103074926.dc066b1d4d2e0a1a65719ae85a8071e6.57852f289c.wbe@email.secureserver.net>
+	<20070103170634.tp24983p2nsw0osg@srv11.ezyreg.com>
+	<017f01c72fb1$d250dc60$76f29520$@info>
+Message-ID: <20070103223005.uoo3y4qhut4wg80w@srv11.ezyreg.com>
+
+Quoting David RR Webber <david at drrw.info>:
+
+> Another thought - Excel can import XML now - need to try and see what makes
+> it work best from the XML to the cells...
+
+Yes it can. It can also export.
+
+We tried using the XML export for one of our Customers who send to the  
+equivilent of Home Depot here. The biggest hardware chain anyway.
+
+Unfortunately, the hardware chain are still running Windows 2000 and  
+Office 2000. They couldn't read in the files at all.
+
+So we had to go back to using the binary xls format. It was a shame  
+because a lot of work went into it making the xml files.
+
+Now we are more tolerant.
+
+It seems that the highest concentrations of new Microsoft Office  
+implementations seem to be in areas where they are not paid for. Say,  
+the local computer industry. Why is that?
+
+We are going with the flow...
+
+Regards
+
+David
+
+
+
+
+From david.lyon at preisshare.net  Sun Jan  7 00:48:36 2007
+From: david.lyon at preisshare.net (david.lyon at preisshare.net)
+Date: Sat, 06 Jan 2007 17:48:36 -0600
+Subject: [Preisshare-dev] Conversion of internet price feeds..
+Message-ID: <20070106174836.o3uu1k0zzx0cc0os@srv11.ezyreg.com>
+
+Hi Sonmez,
+
+I have a first task for you.
+
+There are quite a lot of Internet price feeds in CSV format. For example,
+
+http://www.i-tech.com.au/Products.csv
+
+What we need to do is to provide them in the distribution package so  
+that people can load up the search engine using some internet data  
+feeds.
+
+If we are able to provide information that points to the feeds in a  
+configuration file, then if they load the configuration, they can  
+attach to the feed. We could provide a few config files like this as  
+samples.
+
+In the price-update engine, they should then be able to see what  
+prices advanced/declined.
+
+It shouldn't be so difficult, I'll just need to show you were to find  
+the things neccessary to do it.
+
+Regards
+
+David
+
+
+From david.lyon at preisshare.net  Mon Jan  8 00:38:16 2007
+From: david.lyon at preisshare.net (david.lyon at preisshare.net)
+Date: Sun, 07 Jan 2007 17:38:16 -0600
+Subject: [Preisshare-dev] Doing xml data feeds
+Message-ID: <20070107173816.vphfv00ot544gk4c@srv11.ezyreg.com>
+
+Hi Sinu,
+
+You did a good job on getting the vtk components integrated for  
+preparing the XLS Price spreadsheets.
+
+I guess we should start looking at the xml format for the pricelists.
+
+Would you like to look at this?
+
+It basically involves creating the xml pricelist files in pretty much  
+the same way as XLS spreadsheet files are done.
+
+There are too ways of doing this I guess, we can use code generated by  
+the delphi data binding wizard, or we can create some of our own.
+
+Geoff did this mappings using the data binding wizard and sent them to  
+me offlist. They look pretty good.
+
+What do you think?
+
+Best Regards
+
+David
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: PreisShare Pricelist.xml
+Type: text/xml
+Size: 786 bytes
+Desc: not available
+URL: <https://lists.berlios.de/pipermail/preisshare-dev/attachments/20070107/6e5630e5/attachment.xml>
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: Retail.pas
+Type: text/x-pascal
+Size: 18011 bytes
+Desc: not available
+URL: <https://lists.berlios.de/pipermail/preisshare-dev/attachments/20070107/6e5630e5/attachment.pas>
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: Retailu.pas
+Type: text/x-pascal
+Size: 7890 bytes
+Desc: not available
+URL: <https://lists.berlios.de/pipermail/preisshare-dev/attachments/20070107/6e5630e5/attachment-0001.pas>
+
+From sinu at preisshare.net  Mon Jan  8 07:33:39 2007
+From: sinu at preisshare.net (sinu at preisshare.net)
+Date: Mon, 8 Jan 2007 00:33:39 -0600 (CST)
+Subject: [Preisshare-dev] Doing xml data feeds
+In-Reply-To: <20070107173816.vphfv00ot544gk4c@srv11.ezyreg.com>
+References: <20070107173816.vphfv00ot544gk4c@srv11.ezyreg.com>
+Message-ID: <34070.127.0.0.1.1168238019.squirrel@srv11.ezyreg.com>
+
+Hi david ,
+
+I'll look into this new task. I think we can use Delphi's "TXMLDocument"
+for this purpose. I'll check it and get back to you soon.
+
+Best Regards
+Sinu
+
+> Hi Sinu,
+>
+> You did a good job on getting the vtk components integrated for
+> preparing the XLS Price spreadsheets.
+>
+> I guess we should start looking at the xml format for the pricelists.
+>
+> Would you like to look at this?
+>
+> It basically involves creating the xml pricelist files in pretty much
+> the same way as XLS spreadsheet files are done.
+>
+> There are too ways of doing this I guess, we can use code generated by
+> the delphi data binding wizard, or we can create some of our own.
+>
+> Geoff did this mappings using the data binding wizard and sent them to
+> me offlist. They look pretty good.
+>
+> What do you think?
+>
+> Best Regards
+>
+> David
+>
+
+
+
+From david.lyon at preisshare.net  Fri Jan 12 02:52:17 2007
+From: david.lyon at preisshare.net (david.lyon at preisshare.net)
+Date: Thu, 11 Jan 2007 19:52:17 -0600
+Subject: [Preisshare-dev] Pricelists scheduling..
+In-Reply-To: <33828.127.0.0.1.1168237580.squirrel@srv11.ezyreg.com>
+References: <45987206.20908@preisshare.net>
+	<51214.127.0.0.1.1167664846.squirrel@srv11.ezyreg.com>
+	<45993A8C.50505@preisshare.net>
+	<54872.127.0.0.1.1167714747.squirrel@srv11.ezyreg.com>
+	<4599F1BD.7020605@preisshare.net>
+	<58407.127.0.0.1.1167719833.squirrel@srv11.ezyreg.com>
+	<459C86BC.7070205@preisshare.net>
+	<44794.127.0.0.1.1167974407.squirrel@srv11.ezyreg.com>
+	<20070105062413.wbn3pu14sa0o488o@srv11.ezyreg.com>
+	<33828.127.0.0.1.1168237580.squirrel@srv11.ezyreg.com>
+Message-ID: <20070111195217.0getxjocevsc8kgo@srv11.ezyreg.com>
+
+
+Hi Sinu,
+
+I'm just looking at the code now...
+
+Looks good ;-)
+
+I will incorporate it in over the next few days and give it some testing.
+
+Regards
+
+David
+
+Quoting sinu at preisshare.net:
+
+> Hi David ,
+>
+> I have already finished the scheduling of Pricelists
+> emailing. I have done it in the PricelistGenerate.pas
+> itself. I was little bit busy in the weekend. That's why I
+> could not sent it to you.
+>
+> I am attaching the latest PricelistGenerate.pas along
+> with this. Plz have a look at the code.
+>
+
+
+
+From sinu at preisshare.net  Fri Jan 12 06:12:26 2007
+From: sinu at preisshare.net (sinu at preisshare.net)
+Date: Thu, 11 Jan 2007 23:12:26 -0600 (CST)
+Subject: [Preisshare-dev] Pricelists scheduling..
+In-Reply-To: <20070111195217.0getxjocevsc8kgo@srv11.ezyreg.com>
+References: <45987206.20908@preisshare.net>
+	<51214.127.0.0.1.1167664846.squirrel@srv11.ezyreg.com>
+	<45993A8C.50505@preisshare.net>
+	<54872.127.0.0.1.1167714747.squirrel@srv11.ezyreg.com>
+	<4599F1BD.7020605@preisshare.net>
+	<58407.127.0.0.1.1167719833.squirrel@srv11.ezyreg.com>
+	<459C86BC.7070205@preisshare.net>
+	<44794.127.0.0.1.1167974407.squirrel@srv11.ezyreg.com>
+	<20070105062413.wbn3pu14sa0o488o@srv11.ezyreg.com>
+	<33828.127.0.0.1.1168237580.squirrel@srv11.ezyreg.com>
+	<20070111195217.0getxjocevsc8kgo@srv11.ezyreg.com>
+Message-ID: <41305.127.0.0.1.1168578746.squirrel@srv11.ezyreg.com>
+
+Thanks David . Here my machine was not working. I could not check that XML
+pricelist emailing. Today I'll check it and let you know.
+
+Regards,
+Sinu
+
+>
+> Hi Sinu,
+>
+> I'm just looking at the code now...
+>
+> Looks good ;-)
+>
+> I will incorporate it in over the next few days and give it some testing.
+>
+> Regards
+>
+> David
+>
+> Quoting sinu at preisshare.net:
+>
+>> Hi David ,
+>>
+>> I have already finished the scheduling of Pricelists
+>> emailing. I have done it in the PricelistGenerate.pas
+>> itself. I was little bit busy in the weekend. That's why I
+>> could not sent it to you.
+>>
+>> I am attaching the latest PricelistGenerate.pas along
+>> with this. Plz have a look at the code.
+>>
+>
+>
+
+
+
+From sinu at preisshare.net  Sat Jan 13 18:36:42 2007
+From: sinu at preisshare.net (sinu at preisshare.net)
+Date: Sat, 13 Jan 2007 11:36:42 -0600 (CST)
+Subject: [Preisshare-dev] Doing xml data feeds
+In-Reply-To: <20070107173816.vphfv00ot544gk4c@srv11.ezyreg.com>
+References: <20070107173816.vphfv00ot544gk4c@srv11.ezyreg.com>
+Message-ID: <34633.127.0.0.1.1168709802.squirrel@srv11.ezyreg.com>
+
+
+Hi David,
+
+I had a look at the .xml file sent [generated using the data binding
+wizard], the auto created interface file(retail.pas) and the classes used
+for creating the .xml file (retailu.pas).
+
+I tried to use the 'loadfromfile' and 'savetofile' methods.
+But faced some access violation while calling the loadfromfile when the
+earlier sample .PreisFile file was used as an input.
+So, for testing the new classes [in retailu.pas], a new sample .PreisFile
+[with the new format] file is required.
+
+Another thing is - the logic used in the functions is like this.
+1.Load the . PreisFile file.
+2.Get the various pricelist items in internal structures.
+3.Save to .xml file
+
+But we already have some classes for reading the .PreisFile file.
+So it will be nice if we can reuse them.
+Something like the following will be fine.
+*read a line from .PreisFile are file [already exists]
+*write the .xml node with the pricelist item.
+*finally save the .xml file.
+
+While trying in a different way to come with an .xml file I noticed that
+if we make some small changes in the current .PreisFile file itself,
+we can convert it to an .xml file [the current . PreisFile file is
+somewhat in .xml format].
+
+If following things are done, the existing .PreisFile file can be changed
+to .xml file.
+step1:
+remove the space in the following nodes.
+  <Product Information>
+    <Product Group>
+       <Product Item>
+
+step2:
+remove '&' from the end of all the items.
+
+step3:
+add the xml header.
+
+The easiest way is to convert the existing .PreisFile file to .xml is :
+[This is similar to a simple file operation]
+1.read the .PreisFile file line by line
+2.assign the line to a temp line
+3.remove space and '&'
+[tags can be added to make it a true .xml file]
+4.write to a new file with extension .xml
+But this is a clumsy way of doing it :(
+
+Better method:
+we can use methods of TXMLDocument component to create an XML file.
+
+Now I am in confusion which approach is the best one?
+
+Please advice me in this matter.
+
+The tag information in the xml file that you have sent is different from
+the tags in the .PreisFile file.
+Should I have to use the new format of .PreisFile (which includes vendor
+information) ?
+
+Expecting your suggestions,
+
+Regards,
+Sinu
+
+
+
+> Hi Sinu,
+>
+> You did a good job on getting the vtk components integrated for
+> preparing the XLS Price spreadsheets.
+>
+> I guess we should start looking at the xml format for the pricelists.
+>
+> Would you like to look at this?
+>
+> It basically involves creating the xml pricelist files in pretty much
+> the same way as XLS spreadsheet files are done.
+>
+> There are too ways of doing this I guess, we can use code generated by
+> the delphi data binding wizard, or we can create some of our own.
+>
+> Geoff did this mappings using the data binding wizard and sent them to
+> me offlist. They look pretty good.
+>
+> What do you think?
+>
+> Best Regards
+>
+> David
+>
+
+
+
+From david.lyon at preisshare.net  Mon Jan 15 01:57:22 2007
+From: david.lyon at preisshare.net (david.lyon at preisshare.net)
+Date: Sun, 14 Jan 2007 18:57:22 -0600
+Subject: [Preisshare-dev] Doing xml data feeds
+In-Reply-To: <34633.127.0.0.1.1168709802.squirrel@srv11.ezyreg.com>
+References: <20070107173816.vphfv00ot544gk4c@srv11.ezyreg.com>
+	<34633.127.0.0.1.1168709802.squirrel@srv11.ezyreg.com>
+Message-ID: <20070114185722.p9bp2vaz7lfcwsc4@srv11.ezyreg.com>
+
+
+Hi Sinu,
+
+Quoting sinu at preisshare.net:
+> I had a look at the .xml file sent [generated using the data binding
+> wizard], the auto created interface file(retail.pas) and the classes used
+> for creating the .xml file (retailu.pas).
+>
+> I tried to use the 'loadfromfile' and 'savetofile' methods.
+> But faced some access violation while calling the loadfromfile when the
+> earlier sample .PreisFile file was used as an input.
+
+Oh yeah, don't do that.. they're not compatable. The ms-xml parser will crash.
+
+> So, for testing the new classes [in retailu.pas], a new sample .PreisFile
+> [with the new format] file is required.
+
+Yes. That's right. I've attached it.
+
+>
+> Another thing is - the logic used in the functions is like this.
+> 1.Load the . PreisFile file.
+> 2.Get the various pricelist items in internal structures.
+> 3.Save to .xml file
+
+Correct.
+
+> But we already have some classes for reading the .PreisFile file.
+> So it will be nice if we can reuse them.
+> Something like the following will be fine.
+> *read a line from .PreisFile are file [already exists]
+> *write the .xml node with the pricelist item.
+> *finally save the .xml file.
+
+Yes.
+
+There are two options. We use the Wizard style xml interface (the  
+Retail example) or we manipulate items in the xml pricelist directly  
+using code like in xmlunit.pas (attached).
+
+> While trying in a different way to come with an .xml file I noticed that
+> if we make some small changes in the current .PreisFile file itself,
+> we can convert it to an .xml file [the current . PreisFile file is
+> somewhat in .xml format].
+
+It's more tricky than it might seem.
+
+> ..
+> But this is a clumsy way of doing it :(
+
+Yes. I'd rather not do it this way.
+
+> Better method:
+> we can use methods of TXMLDocument component to create an XML file.
+
+Yes.
+
+> The tag information in the xml file that you have sent is different from
+> the tags in the .PreisFile file.
+
+I know.
+
+We need to use the .PreisFile format. Some of the tags got accidently changed.
+
+Meanwhile, I am busy merging your timer code. It looks very good.
+
+Regards
+
+David
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: PreisShare Pricelist.xml
+Type: text/xml
+Size: 786 bytes
+Desc: not available
+URL: <https://lists.berlios.de/pipermail/preisshare-dev/attachments/20070114/48fbcfda/attachment.xml>
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: xmlunit.pas
+Type: text/x-pascal
+Size: 6467 bytes
+Desc: not available
+URL: <https://lists.berlios.de/pipermail/preisshare-dev/attachments/20070114/48fbcfda/attachment.pas>
+
+From sinu at preisshare.net  Tue Jan 16 06:17:11 2007
+From: sinu at preisshare.net (sinu at preisshare.net)
+Date: Mon, 15 Jan 2007 23:17:11 -0600 (CST)
+Subject: [Preisshare-dev] Doing xml data feeds
+In-Reply-To: <20070114185722.p9bp2vaz7lfcwsc4@srv11.ezyreg.com>
+References: <20070107173816.vphfv00ot544gk4c@srv11.ezyreg.com>
+	<34633.127.0.0.1.1168709802.squirrel@srv11.ezyreg.com>
+	<20070114185722.p9bp2vaz7lfcwsc4@srv11.ezyreg.com>
+Message-ID: <52431.127.0.0.1.1168924631.squirrel@srv11.ezyreg.com>
+
+Hi David ,
+
+I have completed the XML conversion using TXMLDocument component.
+
+I have modified following files in the components folder
+
+1. PricelistGenerate.pas
+2. GTDPricelists.pas
+
+and added a new unit called UXMLOp.pas for XMl operations. I have attached
+all files.
+
+Also, I have attached a sample .Preisfile and the corresponding .xml file
+generated.
+
+In the GTDPricelists.pas  you can check the function ExportAsXML and in
+PricelistGenerate.pas, you can search for PL_DELIV_XML for getting the
+latest changes.
+
+Expecting your suggestions regarding the new changes,
+
+Best regards,
+Sinu
+
+
+
+
+
+
+>
+> Hi Sinu,
+>
+> Quoting sinu at preisshare.net:
+>> I had a look at the .xml file sent [generated using the data binding
+>> wizard], the auto created interface file(retail.pas) and the classes
+>> used
+>> for creating the .xml file (retailu.pas).
+>>
+>> I tried to use the 'loadfromfile' and 'savetofile' methods.
+>> But faced some access violation while calling the loadfromfile when the
+>> earlier sample .PreisFile file was used as an input.
+>
+> Oh yeah, don't do that.. they're not compatable. The ms-xml parser will
+> crash.
+>
+>> So, for testing the new classes [in retailu.pas], a new sample
+>> .PreisFile
+>> [with the new format] file is required.
+>
+> Yes. That's right. I've attached it.
+>
+>>
+>> Another thing is - the logic used in the functions is like this.
+>> 1.Load the . PreisFile file.
+>> 2.Get the various pricelist items in internal structures.
+>> 3.Save to .xml file
+>
+> Correct.
+>
+>> But we already have some classes for reading the .PreisFile file.
+>> So it will be nice if we can reuse them.
+>> Something like the following will be fine.
+>> *read a line from .PreisFile are file [already exists]
+>> *write the .xml node with the pricelist item.
+>> *finally save the .xml file.
+>
+> Yes.
+>
+> There are two options. We use the Wizard style xml interface (the
+> Retail example) or we manipulate items in the xml pricelist directly
+> using code like in xmlunit.pas (attached).
+>
+>> While trying in a different way to come with an .xml file I noticed that
+>> if we make some small changes in the current .PreisFile file itself,
+>> we can convert it to an .xml file [the current . PreisFile file is
+>> somewhat in .xml format].
+>
+> It's more tricky than it might seem.
+>
+>> ..
+>> But this is a clumsy way of doing it :(
+>
+> Yes. I'd rather not do it this way.
+>
+>> Better method:
+>> we can use methods of TXMLDocument component to create an XML file.
+>
+> Yes.
+>
+>> The tag information in the xml file that you have sent is different from
+>> the tags in the .PreisFile file.
+>
+> I know.
+>
+> We need to use the .PreisFile format. Some of the tags got accidently
+> changed.
+>
+> Meanwhile, I am busy merging your timer code. It looks very good.
+>
+> Regards
+>
+> David
+>
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: Preisshare_XML.zip
+Type: application/x-zip-compressed
+Size: 15951 bytes
+Desc: not available
+URL: <https://lists.berlios.de/pipermail/preisshare-dev/attachments/20070115/8137f1a8/attachment.bin>
+
+From david.lyon at preisshare.net  Tue Jan 16 06:25:27 2007
+From: david.lyon at preisshare.net (david.lyon at preisshare.net)
+Date: Mon, 15 Jan 2007 23:25:27 -0600
+Subject: [Preisshare-dev] Doing xml data feeds / Now ranked 71 on Berlios
+In-Reply-To: <52431.127.0.0.1.1168924631.squirrel@srv11.ezyreg.com>
+References: <20070107173816.vphfv00ot544gk4c@srv11.ezyreg.com>
+	<34633.127.0.0.1.1168709802.squirrel@srv11.ezyreg.com>
+	<20070114185722.p9bp2vaz7lfcwsc4@srv11.ezyreg.com>
+	<52431.127.0.0.1.1168924631.squirrel@srv11.ezyreg.com>
+Message-ID: <20070115232527.6dzz81xp4z4sgos4@srv11.ezyreg.com>
+
+
+Thanks Sinu,
+
+I'll look at it asap. I've been working on the scheduling stuff and  
+getting it ready for an installation that we have here. The new source  
+code is checked in on Berlios. You can grab it from there.
+
+We are now ranked around 71 on Berlios. Maybe we can make it into the  
+top 50 in the next few weeks.
+
+Regards
+
+David
+
+
+Quoting sinu at preisshare.net:
+
+> Hi David ,
+>
+> I have completed the XML conversion using TXMLDocument component.
+>
+> I have modified following files in the components folder
+>
+> 1. PricelistGenerate.pas
+> 2. GTDPricelists.pas
+>
+> and added a new unit called UXMLOp.pas for XMl operations. I have attached
+> all files.
+>
+> Also, I have attached a sample .Preisfile and the corresponding .xml file
+> generated.
+>
+> In the GTDPricelists.pas  you can check the function ExportAsXML and in
+> PricelistGenerate.pas, you can search for PL_DELIV_XML for getting the
+> latest changes.
+>
+> Expecting your suggestions regarding the new changes,
+>
+> Best regards,
+> Sinu
+>
+>
+>
+>
+>
+>
+>>
+>> Hi Sinu,
+>>
+>> Quoting sinu at preisshare.net:
+>>> I had a look at the .xml file sent [generated using the data binding
+>>> wizard], the auto created interface file(retail.pas) and the classes
+>>> used
+>>> for creating the .xml file (retailu.pas).
+>>>
+>>> I tried to use the 'loadfromfile' and 'savetofile' methods.
+>>> But faced some access violation while calling the loadfromfile when the
+>>> earlier sample .PreisFile file was used as an input.
+>>
+>> Oh yeah, don't do that.. they're not compatable. The ms-xml parser will
+>> crash.
+>>
+>>> So, for testing the new classes [in retailu.pas], a new sample
+>>> .PreisFile
+>>> [with the new format] file is required.
+>>
+>> Yes. That's right. I've attached it.
+>>
+>>>
+>>> Another thing is - the logic used in the functions is like this.
+>>> 1.Load the . PreisFile file.
+>>> 2.Get the various pricelist items in internal structures.
+>>> 3.Save to .xml file
+>>
+>> Correct.
+>>
+>>> But we already have some classes for reading the .PreisFile file.
+>>> So it will be nice if we can reuse them.
+>>> Something like the following will be fine.
+>>> *read a line from .PreisFile are file [already exists]
+>>> *write the .xml node with the pricelist item.
+>>> *finally save the .xml file.
+>>
+>> Yes.
+>>
+>> There are two options. We use the Wizard style xml interface (the
+>> Retail example) or we manipulate items in the xml pricelist directly
+>> using code like in xmlunit.pas (attached).
+>>
+>>> While trying in a different way to come with an .xml file I noticed that
+>>> if we make some small changes in the current .PreisFile file itself,
+>>> we can convert it to an .xml file [the current . PreisFile file is
+>>> somewhat in .xml format].
+>>
+>> It's more tricky than it might seem.
+>>
+>>> ..
+>>> But this is a clumsy way of doing it :(
+>>
+>> Yes. I'd rather not do it this way.
+>>
+>>> Better method:
+>>> we can use methods of TXMLDocument component to create an XML file.
+>>
+>> Yes.
+>>
+>>> The tag information in the xml file that you have sent is different from
+>>> the tags in the .PreisFile file.
+>>
+>> I know.
+>>
+>> We need to use the .PreisFile format. Some of the tags got accidently
+>> changed.
+>>
+>> Meanwhile, I am busy merging your timer code. It looks very good.
+>>
+>> Regards
+>>
+>> David
+>>
+>
+
+
+
+
+From david.lyon at preisshare.net  Wed Jan 31 04:06:02 2007
+From: david.lyon at preisshare.net (david.lyon at preisshare.net)
+Date: Tue, 30 Jan 2007 21:06:02 -0600
+Subject: [Preisshare-dev] Pricelist files from Hong-Kong, China
+Message-ID: <20070130210602.tskbmi208gpc8sgc@srv11.ezyreg.com>
+
+Hi Sinu,Sonmez,Geoff,
+
+I have been a bit quiet over the last few weeks because I've been  
+getting some pricelist files in from HK, China and Taiwan.
+
+They are mostly in Excel format, but some are in html tables within emails.
+
+What I'd like to do obviously is to incorporate these companies as  
+samples into preisshare within the distribution. They include prices  
+on all sorts of computer parts from asia. There's no shortage of  
+companies or prices.
+
+At the moment I have these files on my hard-disk.
+
+Any ideas on the best place to put these files so people can load them  
+up and use them?
+
+I'm thinking I could put them on berlios.. maybe in a 'sample-sheets'  
+directory.
+
+Not sure... any ideas?
+
+
+
+
+From david at drrw.info  Wed Jan 31 16:43:50 2007
+From: david at drrw.info (David RR Webber (XML))
+Date: Wed, 31 Jan 2007 08:43:50 -0700
+Subject: [Preisshare-dev] Pricelist files from Hong-Kong, China
+Message-ID: <20070131084350.dc066b1d4d2e0a1a65719ae85a8071e6.49a1327fb2.wbe@email.secureserver.net>
+
+An HTML attachment was scrubbed...
+URL: <https://lists.berlios.de/pipermail/preisshare-dev/attachments/20070131/5667a9c6/attachment.html>
+
+From david.lyon at preisshare.net  Wed Jan 31 23:47:47 2007
+From: david.lyon at preisshare.net (david.lyon at preisshare.net)
+Date: Wed, 31 Jan 2007 16:47:47 -0600
+Subject: [Preisshare-dev] Pricelist files from Hong-Kong, China
+In-Reply-To: <20070131084350.dc066b1d4d2e0a1a65719ae85a8071e6.49a1327fb2.wbe@email.secureserver.net>
+References: <20070131084350.dc066b1d4d2e0a1a65719ae85a8071e6.49a1327fb2.wbe@email.secureserver.net>
+Message-ID: <20070131164747.cz0svnuf8o00scw4@srv11.ezyreg.com>
+
+Quoting "David RR Webber \(XML\)" <david at drrw.info>:
+
+> David,    If they are in Excel - can you try the XML export feature -
+> to get them into more machine readable format?
+
+Hello,
+
+Yes - that's an idea.
+
+But maybe I haven't explained how many there could be. We're trying  
+gearing up to handle about 20,000 suppliers.
+
+That's a lot of spreadsheets for me to sit here converting :-(
+
+Instead, we're trying to get the PreisShare software to be able to  
+decode them automatically. This is going ok, but it is starting to get  
+a bit much.
+
+> Once you have a
+> simple XML format available - then post-processing with xslt to
+> standard format is much easier- and also you can then make HTML
+> viewers for that - and then search...    Once you have that up online
+> - then you can work on Google rankings to get people's attention.   DW
+
+It's food for thought.
+
+Regards
+
+David
+
+
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: PUNUD Digital Photo Frame updated price Jan 8.xls
+Type: application/vnd.ms-excel
+Size: 107008 bytes
+Desc: not available
+URL: <https://lists.berlios.de/pipermail/preisshare-dev/attachments/20070131/2df65b41/attachment.xls>
+

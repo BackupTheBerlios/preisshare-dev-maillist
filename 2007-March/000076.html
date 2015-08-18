@@ -1,0 +1,204 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Preisshare-dev] Sample code from tradedesk showing xpath setup..
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/preisshare-dev/2007-March/index.html" >
+   <LINK REL="made" HREF="mailto:preisshare-dev%40lists.berlios.de?Subject=Re%3A%20%5BPreisshare-dev%5D%20Sample%20code%20from%20tradedesk%20showing%20xpath%20setup..&In-Reply-To=%3C20070307172855.6cwi6ibhptcswokc%40srv11.ezyreg.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000075.html">
+   <LINK REL="Next"  HREF="000077.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Preisshare-dev] Sample code from tradedesk showing xpath setup..</H1>
+    <B>david.lyon at preisshare.net</B> 
+    <A HREF="mailto:preisshare-dev%40lists.berlios.de?Subject=Re%3A%20%5BPreisshare-dev%5D%20Sample%20code%20from%20tradedesk%20showing%20xpath%20setup..&In-Reply-To=%3C20070307172855.6cwi6ibhptcswokc%40srv11.ezyreg.com%3E"
+       TITLE="[Preisshare-dev] Sample code from tradedesk showing xpath setup..">david.lyon at preisshare.net
+       </A><BR>
+    <I>Thu Mar  8 00:28:55 CET 2007</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000075.html">[Preisshare-dev] Hi David
+</A></li>
+        <LI>Next message: <A HREF="000077.html">[Preisshare-dev] Sample code from tradedesk showing	xpath	setup..
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#76">[ date ]</a>
+              <a href="thread.html#76">[ thread ]</a>
+              <a href="subject.html#76">[ subject ]</a>
+              <a href="author.html#76">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>
+Hi Steve,
+
+I know that you can't compile it because you don't have a development  
+environment set up. But here is some code from tradedesk showing how  
+the xpath(like) assignments work.
+
+
+Regards
+
+David
+
+procedure TfrmMain.InitialiseStandardDoc;
+var
+     s,supplierNode,CustomerNode : String;
+     xc : Integer;
+     Total,TaxRate,TotalTax : Currency;
+     anItem : TListItem;
+begin
+
+	// -- Buyer/Seller need to be flipped
+	if (stdDocPanel.CurrentDocument.Document_Type = GTD_QUOTE_TYPE) or
+	   (stdDocPanel.CurrentDocument.Document_Type = GTD_INVOICE_TYPE) then
+	begin
+		supplierNode := STDDOC_SELLER_NODE;
+		CustomerNode := STDDOC_BUYER_NODE;
+	end
+	else begin
+		supplierNode := STDDOC_BUYER_NODE;
+		CustomerNode := STDDOC_SELLER_NODE;
+	end;
+
+	// -- Add Vendor details
+	with stdDocPanel.CurrentDocument do
+	begin
+		SetStringElement(CustomerNode,STDDOC_ELE_COMPANY_NAME,dmlData.tblTrader.FieldByName(GTD_DB_COL_COMPANY_NAME).AsString);
+		SetStringElement(CustomerNode,STDDOC_ELE_ADDRESS_LINE_1,dmlData.tblTrader.FieldByName(GTD_DB_COL_ADDRESS_LINE_1).AsString);
+		SetStringElement(CustomerNode,STDDOC_ELE_ADDRESS_LINE_2,dmlData.tblTrader.FieldByName(GTD_DB_COL_ADDRESS_LINE_2).AsString);
+		SetStringElement(CustomerNode,STDDOC_ELE_TOWN,  
+dmlData.tblTrader.FieldByName(GTD_DB_COL_TOWN).AsString);
+		SetStringElement(CustomerNode,STDDOC_ELE_STATE_REGION,dmlData.tblTrader.FieldByName(GTD_DB_COL_STATE_REGION).AsString);
+		SetStringElement(CustomerNode,STDDOC_ELE_POSTALCODE,dmlData.tblTrader.FieldByName(GTD_DB_COL_POSTALCODE).AsString);
+		SetStringElement(CustomerNode,STDDOC_ELE_COUNTRYCODE,dmlData.tblTrader.FieldByName(GTD_DB_COL_COUNTRYCODE).AsString);
+		SetStringElement(CustomerNode,STDDOC_ELE_TELEPHONE,dmlData.tblTrader.FieldByName(GTD_DB_COL_TELEPHONE).AsString);
+		SetStringElement(CustomerNode,STDDOC_ELE_TELEPHONE2,dmlData.tblTrader.FieldByName(GTD_DB_COL_TELEPHONE2).AsString);
+		SetStringElement(CustomerNode,STDDOC_ELE_TELEPHONE2,dmlData.tblTrader.FieldByName(GTD_DB_COL_TELEPHONE2).AsString);
+		SetStringElement(CustomerNode,STDDOC_ELE_EMAIL_ADDRESS,dmlData.tblTrader.FieldByName(GTD_DB_COL_EMAILADDRESS).AsString);
+	end;
+
+	// -- Add  details
+	frmConfig.RefreshCompanyInfo;
+	with stdDocPanel.CurrentDocument do
+	begin
+		// -- Selliug pary
+		SetStringElement(SupplierNode,STDDOC_ELE_COMPANY_NAME,frmConfig.txtCompany.Text);
+		SetStringElement(SupplierNode,STDDOC_ELE_ADDRESS_LINE_1,frmConfig.txtStreet1.Text);
+		SetStringElement(SupplierNode,STDDOC_ELE_ADDRESS_LINE_2,frmConfig.txtStreet2.Text);
+		SetStringElement(SupplierNode,STDDOC_ELE_TOWN, frmConfig.txtCity.Text);
+		SetStringElement(SupplierNode,STDDOC_ELE_STATE_REGION,frmConfig.cbxState.Text);
+		SetStringElement(SupplierNode,STDDOC_ELE_POSTALCODE,frmConfig.txtPostCode.Text);
+		SetStringElement(SupplierNode,STDDOC_ELE_COUNTRYCODE,GetCodeFromCountryName(frmConfig.cbxCountry.Text));
+		SetStringElement(SupplierNode,STDDOC_ELE_TELEPHONE,frmConfig.txtTelephone.Text);
+		SetStringElement(SupplierNode,STDDOC_ELE_TELEPHONE2,frmConfig.txtFax.Text);
+		SetStringElement(SupplierNode,STDDOC_ELE_OTHER_INFO,frmConfig.txtOtherInfo.Text);
+
+		// -- Header
+		SetStringElement(STDDOC_HDR_NODE,STDDOC_HDR_ELE_CONTACT,UserName);
+		SetStringElement(STDDOC_HDR_NODE,STDDOC_HDR_ELE_SALES_PERSON,UserName);
+
+		if stdDocPanel.CurrentDocument.Document_Type = GTD_ORDER_TYPE then
+		begin
+			SetStringElement(STDDOC_HDR_NODE,STDDOC_HDR_ELE_DELIV_ADDR,'');
+			SetStringElement(STDDOC_HDR_NODE,STDDOC_HDR_ELE_SPECL_INSTR,'');
+			SetStringElement(STDDOC_HDR_NODE,STDDOC_HDR_ELE_PMT_TERMS,'Account');
+		end
+		else if stdDocPanel.CurrentDocument.Document_Type = GTD_QUOTE_TYPE then
+		begin
+			SetStringElement(STDDOC_HDR_NODE,STDDOC_HDR_ELE_GEN_TERMS,frmConfig.txtQuoteTerms.Text);
+			SetStringElement(STDDOC_HDR_NODE,STDDOC_HDR_ELE_DELIV_MODE,frmConfig.cbxQuoteDeliveryMode.Text);
+			SetStringElement(STDDOC_HDR_NODE,STDDOC_HDR_ELE_DELIV_CHG,frmConfig.txtQuoteDeliveryCharge.EditText);
+		end;
+
+		// -- Is the quote tax inclusive or tax exclusive
+		if stdDocPanel.rdoTaxInclusive.Checked then
+		begin
+			// -- Tax calculation
+			Total := 0;
+			// -- Add up all the lines
+			for xc := 1 to stdDocPanel.lsvLineItems.Items.Count do
+			begin
+				anItem := stdDocPanel.lsvLineItems.Items[xc-1];
+				Total := Total + StringToFloat(anItem.SubItems[4]);
+			end;
+			// -- Get our tax rate
+			TaxRate :=  
+GetSalesTaxRateFromCountryCode(GetCodeFromCountryName(frmConfig.cbxCountry.Text));
+
+			SetStringElement(STDDOC_HDR_NODE,STDDOC_HDR_ELE_TAX_MODE,STDDOC_CONST_TAX_MODE_INC);
+		end
+		else begin
+			SetStringElement(STDDOC_HDR_NODE,STDDOC_HDR_ELE_TAX_MODE,STDDOC_CONST_TAX_MODE_EXC);
+			SetNumberElement(STDDOC_HDR_NODE,STDDOC_HDR_ELE_TAX_TOTAL,0);
+		end;
+
+		SetStringElement(STDDOC_HDR_NODE,STDDOC_HDR_ELE_TAX_NAME,GetTaxNameFromCountryCode(GetCodeFromCountryName(frmConfig.cbxCountry.Text)));
+		SetStringElement(STDDOC_HDR_NODE,STDDOC_HDR_ORIGIN_CODE,GetCodeFromCountryName(frmConfig.cbxCountry.Text));
+
+		// -- The document logo
+		if stdDocPanel.CurrentDocument.Document_Type = GTD_QUOTE_TYPE then
+		begin
+			// -- Logos go on quotes
+			if (frmConfig.txtLogoFilename.Text &lt;&gt; '') and  
+FileExists(frmConfig.txtLogoFilename.Text) then
+				SetStringElement(STDDOC_HDR_NODE,STDDOC_HDR_LOGO_IMAGE,ExtractFileName(frmConfig.txtLogoFilename.Text));
+
+			SetDateElement(STDDOC_HDR_NODE,STDDOC_HDR_QUOTE_EXPIRES,Date +  
+frmConfig.cbxQuoteExpiry.Value);
+		end;
+
+		SetStringElement(STDDOC_HDR_NODE,STDDOC_HDR_PAPER_SIZE,'A4');
+		SetStringElement(STDDOC_HDR_NODE,STDDOC_HDR_PRINT_ORIENT,'Portrait');
+
+		// SetStringElement(STDDOC_HDR,STDDOC_HDR_DISPLAY_FORMAT,) + #13;
+		// SetStringElement(STDDOC_HDR,STDDOC_HDR_HEADER_COLS,) + #13;
+		// SetStringElement(STDDOC_HDR,STDDOC_HDR_ITEM_COLS,) + #13;
+
+		// -- Initialise the total
+		Total := 0;
+		if txtDeliveryCost.Text &lt;&gt; '' then
+			Total := StrToFloat(txtDeliveryCost.Text);
+
+		// -- Add Delivery details
+		{
+		SetStringElement(GTD_PO_DEL_NODE,GTD_PO_DEL_ELE_MODE,cbxDeliveryMode.Text);
+		SetDateElement(GTD_PO_DEL_NODE,GTD_PO_DEL_ELE_DATE,dtpDeliveryDate.Date);
+		SetStringElement(GTD_PO_DEL_NODE,GTD_PO_DEL_ELE_ADDR,rceDeliveryAddress.Text);
+		SetStringElement(GTD_PO_DEL_NODE,GTD_PO_DEL_ELE_INSTR,rceDeliveryInstructions.Text);
+		SetStringElement(GTD_PO_DEL_NODE,GTD_PO_DEL_ELE_CHARGE,txtDeliveryCost.Text);
+		}
+     end;
+
+end;
+
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000075.html">[Preisshare-dev] Hi David
+</A></li>
+	<LI>Next message: <A HREF="000077.html">[Preisshare-dev] Sample code from tradedesk showing	xpath	setup..
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#76">[ date ]</a>
+              <a href="thread.html#76">[ thread ]</a>
+              <a href="subject.html#76">[ subject ]</a>
+              <a href="author.html#76">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/preisshare-dev">More information about the Preisshare-dev
+mailing list</a><br>
+</body></html>

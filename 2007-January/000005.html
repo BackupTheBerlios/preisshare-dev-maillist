@@ -1,0 +1,203 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Preisshare-dev] fyi : PreisShare XML Format
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/preisshare-dev/2007-January/index.html" >
+   <LINK REL="made" HREF="mailto:preisshare-dev%40lists.berlios.de?Subject=Re%3A%20%5BPreisshare-dev%5D%20fyi%20%3A%20PreisShare%20XML%20Format&In-Reply-To=%3C45999622.20406%40preisshare.net%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000004.html">
+   <LINK REL="Next"  HREF="000007.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Preisshare-dev] fyi : PreisShare XML Format</H1>
+    <B>David Lyon</B> 
+    <A HREF="mailto:preisshare-dev%40lists.berlios.de?Subject=Re%3A%20%5BPreisshare-dev%5D%20fyi%20%3A%20PreisShare%20XML%20Format&In-Reply-To=%3C45999622.20406%40preisshare.net%3E"
+       TITLE="[Preisshare-dev] fyi : PreisShare XML Format">david.lyon at preisshare.net
+       </A><BR>
+    <I>Tue Jan  2 00:15:46 CET 2007</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000004.html">[Preisshare-dev] fyi : PreisShare XML Format
+</A></li>
+        <LI>Next message: <A HREF="000007.html">[Preisshare-dev] fyi : PreisShare XML Format
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#5">[ date ]</a>
+              <a href="thread.html#5">[ thread ]</a>
+              <a href="subject.html#5">[ subject ]</a>
+              <a href="author.html#5">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Hi David,
+
+David RR Webber wrote:
+&gt;<i> OK - I went in and looked at three existing formats:
+</I>&gt;<i>
+</I>&gt;<i> 1) openapplicationsgroup.org
+</I>&gt;<i> 2) oasis UBL v2.0
+</I>&gt;<i> 3) Amazon.com
+</I>&gt;<i>   
+</I>Just need to be a little careful on the plagiarism front. I think Amazon 
+could afford a fairly good legal team.
+
+In any case I like the feedback. With all that Industry experience, it 
+has taken you only a short time to clearly identify some areas that 
+could do with improvement.
+
+&gt;<i> I also re-designed pricelist details - based on these premises:
+</I>&gt;<i>
+</I>&gt;<i> a) Address does not belong here - just locale (Amazon shows buyer rough area
+</I>&gt;<i> of seller).  Address of merchant should be separate table lookup - and that
+</I>&gt;<i> layout should be based on OASIS CIQ v3 xsd - gives you real international
+</I>&gt;<i> address format, GPS location and more.
+</I>&gt;<i>   
+</I>Maybe.
+
+Traditionally though I've included it because the address in the table 
+is updated from the pricelist if it is changed.
+
+Just making some of the address fields optional should satisfy this.
+&gt;<i> b) Web services should be used to complement the price list - to lookup
+</I>&gt;<i> related information - such as shipping cost, VAT applicable, and so on.
+</I>&gt;<i>   
+</I>I'm just thinking that this would have a fairly big impact on the cost 
+of the whole product. Presently we can get away without any web server. 
+To keep the implementation cost down. I was planning to keep them in the 
+pricelist, redistribute daily/weekly/etc.
+
+Then they have all the information that they need.
+
+It will be an ongoing issue that will need more attention as you clearly 
+point out.
+&gt;<i> c) Added optional merchant notes - allows extensions to cover special needs.
+</I>&gt;<i>   
+</I>Yes I agree with this.
+
+&gt;<i> d) organized like information into sections - again this allows better
+</I>&gt;<i> versioning and selections down the road - e.g. REST based requests (a la AWS
+</I>&gt;<i> Amazon) - can select parts of the structure.
+</I>&gt;<i>   
+</I>I'll take a closer look.
+&gt;<i> I think this is now closer - but probably still needs some tweaking.
+</I>&gt;<i>   
+</I>Yes, it's definitely better!
+
+And I very much appreciate having somebody with so much Industry stature 
+look into the messages.
+
+Thanks
+
+David
+&gt;<i> ------------------------------------------------------------------------
+</I>&gt;<i>
+</I>&gt;<i> &lt;?xml version=&quot;1.0&quot;?&gt;
+</I>&gt;<i> &lt;PriceList&gt;
+</I>&gt;<i>   &lt;VendorInformation&gt;
+</I>&gt;<i> 	&lt;Organisation_Name&gt;
+</I>&gt;<i> 	&lt;/Organisation_Name&gt;
+</I>&gt;<i>   	&lt;PreisShare_ID&gt;
+</I>&gt;<i> 	&lt;/PreisShare_ID&gt;
+</I>&gt;<i>  &lt;LocationDetails&gt;
+</I>&gt;<i>    &lt;StateProvince&gt;&lt;/StateProvince&gt;
+</I>&gt;<i>    &lt;Country&gt;&lt;/Country&gt;
+</I>&gt;<i>  &lt;/LocationDetails&gt;
+</I>&gt;<i>   &lt;/VendorInformation&gt;
+</I>&gt;<i>   &lt;ProductInformation&gt;
+</I>&gt;<i> 	&lt;ProductGroup&gt;
+</I>&gt;<i> 	  &lt;Group_Description&gt;
+</I>&gt;<i> 	   &lt;/Group_Description&gt;
+</I>&gt;<i> 	  &lt;Product_Items&gt;
+</I>&gt;<i> 		&lt;Product&gt;
+</I>&gt;<i> 		  &lt;PLU&gt;
+</I>&gt;<i> 		  &lt;/PLU&gt;
+</I>&gt;<i> 		  &lt;Name&gt;
+</I>&gt;<i> 		  &lt;/Name&gt;
+</I>&gt;<i> 		  &lt;Description&gt;
+</I>&gt;<i> 		  &lt;/Description&gt;
+</I>&gt;<i> 		  &lt;OnSpecial_Flag&gt;
+</I>&gt;<i> 		  &lt;/OnSpecial_Flag&gt;
+</I>&gt;<i>
+</I>&gt;<i> &lt;ListPrice&gt;
+</I>&gt;<i>   &lt;Amount&gt;7999&lt;/Amount&gt;
+</I>&gt;<i>   &lt;CurrencyCode&gt;USD&lt;/CurrencyCode&gt;
+</I>&gt;<i>   &lt;FormattedPrice&gt;$79.99&lt;/FormattedPrice&gt;
+</I>&gt;<i>   &lt;VATcategory&gt;Standard&lt;/VATcategory&gt;
+</I>&gt;<i>   &lt;/ListPrice&gt;
+</I>&gt;<i>   &lt;ValidityPeriod&gt;
+</I>&gt;<i>    &lt;StartDate time=&quot;&quot;&gt;&lt;/StartDate&gt;
+</I>&gt;<i>    &lt;EndDate time=&quot;&quot;&gt;&lt;/EndDate&gt;
+</I>&gt;<i>   &lt;/ValidityPeriod&gt;
+</I>&gt;<i>   &lt;ShippingDetails&gt;
+</I>&gt;<i>     &lt;FreeShipping allowed=&quot;true&quot; currency=&quot;USD&quot; orderTotal=&quot;$150&quot;/&gt;
+</I>&gt;<i>     &lt;SpecialHandling type=&quot;refridgerated&quot;/&gt;
+</I>&gt;<i>     &lt;SpecialHandling type=&quot;hazardous&quot;/&gt;
+</I>&gt;<i>     &lt;Shipping type=&quot;UPS&quot;/&gt;
+</I>&gt;<i>     &lt;Shipping type=&quot;FedEx&quot;/&gt;
+</I>&gt;<i>   &lt;/ShippingDetails&gt;
+</I>&gt;<i>  &lt;ItemAttributes&gt;
+</I>&gt;<i>   &lt;Manufacturer&gt;Viva Media&lt;/Manufacturer&gt;
+</I>&gt;<i>   &lt;Model&gt;00145&lt;/Model&gt;
+</I>&gt;<i>   &lt;ReleaseDate&gt;2006/01/01&lt;/ReleaseDate&gt;
+</I>&gt;<i>   &lt;UPC&gt;838639001453&lt;/UPC&gt;
+</I>&gt;<i>   &lt;EAN&gt;838639001453&lt;/EAN&gt;
+</I>&gt;<i>   &lt;ISBN&gt;0879801115&lt;/ISBN&gt;
+</I>&gt;<i>  &lt;/ItemAttributes&gt;
+</I>&gt;<i>  &lt;OfferAttributes&gt;
+</I>&gt;<i>   &lt;Condition&gt;New&lt;/Condition&gt;
+</I>&gt;<i>   &lt;SubCondition&gt;New&lt;/SubCondition&gt;
+</I>&gt;<i>   &lt;ConditionNote&gt;BRAND NEW FACTORY SEALED RETAIL BOX&lt;/ConditionNote&gt;
+</I>&gt;<i>   &lt;Availability&gt;Usually ships in 24 hours&lt;/Availability&gt;
+</I>&gt;<i>   &lt;TotalNew&gt;2&lt;/TotalNew&gt;
+</I>&gt;<i>   &lt;TotalUsed&gt;0&lt;/TotalUsed&gt;
+</I>&gt;<i>   &lt;TotalCollectible&gt;0&lt;/TotalCollectible&gt;
+</I>&gt;<i>   &lt;TotalRefurbished&gt;0&lt;/TotalRefurbished&gt;
+</I>&gt;<i>  &lt;/OfferAttributes&gt;
+</I>&gt;<i> 	&lt;Unit&gt;
+</I>&gt;<i>   &lt;Height Units=&quot;hundredths-inches&quot;&gt;66&lt;/Height&gt;
+</I>&gt;<i>   &lt;Length Units=&quot;hundredths-inches&quot;&gt;900&lt;/Length&gt;
+</I>&gt;<i>   &lt;Weight Units=&quot;hundredths-pounds&quot;&gt;104&lt;/Weight&gt;
+</I>&gt;<i>   &lt;Width Units=&quot;hundredths-inches&quot;&gt;676&lt;/Width&gt;
+</I>&gt;<i> 	&lt;/Unit&gt;
+</I>&gt;<i>   &lt;MerchantNotes&gt;
+</I>&gt;<i>      &lt;Note type=&quot;onspecial&quot;&gt;20% discount until January 1st, 2007&lt;/Note&gt;
+</I>&gt;<i>      &lt;Note type=&quot;aboutus&quot;&gt;Our 20th year of selling these&lt;/Note&gt;
+</I>&gt;<i>   &lt;/MerchantNotes&gt;
+</I>&gt;<i> 		&lt;/Product&gt;
+</I>&gt;<i> 	  &lt;/Product_Items&gt;
+</I>&gt;<i> 	&lt;/ProductGroup&gt;
+</I>&gt;<i>   &lt;/ProductInformation&gt;
+</I>&gt;<i> &lt;/PriceList&gt;
+</I>&gt;<i>   
+</I>-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/preisshare-dev/attachments/20070102/05c04a1b/attachment.html">https://lists.berlios.de/pipermail/preisshare-dev/attachments/20070102/05c04a1b/attachment.html</A>&gt;
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000004.html">[Preisshare-dev] fyi : PreisShare XML Format
+</A></li>
+	<LI>Next message: <A HREF="000007.html">[Preisshare-dev] fyi : PreisShare XML Format
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#5">[ date ]</a>
+              <a href="thread.html#5">[ thread ]</a>
+              <a href="subject.html#5">[ subject ]</a>
+              <a href="author.html#5">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/preisshare-dev">More information about the Preisshare-dev
+mailing list</a><br>
+</body></html>

@@ -1,0 +1,171 @@
+From david.lyon at preisshare.net  Wed Jun 20 05:35:51 2007
+From: david.lyon at preisshare.net (David Lyon)
+Date: Wed, 20 Jun 2007 13:35:51 +1000
+Subject: [Preisshare-dev] Scripting... answering your question
+In-Reply-To: <79a025780706180005g5f7e6f0ax96f66205061cbbc7@mail.gmail.com>
+References: <79a025780706180005g5f7e6f0ax96f66205061cbbc7@mail.gmail.com>
+Message-ID: <4678A097.70003@preisshare.net>
+
+Hi Sonmez,
+
+> How's going? Would PreisShare be more interesting and efficient, if it 
+> has a
+> scripting language?
+>   I mean, serving all resources by root program to
+> scripting language probably increase the flexibility. Flexibility
+> means customizable, so, you may develop add-ons faster and easier than
+> coding them in Delphi. I think people would be affected by this kind
+> thing in a program like PreisShare.
+>
+Yes I believe that it would.
+
+You can read the Access database directly with Python. I looked up a 
+python database driver for ado and found the following link:
+
+http://www.mayukhbose.com/python/ado/ado-connection.php
+
+What would be good is some scripts that read the database once it has 
+been updated, generate some fancy html pages for this and that, and so 
+forth.
+
+These things could include displaying new products, price changes etc. 
+Doing it in python is not such a bad idea. Why not come up with some 
+interesting concepts and we'll see how easy/hard they would be to do them.
+
+Regards
+
+David
+
+S?nmez Kartal wrote:
+
+
+From david at drrw.info  Wed Jun 20 19:03:02 2007
+From: david at drrw.info (David RR Webber (XML))
+Date: Wed, 20 Jun 2007 10:03:02 -0700
+Subject: [Preisshare-dev] Scripting... answering your question
+Message-ID: <20070620100301.dc066b1d4d2e0a1a65719ae85a8071e6.388c063663.wbe@email.secureserver.net>
+
+An HTML attachment was scrubbed...
+URL: <https://lists.berlios.de/pipermail/preisshare-dev/attachments/20070620/6e14bae7/attachment.html>
+
+From david.lyon at preisshare.net  Thu Jun 21 02:38:28 2007
+From: david.lyon at preisshare.net (David Lyon)
+Date: Thu, 21 Jun 2007 10:38:28 +1000
+Subject: [Preisshare-dev] Scripting... answering your question
+In-Reply-To: <20070620100301.dc066b1d4d2e0a1a65719ae85a8071e6.388c063663.wbe@email.secureserver.net>
+References: <20070620100301.dc066b1d4d2e0a1a65719ae85a8071e6.388c063663.wbe@email.secureserver.net>
+Message-ID: <4679C884.705@preisshare.net>
+
+David RR Webber (XML) wrote:
+> I'd suggest scripts tied to SQL queries that create XML outputs.
+>  
+> Then use xslt to do the rendering to HTML pages.
+>  
+> This is then fully scripted - people can tweak the SQL and the xslt 
+> freely - to get the results they want.
+Yeah,
+
+That's kindof what I'm thinking.
+
+Recently, I've been working with 3d, so once we get some, I can render 
+them on a 3d moving object around the PreisShare workspace. But it is a 
+little way off yet.
+
+Reminds me I should be working on this seriously... :-)
+
+Regards
+
+Daivd
+
+
+
+From david.lyon at preisshare.net  Thu Jun 21 02:45:21 2007
+From: david.lyon at preisshare.net (David Lyon)
+Date: Thu, 21 Jun 2007 10:45:21 +1000
+Subject: [Preisshare-dev] Scripting... downloading a lot of pricing data
+ from Germany via shopinfo.xml
+In-Reply-To: <20070620100301.dc066b1d4d2e0a1a65719ae85a8071e6.388c063663.wbe@email.secureserver.net>
+References: <20070620100301.dc066b1d4d2e0a1a65719ae85a8071e6.388c063663.wbe@email.secureserver.net>
+Message-ID: <4679CA21.8030802@preisshare.net>
+
+David,
+
+Have you come across shopinfo.xml ?
+
+It's interesting... at the moment we're linking in to that system.
+
+Here is a script that pulls down product information. If you don't have 
+the time/will to run it, here is the output.
+
+Certainly provides us with a lot of data...
+
+F:\PreisShare\ShopInfo Utilities>perl pull_shopinfo.pl 19
+Now pulling down http://www.asmedia.de/shopinfo.xml
+Writing file 19.xml
+Languages: de
+Contains 451 products
+productid=name=brand=offerid=category=description=price=image=url=availability=s
+hipping=special=expirationdate=oldprice=\nI found these Urls:
+http://www.asmedia.de/elmar_products.php
+I found these Mappings:
+availability
+brand
+category
+description
+image
+name
+price
+productid
+shipping
+special
+url
+Now pulling down http://www.asmedia.de/elmar_products.php
+Writing csv file to 19.csv
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: <https://lists.berlios.de/pipermail/preisshare-dev/attachments/20070621/cb815ed6/attachment.html>
+-------------- next part --------------
+An embedded and charset-unspecified text was scrubbed...
+Name: pull_shopinfo.pl
+URL: <https://lists.berlios.de/pipermail/preisshare-dev/attachments/20070621/cb815ed6/attachment.pl>
+-------------- next part --------------
+An embedded and charset-unspecified text was scrubbed...
+Name: shopinfolist.txt
+URL: <https://lists.berlios.de/pipermail/preisshare-dev/attachments/20070621/cb815ed6/attachment.txt>
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: 2.xml
+Type: text/xml
+Size: 7125 bytes
+Desc: not available
+URL: <https://lists.berlios.de/pipermail/preisshare-dev/attachments/20070621/cb815ed6/attachment.xml>
+
+From david.lyon at preisshare.net  Thu Jun 28 03:51:51 2007
+From: david.lyon at preisshare.net (David Lyon)
+Date: Thu, 28 Jun 2007 11:51:51 +1000
+Subject: [Preisshare-dev] Models Database
+Message-ID: <46831437.4080808@preisshare.net>
+
+Sonmez,
+
+We need to add a models & brands table into the database.
+
+I'm doing this in MS-Access here at the moment. That doesn't matter so 
+much. Here is what the tables look like.
+
+Can you setup an appropriate set of tables under mysql.
+
+After that, we'll probably need a new script that will check models if 
+they exist in this database. If they don't then they should be added.
+
+Regards
+
+David
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: ModelsDB.PNG
+Type: image/png
+Size: 64667 bytes
+Desc: not available
+URL: <https://lists.berlios.de/pipermail/preisshare-dev/attachments/20070628/e0dabf6d/attachment.png>
+

@@ -1,0 +1,153 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Preisshare-dev] fyi : PreisShare XML Format
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/preisshare-dev/2007-January/index.html" >
+   <LINK REL="made" HREF="mailto:preisshare-dev%40lists.berlios.de?Subject=Re%3A%20%5BPreisshare-dev%5D%20fyi%20%3A%20PreisShare%20XML%20Format&In-Reply-To=%3C20070101215342.08qczv7m600kkkg4%40srv11.ezyreg.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000007.html">
+   <LINK REL="Next"  HREF="000006.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Preisshare-dev] fyi : PreisShare XML Format</H1>
+    <B>david.lyon at preisshare.net</B> 
+    <A HREF="mailto:preisshare-dev%40lists.berlios.de?Subject=Re%3A%20%5BPreisshare-dev%5D%20fyi%20%3A%20PreisShare%20XML%20Format&In-Reply-To=%3C20070101215342.08qczv7m600kkkg4%40srv11.ezyreg.com%3E"
+       TITLE="[Preisshare-dev] fyi : PreisShare XML Format">david.lyon at preisshare.net
+       </A><BR>
+    <I>Tue Jan  2 04:53:42 CET 2007</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000007.html">[Preisshare-dev] fyi : PreisShare XML Format
+</A></li>
+        <LI>Next message: <A HREF="000006.html">[Preisshare-dev] fyi : PreisShare XML Format
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#8">[ date ]</a>
+              <a href="thread.html#8">[ thread ]</a>
+              <a href="subject.html#8">[ subject ]</a>
+              <a href="author.html#8">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Quoting David RR Webber &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/preisshare-dev">david at drrw.info</A>&gt;:
+
+&gt;<i> Amazon would probably be upset if you were totally cloning their stuff - but
+</I>&gt;<i> making it compatible seems fair do's.   Besides - they'd hardly want to give
+</I>&gt;<i> you all that huge free PR.
+</I>
+:<i>-)
+</I>
+If a customer needs a compatable feed for doing Amazon, then maybe  
+they can buy a CAM template from you :-)
+
+If not, then maybe we could do a transform with an XSLT module.
+
+I really don't want to try to do everything. Only have a really good  
+simple platform.
+
+One issue that I have with their format is that it will get enormously  
+bulky for large numbers of items. Such as in spare parts.
+
+&lt;ListPrice&gt;
+   &lt;amount&gt;7999&lt;/Amount&gt;
+   &lt;CurrencyCode&gt;USD&lt;/CurrencyCode&gt;
+   &lt;FormattedPrice&gt;$79.99&lt;/FormattedPrice&gt;
+   &lt;VATcategory&gt;Standard&lt;/VATcategory&gt;
+   &lt;/ListPrice&gt;
+   &lt;ValidityPeriod&gt;
+    &lt;StartDate time=&quot;&quot;&gt;&lt;/StartDate&gt;
+    &lt;EndDate time=&quot;&quot;&gt;&lt;/EndDate&gt;
+   &lt;/ValidityPeriod&gt;
+  &lt;ItemAttributes&gt;
+   &lt;Manufacturer&gt;Viva Media&lt;/Manufacturer&gt;
+   &lt;Model&gt;00145&lt;/Model&gt;
+  &lt;/ItemAttributes&gt;
+
+This I already have as:
+
+&lt;Product&gt;
+   ListPrice$=79.99
+   Vatcategory&amp;=&quot;Standard&quot;
+   Manufacturer&amp;=&quot;Viva Media&quot;
+   Model&amp;=&quot;00145&quot;
+&lt;/Product&gt;
+
+so in xml it should be:
+
+&lt;Product&gt;
+   &lt;ListPrice&gt;79.99&lt;/ListPrice&gt;
+   &lt;Vatcategory&gt;Standard&lt;/Vatcategory&gt;
+   &lt;Manufacturer&gt;Viva Media&lt;/Manufacturer&gt;
+   &lt;Model&gt;00145&lt;/Model&gt;
+&lt;/Product&gt;
+
+I'm not that keen on nesting because it bulks everything out. I accept  
+the arguments for versioning and stuff like that, but they aren't as  
+applicable in an SME environment.
+
+&gt;<i> You don't need to use web service for address - static XML with #ID anchors
+</I>&gt;<i> - and xinclude will work just fine too.
+</I>
+Ok. That's a point.
+
+&gt;<i> Advantage is - just one place changes address for all references.   This
+</I>&gt;<i> would be transparent to the user anyway.  They would just publish their
+</I>&gt;<i> pricelist and their address in two separate pieces of XML.
+</I>
+I'm considering it, but it sounds more complex than just having it in  
+one file.
+
+&gt;<i> Engineering simple xml and pricelist on the fly is a challenge here I'd not
+</I>&gt;<i> realized we needed to re-visit.
+</I>
+Oh yes. It's what I'm working on for a Customer right now.
+
+It's not so bad. Each customer wants a seperate pricelist with  
+different columns in it. There are of course different prices also.
+
+&gt;<i> As usual - the standard industry practice
+</I>&gt;<i> has become massively complex XML that protects customer lock-in and erects a
+</I>&gt;<i> massive technology barrier.
+</I>
+That's why I would prefer to keep it simple.
+
+&gt;<i> : -(
+</I>&gt;<i>
+</I>&gt;<i> We can do better.
+</I>
+That's what I believe also.
+
+Best Regards
+
+David
+
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000007.html">[Preisshare-dev] fyi : PreisShare XML Format
+</A></li>
+	<LI>Next message: <A HREF="000006.html">[Preisshare-dev] fyi : PreisShare XML Format
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#8">[ date ]</a>
+              <a href="thread.html#8">[ thread ]</a>
+              <a href="subject.html#8">[ subject ]</a>
+              <a href="author.html#8">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/preisshare-dev">More information about the Preisshare-dev
+mailing list</a><br>
+</body></html>

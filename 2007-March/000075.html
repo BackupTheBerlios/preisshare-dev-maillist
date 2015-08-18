@@ -1,0 +1,122 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Preisshare-dev] Hi David
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/preisshare-dev/2007-March/index.html" >
+   <LINK REL="made" HREF="mailto:preisshare-dev%40lists.berlios.de?Subject=Re%3A%20%5BPreisshare-dev%5D%20Hi%20David&In-Reply-To=%3C45ECFD97.7010600%40preisshare.net%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000074.html">
+   <LINK REL="Next"  HREF="000076.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Preisshare-dev] Hi David</H1>
+    <B>David Lyon</B> 
+    <A HREF="mailto:preisshare-dev%40lists.berlios.de?Subject=Re%3A%20%5BPreisshare-dev%5D%20Hi%20David&In-Reply-To=%3C45ECFD97.7010600%40preisshare.net%3E"
+       TITLE="[Preisshare-dev] Hi David">david.lyon at preisshare.net
+       </A><BR>
+    <I>Tue Mar  6 06:35:19 CET 2007</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000074.html">[Preisshare-dev] A &quot;duh&quot; question - Excel
+</A></li>
+        <LI>Next message: <A HREF="000076.html">[Preisshare-dev] Sample code from tradedesk showing xpath setup..
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#75">[ date ]</a>
+              <a href="thread.html#75">[ thread ]</a>
+              <a href="subject.html#75">[ subject ]</a>
+              <a href="author.html#75">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>
+Sinu,
+
+Still a fair bit to go. The idea sounds simple but they take time to get 
+right.
+
+Here I'm just trying to get the full circle of price-relaying working. 
+And make it very simple to use.
+
+What I've ended up doing is using DWSII (Delphi web script) to do the 
+actual price calculations. This means that the users can put in whatever 
+logic that they like to calculate from the cost price up to the final 
+sell price.
+
+The Relay_Calculations.pas file sits in the PreisShare directory. It 
+get's interpreted, not compiled into the program.
+
+I've attached a sample.
+
+An Editor (with syntax highlighting) is built into the new PriceSharer. 
+c/o the SynEdit components.
+
+We've got this running in production now and it seems to be ok.
+
+So it will be nice to be able to download some prices from an email, run 
+the relay_calculations over the prices, and then pump out new prices to 
+customers. We're getting ever closer.
+
+Regards
+
+David
+
+Sinu S. wrote:
+&gt;<i>
+</I>&gt;<i> Hi David,
+</I>&gt;<i>
+</I>&gt;<i>  
+</I>&gt;<i>
+</I>&gt;<i> I downloaded TMail2000. They are using ClientSocket component for 
+</I>&gt;<i> getting connection. Looks good.
+</I>&gt;<i>
+</I>&gt;<i>  
+</I>&gt;<i>
+</I>&gt;<i> By the way I am attaching a sample application using Indy.  You can 
+</I>&gt;<i> see the downloading functions in the class &quot;UPLDownloader.pas&quot;  
+</I>&gt;<i>
+</I>&gt;<i>  
+</I>&gt;<i>
+</I>&gt;<i> Regards,
+</I>&gt;<i>
+</I>&gt;<i> Sinu
+</I>&gt;<i>
+</I>&gt;<i>  
+</I>&gt;<i>
+</I>
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/preisshare-dev/attachments/20070306/44201190/attachment.html">https://lists.berlios.de/pipermail/preisshare-dev/attachments/20070306/44201190/attachment.html</A>&gt;
+-------------- next part --------------
+An embedded and charset-unspecified text was scrubbed...
+Name: Relay_Calculations.pas
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/preisshare-dev/attachments/20070306/44201190/attachment.ksh">https://lists.berlios.de/pipermail/preisshare-dev/attachments/20070306/44201190/attachment.ksh</A>&gt;
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000074.html">[Preisshare-dev] A &quot;duh&quot; question - Excel
+</A></li>
+	<LI>Next message: <A HREF="000076.html">[Preisshare-dev] Sample code from tradedesk showing xpath setup..
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#75">[ date ]</a>
+              <a href="thread.html#75">[ thread ]</a>
+              <a href="subject.html#75">[ subject ]</a>
+              <a href="author.html#75">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/preisshare-dev">More information about the Preisshare-dev
+mailing list</a><br>
+</body></html>

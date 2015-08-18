@@ -1,0 +1,111 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Preisshare-dev] Scripting... downloading a lot of pricing data from Germany via shopinfo.xml
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/preisshare-dev/2007-June/index.html" >
+   <LINK REL="made" HREF="mailto:preisshare-dev%40lists.berlios.de?Subject=Re%3A%20%5BPreisshare-dev%5D%20Scripting...%20downloading%20a%20lot%20of%20pricing%20data%0A%20from%20Germany%20via%20shopinfo.xml&In-Reply-To=%3C4679CA21.8030802%40preisshare.net%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000109.html">
+   <LINK REL="Next"  HREF="000111.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Preisshare-dev] Scripting... downloading a lot of pricing data from Germany via shopinfo.xml</H1>
+    <B>David Lyon</B> 
+    <A HREF="mailto:preisshare-dev%40lists.berlios.de?Subject=Re%3A%20%5BPreisshare-dev%5D%20Scripting...%20downloading%20a%20lot%20of%20pricing%20data%0A%20from%20Germany%20via%20shopinfo.xml&In-Reply-To=%3C4679CA21.8030802%40preisshare.net%3E"
+       TITLE="[Preisshare-dev] Scripting... downloading a lot of pricing data from Germany via shopinfo.xml">david.lyon at preisshare.net
+       </A><BR>
+    <I>Thu Jun 21 02:45:21 CEST 2007</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000109.html">[Preisshare-dev] Scripting... answering your question
+</A></li>
+        <LI>Next message: <A HREF="000111.html">[Preisshare-dev] Models Database
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#110">[ date ]</a>
+              <a href="thread.html#110">[ thread ]</a>
+              <a href="subject.html#110">[ subject ]</a>
+              <a href="author.html#110">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>David,
+
+Have you come across shopinfo.xml ?
+
+It's interesting... at the moment we're linking in to that system.
+
+Here is a script that pulls down product information. If you don't have 
+the time/will to run it, here is the output.
+
+Certainly provides us with a lot of data...
+
+F:\PreisShare\ShopInfo Utilities&gt;perl pull_shopinfo.pl 19
+Now pulling down <A HREF="http://www.asmedia.de/shopinfo.xml">http://www.asmedia.de/shopinfo.xml</A>
+Writing file 19.xml
+Languages: de
+Contains 451 products
+productid=name=brand=offerid=category=description=price=image=url=availability=s
+hipping=special=expirationdate=oldprice=\nI found these Urls:
+<A HREF="http://www.asmedia.de/elmar_products.php">http://www.asmedia.de/elmar_products.php</A>
+I found these Mappings:
+availability
+brand
+category
+description
+image
+name
+price
+productid
+shipping
+special
+url
+Now pulling down <A HREF="http://www.asmedia.de/elmar_products.php">http://www.asmedia.de/elmar_products.php</A>
+Writing csv file to 19.csv
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/preisshare-dev/attachments/20070621/cb815ed6/attachment.html">https://lists.berlios.de/pipermail/preisshare-dev/attachments/20070621/cb815ed6/attachment.html</A>&gt;
+-------------- next part --------------
+An embedded and charset-unspecified text was scrubbed...
+Name: pull_shopinfo.pl
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/preisshare-dev/attachments/20070621/cb815ed6/attachment.pl">https://lists.berlios.de/pipermail/preisshare-dev/attachments/20070621/cb815ed6/attachment.pl</A>&gt;
+-------------- next part --------------
+An embedded and charset-unspecified text was scrubbed...
+Name: shopinfolist.txt
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/preisshare-dev/attachments/20070621/cb815ed6/attachment.txt">https://lists.berlios.de/pipermail/preisshare-dev/attachments/20070621/cb815ed6/attachment.txt</A>&gt;
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: 2.xml
+Type: text/xml
+Size: 7125 bytes
+Desc: not available
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/preisshare-dev/attachments/20070621/cb815ed6/attachment.xml">https://lists.berlios.de/pipermail/preisshare-dev/attachments/20070621/cb815ed6/attachment.xml</A>&gt;
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000109.html">[Preisshare-dev] Scripting... answering your question
+</A></li>
+	<LI>Next message: <A HREF="000111.html">[Preisshare-dev] Models Database
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#110">[ date ]</a>
+              <a href="thread.html#110">[ thread ]</a>
+              <a href="subject.html#110">[ subject ]</a>
+              <a href="author.html#110">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/preisshare-dev">More information about the Preisshare-dev
+mailing list</a><br>
+</body></html>
